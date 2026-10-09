@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-display: 'Space Grotesk', 'Inter', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --color-bg: #04070d;
+  --color-brand: #22d3ee;
+  --color-accent: #8b5cf6;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans bg-ink-950 text-slate-200 antialiased;
+  }
+  h1, h2, h3, h4 {
+    @apply font-display text-white tracking-tight;
+  }
+  ::selection {
+    background: rgba(34, 211, 238, 0.3);
+    color: #fff;
+  }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #080d16;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #1e2d45;
+    border-radius: 6px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #22d3ee;
+  }
+}
+
+@layer components {
+  .bg-tech-grid {
+    @apply bg-ink-950 bg-grid-lines bg-grid;
+    background-position: center top;
+  }
+
+  /*
+   * .bg-tech-grid-fade adds a radial vignette over a grid background via ::before.
+   * Direct children of this class need `position: relative` so they sit above the overlay.
+   */
+  .bg-tech-grid-fade {
+    position: relative;
+  }
+  .bg-tech-grid-fade::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(ellipse at center, transparent 0%, #04070d 80%);
+  }
+
+  .text-gradient {
+    @apply bg-brand-gradient bg-clip-text text-transparent;
+  }
+
+  .tech-card {
+    @apply bg-ink-800/70 border border-ink-600 rounded-xl backdrop-blur transition-all duration-300;
+  }
+  .tech-card:hover {
+    @apply border-brand-400/50 shadow-glow;
+  }
+}
