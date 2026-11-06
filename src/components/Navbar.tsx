@@ -71,9 +71,11 @@ export default function Navbar() {
   const tr = t[lang];
   const [isOpen, setIsOpen] = useState(false);
   // Barre transparente seulement en haut de l'accueil (fond clair) ; blanche partout ailleurs.
-  const isHome = ['/', '/home', '/apercu-b'].includes(location.pathname);
+  const isHome = ['/', '/home', '/apercu-c'].includes(location.pathname);
   const [scrolledDown, setScrolledDown] = useState(() => window.scrollY > 10);
   const scrolled = !isHome || scrolledDown;
+  // Variante sombre, utilisée seulement par la proposition D.
+  const dark = location.pathname === '/apercu-d';
 
   useEffect(() => {
     const handleScroll = () => setScrolledDown(window.scrollY > 10);
@@ -110,7 +112,9 @@ export default function Navbar() {
     <nav
       id="navbar-root-w8p1k9m3"
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled || isOpen
+        dark && !isOpen
+          ? 'bg-[#050d1c]/85 backdrop-blur-xl border-b border-white/10'
+          : scrolled || isOpen
           ? 'bg-white/90 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_8px_30px_-20px_rgba(11,31,58,0.35)]'
           : 'bg-white/0 border-b border-transparent'
       }`}
@@ -121,8 +125,8 @@ export default function Navbar() {
             <Link to="/" className="flex items-center gap-3">
               <img src="/logo-concept-informatique-mark.png" alt="Logo Concept Informatique" className="h-10 w-auto object-contain" />
               <span className="hidden min-[420px]:flex flex-col leading-tight whitespace-nowrap">
-                <span className="text-lg font-extrabold tracking-tight text-ci-navy">
-                  Concept <span className="text-ci-green-600">Informatique</span>
+                <span className={`text-lg font-extrabold tracking-tight ${dark ? 'text-white' : 'text-ci-navy'}`}>
+                  Concept <span className={dark ? 'text-ci-green-400' : 'text-ci-green-600'}>Informatique</span>
                 </span>
                 <span className="hidden sm:block text-[11px] font-medium text-slate-500">{tr.tagline}</span>
               </span>
@@ -138,7 +142,9 @@ export default function Navbar() {
                   to={link.path}
                   aria-current={active ? 'page' : undefined}
                   className={`relative whitespace-nowrap rounded-lg px-3.5 py-2 text-sm font-semibold transition-colors ${
-                    active ? 'text-ci-blue-600 bg-ci-blue-50' : 'text-slate-600 hover:text-ci-navy hover:bg-slate-100'
+                    dark
+                      ? active ? 'text-white bg-white/10' : 'text-slate-300 hover:text-white hover:bg-white/5'
+                      : active ? 'text-ci-blue-600 bg-ci-blue-50' : 'text-slate-600 hover:text-ci-navy hover:bg-slate-100'
                   }`}
                   id={`nav-link-${link.idSlug}-p8n2k1m4`}
                 >

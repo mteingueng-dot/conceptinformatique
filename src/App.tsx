@@ -3,7 +3,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import HomePage from './pages/HomePage';
-import HomePageB from './pages/HomePageB';
+import HomePageC from './pages/HomePageC';
+import HomePageD from './pages/HomePageD';
 import AboutPage from './pages/AboutPage';
 import ValuesPage from './pages/ValuesPage';
 import ServicesPage from './pages/ServicesPages';
@@ -29,8 +30,9 @@ export default function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/home" element={<HomePage />} />
-              {/* Proposition de design B, pour comparaison */}
-              <Route path="/apercu-b" element={<HomePageB />} />
+              {/* Propositions de design C et D, pour comparaison avec l'accueil (A) */}
+              <Route path="/apercu-c" element={<HomePageC />} />
+              <Route path="/apercu-d" element={<HomePageD />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/about/values" element={<ValuesPage />} />
               <Route path="/about/profil-professionnel" element={<ProfessionalProfilePage />} />
