@@ -127,7 +127,7 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-slate-600">
                 <MapPin className="mt-0.5 w-4 h-4 shrink-0 text-ci-green-600" />
-                <span>1590 Rue Kesteman,<br />Sherbrooke, QC, J1R 0Y5</span>
+                <span>Sherbrooke, QC</span>
               </li>
               <li className="flex items-center gap-3 text-sm text-slate-600">
                 <Phone className="w-4 h-4 shrink-0 text-ci-green-600" />

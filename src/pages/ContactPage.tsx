@@ -119,8 +119,7 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm text-slate-600 uppercase tracking-widest mb-1">{c.addressLabel}</p>
                     <p className="text-lg font-light text-ci-navy">
-                      1590 Rue Kesteman,<br />
-                      Sherbrooke, QC, J1R 0Y5
+                      Sherbrooke, QC
                     </p>
                   </div>
                 </div>
@@ -252,7 +251,7 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-sans font-medium text-slate-900">{c.officeTitle}</p>
-              <p className="text-sm text-slate-500 font-light">1590 Rue Kesteman, Sherbrooke</p>
+              <p className="text-sm text-slate-500 font-light">Sherbrooke, QC</p>
             </div>
           </div>
         </div>
