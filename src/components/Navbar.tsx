@@ -71,7 +71,7 @@ export default function Navbar() {
   const tr = t[lang];
   const [isOpen, setIsOpen] = useState(false);
   // Barre transparente seulement en haut de l'accueil (fond clair) ; blanche partout ailleurs.
-  const isHome = location.pathname === '/' || location.pathname === '/home';
+  const isHome = ['/', '/home', '/apercu-b'].includes(location.pathname);
   const [scrolledDown, setScrolledDown] = useState(() => window.scrollY > 10);
   const scrolled = !isHome || scrolledDown;
 
