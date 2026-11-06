@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 
 /*
- * Version F de la page d'accueil — « 3D futuriste ».
+ * Version F de la page d'accueil — « 3D futuriste », sur fond bleu clair.
  * Sphère de données en 3D dessinée sur <canvas> (sans bibliothèque), grille en perspective,
  * cartes inclinables à la souris. Contenu « pile de données moderne » (technologies déjà
  * annoncées sur le site). Les animations s'arrêtent si l'utilisateur préfère moins de mouvement.
@@ -172,7 +172,7 @@ function DataSphere({ label }: { label: string }) {
 
       // Halo
       const g = ctx.createRadialGradient(w / 2, h / 2, Math.min(w, h) * 0.1, w / 2, h / 2, Math.min(w, h) * 0.55);
-      g.addColorStop(0, 'rgba(31,111,235,0.18)');
+      g.addColorStop(0, 'rgba(31,111,235,0.08)');
       g.addColorStop(1, 'rgba(31,111,235,0)');
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
@@ -181,7 +181,7 @@ function DataSphere({ label }: { label: string }) {
       for (const p of pts) {
         const q = project(p, rot);
         const front = (q.z + 1) / 2;
-        ctx.fillStyle = `rgba(110,168,255,${0.08 + front * 0.6})`;
+        ctx.fillStyle = `rgba(21,89,209,${0.06 + front * 0.55})`;
         const size = (0.6 + front * 1.1) * q.s;
         ctx.fillRect(q.x - size / 2, q.y - size / 2, size, size);
       }
@@ -195,7 +195,7 @@ function DataSphere({ label }: { label: string }) {
           if (q.z < -0.15) { started = false; continue; }
           if (!started) { ctx.moveTo(q.x, q.y); started = true; } else ctx.lineTo(q.x, q.y);
         }
-        ctx.strokeStyle = k % 2 ? 'rgba(52,209,127,0.45)' : 'rgba(110,168,255,0.45)';
+        ctx.strokeStyle = k % 2 ? 'rgba(14,145,80,0.55)' : 'rgba(21,89,209,0.45)';
         ctx.lineWidth = 1;
         ctx.stroke();
         // Impulsion qui voyage sur l'arc
@@ -204,7 +204,7 @@ function DataSphere({ label }: { label: string }) {
         if (q.z > -0.15) {
           ctx.beginPath();
           ctx.arc(q.x, q.y, 2.4 * q.s, 0, Math.PI * 2);
-          ctx.fillStyle = '#34d17f';
+          ctx.fillStyle = '#16b364';
           ctx.shadowColor = '#34d17f';
           ctx.shadowBlur = 12;
           ctx.fill();
@@ -219,12 +219,12 @@ function DataSphere({ label }: { label: string }) {
         const pulse = 6 + ((now / 400) % 1) * 14;
         ctx.beginPath();
         ctx.arc(hq.x, hq.y, pulse, 0, Math.PI * 2);
-        ctx.strokeStyle = `rgba(52,209,127,${0.6 - (pulse - 6) / 28})`;
+        ctx.strokeStyle = `rgba(22,179,100,${0.7 - (pulse - 6) / 28})`;
         ctx.lineWidth = 1.5;
         ctx.stroke();
         ctx.beginPath();
         ctx.arc(hq.x, hq.y, 4, 0, Math.PI * 2);
-        ctx.fillStyle = '#34d17f';
+        ctx.fillStyle = '#16b364';
         ctx.fill();
       }
       // Étiquette déplacée directement dans le DOM (pas de rendu React à chaque image)
@@ -261,7 +261,7 @@ function DataSphere({ label }: { label: string }) {
     <div className="relative aspect-square w-full">
       <canvas ref={canvasRef} className="absolute inset-0 h-full w-full" aria-hidden="true" />
       <div ref={labelRef} className="pointer-events-none absolute left-0 top-0 opacity-0 transition-opacity duration-300">
-        <span className="whitespace-nowrap rounded-md border border-ci-green-400/40 bg-[#040b18]/80 px-2 py-1 font-mono text-[11px] text-ci-green-400 backdrop-blur">
+        <span className="whitespace-nowrap rounded-md border border-ci-green-100 bg-white px-2 py-1 font-mono text-[11px] font-semibold text-ci-green-600 shadow-sm">
           {label}
         </span>
       </div>
@@ -288,7 +288,7 @@ function TiltCard({ children, className = '' }: { children: ReactNode; className
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: `radial-gradient(400px circle at ${style.glare}, rgba(110,168,255,0.16), transparent 45%)` }}
+        style={{ background: `radial-gradient(400px circle at ${style.glare}, rgba(31,111,235,0.08), transparent 45%)` }}
       />
       {children}
     </div>
@@ -301,7 +301,11 @@ export default function HomePageF() {
   const t = dict[lang];
 
   return (
-    <div className="overflow-hidden bg-[#040b18] text-slate-300">
+    <div className="relative overflow-hidden bg-[#dfeafb] text-slate-600">
+      {/* Fond bleu clair teinté (couleurs du logo) : dégradé bleu pâle → menthe pâle, lueurs et trame de points */}
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,#d3e3fb_0%,#e2ecfc_30%,#e6effc_60%,#ddf3e8_100%)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-[radial-gradient(60rem_40rem_at_85%_35%,rgba(22,179,100,0.12),transparent_70%),radial-gradient(70rem_45rem_at_10%_60%,rgba(31,111,235,0.14),transparent_70%)]" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-dot-grid opacity-70 [mask-image:linear-gradient(to_bottom,black,transparent_20%,transparent_85%,black)]" />
       {/* Hero */}
       <section className="relative min-h-[max(100svh,760px)] pt-28 pb-16 flex items-center">
         {/* Grille en perspective qui défile */}
@@ -311,12 +315,30 @@ export default function HomePageF() {
             style={{
               transform: 'rotateX(68deg)',
               backgroundImage:
-                'linear-gradient(rgba(52,209,127,0.35) 1px, transparent 1px), linear-gradient(90deg, rgba(31,111,235,0.35) 1px, transparent 1px)',
+                'linear-gradient(rgba(22,179,100,0.30) 1px, transparent 1px), linear-gradient(90deg, rgba(31,111,235,0.30) 1px, transparent 1px)',
               backgroundSize: '64px 64px',
             }}
           />
         </div>
-        <div aria-hidden="true" className="absolute top-0 left-1/2 -translate-x-1/2 w-[60rem] h-[30rem] rounded-full bg-ci-blue-600/20 blur-[140px]" />
+        {/* Aurore animée aux couleurs du logo */}
+        <motion.div
+          aria-hidden="true"
+          className="absolute -top-40 left-[10%] w-[44rem] h-[30rem] rounded-full bg-ci-blue-200/70 blur-[130px]"
+          animate={{ x: [0, 80, 0], y: [0, 30, 0] }}
+          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          aria-hidden="true"
+          className="absolute top-10 right-[5%] w-[34rem] h-[26rem] rounded-full bg-[#a5f3fc]/50 blur-[130px]"
+          animate={{ x: [0, -60, 0], y: [0, 50, 0] }}
+          transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
+        />
+        <motion.div
+          aria-hidden="true"
+          className="absolute bottom-0 left-1/3 w-[40rem] h-[20rem] rounded-full bg-ci-green-100 blur-[130px]"
+          animate={{ x: [0, 60, 0] }}
+          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
+        />
         <style>{'@keyframes ci-grid { from { background-position: 0 0; } to { background-position: 0 64px; } }'}</style>
 
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
@@ -324,34 +346,34 @@ export default function HomePageF() {
             <motion.span
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-[#6ea8ff] backdrop-blur"
+              className="inline-flex items-center gap-2 rounded-full border border-ci-blue-100 bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-ci-blue-700 shadow-sm"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-ci-green-400 shadow-[0_0_10px_#34d17f]" /> {t.badge}
+              <span className="h-1.5 w-1.5 rounded-full bg-ci-green-500 shadow-[0_0_10px_#34d17f]" /> {t.badge}
             </motion.span>
             <motion.h1
               initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.9 }}
-              className="mt-8 font-display font-bold text-white text-[2.9rem] leading-[1] sm:text-7xl lg:text-[5.2rem] tracking-[-0.045em]"
+              className="mt-8 font-display font-bold text-ci-navy text-[2.9rem] leading-[1] sm:text-7xl lg:text-[5.2rem] tracking-[-0.045em]"
             >
               {t.titleA}{' '}
-              <span className="bg-gradient-to-r from-[#6ea8ff] via-[#5ad1ff] to-ci-green-400 bg-clip-text text-transparent drop-shadow-[0_0_30px_rgba(52,209,127,0.35)]">
+              <span className="text-gradient-ci">
                 {t.titleB}
               </span>
             </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-7 max-w-xl text-lg leading-relaxed text-slate-400">
+            <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-7 max-w-xl text-lg leading-relaxed text-slate-600">
               {t.intro}
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="mt-10 flex flex-col sm:flex-row gap-3">
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-ci-blue-600 to-ci-green-500 px-7 py-4 font-semibold text-white shadow-[0_0_40px_-6px_rgba(31,111,235,0.8)]"
+                className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-ci-blue-600 to-ci-green-500 px-7 py-4 font-semibold text-white shadow-[0_12px_40px_-10px_rgba(31,111,235,0.6)]"
               >
                 <span aria-hidden="true" className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <span className="relative">{t.ctaPrimary}</span>
                 <ArrowRight className="relative w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link to="/services" className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-white/5 px-7 py-4 font-semibold text-white backdrop-blur hover:border-[#6ea8ff]/60 hover:bg-white/10 transition-colors">
+              <Link to="/services" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-4 font-semibold text-ci-navy hover:border-ci-blue-200 hover:bg-ci-blue-50 transition-colors">
                 {t.ctaSecondary}
               </Link>
             </motion.div>
@@ -363,12 +385,12 @@ export default function HomePageF() {
       </section>
 
       {/* Chiffres */}
-      <section className="relative border-y border-white/10 bg-white/[0.02] backdrop-blur">
+      <section className="relative border-y border-white/70 bg-white/50 backdrop-blur">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 grid grid-cols-2 lg:grid-cols-4 gap-8">
           {t.stats.map((s, i) => (
             <motion.div key={s.l} {...reveal} transition={{ delay: i * 0.08 }}>
-              <p className="font-display text-4xl md:text-5xl font-bold text-white drop-shadow-[0_0_18px_rgba(110,168,255,0.45)]">{s.v}</p>
-              <p className="mt-1 text-sm text-slate-400">{s.l}</p>
+              <p className="font-display text-4xl md:text-5xl font-bold text-gradient-ci">{s.v}</p>
+              <p className="mt-1 text-sm text-slate-500">{s.l}</p>
             </motion.div>
           ))}
         </div>
@@ -378,8 +400,8 @@ export default function HomePageF() {
       <section className="relative py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <motion.div {...reveal}>
-            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-400">{t.stackTag}</p>
-            <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-[-0.04em] text-white">{t.stackTitle}</h2>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.stackTag}</p>
+            <h2 className="mt-3 font-display text-4xl md:text-6xl font-bold tracking-[-0.04em] text-ci-navy">{t.stackTitle}</h2>
           </motion.div>
           <div className="[perspective:1200px]">
             <div className="space-y-3 [transform:rotateX(18deg)_rotateY(-14deg)] [transform-style:preserve-3d]">
@@ -392,15 +414,15 @@ export default function HomePageF() {
                     whileInView={{ opacity: 1, x: 0, z: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.12 }}
-                    className="flex items-center gap-4 rounded-2xl border border-white/10 bg-gradient-to-r from-white/[0.07] to-white/[0.02] px-5 py-4 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.8)] backdrop-blur"
+                    className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_25px_50px_-25px_rgba(11,31,58,0.35)]"
                     style={{ marginLeft: `${i * 5}%` }}
                   >
-                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${i === 4 ? 'bg-ci-green-500 shadow-[0_0_20px_#16b364]' : 'bg-ci-blue-600 shadow-[0_0_20px_rgba(31,111,235,0.7)]'} text-white`}>
+                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${i === 4 ? 'bg-ci-green-500 shadow-[0_8px_20px_-4px_rgba(22,179,100,0.6)]' : 'bg-ci-blue-600 shadow-[0_8px_20px_-4px_rgba(31,111,235,0.6)]'} text-white`}>
                       <Icon className="w-5 h-5" />
                     </span>
                     <div className="min-w-0">
-                      <p className="font-bold text-white">{layer.title}</p>
-                      <p className="truncate font-mono text-[11px] text-slate-400">{layer.tech}</p>
+                      <p className="font-bold text-ci-navy">{layer.title}</p>
+                      <p className="truncate font-mono text-[11px] text-slate-500">{layer.tech}</p>
                     </div>
                   </motion.div>
                 );
@@ -411,20 +433,20 @@ export default function HomePageF() {
       </section>
 
       {/* Capacités */}
-      <section className="relative py-24 border-t border-white/10">
+      <section className="relative py-24 border-t border-white/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="mb-12 font-mono text-xs uppercase tracking-[0.2em] text-ci-green-400">{t.capTag}</p>
+          <p className="mb-12 font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.capTag}</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {t.caps.map((c, i) => {
               const Icon = capIcons[i];
               return (
                 <motion.div key={c.title} {...reveal} transition={{ delay: i * 0.08 }}>
                   <TiltCard className="h-full rounded-3xl">
-                    <Link to={c.to} className="relative flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.04] p-7 backdrop-blur transition-colors hover:border-[#6ea8ff]/50">
-                      <Icon className="w-8 h-8 text-[#6ea8ff] [transform:translateZ(30px)]" />
-                      <h3 className="mt-8 font-display text-2xl font-bold text-white">{c.title}</h3>
-                      <p className="mt-2 text-slate-400">{c.text}</p>
-                      <span className="mt-auto pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-ci-green-400">
+                    <Link to={c.to} className="relative flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 transition-all hover:border-ci-blue-200 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)]">
+                      <Icon className="w-8 h-8 text-ci-blue-600 [transform:translateZ(30px)]" />
+                      <h3 className="mt-8 font-display text-2xl font-bold text-ci-navy">{c.title}</h3>
+                      <p className="mt-2 text-slate-600">{c.text}</p>
+                      <span className="mt-auto pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-ci-green-600">
                         {t.learnMore} <ArrowUpRight className="w-4 h-4" />
                       </span>
                     </Link>
@@ -438,24 +460,24 @@ export default function HomePageF() {
 
       {/* CTA */}
       <section className="relative px-4 sm:px-6 lg:px-8 pb-28 pt-8">
-        <motion.div {...reveal} className="relative max-w-7xl mx-auto overflow-hidden rounded-[2rem] border border-white/10 px-6 py-20 sm:px-12 text-center">
-          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31,111,235,0.35),transparent_70%)]" />
+        <motion.div {...reveal} className="relative max-w-7xl mx-auto overflow-hidden rounded-[2rem] border border-white bg-white/70 px-6 py-20 shadow-[0_30px_80px_-40px_rgba(11,31,58,0.4)] backdrop-blur sm:px-12 text-center">
+          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(31,111,235,0.07),transparent_70%)]" />
           <motion.div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-[#6ea8ff]/20"
+            className="absolute left-1/2 top-1/2 h-[36rem] w-[36rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-ci-blue-100"
             animate={{ rotate: 360 }}
             transition={{ duration: 60, repeat: Infinity, ease: 'linear' }}
           />
           <motion.div
             aria-hidden="true"
-            className="absolute left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-ci-green-400/20"
+            className="absolute left-1/2 top-1/2 h-[24rem] w-[24rem] -translate-x-1/2 -translate-y-1/2 rounded-full border border-ci-green-100"
             animate={{ rotate: -360 }}
             transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
           />
           <div className="relative">
-            <h2 className="mx-auto max-w-3xl font-display text-4xl md:text-6xl font-bold tracking-[-0.04em] text-white">{t.ctaTitle}</h2>
-            <p className="mx-auto mt-5 max-w-xl text-lg text-slate-400">{t.ctaText}</p>
-            <Link to="/contact" className="group mt-10 inline-flex items-center gap-2 rounded-xl bg-white px-7 py-4 font-semibold text-[#040b18] shadow-[0_0_40px_-5px_rgba(255,255,255,0.5)] hover:bg-ci-green-50 transition-colors">
+            <h2 className="mx-auto max-w-3xl font-display text-4xl md:text-6xl font-bold tracking-[-0.04em] text-ci-navy">{t.ctaTitle}</h2>
+            <p className="mx-auto mt-5 max-w-xl text-lg text-slate-600">{t.ctaText}</p>
+            <Link to="/contact" className="group mt-10 inline-flex items-center gap-2 rounded-xl bg-ci-blue-600 px-7 py-4 font-semibold text-white shadow-lg shadow-ci-blue-600/30 hover:bg-ci-blue-700 transition-colors">
               {t.ctaButton} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

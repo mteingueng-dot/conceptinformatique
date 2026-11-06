@@ -71,11 +71,11 @@ export default function Navbar() {
   const tr = t[lang];
   const [isOpen, setIsOpen] = useState(false);
   // Barre transparente seulement en haut de l'accueil (fond clair) ; blanche partout ailleurs.
-  const isHome = ['/', '/home', '/apercu-c', '/apercu-e'].includes(location.pathname);
+  const isHome = ['/', '/home', '/apercu-c', '/apercu-e', '/apercu-f'].includes(location.pathname);
   const [scrolledDown, setScrolledDown] = useState(() => window.scrollY > 10);
   const scrolled = !isHome || scrolledDown;
-  // Variante sombre, utilisée seulement par les propositions D et F.
-  const dark = ['/apercu-d', '/apercu-f'].includes(location.pathname);
+  // Variante sombre, utilisée seulement par la proposition D.
+  const dark = location.pathname === '/apercu-d';
 
   useEffect(() => {
     const handleScroll = () => setScrolledDown(window.scrollY > 10);
