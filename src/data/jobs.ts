@@ -439,45 +439,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       ...informationSecurityMandate.en,
     },
     {
-      id: 'typo3-php-solr',
-      title: 'Senior TYPO3/PHP/Solr Developers',
-      summary:
-        'A 36-month, on-demand hour bank for AWS, TYPO3, PHP and Solr work, with an emphasis on advanced technical support and knowledge transfer.',
-      location: 'Remote',
-      type: '36-month contract',
-      intro:
-        'This mandate provides a bank of 1,800 hours over 36 months. The client estimates an average of approximately 25 to 50 hours per month for planning purposes only; hours are not guaranteed and there is no firm consumption commitment. Each request is written by the client or, if proposed by ISGA, approved in advance by the client. Hours are not divided by technical category; the client estimates that advanced TYPO3/PHP/Solr support will account for at most approximately 20%.',
-      responsibilities: [
-        'Deliver additional AWS work outside routine operational maintenance.',
-        'Add or adjust AWS components such as DNS, S3, CloudFront and Lambda for occasional requests or improvements.',
-        'Review and improve release and production deployment processes.',
-        'Design and implement load-testing solutions in acceptance environments.',
-        'Replace local developer tools, including Docker ecosystem and environment emulation solutions.',
-        'Document completed work.',
-        'Add or manage peripheral components, such as a mail server for a support centre.',
-        'Provide training, knowledge transfer and guidance to the technology team.',
-        'Recommend or implement security, availability, integrity and good-practice configurations across AWS, Docker, TYPO3 Cloud, Solr, GitLab Pipelines, Cognito, disaster-recovery sites, CloudWatch and update automation.',
-        'Provide consulting and advanced support to the client’s developer team for TYPO3, PHP and Solr.',
-        'Review code produced by the client’s team.',
-        'Recommend approaches, fixes or extensions for new needs.',
-      ],
-      requirements: [
-        'At least 5 years of experience in technology.',
-        'Three relevant mandates of at least 100 person-days each involving AWS, TYPO3, PHP and Apache Solr.',
-        'Concrete examples of deployed automation projects using CI/CD pipelines and AWS CDK for programmable infrastructure.',
-        'Excellent command of French.',
-        'A CV signed by each proposed resource.',
-        'At least two mandates demonstrating knowledge transfer to the client’s resources; the methodology must be described.',
-        'A recent list of similar projects of comparable scope.',
-        'A succession plan in case the primary resource leaves during the mandate.',
-      ],
-      assets: [],
-      benefits: [
-        '36-month mandate, performed remotely.',
-        'Work is requested as needed from a 1,800-hour bank; the estimated monthly volume is indicative and not guaranteed.',
-      ],
-    },
-    {
       id: 'fullstack',
       title: 'Full-Stack Software Developer',
       summary:
@@ -547,41 +508,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
         'Mentorship from experienced data professionals.',
       ],
     },
-    {
-      id: 'support',
-      title: 'IT Support Technician',
-      summary:
-        'Provide technical support to our clients, resolve incidents, and help keep their environments secure and stable.',
-      location: 'Sherbrooke',
-      type: 'Full-time',
-      intro:
-        'As an IT Support Technician, you are the first point of contact for our clients when something needs attention. You will resolve incidents quickly, maintain their workstations and networks, and help keep their environments secure. Your attitude and service sense make all the difference.',
-      responsibilities: [
-        'Respond to support requests and resolve incidents by phone, remotely and on site.',
-        'Administer Microsoft 365 accounts and support Windows workstations.',
-        'Install, configure and troubleshoot networks, printers and peripherals.',
-        'Apply security best practices: updates, backups, access management and user awareness.',
-        'Document interventions and keep the ticketing system up to date.',
-      ],
-      requirements: [
-        'Diploma in computer support, network administration or equivalent experience.',
-        'Good knowledge of Windows and Microsoft 365 administration.',
-        'Solid understanding of networking fundamentals (TCP/IP, DNS, DHCP, Wi-Fi).',
-        'Ability to prioritize and manage multiple incidents at once.',
-        'Excellent customer service and communication skills in French; English is an asset.',
-      ],
-      assets: [
-        'Microsoft or CompTIA certifications (e.g. MS-102, A+, Network+).',
-        'Experience with remote support and monitoring tools.',
-        'Knowledge of cybersecurity fundamentals.',
-      ],
-      benefits: [
-        'Training and certification opportunities.',
-        'Clear path to more specialized technical roles.',
-        'Supportive, team-oriented work environment.',
-        'Varied days with different clients and challenges.',
-      ],
-    },
   ],
   fr: [
     {
@@ -613,45 +539,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'information-security-governance',
       title: "Conseiller en sécurité de l'information – spécialiste gouvernance et gestion du risque",
       ...informationSecurityMandate.fr,
-    },
-    {
-      id: 'typo3-php-solr',
-      title: 'Développeurs sénior TYPO3/PHP/Solr',
-      summary:
-        'Banque de 1 800 heures sur 36 mois pour des travaux AWS, TYPO3, PHP et Solr, avec soutien technique avancé et transfert de connaissances.',
-      location: 'Télétravail',
-      type: 'Mandat de 36 mois',
-      intro:
-        'Le mandat prévoit une banque de 1 800 heures sur 36 mois. À titre indicatif seulement, le client estime une moyenne d’environ 25 à 50 heures par mois. Ces heures ne sont pas garanties et aucun engagement ferme de consommation n’est prévu. Chaque demande est rédigée par le client ou, si elle est suggérée par ISGA, approuvée au préalable par le client. Les heures ne sont pas réparties par catégorie technique; le client estime que le soutien avancé TYPO3/PHP/Solr représentera au maximum environ 20 % des heures.',
-      responsibilities: [
-        'Réaliser des travaux AWS complémentaires hors du maintien opérationnel courant.',
-        'Ajouter ou ajuster des composantes AWS (DNS, S3, CloudFront, Lambda, etc.) pour des demandes ponctuelles ou des évolutions.',
-        'Réviser et améliorer les processus de mise en production.',
-        'Élaborer et mettre en place des solutions de tests de charge en environnement d’acceptation.',
-        'Remplacer des outils locaux de développement, notamment l’écosystème Docker et l’émulation d’environnements.',
-        'Documenter les travaux réalisés.',
-        'Ajouter ou gérer des composantes périphériques, par exemple un serveur de courriel pour un centre d’assistance.',
-        'Former l’équipe technologique, transférer les connaissances et l’accompagner.',
-        'Recommander ou mettre en place des configurations de sécurité, disponibilité, intégrité et bonnes pratiques pour AWS, Docker, TYPO3 infonuagique, Solr, GitLab Pipelines, Cognito, le site de relève, CloudWatch et l’automatisation des mises à jour.',
-        'Fournir des services-conseils et du soutien avancé aux développeurs de la DCN en TYPO3, PHP et Solr.',
-        'Réviser le code produit par l’équipe du client.',
-        'Proposer des approches, correctifs ou extensions pour répondre à de nouveaux besoins.',
-      ],
-      requirements: [
-        'Au moins 5 années d’expérience en technologies.',
-        'Trois mandats pertinents d’au moins 100 jours-personnes chacun en lien avec AWS, TYPO3, PHP et Apache Solr.',
-        'Exemples concrets de projets d’automatisation déployée avec des pipelines CI/CD et d’utilisation d’AWS CDK pour gérer des infrastructures programmables.',
-        'Maîtrise du français.',
-        'CV signé par la ressource proposée.',
-        'Démonstration d’au moins 2 mandats avec transfert de connaissances aux ressources du donneur d’ouvrage; la méthodologie doit être décrite.',
-        'Liste récente de projets similaires de même envergure.',
-        'Mécanismes de relève prévus en cas de départ de la ressource principale pendant le mandat.',
-      ],
-      assets: [],
-      benefits: [
-        'Mandat de 36 mois en télétravail.',
-        'Travaux réalisés sur demande à partir d’une banque de 1 800 heures; le volume mensuel estimé est indicatif et non garanti.',
-      ],
     },
     {
       id: 'fullstack',
@@ -721,41 +608,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
         'Horaires flexibles et télétravail hybride.',
         'Projets variés dans plusieurs secteurs d’activité.',
         'Mentorat par des professionnels de la donnée expérimentés.',
-      ],
-    },
-    {
-      id: 'support',
-      title: 'Technicien en soutien informatique',
-      summary:
-        'Offrez du soutien technique à nos clients, résolvez les incidents et contribuez à maintenir leurs environnements sécuritaires et stables.',
-      location: 'Sherbrooke',
-      type: 'Temps plein',
-      intro:
-        'À titre de technicien en soutien informatique, vous êtes le premier point de contact de nos clients lorsqu’un besoin survient. Vous résoudrez rapidement les incidents, entretiendrez leurs postes de travail et leurs réseaux, et contribuerez à la sécurité de leurs environnements. Votre attitude et votre sens du service font toute la différence.',
-      responsibilities: [
-        'Répondre aux demandes de soutien et résoudre les incidents par téléphone, à distance et sur place.',
-        'Administrer les comptes Microsoft 365 et soutenir les postes de travail Windows.',
-        'Installer, configurer et dépanner les réseaux, imprimantes et périphériques.',
-        'Appliquer les bonnes pratiques de sécurité : mises à jour, sauvegardes, gestion des accès et sensibilisation des utilisateurs.',
-        'Documenter les interventions et tenir à jour le système de billetterie.',
-      ],
-      requirements: [
-        'Diplôme en soutien informatique, en administration de réseaux ou expérience équivalente.',
-        'Bonne connaissance de Windows et de l’administration Microsoft 365.',
-        'Compréhension solide des notions de réseautique (TCP/IP, DNS, DHCP, Wi-Fi).',
-        'Capacité à prioriser et à gérer plusieurs incidents simultanément.',
-        'Excellent service à la clientèle et aisance en communication en français; l’anglais est un atout.',
-      ],
-      assets: [
-        'Certifications Microsoft ou CompTIA (p. ex. MS-102, A+, Network+).',
-        'Expérience avec des outils de soutien à distance et de surveillance.',
-        'Connaissances de base en cybersécurité.',
-      ],
-      benefits: [
-        'Possibilités de formation et de certification.',
-        'Cheminement clair vers des rôles techniques plus spécialisés.',
-        'Environnement de travail solidaire et axé sur l’équipe.',
-        'Des journées variées avec différents clients et défis.',
       ],
     },
   ],

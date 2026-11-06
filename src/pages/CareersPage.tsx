@@ -138,14 +138,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         type: 'Governance and risk management',
       },
       {
-        id: 'typo3-php-solr',
-        title: 'Senior TYPO3/PHP/Solr Developers',
-        description:
-          'Remote 36-month, on-demand hour bank supporting AWS, TYPO3, PHP and Solr, including delivery improvements, automation and knowledge transfer.',
-        location: 'Remote',
-        type: '36-month contract',
-      },
-      {
         id: 'fullstack',
         title: 'Full-Stack Software Developer',
         description:
@@ -159,14 +151,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         description:
           'Turn our clients’ data into clear dashboards and useful indicators that guide their strategic decisions.',
         location: 'Sherbrooke / Hybrid',
-        type: 'Full-time',
-      },
-      {
-        id: 'support',
-        title: 'IT Support Technician',
-        description:
-          'Provide technical support to our clients, resolve incidents, and help keep their environments secure and stable.',
-        location: 'Sherbrooke',
         type: 'Full-time',
       },
     ],
@@ -271,14 +255,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         type: 'Gouvernance et gestion du risque',
       },
       {
-        id: 'typo3-php-solr',
-        title: 'Développeurs sénior TYPO3/PHP/Solr',
-        description:
-          'Mandat à distance de 36 mois sous forme de banque d’heures sur demande, en soutien à AWS, TYPO3, PHP et Solr, avec transfert de connaissances.',
-        location: 'Télétravail',
-        type: 'Mandat de 36 mois',
-      },
-      {
         id: 'fullstack',
         title: 'Développeur logiciel full-stack',
         description:
@@ -292,14 +268,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         description:
           'Transformez les données de nos clients en tableaux de bord clairs et en indicateurs utiles qui guident leurs décisions stratégiques.',
         location: 'Sherbrooke / Hybride',
-        type: 'Temps plein',
-      },
-      {
-        id: 'support',
-        title: 'Technicien en soutien informatique',
-        description:
-          'Offrez du soutien technique à nos clients, résolvez les incidents et contribuez à maintenir leurs environnements sécuritaires et stables.',
-        location: 'Sherbrooke',
         type: 'Temps plein',
       },
     ],
