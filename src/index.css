@@ -61,6 +61,18 @@
     background: radial-gradient(ellipse at center, transparent 0%, #04070d 80%);
   }
 
+  /* Refonte claire : trame de points discrète et dégradé bleu → vert du logo */
+  .bg-dot-grid {
+    background-image: radial-gradient(rgba(17, 70, 166, 0.13) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+  .text-gradient-ci {
+    background-image: linear-gradient(100deg, #1559d1 0%, #1f6feb 45%, #16b364 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
   .text-gradient {
     @apply bg-brand-gradient bg-clip-text text-transparent;
   }

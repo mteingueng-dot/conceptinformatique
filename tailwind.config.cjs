@@ -3,11 +3,30 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
         display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
       colors: {
+        // Palette claire de la refonte, tirée du logo (bleu + vert)
+        ci: {
+          navy: '#0b1f3a',
+          blue: {
+            50: '#eef5ff',
+            100: '#d9e8ff',
+            200: '#b6d3ff',
+            500: '#1f6feb',
+            600: '#1559d1',
+            700: '#1146a6',
+          },
+          green: {
+            50: '#ecfdf3',
+            100: '#d1fadf',
+            400: '#34d17f',
+            500: '#16b364',
+            600: '#0e9150',
+          },
+        },
         ink: {
           950: '#04070d',
           900: '#080d16',
