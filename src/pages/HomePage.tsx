@@ -87,6 +87,14 @@ const en: typeof fr = {
 
 const dict = { fr, en };
 const layerIcons = [Radio, Database, GitBranch, LineChart, BrainCircuit];
+// Page de service liée à chaque couche de la pile
+const layerLinks = [
+  '/services/data-engineering',
+  '/services/architecture-cloud',
+  '/services/data-engineering',
+  '/services/business-intelligence',
+  '/services/automatisation-ia',
+];
 const capIcons = [Database, Radio, LineChart, Sparkles];
 const reveal = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-60px' } };
 
@@ -414,16 +422,24 @@ export default function HomePage() {
                     whileInView={{ opacity: 1, x: 0, z: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, delay: i * 0.12 }}
-                    className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_25px_50px_-25px_rgba(11,31,58,0.35)]"
                     style={{ marginLeft: `${i * 5}%` }}
                   >
-                    <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${i === 4 ? 'bg-ci-green-500 shadow-[0_8px_20px_-4px_rgba(22,179,100,0.6)]' : 'bg-ci-blue-600 shadow-[0_8px_20px_-4px_rgba(31,111,235,0.6)]'} text-white`}>
-                      <Icon className="w-5 h-5" />
-                    </span>
-                    <div className="min-w-0">
-                      <p className="font-bold text-ci-navy">{layer.title}</p>
-                      <p className="truncate font-mono text-[11px] text-slate-500">{layer.tech}</p>
-                    </div>
+                    <Link
+                      to={layerLinks[i]}
+                      className="group flex items-center gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-[0_25px_50px_-25px_rgba(11,31,58,0.35)] transition-all hover:-translate-x-1 hover:border-ci-blue-200 hover:shadow-[0_25px_50px_-20px_rgba(21,89,209,0.5)]"
+                    >
+                      <span className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl ${i === 4 ? 'bg-ci-green-500 shadow-[0_8px_20px_-4px_rgba(22,179,100,0.6)]' : 'bg-ci-blue-600 shadow-[0_8px_20px_-4px_rgba(31,111,235,0.6)]'} text-white`}>
+                        <Icon className="w-5 h-5" />
+                      </span>
+                      <div className="min-w-0 flex-1">
+                        <p className="font-bold text-ci-navy">{layer.title}</p>
+                        <p className="truncate font-mono text-[11px] text-slate-500">{layer.tech}</p>
+                      </div>
+                      <span className={`ml-auto inline-flex shrink-0 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-semibold transition-colors ${i === 4 ? 'border-ci-green-100 bg-ci-green-50 text-ci-green-600 group-hover:bg-ci-green-500 group-hover:text-white' : 'border-ci-blue-100 bg-ci-blue-50 text-ci-blue-600 group-hover:bg-ci-blue-600 group-hover:text-white'}`}>
+                        <span className="hidden sm:inline">{t.learnMore}</span>
+                        <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                      </span>
+                    </Link>
                   </motion.div>
                 );
               })}
