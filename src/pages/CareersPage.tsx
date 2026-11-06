@@ -332,10 +332,10 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
 };
 
 const inputClass =
-  'w-full px-4 py-3 bg-slate-950 border border-slate-700 rounded-xl text-white placeholder:text-white/40 focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 focus:outline-none transition-all';
+  'w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-ci-navy placeholder:text-ci-navy focus:ring-2 focus:ring-ci-blue-500 focus:border-ci-blue-500 focus:outline-none transition-all';
 
 const techCardClass =
-  'bg-slate-900/70 border border-slate-700 rounded-xl backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)]';
+  'bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)]';
 
 export default function CareersPage() {
   const { lang: currentLang } = useLanguage();
@@ -415,14 +415,14 @@ export default function CareersPage() {
   return (
     <>
       {emailSent && createPortal(
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-white/80 p-4 backdrop-blur-sm">
           <section
             role="dialog"
             aria-modal="true"
             aria-labelledby="application-success-title"
-            className="w-full max-w-md rounded-2xl border border-emerald-400/30 bg-slate-900 p-8 text-center text-white shadow-2xl"
+            className="w-full max-w-md rounded-2xl border border-ci-green-400/30 bg-white p-8 text-center text-ci-navy shadow-2xl"
           >
-            <CheckCircle2 aria-hidden="true" className="mx-auto mb-5 h-12 w-12 text-emerald-400" />
+            <CheckCircle2 aria-hidden="true" className="mx-auto mb-5 h-12 w-12 text-ci-green-600" />
             <h2 id="application-success-title" className="text-xl font-medium leading-relaxed">
               {t.successMessage}
             </h2>
@@ -432,7 +432,7 @@ export default function CareersPage() {
                 setEmailSent(false);
                 requestAnimationFrame(() => scrollTo('postes'));
               }}
-              className="mt-7 inline-flex min-h-11 items-center justify-center rounded-lg bg-cyan-400 px-5 py-3 font-medium text-slate-950 transition-colors hover:bg-cyan-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+              className="mt-7 inline-flex min-h-11 items-center justify-center rounded-lg bg-ci-blue-600 px-5 py-3 font-medium text-white transition-colors hover:bg-ci-blue-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
             >
               {t.successReturnToJobs}
             </button>
@@ -440,14 +440,14 @@ export default function CareersPage() {
         </div>,
         document.body,
       )}
-      <div id="careers-page-root-c4r33rs1" className="pt-20 bg-slate-950 text-slate-200 min-h-screen">
+      <div id="careers-page-root-c4r33rs1" className="pt-20 bg-transparent text-slate-700 min-h-screen">
       {/* Hero */}
-      <section className="relative bg-slate-950 text-white py-24">
+      <section className="relative bg-transparent text-ci-navy py-24">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.07]"
           style={{
             backgroundImage:
-              'linear-gradient(#22d3ee 1px, transparent 1px), linear-gradient(90deg, #22d3ee 1px, transparent 1px)',
+              'linear-gradient(#1559d1 1px, transparent 1px), linear-gradient(90deg, #1559d1 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
@@ -456,15 +456,15 @@ export default function CareersPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-sans font-extralight text-5xl md:text-7xl mb-8"
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-7xl mb-8"
           >
-            {t.heroTitleLead}<span className="font-display italic text-cyan-400">{t.heroTitleAccent}</span>
+            {t.heroTitleLead}<span className="text-gradient-ci">{t.heroTitleAccent}</span>
           </motion.h1>
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white/60 text-xl font-light max-w-2xl mb-12"
+            className="text-ci-navy text-xl font-light max-w-2xl mb-12"
           >
             {t.heroSubtitle}
           </motion.p>
@@ -477,7 +477,7 @@ export default function CareersPage() {
             <button
               type="button"
               onClick={() => scrollTo('postes')}
-              className="inline-flex items-center justify-center gap-2 bg-cyan-400 text-slate-950 px-8 py-4 rounded-full font-medium hover:bg-cyan-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] transition-all"
+              className="inline-flex items-center justify-center gap-2 bg-ci-blue-600 text-white px-8 py-4 rounded-full font-medium hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
             >
               <Briefcase className="w-5 h-5" />
               {t.viewPositions}
@@ -488,7 +488,7 @@ export default function CareersPage() {
                 setSelectedJob(SPONTANEOUS_ID);
                 scrollTo('candidature');
               }}
-              className="inline-flex items-center justify-center gap-2 border border-cyan-400/40 text-cyan-300 px-8 py-4 rounded-full font-medium hover:bg-cyan-400/10 hover:border-cyan-400 transition-all"
+              className="inline-flex items-center justify-center gap-2 border border-ci-blue-200 text-ci-blue-600 px-8 py-4 rounded-full font-medium hover:bg-ci-blue-500/10 hover:border-ci-blue-500 transition-all"
             >
               {t.spontaneousLabel}
             </button>
@@ -497,15 +497,15 @@ export default function CareersPage() {
       </section>
 
       {/* Why join us */}
-      <section className="bg-slate-950 py-24">
+      <section className="bg-transparent py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-sans font-extralight text-4xl md:text-5xl text-white mb-16"
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-4xl md:text-5xl mb-16"
           >
-            {t.whyTitleLead}<span className="font-display italic text-violet-400">{t.whyTitleAccent}</span>
+            {t.whyTitleLead}<span className="text-gradient-ci">{t.whyTitleAccent}</span>
           </motion.h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {t.perks.map((perk, i) => {
@@ -519,11 +519,11 @@ export default function CareersPage() {
                   transition={{ delay: i * 0.1 }}
                   className={`${techCardClass} p-8`}
                 >
-                  <div className="w-12 h-12 bg-cyan-400/10 rounded-full flex items-center justify-center mb-6">
-                    <Icon className="w-6 h-6 text-cyan-400" />
+                  <div className="w-12 h-12 bg-ci-blue-500/10 rounded-full flex items-center justify-center mb-6">
+                    <Icon className="w-6 h-6 text-ci-blue-600" />
                   </div>
-                  <h3 className="text-xl font-sans font-medium text-white mb-3">{perk.title}</h3>
-                  <p className="text-white/60 font-light">{perk.text}</p>
+                  <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">{perk.title}</h3>
+                  <p className="text-ci-navy font-light">{perk.text}</p>
                 </motion.div>
               );
             })}
@@ -532,15 +532,15 @@ export default function CareersPage() {
       </section>
 
       {/* Open positions */}
-      <section id="postes" className="bg-slate-900 py-24">
+      <section id="postes" className="bg-white/50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-sans font-extralight text-4xl md:text-5xl text-white mb-16"
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-4xl md:text-5xl mb-16"
           >
-            {t.openTitleLead}<span className="font-display italic text-violet-400">{t.openTitleAccent}</span>
+            {t.openTitleLead}<span className="text-gradient-ci">{t.openTitleAccent}</span>
           </motion.h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {t.jobs.map((job, i) => (
@@ -553,23 +553,23 @@ export default function CareersPage() {
                 onClick={() => navigate(`/careers/${job.id}`)}
                 className={`${techCardClass} p-8 flex flex-col cursor-pointer`}
               >
-                <h3 className="text-xl font-sans font-medium text-white mb-3">
+                <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">
                   <Link
                     to={`/careers/${job.id}`}
                     onClick={(e) => e.stopPropagation()}
-                    className="hover:text-cyan-300 transition-colors"
+                    className="hover:text-ci-blue-600 transition-colors"
                   >
                     {job.title}
                   </Link>
                 </h3>
-                <p className="text-white/60 font-light mb-6 flex-1">{job.description}</p>
+                <p className="text-ci-navy font-light mb-6 flex-1">{job.description}</p>
                 <div className="flex flex-wrap gap-3 mb-8">
-                  <span className="inline-flex items-center gap-2 text-sm text-white/70 bg-slate-950 border border-slate-700 rounded-full px-3 py-1">
-                    <MapPin className="w-4 h-4 text-cyan-400" />
+                  <span className="inline-flex items-center gap-2 text-sm text-ci-navy bg-white border border-slate-200 rounded-full px-3 py-1">
+                    <MapPin className="w-4 h-4 text-ci-blue-600" />
                     {job.location}
                   </span>
-                  <span className="inline-flex items-center gap-2 text-sm text-white/70 bg-slate-950 border border-slate-700 rounded-full px-3 py-1">
-                    <Clock className="w-4 h-4 text-cyan-400" />
+                  <span className="inline-flex items-center gap-2 text-sm text-ci-navy bg-white border border-slate-200 rounded-full px-3 py-1">
+                    <Clock className="w-4 h-4 text-ci-blue-600" />
                     {job.type}
                   </span>
                 </div>
@@ -577,7 +577,7 @@ export default function CareersPage() {
                   <Link
                     to={`/careers/${job.id}`}
                     onClick={(e) => e.stopPropagation()}
-                    className="bg-cyan-400 text-slate-950 rounded-full px-8 py-3 font-medium hover:bg-cyan-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] transition-all"
+                    className="bg-ci-blue-600 text-white rounded-full px-8 py-3 font-medium hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
                   >
                     {t.viewDetails}
                   </Link>
@@ -587,7 +587,7 @@ export default function CareersPage() {
                       e.stopPropagation();
                       handleApply(job.id);
                     }}
-                    className="border border-cyan-400/40 text-cyan-300 rounded-full px-8 py-3 font-medium hover:bg-cyan-400/10 transition-all"
+                    className="border border-ci-blue-200 text-ci-blue-600 rounded-full px-8 py-3 font-medium hover:bg-ci-blue-500/10 transition-all"
                   >
                     {t.apply}
                   </button>
@@ -609,22 +609,22 @@ export default function CareersPage() {
       </section>
 
       {/* Application */}
-      <section id="candidature" className="bg-slate-950 text-white py-24">
+      <section id="candidature" className="bg-transparent text-ci-navy py-24">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="font-sans font-extralight text-4xl md:text-5xl mb-12"
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-4xl md:text-5xl mb-12"
           >
-            {t.applyTitleLead}<span className="font-display italic text-cyan-400">{t.applyTitleAccent}</span>
+            {t.applyTitleLead}<span className="text-gradient-ci">{t.applyTitleAccent}</span>
           </motion.h2>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="bg-slate-900 border border-slate-700 rounded-3xl p-8 lg:p-12 shadow-2xl text-white text-left"
+            className="bg-white border border-slate-200 rounded-3xl p-8 lg:p-12 shadow-2xl text-ci-navy text-left"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <input
@@ -637,7 +637,7 @@ export default function CareersPage() {
               />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="careers-name" className="text-sm font-medium text-white/80">{t.nameLabel}</label>
+                  <label htmlFor="careers-name" className="text-sm font-medium text-ci-navy">{t.nameLabel}</label>
                   <input
                     id="careers-name"
                     type="text"
@@ -648,7 +648,7 @@ export default function CareersPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="careers-email" className="text-sm font-medium text-white/80">{t.emailLabel}</label>
+                  <label htmlFor="careers-email" className="text-sm font-medium text-ci-navy">{t.emailLabel}</label>
                   <input
                     id="careers-email"
                     type="email"
@@ -661,7 +661,7 @@ export default function CareersPage() {
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="careers-phone" className="text-sm font-medium text-white/80">{t.phoneLabel}</label>
+                  <label htmlFor="careers-phone" className="text-sm font-medium text-ci-navy">{t.phoneLabel}</label>
                   <input
                     id="careers-phone"
                     type="tel"
@@ -672,7 +672,7 @@ export default function CareersPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="careers-position" className="text-sm font-medium text-white/80">{t.positionLabel}</label>
+                  <label htmlFor="careers-position" className="text-sm font-medium text-ci-navy">{t.positionLabel}</label>
                   <input
                     id="careers-position"
                     type="text"
@@ -685,7 +685,7 @@ export default function CareersPage() {
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="careers-linkedin" className="text-sm font-medium text-white/80">{t.linkedinLabel}</label>
+                <label htmlFor="careers-linkedin" className="text-sm font-medium text-ci-navy">{t.linkedinLabel}</label>
                 <input
                   id="careers-linkedin"
                   type="url"
@@ -695,8 +695,8 @@ export default function CareersPage() {
                 />
               </div>
               <div className="space-y-2">
-                <label htmlFor="careers-attachment" className="text-sm font-medium text-white/80">{t.attachmentLabel}</label>
-                <p className="text-xs text-white/50 font-light">{t.attachmentHelp}</p>
+                <label htmlFor="careers-attachment" className="text-sm font-medium text-ci-navy">{t.attachmentLabel}</label>
+                <p className="text-xs text-ci-navy font-light">{t.attachmentHelp}</p>
                 <div className="flex flex-col sm:flex-row gap-3 items-stretch sm:items-center">
                   <input
                     id="careers-attachment"
@@ -708,18 +708,18 @@ export default function CareersPage() {
                   />
                   <label
                     htmlFor="careers-attachment"
-                    className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-cyan-400/50 bg-cyan-400/10 px-5 py-3 text-sm font-medium text-cyan-200 transition-all hover:border-cyan-300 hover:bg-cyan-400/20"
+                    className="inline-flex cursor-pointer items-center justify-center gap-2 rounded-xl border border-ci-blue-200 bg-ci-blue-500/10 px-5 py-3 text-sm font-medium text-ci-blue-600 transition-all hover:border-ci-blue-500 hover:bg-ci-blue-500/20"
                   >
                     <Paperclip className="w-4 h-4" />
                     Parcourir
                   </label>
-                  <span className="min-h-[20px] text-sm text-slate-300">
+                  <span className="min-h-[20px] text-sm text-slate-600">
                     {attachment?.name || 'Aucun fichier sélectionné'}
                   </span>
                 </div>
               </div>
               <div className="space-y-2">
-                <label htmlFor="careers-message" className="text-sm font-medium text-white/80">{t.messageLabel}</label>
+                <label htmlFor="careers-message" className="text-sm font-medium text-ci-navy">{t.messageLabel}</label>
                 <textarea
                   id="careers-message"
                   name="message"
@@ -733,7 +733,7 @@ export default function CareersPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="inline-flex items-center justify-center gap-2 bg-cyan-400 text-slate-950 px-6 py-3 rounded-xl font-medium hover:bg-cyan-300 transition-all w-full disabled:cursor-not-allowed disabled:opacity-70"
+                  className="inline-flex items-center justify-center gap-2 bg-ci-blue-600 text-white px-6 py-3 rounded-xl font-medium hover:bg-ci-blue-700 transition-all w-full disabled:cursor-not-allowed disabled:opacity-70"
                 >
                   <Paperclip className="w-4 h-4" />
                   {isSubmitting ? 'Envoi en cours...' : t.submitByEmail}

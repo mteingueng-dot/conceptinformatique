@@ -175,16 +175,16 @@ const copy = {
 
 const gridStyle = {
   backgroundImage:
-    'linear-gradient(#22d3ee 1px, transparent 1px), linear-gradient(90deg, #22d3ee 1px, transparent 1px)',
+    'linear-gradient(#1559d1 1px, transparent 1px), linear-gradient(90deg, #1559d1 1px, transparent 1px)',
   backgroundSize: '48px 48px',
 };
 
 const glowStyle = {
-  background: 'radial-gradient(ellipse at top, rgba(34,211,238,0.18), transparent 60%)',
+  background: 'radial-gradient(ellipse at top, rgba(31,111,235,0.12), transparent 60%)',
 };
 
 const fadeStyle = {
-  background: 'radial-gradient(ellipse at center, transparent 0%, #04070d 80%)',
+  background: 'radial-gradient(ellipse at center, transparent 0%, rgba(223,234,251,0.9) 80%)',
 };
 
 const containerVariants = {
@@ -212,9 +212,9 @@ export default function ProfessionalProfilePage() {
   const t = (b: Bi): string => b[lang];
 
   return (
-    <div id="professional-profile-page-root" className="pt-20 bg-slate-950 text-slate-200 min-h-screen">
+    <div id="professional-profile-page-root" className="pt-20 bg-transparent text-slate-700 min-h-screen">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-950 py-28 md:py-36">
+      <section className="relative overflow-hidden bg-transparent py-28 md:py-36">
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]" style={gridStyle}></div>
         <div className="absolute inset-0 pointer-events-none" style={glowStyle}></div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -223,30 +223,30 @@ export default function ProfessionalProfilePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="inline-flex items-center gap-2 font-mono uppercase tracking-widest text-xs border border-cyan-400/30 bg-cyan-400/10 text-cyan-300 rounded-full px-4 py-2 mb-8">
+            <span className="inline-flex items-center gap-2 font-mono uppercase tracking-widest text-xs border border-ci-blue-200 bg-ci-blue-500/10 text-ci-blue-600 rounded-full px-4 py-2 mb-8">
               <Activity className="w-4 h-4" />
               {t(copy.heroBadge)}
             </span>
-            <h1 className="font-display text-white text-4xl md:text-6xl font-semibold mb-6 leading-tight">
+            <h1 className="font-display text-ci-navy text-4xl md:text-6xl font-bold tracking-[-0.03em] mb-6 leading-tight">
               {t(copy.heroTitle)}
             </h1>
-            <p className="text-slate-300 text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
+            <p className="text-slate-600 text-lg md:text-xl font-light mb-8 max-w-3xl mx-auto">
               {t(copy.heroIntro)}
             </p>
-            <p className="font-mono text-cyan-300 text-sm md:text-base">{t(copy.slogan)}</p>
+            <p className="font-mono text-ci-blue-600 text-sm md:text-base">{t(copy.slogan)}</p>
           </motion.div>
         </div>
       </section>
 
       {/* Company Introduction */}
-      <section className="bg-slate-900 py-24">
+      <section className="bg-white/50 py-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6 text-slate-300 font-light leading-relaxed text-lg"
+            className="space-y-6 text-slate-600 font-light leading-relaxed text-lg"
           >
             <p>{t(copy.companyIntro1)}</p>
             <p>{t(copy.companyIntro2)}</p>
@@ -255,7 +255,7 @@ export default function ProfessionalProfilePage() {
       </section>
 
       {/* Expertise Areas */}
-      <section id="expertise-areas-section" className="relative bg-slate-950 py-24">
+      <section id="expertise-areas-section" className="relative bg-transparent py-24">
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]" style={gridStyle}></div>
         <div className="absolute inset-0 pointer-events-none" style={fadeStyle}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -267,8 +267,8 @@ export default function ProfessionalProfilePage() {
               onClick={() => document.getElementById('expertise-areas-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full text-center hover:opacity-80 transition-opacity cursor-pointer"
             >
-              <h2 className="font-display text-white text-3xl md:text-5xl font-semibold">
-                {t(copy.expertisePrefix)} <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">{t(copy.expertiseAccent)}</span>
+              <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em]">
+                {t(copy.expertisePrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.expertiseAccent)}</span>
               </h2>
             </motion.button>
           </div>
@@ -287,13 +287,13 @@ export default function ProfessionalProfilePage() {
               >
                 <motion.div
                   variants={itemVariants}
-                  className="bg-slate-900/70 border border-slate-700 rounded-xl backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] p-8 text-center"
+                  className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8 text-center"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-cyan-400/10 text-cyan-400 flex items-center justify-center mx-auto mb-6">
+                  <div className="w-14 h-14 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center mx-auto mb-6">
                     <item.icon className="w-7 h-7" />
                   </div>
-                  <h3 className="font-display text-white text-xl font-medium mb-3">{t(item.title)}</h3>
-                  <p className="text-slate-400 font-light leading-relaxed">{t(item.desc)}</p>
+                  <h3 className="font-display text-ci-navy text-xl font-medium mb-3">{t(item.title)}</h3>
+                  <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
                 </motion.div>
               </Link>
             ))}
@@ -302,7 +302,7 @@ export default function ProfessionalProfilePage() {
       </section>
 
       {/* Team Background */}
-      <section id="team-background-section" className="bg-slate-900 py-24">
+      <section id="team-background-section" className="bg-white/50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.button
@@ -312,8 +312,8 @@ export default function ProfessionalProfilePage() {
               onClick={() => document.getElementById('team-background-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full text-center hover:opacity-80 transition-opacity cursor-pointer"
             >
-              <h2 className="font-display text-white text-3xl md:text-5xl font-semibold">
-                {t(copy.teamPrefix)} <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">{t(copy.teamAccent)}</span>
+              <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em]">
+                {t(copy.teamPrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.teamAccent)}</span>
               </h2>
             </motion.button>
           </div>
@@ -328,13 +328,13 @@ export default function ProfessionalProfilePage() {
               <motion.div
                 key={item.title.en}
                 variants={itemVariants}
-                className="bg-slate-900/70 border border-slate-700 rounded-xl backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] p-8 text-center"
+                className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8 text-center"
               >
-                <div className="w-14 h-14 rounded-xl bg-cyan-400/10 text-cyan-400 flex items-center justify-center mx-auto mb-6">
+                <div className="w-14 h-14 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center mx-auto mb-6">
                   <item.icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-display text-white text-xl font-medium mb-3">{t(item.title)}</h3>
-                <p className="text-slate-400 font-light leading-relaxed">{t(item.desc)}</p>
+                <h3 className="font-display text-ci-navy text-xl font-medium mb-3">{t(item.title)}</h3>
+                <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -342,7 +342,7 @@ export default function ProfessionalProfilePage() {
       </section>
 
       {/* Experience & Projects */}
-      <section id="experience-projects-section" className="relative bg-slate-950 py-24">
+      <section id="experience-projects-section" className="relative bg-transparent py-24">
         <div className="absolute inset-0 pointer-events-none opacity-[0.07]" style={gridStyle}></div>
         <div className="absolute inset-0 pointer-events-none" style={fadeStyle}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -354,8 +354,8 @@ export default function ProfessionalProfilePage() {
               onClick={() => document.getElementById('experience-projects-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full text-center hover:opacity-80 transition-opacity cursor-pointer"
             >
-              <h2 className="font-display text-white text-3xl md:text-5xl font-semibold">
-                {t(copy.experiencePrefix)} <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">{t(copy.experienceAccent)}</span>
+              <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em]">
+                {t(copy.experiencePrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.experienceAccent)}</span>
               </h2>
             </motion.button>
           </div>
@@ -370,13 +370,13 @@ export default function ProfessionalProfilePage() {
               <motion.div
                 key={item.title.en}
                 variants={itemVariants}
-                className="bg-slate-900/70 border border-slate-700 rounded-xl backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] p-8 text-center"
+                className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8 text-center"
               >
-                <div className="w-14 h-14 rounded-xl bg-cyan-400/10 text-cyan-400 flex items-center justify-center mx-auto mb-6">
+                <div className="w-14 h-14 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center mx-auto mb-6">
                   <item.icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-display text-white text-xl font-medium mb-3">{t(item.title)}</h3>
-                <p className="text-slate-400 font-light leading-relaxed">{t(item.desc)}</p>
+                <h3 className="font-display text-ci-navy text-xl font-medium mb-3">{t(item.title)}</h3>
+                <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -384,7 +384,7 @@ export default function ProfessionalProfilePage() {
       </section>
 
       {/* Education & Training */}
-      <section id="education-training-section" className="bg-slate-900 py-24">
+      <section id="education-training-section" className="bg-white/50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.button
@@ -394,8 +394,8 @@ export default function ProfessionalProfilePage() {
               onClick={() => document.getElementById('education-training-section')?.scrollIntoView({ behavior: 'smooth' })}
               className="w-full text-center hover:opacity-80 transition-opacity cursor-pointer"
             >
-              <h2 className="font-display text-white text-3xl md:text-5xl font-semibold">
-                {t(copy.educationPrefix)} <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">{t(copy.educationAccent)}</span>
+              <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em]">
+                {t(copy.educationPrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.educationAccent)}</span>
               </h2>
             </motion.button>
           </div>
@@ -410,13 +410,13 @@ export default function ProfessionalProfilePage() {
               <motion.div
                 key={item.title.en}
                 variants={itemVariants}
-                className="bg-slate-900/70 border border-slate-700 rounded-xl backdrop-blur transition-all duration-300 hover:border-cyan-400/50 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] p-8 text-center"
+                className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8 text-center"
               >
-                <div className="w-14 h-14 rounded-xl bg-cyan-400/10 text-cyan-400 flex items-center justify-center mx-auto mb-6">
+                <div className="w-14 h-14 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center mx-auto mb-6">
                   <item.icon className="w-7 h-7" />
                 </div>
-                <h3 className="font-display text-white text-xl font-medium mb-3">{t(item.title)}</h3>
-                <p className="text-slate-400 font-light leading-relaxed">{t(item.desc)}</p>
+                <h3 className="font-display text-ci-navy text-xl font-medium mb-3">{t(item.title)}</h3>
+                <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -424,7 +424,7 @@ export default function ProfessionalProfilePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="relative overflow-hidden bg-slate-950 py-24">
+      <section className="relative overflow-hidden bg-transparent py-24">
         <div className="absolute inset-0 pointer-events-none" style={glowStyle}></div>
         <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -432,15 +432,15 @@ export default function ProfessionalProfilePage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="block rounded-2xl border border-cyan-400/30 bg-slate-800/70 p-12 shadow-[0_0_24px_rgba(34,211,238,0.35)] text-center"
+            className="block rounded-2xl border border-ci-blue-200 bg-slate-100 p-12 shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] text-center"
           >
-            <h2 className="font-display text-white text-3xl md:text-5xl font-semibold mb-4">
-              {t(copy.ctaPrefix)} <span className="bg-gradient-to-r from-cyan-400 to-violet-500 bg-clip-text text-transparent">{t(copy.ctaAccent)}</span>
+            <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em] mb-4">
+              {t(copy.ctaPrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.ctaAccent)}</span>
             </h2>
-            <p className="font-mono text-cyan-300 mb-10">{t(copy.slogan)}</p>
+            <p className="font-mono text-ci-blue-600 mb-10">{t(copy.slogan)}</p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-cyan-400 text-slate-950 font-medium px-8 py-4 rounded-full hover:bg-cyan-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] transition-all"
+              className="inline-flex items-center gap-2 bg-ci-blue-600 text-white font-medium px-8 py-4 rounded-full hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
             >
               {t(copy.ctaButton)}
               <ArrowRight className="w-5 h-5" />

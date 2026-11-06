@@ -38,11 +38,11 @@ const copy = {
   },
 };
 
-const cardClass = 'bg-slate-900/70 border border-slate-700 rounded-xl p-8';
+const cardClass = 'bg-white/90 border border-slate-200 rounded-xl p-8';
 const pillClass =
-  'inline-flex items-center gap-2 text-sm text-white/70 bg-slate-950 border border-slate-700 rounded-full px-3 py-1';
+  'inline-flex items-center gap-2 text-sm text-ci-navy bg-white border border-slate-200 rounded-full px-3 py-1';
 const applyClass =
-  'inline-flex items-center justify-center bg-cyan-400 text-slate-950 rounded-full px-8 py-4 font-medium hover:bg-cyan-300 hover:shadow-[0_0_24px_rgba(34,211,238,0.35)] transition-all';
+  'inline-flex items-center justify-center bg-ci-blue-600 text-white rounded-full px-8 py-4 font-medium hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all';
 
 export default function JobDetailPage() {
   const { jobId } = useParams<{ jobId: string }>();
@@ -54,12 +54,12 @@ export default function JobDetailPage() {
 
   if (!job) {
     return (
-      <div id="job-not-found-j0b4n0t1" className="pt-20 bg-slate-950 text-slate-200 min-h-screen">
+      <div id="job-not-found-j0b4n0t1" className="pt-20 bg-transparent text-slate-700 min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <h1 className="font-sans font-extralight text-4xl md:text-6xl text-white mb-10">{t.notFound}</h1>
+          <h1 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-6xl text-ci-navy mb-10">{t.notFound}</h1>
           <Link
             to="/careers"
-            className="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
+            className="inline-flex items-center gap-2 text-ci-blue-600 hover:text-ci-blue-600 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
             {t.back}
@@ -83,14 +83,14 @@ export default function JobDetailPage() {
   ].filter((section) => section.items.length > 0);
 
   return (
-    <div id="job-detail-root-j0b3d7a1" className="pt-20 bg-slate-950 text-slate-200 min-h-screen">
+    <div id="job-detail-root-j0b3d7a1" className="pt-20 bg-transparent text-slate-700 min-h-screen">
       {/* Hero */}
-      <section className="relative bg-slate-950 text-white py-24">
+      <section className="relative bg-transparent text-ci-navy py-24">
         <div
           className="absolute inset-0 pointer-events-none opacity-[0.07]"
           style={{
             backgroundImage:
-              'linear-gradient(#22d3ee 1px, transparent 1px), linear-gradient(90deg, #22d3ee 1px, transparent 1px)',
+              'linear-gradient(#1559d1 1px, transparent 1px), linear-gradient(90deg, #1559d1 1px, transparent 1px)',
             backgroundSize: '48px 48px',
           }}
         />
@@ -102,23 +102,23 @@ export default function JobDetailPage() {
           >
             <Link
               to="/careers"
-              className="inline-flex items-center gap-2 text-sm text-slate-400 hover:text-cyan-400 transition-colors mb-10"
+              className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-ci-blue-600 transition-colors mb-10"
             >
               <ArrowLeft className="w-4 h-4" />
               {t.back}
             </Link>
-            <h1 className="font-sans font-extralight text-4xl md:text-6xl text-white mb-8">{job.title}</h1>
+            <h1 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-6xl text-ci-navy mb-8">{job.title}</h1>
             <div className="flex flex-wrap gap-3 mb-8">
               <span className={pillClass}>
-                <MapPin className="w-4 h-4 text-cyan-400" />
+                <MapPin className="w-4 h-4 text-ci-blue-600" />
                 {job.location}
               </span>
               <span className={pillClass}>
-                <Clock className="w-4 h-4 text-cyan-400" />
+                <Clock className="w-4 h-4 text-ci-blue-600" />
                 {job.type}
               </span>
             </div>
-            <p className="text-white/60 text-lg font-light leading-relaxed mb-10">{job.intro}</p>
+            <p className="text-ci-navy text-lg font-light leading-relaxed mb-10">{job.intro}</p>
             <div className="flex flex-wrap items-center gap-3">
               <button type="button" onClick={handleApply} className={applyClass}>
                 {t.apply}
@@ -139,7 +139,7 @@ export default function JobDetailPage() {
       </section>
 
       {/* Details */}
-      <section className="bg-slate-950 pb-24">
+      <section className="bg-transparent pb-24">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           {sections.map((section, i) => (
             <motion.div
@@ -150,13 +150,13 @@ export default function JobDetailPage() {
               transition={{ delay: i * 0.05 }}
               className={cardClass}
             >
-              <h2 className="font-sans font-light text-2xl md:text-3xl text-white mb-6">
-                <span className="text-cyan-400">{section.title}</span>
+              <h2 className="font-display font-bold tracking-[-0.03em] text-2xl md:text-3xl text-ci-navy mb-6">
+                <span className="text-ci-blue-600">{section.title}</span>
               </h2>
               <ul className="space-y-4">
                 {section.items.map((item, j) => (
-                  <li key={j} className="flex items-start gap-3 text-white/70 font-light">
-                    <CheckCircle2 className="w-5 h-5 text-cyan-400 mt-0.5 shrink-0" />
+                  <li key={j} className="flex items-start gap-3 text-ci-navy font-light">
+                    <CheckCircle2 className="w-5 h-5 text-ci-blue-600 mt-0.5 shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}

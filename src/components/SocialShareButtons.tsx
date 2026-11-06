@@ -39,7 +39,7 @@ export default function SocialShareButtons({ jobId, jobTitle, labels }: SocialSh
           aria-label={label}
           title={label}
           onClick={(event) => event.stopPropagation()}
-          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-slate-600 px-3 text-xs font-medium text-slate-300 transition-colors hover:border-cyan-300 hover:text-cyan-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
+          className="inline-flex h-11 items-center justify-center gap-2 rounded-full border border-slate-200 px-3 text-xs font-medium text-slate-600 transition-colors hover:border-ci-blue-500 hover:text-ci-blue-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300"
         >
           <Icon aria-hidden="true" className="h-4 w-4" />
           <span>{label}</span>

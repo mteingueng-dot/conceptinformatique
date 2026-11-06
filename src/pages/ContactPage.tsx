@@ -76,49 +76,49 @@ export default function ContactPage() {
 
   return (
     <div id="contact-page-root-j9x2k4m1" className="pt-20">
-      <section className="bg-slate-950 py-24 text-white">
+      <section className="bg-transparent py-24 text-ci-navy">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               <motion.h1 
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
-                className="font-sans font-extralight text-5xl md:text-7xl mb-8"
+                className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-7xl mb-8"
               >
-                {c.titleBefore}<span className="font-display italic text-indigo-400">{c.titleHighlight}</span>
+                {c.titleBefore}<span className="text-gradient-ci">{c.titleHighlight}</span>
               </motion.h1>
-              <p className="text-slate-400 text-xl font-light mb-12">
+              <p className="text-slate-600 text-xl font-light mb-12">
                 {c.intro}
               </p>
 
               <div className="space-y-8">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center border border-indigo-400/20">
-                    <Phone className="w-5 h-5 text-indigo-400" />
+                  <div className="w-12 h-12 bg-ci-blue-500/10 rounded-full flex items-center justify-center border border-ci-blue-200">
+                    <Phone className="w-5 h-5 text-ci-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">{c.phoneLabel}</p>
-                    <a href="tel:+15147120371" className="text-lg font-light text-white hover:text-indigo-400 transition-colors">(514) 712-0371</a>
+                    <p className="text-sm text-slate-600 uppercase tracking-widest mb-1">{c.phoneLabel}</p>
+                    <a href="tel:+15147120371" className="text-lg font-light text-ci-navy hover:text-ci-blue-600 transition-colors">(514) 712-0371</a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center border border-indigo-400/20">
-                    <Mail className="w-5 h-5 text-indigo-400" />
+                  <div className="w-12 h-12 bg-ci-blue-500/10 rounded-full flex items-center justify-center border border-ci-blue-200">
+                    <Mail className="w-5 h-5 text-ci-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">{c.emailLabel}</p>
-                    <a href="mailto:finances@conceptinformatique.net" className="text-lg font-light text-white hover:text-indigo-400 transition-colors break-all">finances@conceptinformatique.net</a>
+                    <p className="text-sm text-slate-600 uppercase tracking-widest mb-1">{c.emailLabel}</p>
+                    <a href="mailto:finances@conceptinformatique.net" className="text-lg font-light text-ci-navy hover:text-ci-blue-600 transition-colors break-all">finances@conceptinformatique.net</a>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center border border-indigo-400/20">
-                    <MapPin className="w-5 h-5 text-indigo-400" />
+                  <div className="w-12 h-12 bg-ci-blue-500/10 rounded-full flex items-center justify-center border border-ci-blue-200">
+                    <MapPin className="w-5 h-5 text-ci-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">{c.addressLabel}</p>
-                    <p className="text-lg font-light text-white">
+                    <p className="text-sm text-slate-600 uppercase tracking-widest mb-1">{c.addressLabel}</p>
+                    <p className="text-lg font-light text-ci-navy">
                       1590 Rue Kesteman,<br />
                       Sherbrooke, QC, J1R 0Y5
                     </p>
@@ -126,12 +126,12 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center border border-indigo-400/20">
-                    <Link2 className="w-5 h-5 text-indigo-400" />
+                  <div className="w-12 h-12 bg-ci-blue-500/10 rounded-full flex items-center justify-center border border-ci-blue-200">
+                    <Link2 className="w-5 h-5 text-ci-blue-600" />
                   </div>
                   <div>
-                    <p className="text-sm text-slate-400 uppercase tracking-widest mb-1">{c.linkedinLabel}</p>
-                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-lg font-light text-white hover:text-indigo-400 transition-colors">Concept Informatique inc</a>
+                    <p className="text-sm text-slate-600 uppercase tracking-widest mb-1">{c.linkedinLabel}</p>
+                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="text-lg font-light text-ci-navy hover:text-ci-blue-600 transition-colors">Concept Informatique inc</a>
                   </div>
                 </div>
               </div>
@@ -167,7 +167,7 @@ export default function ContactPage() {
                       type="text" 
                       name="name" 
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ci-blue-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
                       placeholder={c.namePlaceholder}
                     />
                   </div>
@@ -178,7 +178,7 @@ export default function ContactPage() {
                       type="email" 
                       name="email" 
                       required
-                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
+                      className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ci-blue-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
                       placeholder={c.emailPlaceholder}
                     />
                   </div>
@@ -188,7 +188,7 @@ export default function ContactPage() {
                   <select 
                     id="contact-subject"
                     name="subject" 
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ci-blue-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
                   >
                     {SUBJECT_VALUES.map((value, i) => (
                       <option key={value} value={value}>{c.subjectOptions[i]}</option>
@@ -202,7 +202,7 @@ export default function ContactPage() {
                     name="message" 
                     rows={5}
                     required
-                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
+                    className="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-xl focus:ring-2 focus:ring-ci-blue-500 focus:outline-none transition-all text-slate-900 focus:border-transparent"
                     placeholder={c.messagePlaceholder}
                   ></textarea>
                 </div>
@@ -220,7 +220,7 @@ export default function ContactPage() {
                     />
                     <label
                       htmlFor="contact-attachment"
-                      className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border border-indigo-300 bg-indigo-50 px-4 py-3 text-sm font-medium text-indigo-700 transition-colors hover:border-indigo-500 hover:bg-indigo-100 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500"
+                      className="inline-flex min-h-11 cursor-pointer items-center justify-center gap-2 rounded-lg border border-ci-blue-200 bg-indigo-50 px-4 py-3 text-sm font-medium text-ci-blue-700 transition-colors hover:border-ci-blue-500 hover:bg-indigo-100 focus-within:outline focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500"
                     >
                       {c.browseButton}
                     </label>
@@ -231,7 +231,7 @@ export default function ContactPage() {
                 </div>
                 <button 
                   type="submit" 
-                  className="w-full bg-indigo-600 text-white py-4 rounded-xl font-medium hover:bg-indigo-700 transition-all shadow-lg shadow-indigo-600/20 hover:shadow-indigo-600/30 active:scale-[0.99]"
+                  className="w-full bg-ci-blue-600 text-white py-4 rounded-xl font-medium hover:bg-ci-navy transition-all shadow-lg shadow-ci-blue-600/20 hover:shadow-ci-blue-600/30 active:scale-[0.99]"
                 >
                   {c.submit}
                 </button>
@@ -245,10 +245,10 @@ export default function ContactPage() {
         {/* Abstract Map Representation */}
         <div className="w-full h-full bg-slate-100 flex items-center justify-center relative overflow-hidden">
           <img src="https://images.unsplash.com/photo-1706009731040-7701affadce3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4ODY5NjV8MHwxfHNlYXJjaHwxfHxtYXAlMjBvZiUyMHNoZXJicm9va2UlMjBxdWViZWMlMjBhZXJpYWwlMjB2aWV3JTIwaGlnaCUyMHJlc29sdXRpb258ZW58MHwwfHx8MTc5MTM4NDEyMHww&ixlib=rb-4.1.0&q=80&w=1080" alt={c.mapAlt} className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" />
-          <div className="absolute inset-0 bg-indigo-900/10"></div>
+          <div className="absolute inset-0 bg-ci-navy/10"></div>
           <div className="relative z-10 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4">
-            <div className="bg-indigo-600 p-3 rounded-full">
-               <MapPin className="w-6 h-6 text-white" />
+            <div className="bg-ci-blue-600 p-3 rounded-full">
+               <MapPin className="w-6 h-6 text-ci-navy" />
             </div>
             <div>
               <p className="font-sans font-medium text-slate-900">{c.officeTitle}</p>

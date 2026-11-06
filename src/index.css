@@ -6,43 +6,51 @@
   --font-display: 'Space Grotesk', 'Inter', sans-serif;
   --font-sans: 'Inter', sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
-  --color-bg: #04070d;
-  --color-brand: #22d3ee;
-  --color-accent: #8b5cf6;
+  --color-bg: #dfeafb;
+  --color-brand: #1f6feb;
+  --color-accent: #16b364;
 }
 
 @layer base {
   html {
     scroll-behavior: smooth;
   }
+  /* Style F : fond bleu clair teinté aux couleurs du logo, texte bleu marine */
   body {
-    @apply font-sans bg-ink-950 text-slate-200 antialiased;
+    @apply font-sans text-slate-600 antialiased;
+    background-color: #dfeafb;
+    background-image:
+      radial-gradient(60rem 40rem at 85% 20rem, rgba(22, 179, 100, 0.10), transparent 70%),
+      radial-gradient(70rem 45rem at 10% 40rem, rgba(31, 111, 235, 0.12), transparent 70%),
+      linear-gradient(180deg, #d3e3fb 0%, #e2ecfc 30rem, #e6effc 60rem, #e3eefb 100%);
+    background-repeat: no-repeat;
   }
   h1, h2, h3, h4 {
-    @apply font-display text-white tracking-tight;
+    @apply font-display text-ci-navy tracking-tight;
   }
   ::selection {
-    background: rgba(34, 211, 238, 0.3);
-    color: #fff;
+    background: rgba(31, 111, 235, 0.2);
+    color: #0b1f3a;
   }
   ::-webkit-scrollbar {
     width: 10px;
   }
   ::-webkit-scrollbar-track {
-    background: #080d16;
+    background: #e2ecfc;
   }
   ::-webkit-scrollbar-thumb {
-    background: #1e2d45;
+    background: #b6d3ff;
     border-radius: 6px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #22d3ee;
+    background: #1f6feb;
   }
 }
 
 @layer components {
   .bg-tech-grid {
-    @apply bg-ink-950 bg-grid-lines bg-grid;
+    @apply bg-grid;
+    background-image: linear-gradient(to right, rgba(21,89,209,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(21,89,209,0.07) 1px, transparent 1px);
     background-position: center top;
   }
 
@@ -58,7 +66,7 @@
     position: absolute;
     inset: 0;
     pointer-events: none;
-    background: radial-gradient(ellipse at center, transparent 0%, #04070d 80%);
+    background: radial-gradient(ellipse at center, transparent 0%, #dfeafb 80%);
   }
 
   /* Refonte claire : trame de points discrète et dégradé bleu → vert du logo */
@@ -78,9 +86,9 @@
   }
 
   .tech-card {
-    @apply bg-ink-800/70 border border-ink-600 rounded-xl backdrop-blur transition-all duration-300;
+    @apply bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300;
   }
   .tech-card:hover {
-    @apply border-brand-400/50 shadow-glow;
+    @apply border-ci-blue-200 shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)];
   }
 }

@@ -65,17 +65,17 @@ export default function ServiceDetailPage() {
 
   if (!service) {
     return (
-      <div id="service-not-found-q4w7e2r9" className="pt-20 bg-slate-950 text-white min-h-screen">
+      <div id="service-not-found-q4w7e2r9" className="pt-20 bg-transparent text-ci-navy min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <h1 className="font-sans font-extralight text-5xl md:text-6xl mb-6">
-            {t.notFoundPrefix}<span className="font-display italic text-emerald-400">{t.notFoundHighlight}</span>
+          <h1 className="font-display font-bold tracking-[-0.03em] text-5xl md:text-6xl mb-6">
+            {t.notFoundPrefix}<span className="text-gradient-ci">{t.notFoundHighlight}</span>
           </h1>
-          <p className="text-slate-400 text-lg font-light mb-10">
+          <p className="text-slate-600 text-lg font-light mb-10">
             {t.notFoundText}
           </p>
           <Link
             to="/services"
-            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-medium px-8 py-4 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-ci-blue-600 hover:bg-ci-blue-700 text-white font-medium px-8 py-4 rounded-full transition-colors"
           >
             {t.backToServices}
           </Link>
@@ -91,9 +91,9 @@ export default function ServiceDetailPage() {
   const otherServices = services.filter((s) => s.slug !== service.slug);
 
   return (
-    <div id="service-detail-root-z6c3b8n1" className="pt-20 bg-slate-950 text-white min-h-screen">
+    <div id="service-detail-root-z6c3b8n1" className="pt-20 bg-transparent text-ci-navy min-h-screen">
       {/* Header */}
-      <section className="bg-slate-900/60 border-b border-slate-800 py-24">
+      <section className="bg-white/50 border-b border-slate-200 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -102,22 +102,22 @@ export default function ServiceDetailPage() {
           >
             <Link
               to="/services"
-              className="inline-block text-sm text-slate-400 hover:text-emerald-400 transition-colors mb-10"
+              className="inline-block text-sm text-slate-600 hover:text-ci-green-600 transition-colors mb-10"
             >
               {t.allServices}
             </Link>
-            <div className="w-14 h-14 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center mb-6">
+            <div className="w-14 h-14 bg-ci-green-500/10 text-ci-green-600 rounded-xl flex items-center justify-center mb-6">
               <Icon className="w-7 h-7" />
             </div>
-            <h1 className="font-sans font-extralight text-white text-5xl md:text-7xl mb-6">
+            <h1 className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-7xl mb-6">
               {firstWords}{' '}
-              {lastWord && <span className="font-display italic text-emerald-400">{lastWord}</span>}
+              {lastWord && <span className="text-gradient-ci">{lastWord}</span>}
             </h1>
-            <p className="text-emerald-400 text-xl md:text-2xl font-light max-w-3xl mb-6">{service.tagline}</p>
-            <p className="text-slate-400 text-lg font-light max-w-3xl leading-relaxed mb-10">{service.intro}</p>
+            <p className="text-ci-green-600 text-xl md:text-2xl font-light max-w-3xl mb-6">{service.tagline}</p>
+            <p className="text-slate-600 text-lg font-light max-w-3xl leading-relaxed mb-10">{service.intro}</p>
             <Link
               to="/contact"
-              className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-medium px-8 py-4 rounded-full transition-colors"
+              className="inline-flex items-center gap-2 bg-ci-blue-600 hover:bg-ci-blue-700 text-white font-medium px-8 py-4 rounded-full transition-colors"
             >
               {t.requestConsultation} <ArrowRight className="w-5 h-5" />
             </Link>
@@ -126,7 +126,7 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Description + checklist */}
-      <section className="py-24 bg-slate-950">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -134,23 +134,23 @@ export default function ServiceDetailPage() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="font-sans font-light text-4xl mb-6 text-white">
-              {t.expertisePrefix}<span className="font-display italic text-emerald-400">{t.expertiseHighlight}</span>
+            <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-6 text-ci-navy">
+              {t.expertisePrefix}<span className="text-gradient-ci">{t.expertiseHighlight}</span>
             </h2>
-            <p className="text-slate-400 text-lg font-light leading-relaxed">{service.desc}</p>
+            <p className="text-slate-600 text-lg font-light leading-relaxed">{service.desc}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="bg-slate-900 border border-slate-800 p-8 rounded-2xl"
+            className="bg-white border border-slate-200 p-8 rounded-2xl"
           >
-            <h3 className="text-xl font-sans font-medium text-white mb-6">{t.keyPoints}</h3>
+            <h3 className="text-xl font-sans font-medium text-ci-navy mb-6">{t.keyPoints}</h3>
             <ul className="space-y-4">
               {service.points.map((point, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-300 font-light">
-                  <CheckCircle2 className="w-5 h-5 text-emerald-400 mt-0.5 shrink-0" />
+                <li key={i} className="flex items-start gap-3 text-slate-600 font-light">
+                  <CheckCircle2 className="w-5 h-5 text-ci-green-600 mt-0.5 shrink-0" />
                   {point}
                 </li>
               ))}
@@ -160,10 +160,10 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 bg-slate-900/60 border-y border-slate-800">
+      <section className="py-24 bg-white/50 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-sans font-light text-4xl mb-12 text-white">
-            {t.benefitsPrefix}<span className="font-display italic text-emerald-400">{t.benefitsHighlight}</span>
+          <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-12 text-ci-navy">
+            {t.benefitsPrefix}<span className="text-gradient-ci">{t.benefitsHighlight}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {service.benefits.map((benefit, i) => (
@@ -173,13 +173,13 @@ export default function ServiceDetailPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="bg-slate-900 border border-slate-800 p-8 rounded-2xl hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1"
+                className="bg-white border border-slate-200 p-8 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mb-5 font-sans font-medium">
+                <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-5 font-sans font-medium">
                   {i + 1}
                 </div>
-                <h3 className="text-xl font-sans font-medium text-white mb-3">{benefit.title}</h3>
-                <p className="text-slate-400 font-light leading-relaxed">{benefit.text}</p>
+                <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">{benefit.title}</h3>
+                <p className="text-slate-600 font-light leading-relaxed">{benefit.text}</p>
               </motion.div>
             ))}
           </div>
@@ -187,20 +187,20 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Deliverables + Technologies */}
-      <section className="py-24 bg-slate-950">
+      <section className="py-24 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-16">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="font-sans font-light text-3xl mb-8 text-white">
-              {t.deliverPrefix}<span className="font-display italic text-emerald-400">{t.deliverHighlight}</span>
+            <h2 className="font-display font-bold tracking-[-0.03em] text-3xl mb-8 text-ci-navy">
+              {t.deliverPrefix}<span className="text-gradient-ci">{t.deliverHighlight}</span>
             </h2>
             <ul className="space-y-4">
               {service.deliverables.map((item, i) => (
-                <li key={i} className="flex items-start gap-3 text-slate-300 font-light">
-                  <div className="w-1.5 h-1.5 bg-emerald-400 rounded-full mt-2.5 shrink-0"></div>
+                <li key={i} className="flex items-start gap-3 text-slate-600 font-light">
+                  <div className="w-1.5 h-1.5 bg-ci-blue-600 rounded-full mt-2.5 shrink-0"></div>
                   {item}
                 </li>
               ))}
@@ -212,14 +212,14 @@ export default function ServiceDetailPage() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h2 className="font-sans font-light text-3xl mb-8 text-white">
-              {t.techPrefix}<span className="font-display italic text-emerald-400">{t.techHighlight}</span>
+            <h2 className="font-display font-bold tracking-[-0.03em] text-3xl mb-8 text-ci-navy">
+              {t.techPrefix}<span className="text-gradient-ci">{t.techHighlight}</span>
             </h2>
             <div className="flex flex-wrap gap-3">
               {service.technologies.map((tech, i) => (
                 <span
                   key={i}
-                  className="px-4 py-2 rounded-full text-sm bg-emerald-500/10 text-emerald-300 border border-emerald-500/30"
+                  className="px-4 py-2 rounded-full text-sm bg-ci-green-500/10 text-ci-green-600 border border-ci-green-400/30"
                 >
                   {tech}
                 </span>
@@ -230,10 +230,10 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Process */}
-      <section className="bg-slate-900 border-t border-slate-800 py-24 overflow-hidden">
+      <section className="bg-white/50 border-t border-slate-200 py-24 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-sans font-light text-4xl mb-16 text-white">
-            {t.approachPrefix}<span className="font-display italic text-emerald-400">{t.approachHighlight}</span>
+          <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-16 text-ci-navy">
+            {t.approachPrefix}<span className="text-gradient-ci">{t.approachHighlight}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {service.process.map((step, i) => (
@@ -245,12 +245,12 @@ export default function ServiceDetailPage() {
                 transition={{ delay: i * 0.1 }}
                 className="relative group"
               >
-                <div className="text-6xl font-sans font-bold text-slate-800 absolute -top-10 -left-4 z-0 group-hover:text-emerald-500/30 transition-colors">
+                <div className="text-6xl font-sans font-bold text-slate-200 absolute -top-10 -left-4 z-0 group-hover:text-ci-green-600 transition-colors">
                   {String(i + 1).padStart(2, '0')}
                 </div>
                 <div className="relative z-10 pt-4">
-                  <h3 className="text-xl font-sans font-medium mb-4 text-emerald-400">{step.title}</h3>
-                  <p className="text-slate-400 font-light text-sm leading-relaxed">{step.text}</p>
+                  <h3 className="text-xl font-sans font-medium mb-4 text-ci-green-600">{step.title}</h3>
+                  <p className="text-slate-600 font-light text-sm leading-relaxed">{step.text}</p>
                 </div>
               </motion.div>
             ))}
@@ -259,10 +259,10 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Other services */}
-      <section className="py-24 bg-slate-950 border-t border-slate-800">
+      <section className="py-24 bg-transparent border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-sans font-light text-4xl mb-12 text-white">
-            {t.otherPrefix}<span className="font-display italic text-emerald-400">{t.otherHighlight}</span>
+          <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-12 text-ci-navy">
+            {t.otherPrefix}<span className="text-gradient-ci">{t.otherHighlight}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherServices.map((other, i) => {
@@ -277,14 +277,14 @@ export default function ServiceDetailPage() {
                 >
                   <Link
                     to={`/services/${other.slug}`}
-                    className="block h-full bg-slate-900 border border-slate-800 p-6 rounded-2xl hover:border-emerald-500/40 hover:shadow-xl hover:shadow-emerald-500/10 transition-all duration-300 hover:-translate-y-1"
+                    className="block h-full bg-white border border-slate-200 p-6 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
                   >
-                    <div className="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mb-4">
+                    <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-4">
                       <OtherIcon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-lg font-sans font-medium text-white mb-2">{other.title}</h3>
-                    <p className="text-slate-400 font-light text-sm leading-relaxed mb-4">{other.tagline}</p>
-                    <span className="inline-flex items-center gap-1 text-sm text-emerald-400">
+                    <h3 className="text-lg font-sans font-medium text-ci-navy mb-2">{other.title}</h3>
+                    <p className="text-slate-600 font-light text-sm leading-relaxed mb-4">{other.tagline}</p>
+                    <span className="inline-flex items-center gap-1 text-sm text-ci-green-600">
                       {t.learnMore} <ArrowRight className="w-4 h-4" />
                     </span>
                   </Link>
@@ -296,17 +296,17 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* CTA */}
-      <section className="bg-indigo-700 py-20">
+      <section className="bg-ci-navy py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-sans font-light text-3xl md:text-4xl text-white mb-4">
+          <h2 className="font-display font-bold tracking-[-0.03em] text-3xl md:text-4xl text-ci-navy mb-4">
             {t.ctaTitle}
           </h2>
-          <p className="text-indigo-100 font-light text-lg mb-8">
+          <p className="text-ci-blue-100 font-light text-lg mb-8">
             {t.ctaText}
           </p>
           <Link
             to="/contact"
-            className="inline-flex items-center gap-2 bg-white text-indigo-700 hover:bg-indigo-50 font-medium px-8 py-4 rounded-full transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-ci-blue-700 hover:bg-indigo-50 font-medium px-8 py-4 rounded-full transition-colors"
           >
             {t.ctaButton} <ArrowRight className="w-5 h-5" />
           </Link>

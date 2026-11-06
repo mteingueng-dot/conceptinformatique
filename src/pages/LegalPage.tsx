@@ -252,22 +252,22 @@ export default function LegalPage({ type }: { type: LegalType }) {
   const c = content[type][lang];
 
   return (
-    <div id="legal-page-root-l3g4l1p9" className="bg-slate-950 text-slate-200 min-h-screen">
+    <div id="legal-page-root-l3g4l1p9" className="bg-transparent text-slate-700 min-h-screen">
       <section className="pt-32 pb-12">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <h1 className="font-sans font-extralight text-4xl md:text-5xl text-white mb-4">{c.title}</h1>
-          <p className="text-sm text-white/50">{c.updated}</p>
+          <h1 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-5xl text-ci-navy mb-4">{c.title}</h1>
+          <p className="text-sm text-ci-navy">{c.updated}</p>
         </div>
       </section>
 
       <div className="max-w-3xl mx-auto px-4 sm:px-6 pb-20">
-        <p className="text-white/70 text-lg leading-relaxed mb-3">{c.intro}</p>
+        <p className="text-ci-navy text-lg leading-relaxed mb-3">{c.intro}</p>
 
         {c.sections.map((section) => (
           <div key={section.heading}>
-            <h2 className="text-2xl font-semibold text-white mt-10 mb-3">{section.heading}</h2>
+            <h2 className="text-2xl font-semibold text-ci-navy mt-10 mb-3">{section.heading}</h2>
             {section.body.map((paragraph, i) => (
-              <p key={i} className="text-white/70 leading-relaxed mb-3">
+              <p key={i} className="text-ci-navy leading-relaxed mb-3">
                 {paragraph}
               </p>
             ))}
@@ -277,7 +277,7 @@ export default function LegalPage({ type }: { type: LegalType }) {
         <div className="mt-12">
           <Link
             to="/contact"
-            className="text-cyan-400 underline hover:text-cyan-300 transition-colors"
+            className="text-ci-blue-600 underline hover:text-ci-blue-600 transition-colors"
           >
             {lang === 'fr' ? 'Nous joindre' : 'Contact us'}
           </Link>

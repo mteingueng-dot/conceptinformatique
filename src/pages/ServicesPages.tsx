@@ -47,21 +47,21 @@ export default function ServicesPage() {
   const services = getServices(lang);
 
   return (
-    <div id="services-page-root-p3r8t5w2" className="pt-20 bg-slate-950 text-white min-h-screen">
+    <div id="services-page-root-p3r8t5w2" className="pt-20 bg-transparent text-ci-navy min-h-screen">
       {/* Header */}
-      <section className="bg-slate-900/60 py-10 md:py-12 border-b border-slate-800">
+      <section className="bg-white/50 py-10 md:py-12 border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="font-sans font-extralight text-white text-4xl md:text-5xl mb-3">
-            {t.headerTitleBefore}<span className="font-display italic text-emerald-400">{t.headerTitleAccent}</span>
+          <h1 className="font-display font-bold tracking-[-0.03em] text-ci-navy text-4xl md:text-5xl mb-3">
+            {t.headerTitleBefore}<span className="text-gradient-ci">{t.headerTitleAccent}</span>
           </h1>
-          <p className="text-slate-400 text-base md:text-lg font-light max-w-3xl leading-relaxed">
+          <p className="text-slate-600 text-base md:text-lg font-light max-w-3xl leading-relaxed">
             {t.headerSubtitle}
           </p>
         </div>
       </section>
 
       {/* Services Grid */}
-      <section className="py-6 md:py-8 bg-slate-950">
+      <section className="py-6 md:py-8 bg-transparent">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
             {services.map((service, idx) => (
@@ -75,14 +75,14 @@ export default function ServicesPage() {
               >
                 <Link
                   to={`/services/${service.slug}`}
-                  className="group flex flex-col h-full min-h-[208px] bg-slate-900 border border-slate-800 p-5 rounded-xl shadow-sm hover:shadow-xl hover:shadow-emerald-500/10 hover:border-emerald-500/40 transition-all duration-300 hover:-translate-y-1"
+                  className="group flex flex-col h-full min-h-[208px] bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-xl hover:shadow-ci-blue-600/10 hover:border-ci-green-400/40 transition-all duration-300 hover:-translate-y-1"
                 >
-                  <div className="w-10 h-10 bg-emerald-500/10 text-emerald-400 rounded-lg flex items-center justify-center mb-3">
+                  <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-3">
                     <service.icon className="w-5 h-5" />
                   </div>
-                  <h2 className="text-lg font-sans font-medium text-white mb-2 line-clamp-2">{service.title}</h2>
-                  <p className="text-sm text-slate-400 font-light mb-4 leading-relaxed line-clamp-2">{service.tagline}</p>
-                  <div className="mt-auto flex items-center gap-2 text-sm font-medium text-emerald-400">
+                  <h2 className="text-lg font-sans font-medium text-ci-navy mb-2 line-clamp-2">{service.title}</h2>
+                  <p className="text-sm text-slate-600 font-light mb-4 leading-relaxed line-clamp-2">{service.tagline}</p>
+                  <div className="mt-auto flex items-center gap-2 text-sm font-medium text-ci-green-600">
                     {t.learnMore}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
                   </div>
@@ -94,22 +94,22 @@ export default function ServicesPage() {
       </section>
 
       {/* Process Section */}
-      <section className="bg-slate-900 border-t border-slate-800 py-24 text-white overflow-hidden">
+      <section className="bg-white/50 border-t border-slate-200 py-24 text-ci-navy overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
-          <h2 className="font-sans font-light text-4xl mb-4 text-white">
-            {t.processTitleBefore}<span className="font-display italic text-emerald-400">{t.processTitleAccent}</span>{t.processTitleAfter}
+          <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-4 text-ci-navy">
+            {t.processTitleBefore}<span className="text-gradient-ci">{t.processTitleAccent}</span>{t.processTitleAfter}
           </h2>
-          <p className="text-slate-400 max-w-2xl mx-auto font-light">{t.processSubtitle}</p>
+          <p className="text-slate-600 max-w-2xl mx-auto font-light">{t.processSubtitle}</p>
         </div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             {t.steps.map((item, i) => (
               <div key={i} className="relative group">
-                <div className="text-6xl font-sans font-bold text-slate-800 absolute -top-10 -left-4 z-0 group-hover:text-emerald-500/30 transition-colors">{item.step}</div>
+                <div className="text-6xl font-sans font-bold text-slate-200 absolute -top-10 -left-4 z-0 group-hover:text-ci-green-600 transition-colors">{item.step}</div>
                 <div className="relative z-10">
-                  <h3 className="text-xl font-sans font-medium mb-4 text-emerald-400">{item.title}</h3>
-                  <p className="text-slate-400 font-light text-sm leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-sans font-medium mb-4 text-ci-green-600">{item.title}</h3>
+                  <p className="text-slate-600 font-light text-sm leading-relaxed">{item.desc}</p>
                 </div>
               </div>
             ))}
