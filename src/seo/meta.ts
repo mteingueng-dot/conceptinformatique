@@ -19,7 +19,20 @@ export interface PageMeta {
   path: string;
   title: string;
   description: string;
+  /** Page inexistante : ne pas indexer, pas de canonique */
+  notFound?: boolean;
 }
+
+/** Chemin utilisé pour pré-rendre la page « introuvable » (dist/404.html). */
+export const NOT_FOUND_PATH = '/404-page-introuvable/';
+
+const NOT_FOUND: StaticMeta = {
+  title: { fr: 'Page introuvable | Concept Informatique', en: 'Page Not Found | Concept Informatique' },
+  description: {
+    fr: "L'adresse demandée n'existe pas ou a été déplacée. Retrouvez les services de Concept Informatique, firme TI de Sherbrooke.",
+    en: 'The address you requested does not exist or has moved. Find the services of Concept Informatique, an IT firm in Sherbrooke.',
+  },
+};
 
 type Bi = { fr: string; en: string };
 type StaticMeta = { title: Bi; description: Bi };
@@ -240,8 +253,8 @@ export function getPageMeta(pathname: string, lang: SeoLang): PageMeta {
     return { path, title: withBrand(job.title), description: clip(job.summary, 158) };
   }
 
-  // Page inconnue : métadonnées de l'accueil, sans canonique propre
-  return { path, title: STATIC['/'].title[lang], description: STATIC['/'].description[lang] };
+  // Page inconnue
+  return { path, title: NOT_FOUND.title[lang], description: NOT_FOUND.description[lang], notFound: true };
 }
 
 /** Toutes les adresses officielles du site (pré-rendu et sitemap). */
@@ -254,4 +267,86 @@ export function listRoutes(): string[] {
     ...expertises.map((e) => `/about/expertises/${e.slug}/`),
     ...jobsContent.fr.map((j) => `/careers/${j.id}/`),
   ];
+}
+
+/* ---------- Données structurées propres à chaque page (JSON-LD) ---------- */
+
+const CRUMB_LABELS: Record<string, Bi> = {
+  '/services/': { fr: 'Services', en: 'Services' },
+  '/about/': { fr: 'À propos', en: 'About' },
+  '/about/values/': { fr: 'Nos valeurs', en: 'Our values' },
+  '/about/profil-professionnel/': { fr: 'Profil professionnel', en: 'Professional profile' },
+  '/careers/': { fr: 'Carrières', en: 'Careers' },
+  '/contact/': { fr: 'Contact', en: 'Contact' },
+  '/privacy/': { fr: 'Confidentialité', en: 'Privacy' },
+  '/terms/': { fr: 'Conditions', en: 'Terms' },
+};
+
+/** Nom affiché d'une page de détail (dernier élément du fil d'Ariane). */
+function detailName(path: string, lang: SeoLang): string | undefined {
+  const slug = path.split('/').filter(Boolean).pop() ?? '';
+  if (path.startsWith('/services/')) return getServiceBySlug(slug, lang)?.title;
+  if (path.startsWith('/about/values/')) return values.find((v) => v.slug === slug)?.title[lang];
+  if (path.startsWith('/about/profils/')) return professionalProfiles.find((p) => p.slug === slug)?.title[lang];
+  if (path.startsWith('/about/expertises/')) return expertises.find((e) => e.slug === slug)?.title[lang];
+  if (path.startsWith('/careers/')) return jobsContent[lang].find((j) => j.id === slug)?.title;
+  return undefined;
+}
+
+/** Fil d'Ariane : Accueil › section › page. */
+function breadcrumb(path: string, lang: SeoLang): { name: string; path: string }[] {
+  const trail = [{ name: lang === 'fr' ? 'Accueil' : 'Home', path: '/' }];
+  if (path === '/') return trail;
+  const parents: Record<string, string[]> = {
+    '/about/profils/': ['/about/', '/about/profil-professionnel/'],
+    '/about/values/': ['/about/', '/about/values/'],
+    '/about/expertises/': ['/about/'],
+    '/about/profil-professionnel/': ['/about/'],
+    '/services/': ['/services/'],
+    '/careers/': ['/careers/'],
+  };
+  const prefix = Object.keys(parents).find((p) => path.startsWith(p) && path !== p);
+  for (const parent of prefix ? parents[prefix] : path === '/about/profil-professionnel/' || path === '/about/values/' ? ['/about/'] : []) {
+    trail.push({ name: CRUMB_LABELS[parent][lang], path: parent });
+  }
+  const name = CRUMB_LABELS[path]?.[lang] ?? detailName(path, lang);
+  if (name) trail.push({ name, path });
+  return trail;
+}
+
+export function getStructuredData(pathname: string, lang: SeoLang): object[] {
+  const meta = getPageMeta(pathname, lang);
+  if (meta.notFound || meta.path === '/') return [];
+  const data: object[] = [
+    {
+      '@context': 'https://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: breadcrumb(meta.path, lang).map((c, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        name: c.name,
+        item: SITE_URL + c.path,
+      })),
+    },
+  ];
+  const m = meta.path.match(/^\/services\/([^/]+)\/$/);
+  const service = m && getServiceBySlug(m[1], lang);
+  if (service) {
+    data.push({
+      '@context': 'https://schema.org',
+      '@type': 'Service',
+      name: service.title,
+      serviceType: service.shortTitle,
+      description: meta.description,
+      url: SITE_URL + meta.path,
+      provider: { '@id': `${SITE_URL}/#entreprise` },
+      areaServed: [
+        { '@type': 'City', name: 'Sherbrooke' },
+        { '@type': 'AdministrativeArea', name: 'Estrie' },
+        { '@type': 'AdministrativeArea', name: 'Québec' },
+      ],
+      availableLanguage: ['fr-CA', 'en-CA'],
+    });
+  }
+  return data;
 }

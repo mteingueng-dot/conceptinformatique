@@ -78,7 +78,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-5">
             <Link to="/" aria-label={t.homeAria} className="inline-block">
               <div data-role="logo" className="flex items-center gap-3">
-                <img src="/logo-concept-informatique-mark.png" alt={t.logoAlt} className="h-11 w-auto object-contain" />
+                <img src="/logo-concept-informatique-mark.webp" width="204" height="132" alt={t.logoAlt} className="h-11 w-auto object-contain" />
                 <span className="text-xl font-extrabold tracking-tight text-ci-navy">
                   Concept <span className="text-ci-green-600">Informatique</span>
                 </span>

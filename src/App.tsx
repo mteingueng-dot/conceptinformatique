@@ -15,6 +15,7 @@ import ExpertiseDetailPage from './pages/ExpertiseDetailPage';
 import ValueDetailPage from './pages/ValueDetailPage';
 import ProfileDetailPage from './pages/ProfileDetailPage';
 import LegalPage from './pages/LegalPage';
+import NotFoundPage from './pages/NotFoundPage';
 import SeoManager from './seo/SeoManager';
 import { LanguageProvider } from './i18n/LanguageContext';
 
@@ -57,7 +58,7 @@ export function AppShell() {
           <Route path="/professional-profiles/:slug" element={<RedirectSlug to={(s) => `/about/profils/${s}/`} />} />
           <Route path="/expertises" element={<Navigate to="/services/" replace />} />
           <Route path="/expertises/:slug" element={<RedirectSlug to={(s) => `/about/expertises/${s}/`} />} />
-          <Route path="*" element={<Navigate to="/" replace />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
       <Footer />

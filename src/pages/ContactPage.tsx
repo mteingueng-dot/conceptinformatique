@@ -38,8 +38,9 @@ const content = {
     browseButton: 'Parcourir',
     submit: 'Envoyer la demande',
     successMessage: 'Votre message a été envoyé avec succès.',
-    mapAlt: 'Emplacement de Concept Informatique',
-    officeTitle: 'Notre bureau',
+    mapAlt: 'Carte de Sherbrooke, zone desservie par Concept Informatique',
+    officeTitle: 'Zone desservie',
+    officeArea: 'Sherbrooke, l’Estrie et partout au Québec, sur place ou à distance',
   },
   en: {
     titleBefore: "Let's talk about your ",
@@ -64,8 +65,9 @@ const content = {
     browseButton: 'Browse',
     submit: 'Send request',
     successMessage: 'Your message was sent successfully.',
-    mapAlt: 'Concept Informatique location',
-    officeTitle: 'Our Office',
+    mapAlt: 'Map of Sherbrooke, the area served by Concept Informatique',
+    officeTitle: 'Service area',
+    officeArea: 'Sherbrooke, the Eastern Townships and anywhere in Québec, on site or remotely',
   },
 };
 
@@ -240,18 +242,23 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="h-[500px] w-full">
-        {/* Abstract Map Representation */}
-        <div className="w-full h-full bg-slate-100 flex items-center justify-center relative overflow-hidden">
-          <img src="https://images.unsplash.com/photo-1706009731040-7701affadce3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4ODY5NjV8MHwxfHNlYXJjaHwxfHxtYXAlMjBvZiUyMHNoZXJicm9va2UlMjBxdWViZWMlMjBhZXJpYWwlMjB2aWV3JTIwaGlnaCUyMHJlc29sdXRpb258ZW58MHwwfHx8MTc5MTM4NDEyMHww&ixlib=rb-4.1.0&q=80&w=1080" alt={c.mapAlt} className="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" />
-          <div className="absolute inset-0 bg-ci-navy/10"></div>
-          <div className="relative z-10 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 flex items-center gap-4">
-            <div className="bg-ci-blue-600 p-3 rounded-full">
-               <MapPin className="w-6 h-6 text-ci-navy" />
+      <section className="relative h-[460px] w-full bg-slate-100">
+        {/* Carte Google de Sherbrooke (ville seulement, sans adresse), chargée à la demande */}
+        <iframe
+          title={c.mapAlt}
+          src="https://www.google.com/maps/embed?origin=mfe&pb=!1m3!2m1!1sSherbrooke,+QC!6i11"
+          className="absolute inset-0 h-full w-full border-0"
+          loading="lazy"
+          referrerPolicy="no-referrer-when-downgrade"
+        />
+        <div className="pointer-events-none absolute inset-x-0 bottom-6 flex justify-center px-4 sm:justify-start sm:px-8">
+          <div className="pointer-events-auto flex max-w-md items-center gap-4 rounded-2xl border border-slate-100 bg-white p-5 shadow-xl">
+            <div className="shrink-0 rounded-full bg-ci-blue-600 p-3">
+              <MapPin className="w-6 h-6 text-white" />
             </div>
             <div>
-              <p className="font-sans font-medium text-slate-900">{c.officeTitle}</p>
-              <p className="text-sm text-slate-500 font-light">Sherbrooke, QC</p>
+              <p className="font-sans font-semibold text-ci-navy">{c.officeTitle}</p>
+              <p className="text-sm text-slate-600">{c.officeArea}</p>
             </div>
           </div>
         </div>

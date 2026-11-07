@@ -8,7 +8,7 @@ import { StaticRouter } from 'react-router-dom/server';
 import { AppShell } from './App';
 import { LanguageProvider } from './i18n/LanguageContext';
 
-export { getPageMeta, listRoutes, SITE_URL } from './seo/meta';
+export { getPageMeta, getStructuredData, listRoutes, SITE_URL, NOT_FOUND_PATH } from './seo/meta';
 
 export function render(url: string): string {
   return renderToString(

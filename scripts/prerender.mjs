@@ -11,7 +11,7 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = join(root, 'dist');
 const ssrDir = join(root, 'dist-ssr');
 
-const { render, getPageMeta, listRoutes, SITE_URL } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
+const { render, getPageMeta, getStructuredData, listRoutes, SITE_URL, NOT_FOUND_PATH } = await import(pathToFileURL(join(ssrDir, 'entry-server.js')).href);
 
 const template = readFileSync(join(dist, 'index.html'), 'utf-8');
 
@@ -38,6 +38,19 @@ function pageHtml(route) {
   html = setTag(html, /<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${d}" />`, 'og:description');
   html = setTag(html, /<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`, 'og:url');
   html = setTag(html, '<div id="root"></div>', `<div id="root">${render(route)}</div>`, 'root');
+
+  if (meta.notFound) {
+    // Page « introuvable » : pas de canonique, non indexée
+    html = setTag(html, /\s*<link rel="canonical" href="[^"]*"\s*\/?>/, '', 'canonical');
+    html = setTag(html, '</head>', '  <meta name="robots" content="noindex" />\n  </head>', 'head');
+  } else {
+    const data = getStructuredData(route, 'fr');
+    if (data.length) {
+      // « < » échappé pour qu'aucun texte ne puisse fermer la balise <script>
+      const json = JSON.stringify(data.length === 1 ? data[0] : data).replace(/</g, '\\u003c');
+      html = setTag(html, '</head>', `  <script id="ld-page" type="application/ld+json">${json}</script>\n  </head>`, 'head');
+    }
+  }
   return html;
 }
 
@@ -48,6 +61,9 @@ for (const route of routes) {
   mkdirSync(dirname(file), { recursive: true });
   writeFileSync(file, html);
 }
+
+// Page « introuvable », servie par le serveur pour toute adresse inexistante (ErrorDocument 404)
+writeFileSync(join(dist, '404.html'), pageHtml(NOT_FOUND_PATH));
 
 const today = new Date().toISOString().slice(0, 10);
 const sitemap =
