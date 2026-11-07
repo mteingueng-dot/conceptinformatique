@@ -101,7 +101,7 @@ const STATIC: Record<string, StaticMeta> = {
   '/contact/': {
     title: {
       fr: 'Contact | Concept Informatique, Sherbrooke',
-      en: 'Contact | Concept Informatique, Sherbrooke',
+      en: 'Contact Us | Concept Informatique, Sherbrooke',
     },
     description: {
       fr: 'Un projet logiciel, de données ou de soutien TI? Joignez Concept Informatique à Sherbrooke au 514 712-0371 ou par notre formulaire. Réponse rapide.',
@@ -251,7 +251,7 @@ export function getPageMeta(pathname: string, langHint?: SeoLang): PageMeta {
   m = base.match(/^\/about\/values\/([^/]+)\/$/);
   const value = m && values.find((v) => v.slug === m![1]);
   if (value) {
-    return { path, title: withBrand(value.title[lang]), description: clip(`${value.tagline[lang]}. ${value.description[lang]}`, 158) };
+    return { path, title: withBrand(`${value.title[lang]} – ${lang === 'fr' ? 'Nos valeurs' : 'Our Values'}`), description: clip(`${value.tagline[lang]}. ${value.description[lang]}`, 158) };
   }
 
   m = base.match(/^\/about\/profils\/([^/]+)\/$/);
