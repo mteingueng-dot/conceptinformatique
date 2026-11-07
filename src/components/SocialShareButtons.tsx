@@ -12,7 +12,7 @@ interface SocialShareButtonsProps {
 }
 
 export default function SocialShareButtons({ jobId, jobTitle, labels }: SocialShareButtonsProps) {
-  const jobUrl = `https://conceptinformatique.net/#/careers/${encodeURIComponent(jobId)}`;
+  const jobUrl = `https://www.conceptinformatique.net/careers/${encodeURIComponent(jobId)}/`;
   const shareText = `${jobTitle} - ${jobUrl}`;
   const linkedInUrl = new URL('https://www.linkedin.com/feed/');
   linkedInUrl.searchParams.set('shareActive', 'true');

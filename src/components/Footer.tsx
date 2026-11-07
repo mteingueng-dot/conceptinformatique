@@ -100,7 +100,7 @@ export default function Footer() {
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link to={`/services/${s.slug}`} className={linkClass}>{s.shortTitle}</Link>
+                  <Link to={`/services/${s.slug}/`} className={linkClass}>{s.shortTitle}</Link>
                 </li>
               ))}
             </ul>
@@ -111,9 +111,9 @@ export default function Footer() {
             <ul className="space-y-3">
               {[
                 { name: t.navHome, path: '/' },
-                { name: t.navAbout, path: '/about' },
-                { name: t.navCareers, path: '/careers' },
-                { name: t.navContact, path: '/contact' },
+                { name: t.navAbout, path: '/about/' },
+                { name: t.navCareers, path: '/careers/' },
+                { name: t.navContact, path: '/contact/' },
               ].map((item) => (
                 <li key={item.path}>
                   <Link to={item.path} className={linkClass}>{item.name}</Link>
@@ -144,8 +144,8 @@ export default function Footer() {
         <div className="flex flex-col items-center justify-between gap-4 border-t border-slate-200 pt-8 md:flex-row">
           <p className="text-xs text-slate-500">&copy; {currentYear} Concept Informatique inc. {t.rights}</p>
           <div className="flex items-center gap-6">
-            <Link to="/privacy" className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.privacy}</Link>
-            <Link to="/terms" className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.terms}</Link>
+            <Link to="/privacy/" className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.privacy}</Link>
+            <Link to="/terms/" className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.terms}</Link>
           </div>
         </div>
       </div>

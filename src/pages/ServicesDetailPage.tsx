@@ -74,7 +74,7 @@ export default function ServiceDetailPage() {
             {t.notFoundText}
           </p>
           <Link
-            to="/services"
+            to="/services/"
             className="inline-flex items-center gap-2 bg-ci-blue-600 hover:bg-ci-blue-700 text-white font-medium px-8 py-4 rounded-full transition-colors"
           >
             {t.backToServices}
@@ -101,7 +101,7 @@ export default function ServiceDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <Link
-              to="/services"
+              to="/services/"
               className="inline-block text-sm text-slate-600 hover:text-ci-green-600 transition-colors mb-10"
             >
               {t.allServices}
@@ -116,7 +116,7 @@ export default function ServiceDetailPage() {
             <p className="text-ci-green-600 text-xl md:text-2xl font-light max-w-3xl mb-6">{service.tagline}</p>
             <p className="text-slate-600 text-lg font-light max-w-3xl leading-relaxed mb-10">{service.intro}</p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center gap-2 bg-ci-blue-600 hover:bg-ci-blue-700 text-white font-medium px-8 py-4 rounded-full transition-colors"
             >
               {t.requestConsultation} <ArrowRight className="w-5 h-5" />
@@ -276,7 +276,7 @@ export default function ServiceDetailPage() {
                   transition={{ delay: i * 0.05 }}
                 >
                   <Link
-                    to={`/services/${other.slug}`}
+                    to={`/services/${other.slug}/`}
                     className="block h-full bg-white border border-slate-200 p-6 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
                   >
                     <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-4">
@@ -305,7 +305,7 @@ export default function ServiceDetailPage() {
             {t.ctaText}
           </p>
           <Link
-            to="/contact"
+            to="/contact/"
             className="inline-flex items-center gap-2 bg-white text-ci-blue-700 hover:bg-indigo-50 font-medium px-8 py-4 rounded-full transition-colors"
           >
             {t.ctaButton} <ArrowRight className="w-5 h-5" />

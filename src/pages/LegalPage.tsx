@@ -276,7 +276,7 @@ export default function LegalPage({ type }: { type: LegalType }) {
 
         <div className="mt-12">
           <Link
-            to="/contact"
+            to="/contact/"
             className="text-ci-blue-600 underline hover:text-ci-blue-600 transition-colors"
           >
             {lang === 'fr' ? 'Nous joindre' : 'Contact us'}

@@ -229,17 +229,17 @@ const copy = {
 
 const expertiseSlugs: Record<string, string> = {
   'Business Intelligence': 'business-intelligence',
-  'Ingénierie de données': 'data-engineering',
-  'Développement logiciel': 'software-development',
+  'Ingénierie de données': 'ingenierie-de-donnees',
+  'Développement logiciel': 'developpement-logiciel',
   'Support TI': 'it-support',
   'Automatisation IA': 'ai-automation',
   'Transformation numérique': 'digital-transformation',
 };
 
 const servicePaths: Record<string, string> = {
-  'Support TI': '/services/support-ti-securite',
-  'Automatisation IA': '/services/automatisation-ia',
-  'Transformation numérique': '/services/transformation-numerique',
+  'Support TI': '/services/support-ti-securite/',
+  'Automatisation IA': '/services/automatisation-ia/',
+  'Transformation numérique': '/services/transformation-numerique/',
 };
 
 const gridStyle = {
@@ -368,7 +368,7 @@ export default function AboutPage() {
               return (
                 <Link
                   key={item.title.en}
-                  to={servicePaths[item.title.fr] ?? `/about/expertises/${slug}`}
+                  to={servicePaths[item.title.fr] ?? `/about/expertises/${slug}/`}
                   className="group no-underline"
                 >
                   <motion.div
@@ -398,7 +398,7 @@ export default function AboutPage() {
       <section id="valeurs-section" className="bg-white/50 py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Link to="/about/values" className="w-full text-center hover:opacity-80 transition-opacity">
+            <Link to="/about/values/" className="w-full text-center hover:opacity-80 transition-opacity">
               <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em]">
                 {t(copy.valuesPrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.valuesAccent)}</span>
               </h2>
@@ -408,7 +408,7 @@ export default function AboutPage() {
             {values.map((item, i) => (
               <Link
                 key={item.title.en}
-                to={`/about/values/${item.slug}`}
+                to={`/about/values/${item.slug}/`}
                 className="group no-underline"
               >
                 <motion.div
@@ -436,7 +436,7 @@ export default function AboutPage() {
         <div className="absolute inset-0 pointer-events-none" style={fadeStyle}></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Link to="/about/profil-professionnel" className="w-full text-center hover:opacity-80 transition-opacity">
+            <Link to="/about/profil-professionnel/" className="w-full text-center hover:opacity-80 transition-opacity">
               <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em]">
                 {t(copy.profilePrefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(copy.profileAccent)}</span>
               </h2>
@@ -459,7 +459,7 @@ export default function AboutPage() {
               {profileHighlights.map((item, i) => (
                 <Link
                   key={item.title.en}
-                  to={`/about/profils/${item.slug}`}
+                  to={`/about/profils/${item.slug}/`}
                   className="group no-underline"
                 >
                   <motion.div
@@ -525,7 +525,7 @@ export default function AboutPage() {
             </h2>
             <p className="font-mono text-ci-blue-600 mb-10">{t(copy.slogan)}</p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center gap-2 bg-ci-blue-600 text-white font-medium px-8 py-4 rounded-full hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
             >
               {t(copy.ctaButton)}

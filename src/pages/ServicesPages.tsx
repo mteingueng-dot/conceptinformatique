@@ -74,7 +74,7 @@ export default function ServicesPage() {
                 className="h-full"
               >
                 <Link
-                  to={`/services/${service.slug}`}
+                  to={`/services/${service.slug}/`}
                   className="group flex flex-col h-full min-h-[208px] bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-xl hover:shadow-ci-blue-600/10 hover:border-ci-green-400/40 transition-all duration-300 hover:-translate-y-1"
                 >
                   <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-3">

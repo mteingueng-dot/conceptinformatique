@@ -12,7 +12,14 @@ import { useLanguage } from '../i18n/LanguageContext';
  */
 
 const fr = {
-  badge: 'Données · Lakehouse · IA',
+  h1: 'Logiciels, données et soutien TI à Sherbrooke',
+  aboutTag: 'Firme informatique à Sherbrooke',
+  aboutTitle: 'Vos données et vos technologies, enfin au service de vos affaires',
+  aboutText: [
+    "Concept Informatique inc. est une firme informatique de Sherbrooke qui aide les PME et les organisations de l’Estrie à tirer le meilleur de leurs données et de leurs technologies. Depuis plus de 17 ans, notre équipe conçoit des logiciels sur mesure, bâtit des tableaux de bord Power BI en intelligence d’affaires, centralise l’information dans des entrepôts de données modernes (Microsoft Fabric, Azure, Databricks) et assure le soutien informatique et la cybersécurité de votre parc.",
+    "Vos rapports prennent des heures à produire? Vos systèmes ne se parlent pas? Un processus repose encore sur des fichiers Excel? Nous partons de vos besoins d’affaires, livrons par étapes courtes et restons à vos côtés après la mise en production, en personne à Sherbrooke ou à distance, partout au Québec.",
+  ],
+  aboutCta: 'Parlons de votre projet',
   titleA: 'Le futur de vos données',
   titleB: 'commence ici.',
   intro:
@@ -37,10 +44,10 @@ const fr = {
   ],
   capTag: 'Ce que nous bâtissons',
   caps: [
-    { title: 'Lakehouse moderne', text: 'Une source de vérité unique, gouvernée et performante.', to: '/services/data-engineering' },
-    { title: 'Temps réel', text: 'Des flux continus pour décider à la seconde près.', to: '/services/data-engineering' },
-    { title: 'BI augmentée', text: 'Des tableaux de bord rapides sur des données à jour.', to: '/services/business-intelligence' },
-    { title: 'IA en production', text: 'Agents et modèles intégrés à vos processus.', to: '/services/automatisation-ia' },
+    { title: 'Lakehouse moderne', text: 'Une source de vérité unique, gouvernée et performante.', to: '/services/data-engineering/' },
+    { title: 'Temps réel', text: 'Des flux continus pour décider à la seconde près.', to: '/services/data-engineering/' },
+    { title: 'BI augmentée', text: 'Des tableaux de bord rapides sur des données à jour.', to: '/services/business-intelligence/' },
+    { title: 'IA en production', text: 'Agents et modèles intégrés à vos processus.', to: '/services/automatisation-ia/' },
   ],
   learnMore: 'Découvrir',
   ctaTitle: 'Prêt à passer à la vitesse supérieure?',
@@ -49,7 +56,14 @@ const fr = {
 };
 
 const en: typeof fr = {
-  badge: 'Data · Lakehouse · AI',
+  h1: 'Software, data and IT support in Sherbrooke',
+  aboutTag: 'IT firm in Sherbrooke',
+  aboutTitle: 'Your data and technology, finally working for your business',
+  aboutText: [
+    'Concept Informatique inc. is an IT firm in Sherbrooke that helps SMEs and organizations across the Eastern Townships get the most out of their data and technology. For more than 17 years, our team has been building custom software, Power BI business intelligence dashboards, modern data warehouses (Microsoft Fabric, Azure, Databricks), and providing IT support and cybersecurity for your systems.',
+    'Do your reports take hours to produce? Do your systems not talk to each other? Does a process still rely on Excel files? We start from your business needs, deliver in short stages and stay by your side after go-live, in person in Sherbrooke or remotely, anywhere in Québec.',
+  ],
+  aboutCta: "Let's talk about your project",
   titleA: 'The future of your data',
   titleB: 'starts here.',
   intro:
@@ -74,10 +88,10 @@ const en: typeof fr = {
   ],
   capTag: 'What we build',
   caps: [
-    { title: 'Modern lakehouse', text: 'A single, governed, high-performance source of truth.', to: '/services/data-engineering' },
-    { title: 'Real time', text: 'Continuous streams to decide in seconds.', to: '/services/data-engineering' },
-    { title: 'Augmented BI', text: 'Fast dashboards on up-to-date data.', to: '/services/business-intelligence' },
-    { title: 'AI in production', text: 'Agents and models built into your processes.', to: '/services/automatisation-ia' },
+    { title: 'Modern lakehouse', text: 'A single, governed, high-performance source of truth.', to: '/services/data-engineering/' },
+    { title: 'Real time', text: 'Continuous streams to decide in seconds.', to: '/services/data-engineering/' },
+    { title: 'Augmented BI', text: 'Fast dashboards on up-to-date data.', to: '/services/business-intelligence/' },
+    { title: 'AI in production', text: 'Agents and models built into your processes.', to: '/services/automatisation-ia/' },
   ],
   learnMore: 'Discover',
   ctaTitle: 'Ready to shift into high gear?',
@@ -89,11 +103,11 @@ const dict = { fr, en };
 const layerIcons = [Radio, Database, GitBranch, LineChart, BrainCircuit];
 // Page de service liée à chaque couche de la pile
 const layerLinks = [
-  '/services/data-engineering',
-  '/services/architecture-cloud',
-  '/services/data-engineering',
-  '/services/business-intelligence',
-  '/services/automatisation-ia',
+  '/services/data-engineering/',
+  '/services/architecture-cloud/',
+  '/services/data-engineering/',
+  '/services/business-intelligence/',
+  '/services/automatisation-ia/',
 ];
 const capIcons = [Database, Radio, LineChart, Sparkles];
 const reveal = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-60px' } };
@@ -351,14 +365,15 @@ export default function HomePage() {
 
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="relative z-10">
-            <motion.span
+            {/* Titre principal (H1) : services + ville, pour le référencement ; le slogan reste le grand texte */}
+            <motion.h1
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 rounded-full border border-ci-blue-100 bg-white px-4 py-1.5 font-mono text-xs uppercase tracking-[0.2em] text-ci-blue-700 shadow-sm"
+              className="inline-flex items-center gap-2 rounded-2xl sm:rounded-full border border-ci-blue-100 bg-white px-4 py-1.5 font-sans text-sm font-semibold tracking-normal text-ci-blue-700 shadow-sm"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-ci-green-500 shadow-[0_0_10px_#34d17f]" /> {t.badge}
-            </motion.span>
-            <motion.h1
+              <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ci-green-500 shadow-[0_0_10px_#34d17f]" /> {t.h1}
+            </motion.h1>
+            <motion.p
               initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               transition={{ duration: 0.9 }}
@@ -368,20 +383,20 @@ export default function HomePage() {
               <span className="text-gradient-ci">
                 {t.titleB}
               </span>
-            </motion.h1>
+            </motion.p>
             <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-7 max-w-xl text-lg leading-relaxed text-slate-600">
               {t.intro}
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="mt-10 flex flex-col sm:flex-row gap-3">
               <Link
-                to="/contact"
+                to="/contact/"
                 className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-ci-blue-600 to-ci-green-500 px-7 py-4 font-semibold text-white shadow-[0_12px_40px_-10px_rgba(31,111,235,0.6)]"
               >
                 <span aria-hidden="true" className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
                 <span className="relative">{t.ctaPrimary}</span>
                 <ArrowRight className="relative w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
-              <Link to="/services" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-4 font-semibold text-ci-navy hover:border-ci-blue-200 hover:bg-ci-blue-50 transition-colors">
+              <Link to="/services/" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-4 font-semibold text-ci-navy hover:border-ci-blue-200 hover:bg-ci-blue-50 transition-colors">
                 {t.ctaSecondary}
               </Link>
             </motion.div>
@@ -401,6 +416,24 @@ export default function HomePage() {
               <p className="mt-1 text-sm text-slate-500">{s.l}</p>
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* Présentation (texte riche en mots-clés pour le référencement) */}
+      <section className="relative py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1fr_1.2fr] gap-12 items-start">
+          <motion.div {...reveal}>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.aboutTag}</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold tracking-[-0.04em] text-ci-navy">{t.aboutTitle}</h2>
+          </motion.div>
+          <motion.div {...reveal} transition={{ delay: 0.1 }} className="space-y-5 text-lg leading-relaxed text-slate-600">
+            {t.aboutText.map((para) => (
+              <p key={para.slice(0, 24)}>{para}</p>
+            ))}
+            <Link to="/contact/" className="group inline-flex items-center gap-2 pt-2 font-semibold text-ci-blue-600 hover:text-ci-blue-700">
+              {t.aboutCta} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
         </div>
       </section>
 
@@ -493,7 +526,7 @@ export default function HomePage() {
           <div className="relative">
             <h2 className="mx-auto max-w-3xl font-display text-4xl md:text-6xl font-bold tracking-[-0.04em] text-ci-navy">{t.ctaTitle}</h2>
             <p className="mx-auto mt-5 max-w-xl text-lg text-slate-600">{t.ctaText}</p>
-            <Link to="/contact" className="group mt-10 inline-flex items-center gap-2 rounded-xl bg-ci-blue-600 px-7 py-4 font-semibold text-white shadow-lg shadow-ci-blue-600/30 hover:bg-ci-blue-700 transition-colors">
+            <Link to="/contact/" className="group mt-10 inline-flex items-center gap-2 rounded-xl bg-ci-blue-600 px-7 py-4 font-semibold text-white shadow-lg shadow-ci-blue-600/30 hover:bg-ci-blue-700 transition-colors">
               {t.ctaButton} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

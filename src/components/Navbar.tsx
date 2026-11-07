@@ -72,7 +72,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   // Barre transparente seulement en haut de l'accueil (fond clair) ; blanche partout ailleurs.
   const isHome = location.pathname === '/' || location.pathname === '/home';
-  const [scrolledDown, setScrolledDown] = useState(() => window.scrollY > 10);
+  const [scrolledDown, setScrolledDown] = useState(() => typeof window !== 'undefined' && window.scrollY > 10);
   const scrolled = !isHome || scrolledDown;
 
   useEffect(() => {
@@ -95,16 +95,17 @@ export default function Navbar() {
 
   const navLinks: { key: NavKey; idSlug: string; path: string }[] = [
     { key: 'home', idSlug: 'accueil', path: '/' },
-    { key: 'services', idSlug: 'services', path: '/services' },
-    { key: 'about', idSlug: 'à propos', path: '/about' },
-    { key: 'careers', idSlug: 'carrières', path: '/careers' },
-    { key: 'contact', idSlug: 'contact', path: '/contact' },
+    { key: 'services', idSlug: 'services', path: '/services/' },
+    { key: 'about', idSlug: 'à propos', path: '/about/' },
+    { key: 'careers', idSlug: 'carrières', path: '/careers/' },
+    { key: 'contact', idSlug: 'contact', path: '/contact/' },
   ];
 
-  const isActive = (path: string) =>
-    path === '/'
-      ? location.pathname === '/'
-      : location.pathname === path || location.pathname.startsWith(path + '/');
+  const isActive = (path: string) => {
+    const current = location.pathname.replace(/\/+$/, '') || '/';
+    const target = path.replace(/\/+$/, '') || '/';
+    return target === '/' ? current === '/' : current === target || current.startsWith(target + '/');
+  };
 
   return (
     <nav
@@ -148,7 +149,7 @@ export default function Navbar() {
             })}
             <LangSwitcher lang={lang} setLang={setLang} label={tr.langLabel} className="ml-4" />
             <Link
-              to="/contact"
+              to="/contact/"
               id="nav-cta-button-q3x7v1n9"
               className="group ml-3 inline-flex items-center gap-1.5 rounded-xl bg-ci-blue-600 px-5 py-2.5 text-sm font-semibold text-white shadow-md shadow-ci-blue-600/25 transition-colors hover:bg-ci-blue-700"
             >
@@ -196,7 +197,7 @@ export default function Navbar() {
             })}
           </div>
           <Link
-            to="/contact"
+            to="/contact/"
             onClick={() => setIsOpen(false)}
             className="mt-auto inline-flex items-center justify-center gap-2 rounded-xl bg-ci-blue-600 px-6 py-4 text-base font-semibold text-white"
           >

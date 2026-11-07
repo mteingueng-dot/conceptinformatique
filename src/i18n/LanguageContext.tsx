@@ -17,21 +17,6 @@ export function getInitialLang(): Lang {
   }
 }
 
-const META: Record<Lang, { title: string; description: string; locale: string }> = {
-  fr: {
-    title: 'Concept Informatique inc | Solutions TI à Sherbrooke',
-    description:
-      'Concept Informatique inc. à Sherbrooke : expert en développement logiciel, Business Intelligence, Data Engineering et automatisation IA pour optimiser votre performance stratégique.',
-    locale: 'fr_CA',
-  },
-  en: {
-    title: 'Concept Informatique inc | IT Solutions in Sherbrooke',
-    description:
-      'Concept Informatique inc. in Sherbrooke: experts in software development, Business Intelligence, Data Engineering and AI automation to optimize your strategic performance.',
-    locale: 'en_CA',
-  },
-};
-
 interface LanguageContextValue {
   lang: Lang;
   setLang: (l: Lang) => void;
@@ -58,18 +43,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     } catch {
       // ignore storage errors
     }
-    document.documentElement.lang = lang;
-    const meta = META[lang];
-    document.title = meta.title;
-    document
-      .querySelector('meta[name="description"]')
-      ?.setAttribute('content', meta.description);
-    document
-      .querySelector('meta[property="og:title"]')
-      ?.setAttribute('content', meta.title);
-    document
-      .querySelector('meta[property="og:locale"]')
-      ?.setAttribute('content', meta.locale);
+    // Titre, description, Open Graph et langue du document : voir src/seo/SeoManager.tsx
   }, [lang]);
 
   useEffect(() => {

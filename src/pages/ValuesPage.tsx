@@ -314,7 +314,7 @@ export default function ValuesPage() {
                 {/* Left: Content */}
                 <motion.div variants={itemVariants}>
                   <Link
-                    to={`/about/values/${valueSlugMap[value.title.en]}`}
+                    to={`/about/values/${valueSlugMap[value.title.en]}/`}
                     className="flex items-center gap-4 mb-8 group no-underline hover:opacity-80 transition-opacity"
                   >
                     <div className="w-16 h-16 rounded-xl bg-gradient-to-br from-ci-blue-600/20 to-ci-green-500/20 flex items-center justify-center">
@@ -431,7 +431,7 @@ export default function ValuesPage() {
                 : 'Discover how our values can transform your organization and make a real difference.'}
             </p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center gap-2 bg-ci-blue-600 text-white font-medium px-8 py-4 rounded-full hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
             >
               {t(copy.ctaButton)}

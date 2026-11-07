@@ -282,7 +282,7 @@ export default function ProfessionalProfilePage() {
             {expertiseAreas.map((item) => (
               <Link
                 key={item.title.en}
-                to={`/about/profils/${item.slug}`}
+                to={`/about/profils/${item.slug}/`}
                 className="group no-underline"
               >
                 <motion.div
@@ -439,7 +439,7 @@ export default function ProfessionalProfilePage() {
             </h2>
             <p className="font-mono text-ci-blue-600 mb-10">{t(copy.slogan)}</p>
             <Link
-              to="/contact"
+              to="/contact/"
               className="inline-flex items-center gap-2 bg-ci-blue-600 text-white font-medium px-8 py-4 rounded-full hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
             >
               {t(copy.ctaButton)}

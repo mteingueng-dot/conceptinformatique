@@ -20,7 +20,7 @@ export const services: ServiceDetail[] = [
   {
     slug: 'developpement-logiciel',
     title: 'Développement Logiciel',
-    shortTitle: 'Logiciels Sur Mesure',
+    shortTitle: 'Logiciels sur mesure',
     icon: Code,
     tagline: 'Des applications sur mesure, conçues pour vos processus métiers.',
     intro:
@@ -30,10 +30,10 @@ export const services: ServiceDetail[] = [
       "Applications Web (React / TypeScript)",
       "API & services back-end (Node.js, .NET / C#)",
       "Intégration de systèmes et d'API tierces",
-      "Modernisation de code legacy",
-      "Performance optimization",
-      "Security & compliance",
-      "CI/CD deployment"
+      "Modernisation d'applications existantes",
+      "Optimisation des performances",
+      "Sécurité et conformité",
+      "Déploiement continu (CI/CD)"
     ],
     benefits: [
       {
@@ -49,11 +49,11 @@ export const services: ServiceDetail[] = [
         text: "Des cycles courts et des démonstrations régulières pour valider chaque étape et ajuster rapidement."
       },
       {
-        title: 'Operability & monitoring',
+        title: 'Exploitation et surveillance',
         text: "Une application clé en main avec surveillance intégrée, alertes et tableaux de bord pour la production."
       },
       {
-        title: 'Time-to-market',
+        title: 'Mise en marché plus rapide',
         text: "Un déploiement automatisé et une mise à jour continue qui vous permettent de réagir rapidement aux demandes du marché."
       }
     ],
@@ -63,9 +63,9 @@ export const services: ServiceDetail[] = [
       "Intégrations avec vos systèmes existants",
       "Jeux de tests et documentation technique",
       "Transfert de connaissances à vos équipes",
-      "User training documentation",
+      "Documentation de formation des utilisateurs",
       "CI/CD pipeline setup",
-      "Monitoring & alerting configuration"
+      "Configuration de la surveillance et des alertes"
     ],
     technologies: [
       'React',
@@ -91,7 +91,7 @@ export const services: ServiceDetail[] = [
         text: "Définition de l'architecture, des maquettes et du découpage fonctionnel de la solution."
       },
       {
-        title: 'Prototyping & MVP validation',
+        title: 'Prototypage et validation du produit minimum viable',
         text: "Réalisation d'une version minimale pour valider rapidement vos hypothèses et affiner les besoins."
       },
       {
@@ -99,7 +99,7 @@ export const services: ServiceDetail[] = [
         text: "Réalisation par incréments en Scrum ou Kanban, avec démonstrations et retours réguliers."
       },
       {
-        title: 'Code review & QA',
+        title: 'Revue de code et assurance qualité',
         text: "Validation rigoureuse du code, tests automatisés et assurance qualité avant livraison."
       },
       {
@@ -110,12 +110,12 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'business-intelligence',
-    title: 'Business Intelligence (BI)',
-    shortTitle: 'Business Intelligence',
+    title: 'Intelligence d’affaires (BI)',
+    shortTitle: 'Intelligence d’affaires',
     icon: BarChart3,
     tagline: 'Des tableaux de bord clairs pour décider avec confiance.',
     intro:
-      "Vos données contiennent la réponse à vos questions stratégiques. Nous les structurons, les structurons et les présentons dans des tableaux de bord interactifs qui racontent une histoire. La BI ne se limite pas aux chiffres : c'est démocratiser l'accès à l'information pour que chaque décideur, du PDG au responsable de département, puisse agir en toute confiance. Nous transformons vos données brutes en insights actionables, présentés de manière claire et accessible à tous.",
+      "Vos données contiennent la réponse à vos questions stratégiques. Nous les structurons, les analysons et les présentons dans des tableaux de bord interactifs qui racontent une histoire. La BI ne se limite pas aux chiffres : c'est démocratiser l'accès à l'information pour que chaque décideur, du PDG au responsable de département, puisse agir en toute confiance. Nous transformons vos données brutes en insights actionables, présentés de manière claire et accessible à tous.",
     desc: "Transformez vos données brutes en décisions éclairées et en actions concrètes. Nous bâtissons des modèles de données robustes et des tableaux de bord interactifs, notamment avec Power BI, qui offrent une vision claire et stratégique de votre organisation. Notre approche combine la rigueur technique avec la clarté narrative : chaque visualisation est conçue pour communiquer rapidement l'information essentielle. Nous assurons également une gouvernance des données solide et des validations continues pour garantir que vous pouvez faire confiance à vos rapports.",
     points: [
       "Tableaux de bord Power BI interactifs",
@@ -200,8 +200,8 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'data-engineering',
-    title: 'Data Engineering',
-    shortTitle: 'Ingénierie de Données',
+    title: 'Ingénierie de données',
+    shortTitle: 'Ingénierie de données',
     icon: Database,
     tagline: 'Des flux de données fiables, automatisés et sécurisés.',
     intro:
@@ -230,7 +230,7 @@ export const services: ServiceDetail[] = [
         text: "Des requêtes et des structures optimisées pour traiter de grands volumes de données en temps réel."
       },
       {
-        title: 'Infrastructure scalable pour la croissance',
+        title: 'Infrastructure évolutive pour la croissance',
         text: "Une architecture conçue pour évoluer avec vos besoins, sans goulot d'étranglement ni réduction de performance."
       },
       {
@@ -298,7 +298,7 @@ export const services: ServiceDetail[] = [
     tagline: 'Une infrastructure stable, protégée et bien entretenue.',
     intro:
       "Réduire les risques, assurer la continuité, respecter les conformités : c'est la mission du support IT moderne. Nous gérons votre infrastructure 24/7, anticipant les menaces et garantissant la disponibilité de vos systèmes. Nos équipes certifiées appliquent les meilleures pratiques de sécurité et de conformité réglementaire, tout en maintenant votre budget IT prévisible et contrôlé.",
-    desc: "Nous bâtissons une stratégie de support IT et de sécurité complète, 24/7 : gestion proactive de votre infrastructure, protection contre les cymenaces avancées, conformité réglementaire continue et assistance fiable. Avec une équipe certifiée et des outils modernes (Azure, Intune, Microsoft Defender, SIEM), nous réduisez les risques d'incident, assurez la continuité de votre activité et maintenez la confiance de vos clients et partenaires. Chaque action est documentée pour audit et traçabilité.",
+    desc: "Nous bâtissons une stratégie de support IT et de sécurité complète, 24/7 : gestion proactive de votre infrastructure, protection contre les cybermenaces avancées, conformité réglementaire continue et assistance fiable. Avec une équipe certifiée et des outils modernes (Azure, Intune, Microsoft Defender, SIEM), nous réduisez les risques d'incident, assurez la continuité de votre activité et maintenez la confiance de vos clients et partenaires. Chaque action est documentée pour audit et traçabilité.",
     points: [
       "Maintenance et gestion proactive des parcs TI",
       "Cybersécurité avancée & configuration pare-feu",
@@ -405,7 +405,7 @@ export const services: ServiceDetail[] = [
         text: "Une réduction directe des coûts opérationnels et du temps de traitement, avec des résultats quantifiés et durables."
       },
       {
-        title: 'Automatisation scalable',
+        title: 'Automatisation évolutive',
         text: "Des solutions conçues pour croître avec votre volume d'activité, sans augmentation proportionnelle des coûts opérationnels."
       },
       {
@@ -551,8 +551,8 @@ export const services: ServiceDetail[] = [
   },
   {
     slug: 'architecture-cloud',
-    title: 'Architecture Cloud',
-    shortTitle: 'Architecture Cloud',
+    title: 'Architecture infonuagique',
+    shortTitle: 'Architecture infonuagique',
     icon: Server,
     tagline: 'Un cloud performant, sécurisé et maîtrisé.',
     intro:
@@ -608,7 +608,7 @@ export const services: ServiceDetail[] = [
       'Terraform',
       'ARM Templates',
       'Kubernetes',
-      'Storage services',
+      'Services de stockage',
       'Networking & VPN',
       'Application Insights',
       'CI/CD & DevOps'

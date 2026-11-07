@@ -58,7 +58,7 @@ export default function JobDetailPage() {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
           <h1 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-6xl text-ci-navy mb-10">{t.notFound}</h1>
           <Link
-            to="/careers"
+            to="/careers/"
             className="inline-flex items-center gap-2 text-ci-blue-600 hover:text-ci-blue-600 transition-colors"
           >
             <ArrowLeft className="w-4 h-4" />
@@ -70,7 +70,7 @@ export default function JobDetailPage() {
   }
 
   const handleApply = () => {
-    navigate('/careers', { state: { applyTo: job.id } });
+    navigate('/careers/', { state: { applyTo: job.id } });
   };
 
   const sections: { key: string; title: string; items: string[] }[] = [
@@ -101,7 +101,7 @@ export default function JobDetailPage() {
             transition={{ duration: 0.6 }}
           >
             <Link
-              to="/careers"
+              to="/careers/"
               className="inline-flex items-center gap-2 text-sm text-slate-600 hover:text-ci-blue-600 transition-colors mb-10"
             >
               <ArrowLeft className="w-4 h-4" />

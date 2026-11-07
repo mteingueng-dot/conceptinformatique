@@ -518,12 +518,12 @@ export default function CareersPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                onClick={() => navigate(`/careers/${job.id}`)}
+                onClick={() => navigate(`/careers/${job.id}/`)}
                 className={`${techCardClass} p-8 flex flex-col cursor-pointer`}
               >
                 <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">
                   <Link
-                    to={`/careers/${job.id}`}
+                    to={`/careers/${job.id}/`}
                     onClick={(e) => e.stopPropagation()}
                     className="hover:text-ci-blue-600 transition-colors"
                   >
@@ -543,7 +543,7 @@ export default function CareersPage() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <Link
-                    to={`/careers/${job.id}`}
+                    to={`/careers/${job.id}/`}
                     onClick={(e) => e.stopPropagation()}
                     className="bg-ci-blue-600 text-white rounded-full px-8 py-3 font-medium hover:bg-ci-blue-700 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] transition-all"
                   >
