@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { getServices } from '../data/services';
 import { useLanguage } from '../i18n/LanguageContext';
 

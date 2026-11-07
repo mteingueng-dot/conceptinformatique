@@ -7,6 +7,7 @@ import { services, getServiceBySlug } from '../data/services';
 import { values } from '../data/values';
 import { professionalProfiles } from '../data/professionalProfiles';
 import { jobsContent } from '../data/jobs';
+import { langFromPath, localizePath, stripLang } from '../i18n/paths';
 
 export type SeoLang = 'fr' | 'en';
 
@@ -209,8 +210,8 @@ const ALIASES: [RegExp, (m: RegExpMatchArray) => string][] = [
   [/^\/(?:about\/)?expertises\/([^/]+)$/, (m) => `/services/${EXPERTISE_TO_SERVICE[m[1]] ?? ''}${EXPERTISE_TO_SERVICE[m[1]] ? '/' : ''}`],
 ];
 
-/** Adresse officielle d'un chemin (gère les doublons et le « / » final). */
-export function canonicalPath(pathname: string): string {
+/** Adresse officielle d'un chemin de base, sans préfixe de langue (gère les doublons et le « / » final). */
+function canonicalBase(pathname: string): string {
   const bare = pathname.replace(/\/+$/, '') || '/';
   for (const [re, to] of ALIASES) {
     const m = bare.match(re);
@@ -219,12 +220,27 @@ export function canonicalPath(pathname: string): string {
   return bare === '/' ? '/' : `${bare}/`;
 }
 
-export function getPageMeta(pathname: string, lang: SeoLang): PageMeta {
-  const path = canonicalPath(pathname);
-  const fixed = STATIC[path];
+/** Adresse officielle d'une adresse quelconque, dans sa langue (/en/… reste en anglais). */
+export function canonicalPath(pathname: string): string {
+  return localizePath(canonicalBase(stripLang(pathname)), langFromPath(pathname));
+}
+
+/** Adresses de la même page en français et en anglais (balises hreflang, sitemap). */
+export function getAlternates(pathname: string): { fr: string; en: string } {
+  const base = canonicalBase(stripLang(pathname));
+  return { fr: SITE_URL + base, en: SITE_URL + localizePath(base, 'en') };
+}
+
+/** Métadonnées d'une page ; la langue est celle de l'adresse (/en/… = anglais). */
+export function getPageMeta(pathname: string, langHint?: SeoLang): PageMeta {
+  void langHint; // la langue vient de l'adresse
+  const lang: SeoLang = langFromPath(pathname);
+  const base = canonicalBase(stripLang(pathname));
+  const path = localizePath(base, lang);
+  const fixed = STATIC[base];
   if (fixed) return { path, title: fixed.title[lang], description: fixed.description[lang] };
 
-  let m = path.match(/^\/services\/([^/]+)\/$/);
+  let m = base.match(/^\/services\/([^/]+)\/$/);
   if (m) {
     const meta = SERVICE_META[m[1]];
     if (meta) return { path, title: meta.title[lang], description: meta.description[lang] };
@@ -232,37 +248,38 @@ export function getPageMeta(pathname: string, lang: SeoLang): PageMeta {
     if (s) return { path, title: withBrand(s.title), description: clip(`${s.tagline} ${s.desc}`, 158) };
   }
 
-  m = path.match(/^\/about\/values\/([^/]+)\/$/);
+  m = base.match(/^\/about\/values\/([^/]+)\/$/);
   const value = m && values.find((v) => v.slug === m![1]);
   if (value) {
     return { path, title: withBrand(value.title[lang]), description: clip(`${value.tagline[lang]}. ${value.description[lang]}`, 158) };
   }
 
-  m = path.match(/^\/about\/profils\/([^/]+)\/$/);
+  m = base.match(/^\/about\/profils\/([^/]+)\/$/);
   const profile = m && professionalProfiles.find((p) => p.slug === m![1]);
   if (profile) {
     return { path, title: withBrand(profile.title[lang]), description: clip(`${profile.tagline[lang]}. ${profile.description[lang]}`, 158) };
   }
 
-  m = path.match(/^\/careers\/([^/]+)\/$/);
+  m = base.match(/^\/careers\/([^/]+)\/$/);
   const job = m && jobsContent[lang].find((j) => j.id === m![1]);
   if (job) {
-    return { path, title: withBrand(job.title), description: clip(`${job.title} : ${job.summary}`, 158) };
+    return { path, title: withBrand(job.title), description: clip(`${job.title}${lang === 'fr' ? ' :' : ':'} ${job.summary}`, 158) };
   }
 
   // Page inconnue
   return { path, title: NOT_FOUND.title[lang], description: NOT_FOUND.description[lang], notFound: true };
 }
 
-/** Toutes les adresses officielles du site (pré-rendu et sitemap). */
+/** Toutes les adresses officielles du site, en français puis en anglais (pré-rendu et sitemap). */
 export function listRoutes(): string[] {
-  return [
+  const fr = [
     ...Object.keys(STATIC),
     ...services.map((s) => `/services/${s.slug}/`),
     ...values.map((v) => `/about/values/${v.slug}/`),
     ...professionalProfiles.map((p) => `/about/profils/${p.slug}/`),
     ...jobsContent.fr.map((j) => `/careers/${j.id}/`),
   ];
+  return [...fr, ...fr.map((r) => localizePath(r, 'en'))];
 }
 
 /* ---------- Données structurées propres à chaque page (JSON-LD) ---------- */
@@ -308,22 +325,24 @@ function breadcrumb(path: string, lang: SeoLang): { name: string; path: string }
   return trail;
 }
 
-export function getStructuredData(pathname: string, lang: SeoLang): object[] {
-  const meta = getPageMeta(pathname, lang);
-  if (meta.notFound || meta.path === '/') return [];
+export function getStructuredData(pathname: string, langHint?: SeoLang): object[] {
+  const meta = getPageMeta(pathname, langHint);
+  const lang: SeoLang = langFromPath(meta.path);
+  const base = stripLang(meta.path);
+  if (meta.notFound || base === '/') return [];
   const data: object[] = [
     {
       '@context': 'https://schema.org',
       '@type': 'BreadcrumbList',
-      itemListElement: breadcrumb(meta.path, lang).map((c, i) => ({
+      itemListElement: breadcrumb(base, lang).map((c, i) => ({
         '@type': 'ListItem',
         position: i + 1,
         name: c.name,
-        item: SITE_URL + c.path,
+        item: SITE_URL + localizePath(c.path, lang),
       })),
     },
   ];
-  const m = meta.path.match(/^\/services\/([^/]+)\/$/);
+  const m = base.match(/^\/services\/([^/]+)\/$/);
   const service = m && getServiceBySlug(m[1], lang);
   if (service) {
     data.push({
@@ -339,6 +358,7 @@ export function getStructuredData(pathname: string, lang: SeoLang): object[] {
         { '@type': 'AdministrativeArea', name: 'Estrie' },
         { '@type': 'AdministrativeArea', name: 'Québec' },
       ],
+      inLanguage: lang === 'fr' ? 'fr-CA' : 'en-CA',
       availableLanguage: ['fr-CA', 'en-CA'],
     });
   }

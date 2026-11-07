@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { Link2, Mail, Phone, MapPin } from 'lucide-react';
 
 import { useLanguage } from '../i18n/LanguageContext';

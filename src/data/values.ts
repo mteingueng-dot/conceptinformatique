@@ -16,8 +16,11 @@ export interface Value {
   };
   icon: React.ComponentType<{ className?: string }>;
   benefits: string[];
+  benefitsEn: string[];
   examples: string[];
+  examplesEn: string[];
   features: string[];
+  featuresEn: string[];
 }
 
 export const values: Value[] = [
@@ -37,10 +40,16 @@ export const values: Value[] = [
     },
     icon: Lightbulb,
     benefits: [
-      "Solutions avant-gardistes et futures-proof",
+      "Solutions avant-gardistes et durables",
       "Recherche et développement continus",
       "Adaptation rapide aux tendances du marché",
       "Expérimentation et amélioration continue",
+    ],
+    benefitsEn: [
+      "Forward-looking, future-proof solutions",
+      "Ongoing research and development",
+      "Fast adaptation to market trends",
+      "Experimentation and continuous improvement",
     ],
     examples: [
       "Adoption précoce des nouvelles technologies",
@@ -48,11 +57,23 @@ export const values: Value[] = [
       "Partenariats avec les leaders technologiques",
       "Hackathons et projets exploratoires",
     ],
+    examplesEn: [
+      "Early adoption of new technologies",
+      "Prototyping and agile innovation",
+      "Partnerships with technology leaders",
+      "Hackathons and exploratory projects",
+    ],
     features: [
       "R&D interne structuré",
       "Veille technologique permanente",
       "Culture d'expérimentation",
       "Investissement en talents innovants",
+    ],
+    featuresEn: [
+      "Structured in-house R&D",
+      "Ongoing technology watch",
+      "A culture of experimentation",
+      "Investment in innovative talent",
     ],
   },
   {
@@ -76,17 +97,35 @@ export const values: Value[] = [
       "Documentation complète et maintenable",
       "Tests exhaustifs et automatisés",
     ],
+    benefitsEn: [
+      "Exceptional code quality",
+      "Strict validation processes",
+      "Complete, maintainable documentation",
+      "Thorough, automated testing",
+    ],
     examples: [
       "Revues de code systématiques",
-      "Certification et conformité audits",
+      "Certifications et audits de conformité",
       "Tests de performance et sécurité",
       "Documentation technique et procédures",
+    ],
+    examplesEn: [
+      "Systematic code reviews",
+      "Certifications and compliance audits",
+      "Performance and security testing",
+      "Technical documentation and procedures",
     ],
     features: [
       "Méthodologies éprouvées",
       "Gestion de la qualité rigoureuse",
       "Respect des normes et standards",
       "Traçabilité complète des opérations",
+    ],
+    featuresEn: [
+      "Proven methodologies",
+      "Rigorous quality management",
+      "Compliance with norms and standards",
+      "Full traceability of operations",
     ],
   },
   {
@@ -110,17 +149,35 @@ export const values: Value[] = [
       "Réduction des risques et erreurs",
       "Mentorat et transfert de connaissances",
     ],
+    benefitsEn: [
+      "Experienced, recognized advisors",
+      "Optimized, proven solutions",
+      "Fewer risks and errors",
+      "Mentoring and knowledge transfer",
+    ],
     examples: [
       "Architectures résolvant des défis complexes",
       "Optimisations basées sur l'expérience",
       "Formation et transfert technologique",
       "Leadership sur les sujets spécialisés",
     ],
+    examplesEn: [
+      "Architectures that solve complex challenges",
+      "Experience-based optimizations",
+      "Training and technology transfer",
+      "Leadership on specialized topics",
+    ],
     features: [
-      "Certifications et accréditations industry",
+      "Certifications et accréditations de l'industrie",
       "Partenariats avec les éditeurs majeurs",
-      "Publications et thought leadership",
+      "Publications et partage d’expertise",
       "Communautés professionnelles actives",
+    ],
+    featuresEn: [
+      "Industry certifications and accreditations",
+      "Partnerships with major vendors",
+      "Publications and thought leadership",
+      "Active professional communities",
     ],
   },
 ];

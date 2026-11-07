@@ -1,21 +1,8 @@
-import { createContext, useCallback, useContext, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { createContext, useCallback, useContext, useMemo, type ReactNode } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { langFromPath, switchLangPath, type Lang } from './paths';
 
-export type Lang = 'fr' | 'en';
-
-const STORAGE_KEY = 'ci-lang';
-
-function isLang(v: unknown): v is Lang {
-  return v === 'fr' || v === 'en';
-}
-
-export function getInitialLang(): Lang {
-  try {
-    const stored = localStorage.getItem(STORAGE_KEY);
-    return isLang(stored) ? stored : 'fr';
-  } catch {
-    return 'fr';
-  }
-}
+export type { Lang } from './paths';
 
 interface LanguageContextValue {
   lang: Lang;
@@ -25,36 +12,25 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
+/**
+ * La langue vient de l'adresse (/en/… = anglais, sinon français) : chaque page existe dans les deux
+ * langues à sa propre adresse, ce qui permet à Google d'indexer les deux. Changer de langue = aller
+ * à la même page dans l'autre langue. Doit être placé à l'intérieur du routeur.
+ */
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>(getInitialLang);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const lang = langFromPath(location.pathname);
 
-  const setLang = useCallback((l: Lang) => {
-    if (!isLang(l)) return;
-    setLangState(l);
-  }, []);
+  const setLang = useCallback(
+    (l: Lang) => {
+      if (l === lang) return;
+      navigate(switchLangPath(location.pathname, l) + location.search + location.hash);
+    },
+    [lang, location.pathname, location.search, location.hash, navigate],
+  );
 
-  const toggleLang = useCallback(() => {
-    setLangState((prev) => (prev === 'fr' ? 'en' : 'fr'));
-  }, []);
-
-  useEffect(() => {
-    try {
-      localStorage.setItem(STORAGE_KEY, lang);
-    } catch {
-      // ignore storage errors
-    }
-    // Titre, description, Open Graph et langue du document : voir src/seo/SeoManager.tsx
-  }, [lang]);
-
-  useEffect(() => {
-    const onStorage = (e: StorageEvent) => {
-      if (e.key === STORAGE_KEY && isLang(e.newValue)) {
-        setLangState(e.newValue);
-      }
-    };
-    window.addEventListener('storage', onStorage);
-    return () => window.removeEventListener('storage', onStorage);
-  }, []);
+  const toggleLang = useCallback(() => setLang(lang === 'fr' ? 'en' : 'fr'), [lang, setLang]);
 
   const value = useMemo(() => ({ lang, setLang, toggleLang }), [lang, setLang, toggleLang]);
 

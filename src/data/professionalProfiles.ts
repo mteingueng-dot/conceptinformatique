@@ -16,8 +16,11 @@ export interface ProfessionalProfile {
   };
   icon: React.ComponentType<{ className?: string }>;
   benefits: string[];
+  benefitsEn: string[];
   examples: string[];
+  examplesEn: string[];
   features: string[];
+  featuresEn: string[];
 }
 
 export const professionalProfiles: ProfessionalProfile[] = [
@@ -42,17 +45,35 @@ export const professionalProfiles: ProfessionalProfile[] = [
       "Réduction du temps d'intégration",
       "Anticipation des problèmes courants",
     ],
+    benefitsEn: [
+      "Solutions based on real use cases",
+      "Deep understanding of business challenges",
+      "Shorter integration time",
+      "Common problems anticipated",
+    ],
     examples: [
       "Gestion de projets complexes multi-départements",
       "Migration de systèmes en production",
       "Résolution d'incidents critiques",
       "Optimisation d'infrastructures existantes",
     ],
+    examplesEn: [
+      "Complex, multi-department project management",
+      "Migration of production systems",
+      "Critical incident resolution",
+      "Optimization of existing infrastructure",
+    ],
     features: [
       "10+ ans d'expérience moyenne par consultant",
       "Portfolio diversifié de secteurs",
       "Gestion de budgets et ressources",
       "Leadership et gestion d'équipes",
+    ],
+    featuresEn: [
+      "10+ years of average experience per consultant",
+      "Diverse industry portfolio",
+      "Budget and resource management",
+      "Leadership and team management",
     ],
   },
   {
@@ -76,17 +97,35 @@ export const professionalProfiles: ProfessionalProfile[] = [
       "ROI transparent et démontrable",
       "Réduction de l'incertitude et des risques",
     ],
+    benefitsEn: [
+      "Decisions based on reliable metrics",
+      "Continuous, measurable optimization",
+      "Transparent, demonstrable ROI",
+      "Less uncertainty and risk",
+    ],
     examples: [
       "Analyse d'impact avant les changements",
-      "KPIs et dashboards de suivi",
-      "A/B testing et expérimentation",
+      "Indicateurs clés et tableaux de bord de suivi",
+      "Tests A/B et expérimentation",
       "Reporting et business intelligence",
+    ],
+    examplesEn: [
+      "Impact analysis before changes",
+      "KPIs and tracking dashboards",
+      "A/B testing and experimentation",
+      "Reporting and business intelligence",
     ],
     features: [
       "Expertise en analyse et statistiques",
       "Outils d'analytics avancés",
       "Méthodologie de mesure rigoureuse",
-      "Data visualization et insights clairs",
+      "Visualisation des données et constats clairs",
+    ],
+    featuresEn: [
+      "Expertise in analysis and statistics",
+      "Advanced analytics tools",
+      "Rigorous measurement methodology",
+      "Data visualization and clear insights",
     ],
   },
   {
@@ -110,17 +149,35 @@ export const professionalProfiles: ProfessionalProfile[] = [
       "Mises à jour et maintenance planifiées",
       "Sécurité et conformité intégrées",
     ],
+    benefitsEn: [
+      "Guaranteed 99.9%+ availability",
+      "Responsive, proactive support",
+      "Planned updates and maintenance",
+      "Built-in security and compliance",
+    ],
     examples: [
       "SLA garantis et respectés",
       "Monitoring 24/7 et alertes",
-      "Plan de continuité et disaster recovery",
-      "Certifications ISO et compliance",
+      "Plan de continuité et reprise après sinistre",
+      "Certifications ISO et conformité",
+    ],
+    examplesEn: [
+      "Guaranteed, honoured SLAs",
+      "24/7 monitoring and alerts",
+      "Business continuity and disaster recovery plan",
+      "ISO certifications and compliance",
     ],
     features: [
       "Architecture haute disponibilité",
       "Tests de performance rigoureux",
-      "Processus de release sécurisé",
+      "Processus de mise en production sécurisé",
       "Documentation et procédures d'exploitation",
+    ],
+    featuresEn: [
+      "High-availability architecture",
+      "Rigorous performance testing",
+      "Secure release process",
+      "Operations documentation and procedures",
     ],
   },
 ];

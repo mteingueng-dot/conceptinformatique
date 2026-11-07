@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { useLanguage, type Lang } from '../i18n/LanguageContext';
 
 type LegalType = 'privacy' | 'terms';

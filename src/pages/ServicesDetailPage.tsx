@@ -1,7 +1,8 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
-import { getServiceBySlug, services } from '../data/services';
+import { getServiceBySlug, getServices } from '../data/services';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const copy = {
@@ -61,7 +62,7 @@ export default function ServiceDetailPage() {
   const { lang } = useLanguage();
   const t = copy[lang];
   const { slug } = useParams<{ slug: string }>();
-  const service = getServiceBySlug(slug);
+  const service = getServiceBySlug(slug, lang);
 
   if (!service) {
     return (
@@ -88,7 +89,7 @@ export default function ServiceDetailPage() {
   const lastWord = words.length > 1 ? words[words.length - 1] : '';
   const firstWords = words.length > 1 ? words.slice(0, -1).join(' ') : service.title;
   const Icon = service.icon;
-  const otherServices = services.filter((s) => s.slug !== service.slug);
+  const otherServices = getServices(lang).filter((s) => s.slug !== service.slug);
 
   return (
     <div id="service-detail-root-z6c3b8n1" className="pt-20 bg-transparent text-ci-navy min-h-screen">

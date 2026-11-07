@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { ArrowRight, Menu, X } from 'lucide-react';
 import { useLanguage, type Lang } from '../i18n/LanguageContext';
+import { stripLang } from '../i18n/paths';
 
 const t = {
   fr: {
@@ -71,7 +73,8 @@ export default function Navbar() {
   const tr = t[lang];
   const [isOpen, setIsOpen] = useState(false);
   // Barre transparente seulement en haut de l'accueil (fond clair) ; blanche partout ailleurs.
-  const isHome = location.pathname === '/' || location.pathname === '/home';
+  const basePath = stripLang(location.pathname);
+  const isHome = basePath === '/' || basePath === '/home';
   const [scrolledDown, setScrolledDown] = useState(() => typeof window !== 'undefined' && window.scrollY > 10);
   const scrolled = !isHome || scrolledDown;
 
@@ -102,7 +105,7 @@ export default function Navbar() {
   ];
 
   const isActive = (path: string) => {
-    const current = location.pathname.replace(/\/+$/, '') || '/';
+    const current = basePath.replace(/\/+$/, '') || '/';
     const target = path.replace(/\/+$/, '') || '/';
     return target === '/' ? current === '/' : current === target || current.startsWith(target + '/');
   };

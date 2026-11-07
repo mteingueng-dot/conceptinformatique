@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState, type MouseEvent, type ReactNode } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, BrainCircuit, Database, GitBranch, LineChart, Radio, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { useLanguage } from '../i18n/LanguageContext';
 
 /*

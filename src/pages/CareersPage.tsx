@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link, useNavigate } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Clock, Rocket, GraduationCap, HeartHandshake, Paperclip, CheckCircle2 } from 'lucide-react';
 import SocialShareButtons from '../components/SocialShareButtons';

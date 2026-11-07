@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { getPageMeta, getStructuredData, SITE_URL } from './meta';
+import { getAlternates, getPageMeta, getStructuredData, SITE_URL } from './meta';
 
 function setMeta(selector: string, attr: 'content' | 'href', value: string) {
   document.querySelector(selector)?.setAttribute(attr, value);
@@ -20,17 +20,23 @@ function ensureHeadTag(selector: string, create: () => HTMLElement, wanted: bool
   return el;
 }
 
+const altLink = (hreflang: string) => () =>
+  Object.assign(document.createElement('link'), { rel: 'alternate', hreflang });
+
 /**
- * Met à jour titre, description, canonique, Open Graph, indexation et données structurées
- * à chaque changement de page ou de langue (les pages pré-rendues ont déjà les bonnes valeurs).
+ * Met à jour titre, description, canonique, versions linguistiques (hreflang), Open Graph,
+ * indexation et données structurées à chaque changement de page ou de langue.
+ * Les pages pré-rendues contiennent déjà les bonnes valeurs.
  */
 export default function SeoManager() {
   const { pathname } = useLocation();
   const { lang } = useLanguage();
 
   useEffect(() => {
-    const meta = getPageMeta(pathname, lang);
+    const meta = getPageMeta(pathname);
     const url = SITE_URL + meta.path;
+    const alt = getAlternates(pathname);
+    const indexable = !meta.notFound;
     document.documentElement.lang = lang === 'fr' ? 'fr-CA' : 'en-CA';
     document.title = meta.title;
     setMeta('meta[name="description"]', 'content', meta.description);
@@ -39,20 +45,18 @@ export default function SeoManager() {
     setMeta('meta[property="og:url"]', 'content', url);
     setMeta('meta[property="og:locale"]', 'content', lang === 'fr' ? 'fr_CA' : 'en_CA');
 
-    const canonical = ensureHeadTag(
-      'link[rel="canonical"]',
-      () => Object.assign(document.createElement('link'), { rel: 'canonical' }),
-      !meta.notFound,
-    );
-    canonical?.setAttribute('href', url);
+    ensureHeadTag('link[rel="canonical"]', () => Object.assign(document.createElement('link'), { rel: 'canonical' }), indexable)?.setAttribute('href', url);
+    ensureHeadTag('link[rel="alternate"][hreflang="fr-CA"]', altLink('fr-CA'), indexable)?.setAttribute('href', alt.fr);
+    ensureHeadTag('link[rel="alternate"][hreflang="en-CA"]', altLink('en-CA'), indexable)?.setAttribute('href', alt.en);
+    ensureHeadTag('link[rel="alternate"][hreflang="x-default"]', altLink('x-default'), indexable)?.setAttribute('href', alt.fr);
 
     ensureHeadTag(
       'meta[name="robots"]',
       () => Object.assign(document.createElement('meta'), { name: 'robots', content: 'noindex' }),
-      Boolean(meta.notFound),
+      !indexable,
     );
 
-    const data = getStructuredData(pathname, lang);
+    const data = getStructuredData(pathname);
     const ld = ensureHeadTag(
       'script#ld-page',
       () => Object.assign(document.createElement('script'), { id: 'ld-page', type: 'application/ld+json' }),

@@ -1,5 +1,5 @@
 import { ArrowRight, Compass } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const dict = {

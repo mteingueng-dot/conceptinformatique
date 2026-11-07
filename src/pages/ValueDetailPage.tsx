@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { values } from '../data/values';
@@ -149,7 +150,7 @@ export default function ValueDetailPage() {
           >
             <h3 className="text-xl font-sans font-medium text-ci-navy mb-6">{t.keyPoints}</h3>
             <ul className="space-y-4">
-              {value.benefits.map((benefit, i) => (
+              {(lang === 'en' ? value.benefitsEn : value.benefits).map((benefit, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-600 font-light">
                   <CheckCircle2 className="w-5 h-5 text-ci-green-600 mt-0.5 shrink-0" />
                   {benefit}
@@ -167,7 +168,7 @@ export default function ValueDetailPage() {
             {t.benefitsPrefix}<span className="text-gradient-ci">{t.benefitsHighlight}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {value.benefits.map((benefit, i) => (
+            {(lang === 'en' ? value.benefitsEn : value.benefits).map((benefit, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -201,7 +202,7 @@ export default function ValueDetailPage() {
               {t.examplesPrefix}<span className="text-gradient-ci">{t.examplesHighlight}</span>
             </h2>
             <ul className="space-y-4">
-              {value.examples.map((example, i) => (
+              {(lang === 'en' ? value.examplesEn : value.examples).map((example, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-600 font-light">
                   <div className="w-1.5 h-1.5 bg-ci-blue-600 rounded-full mt-2.5 shrink-0"></div>
                   {example}
@@ -219,7 +220,7 @@ export default function ValueDetailPage() {
               {t.featuresPrefix}<span className="text-gradient-ci">{t.featuresHighlight}</span>
             </h2>
             <div className="flex flex-wrap gap-3">
-              {value.features.map((feature, i) => (
+              {(lang === 'en' ? value.featuresEn : value.features).map((feature, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full text-sm bg-ci-green-500/10 text-ci-green-600 border border-ci-green-400/30"
@@ -239,24 +240,20 @@ export default function ValueDetailPage() {
             {t.approachPrefix}<span className="text-gradient-ci">{t.approachHighlight}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                title: 'Compréhension',
-                text: 'Immersion complète dans votre vision et vos objectifs',
-              },
-              {
-                title: 'Intégration',
-                text: 'Alignement de nos valeurs avec votre culture',
-              },
-              {
-                title: 'Exécution',
-                text: 'Mise en œuvre avec discipline et excellence',
-              },
-              {
-                title: 'Durabilité',
-                text: 'Partenariat long terme et évolution continue',
-              },
-            ].map((step, i) => (
+            {(lang === 'fr'
+              ? [
+                  { title: 'Compréhension', text: 'Immersion complète dans votre vision et vos objectifs' },
+                  { title: 'Intégration', text: 'Alignement de nos valeurs avec votre culture' },
+                  { title: 'Exécution', text: 'Mise en œuvre avec discipline et excellence' },
+                  { title: 'Durabilité', text: 'Partenariat à long terme et évolution continue' },
+                ]
+              : [
+                  { title: 'Understanding', text: 'Full immersion in your vision and objectives' },
+                  { title: 'Integration', text: 'Aligning our values with your culture' },
+                  { title: 'Execution', text: 'Delivery with discipline and excellence' },
+                  { title: 'Sustainability', text: 'Long-term partnership and continuous evolution' },
+                ]
+            ).map((step, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}

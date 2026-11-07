@@ -1,4 +1,5 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { useNavigate, Link } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Clock, CheckCircle2 } from 'lucide-react';
 import SocialShareButtons from '../components/SocialShareButtons';

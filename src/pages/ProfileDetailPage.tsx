@@ -1,4 +1,5 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import { Link } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { professionalProfiles } from '../data/professionalProfiles';
@@ -149,7 +150,7 @@ export default function ProfileDetailPage() {
           >
             <h3 className="text-xl font-sans font-medium text-ci-navy mb-6">{t.keyPoints}</h3>
             <ul className="space-y-4">
-              {profile.benefits.map((benefit, i) => (
+              {(lang === 'en' ? profile.benefitsEn : profile.benefits).map((benefit, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-600 font-light">
                   <CheckCircle2 className="w-5 h-5 text-ci-green-600 mt-0.5 shrink-0" />
                   {benefit}
@@ -167,7 +168,7 @@ export default function ProfileDetailPage() {
             {t.benefitsPrefix}<span className="text-gradient-ci">{t.benefitsHighlight}</span>
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {profile.benefits.map((benefit, i) => (
+            {(lang === 'en' ? profile.benefitsEn : profile.benefits).map((benefit, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 30 }}
@@ -201,7 +202,7 @@ export default function ProfileDetailPage() {
               {t.examplesPrefix}<span className="text-gradient-ci">{t.examplesHighlight}</span>
             </h2>
             <ul className="space-y-4">
-              {profile.examples.map((example, i) => (
+              {(lang === 'en' ? profile.examplesEn : profile.examples).map((example, i) => (
                 <li key={i} className="flex items-start gap-3 text-slate-600 font-light">
                   <div className="w-1.5 h-1.5 bg-ci-blue-600 rounded-full mt-2.5 shrink-0"></div>
                   {example}
@@ -219,7 +220,7 @@ export default function ProfileDetailPage() {
               {t.featuresPrefix}<span className="text-gradient-ci">{t.featuresHighlight}</span>
             </h2>
             <div className="flex flex-wrap gap-3">
-              {profile.features.map((feature, i) => (
+              {(lang === 'en' ? profile.featuresEn : profile.features).map((feature, i) => (
                 <span
                   key={i}
                   className="px-4 py-2 rounded-full text-sm bg-ci-green-500/10 text-ci-green-600 border border-ci-green-400/30"
