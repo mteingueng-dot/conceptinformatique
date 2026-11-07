@@ -1,0 +1,85 @@
+# Mise en ligne automatique sur cPanel
+#
+# À chaque envoi (push) sur la branche main, GitHub :
+#   1. installe les dépendances et construit le site (npm run build -> dist/) ;
+#   2. copie le contenu de dist/ dans le dossier du site sur cPanel, en FTP sécurisé (FTPS).
+# Seuls les fichiers modifiés sont envoyés (un fichier d'état est gardé sur le serveur).
+#
+# Secrets à créer dans GitHub (Settings -> Secrets and variables -> Actions) :
+#   FTP_SERVER      ex. ftp.conceptinformatique.net (ou le nom du serveur cPanel)
+#   FTP_USERNAME    compte FTP créé dans cPanel, ex. deploiement@conceptinformatique.net
+#   FTP_PASSWORD    mot de passe de ce compte FTP
+#   FTP_SERVER_DIR  dossier du site vu par ce compte, terminé par « / » (ex. ./ ou public_html/)
+# Sans ces secrets, la mise en ligne est ignorée (le build est quand même vérifié).
+#
+# Lancement manuel possible : onglet Actions -> « Mise en ligne cPanel » -> Run workflow.
+
+name: Mise en ligne cPanel
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Une seule mise en ligne à la fois ; une nouvelle annule celle en attente
+concurrency:
+  group: deploy-cpanel
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Installer les dépendances
+        run: npm ci
+
+      - name: Construire le site (vérification TypeScript, build, pré-rendu)
+        run: npm run build
+
+      - name: Vérifier la présence des secrets FTP
+        id: secrets
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          if [ -n "$FTP_SERVER" ] && [ -n "$FTP_USERNAME" ] && [ -n "$FTP_PASSWORD" ]; then
+            echo "ok=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ok=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::Secrets FTP absents : site construit mais pas mis en ligne. Voir DEPLOIEMENT.md."
+          fi
+
+      - name: Envoyer dist/ sur cPanel (FTPS)
+        if: steps.secrets.outputs.ok == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: ./dist/
+          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          # Ne jamais toucher aux fichiers du serveur qui ne viennent pas du site
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+
+      - name: Vérifier le site en ligne
+        if: steps.secrets.outputs.ok == 'true'
+        run: |
+          code=$(curl -s -o /dev/null -w "%{http_code}" https://www.conceptinformatique.net/)
+          echo "Accueil : HTTP $code"
+          test "$code" = "200"
