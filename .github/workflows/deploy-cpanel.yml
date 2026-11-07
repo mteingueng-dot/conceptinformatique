@@ -61,6 +61,17 @@ jobs:
             dir="$(printf '%s' "$dir" | tr -d '[:space:]')"
             case "$dir" in */) ;; *) dir="$dir/" ;; esac
             echo "SERVER_DIR=$dir" >> "$GITHUB_ENV"
+            # Serveur : on retire espaces, « ftp:// », « ftps:// », « / » final et « :21 » éventuels
+            host="$(printf '%s' "$FTP_SERVER" | tr -d '[:space:]')"
+            host="${host#*://}"; host="${host%%/*}"; host="${host%%:*}"
+            echo "::add-mask::$host"
+            echo "FTP_HOST=$host" >> "$GITHUB_ENV"
+            if getent hosts "$host" > /dev/null; then
+              echo "Serveur FTP trouvé (adresse DNS résolue)."
+            else
+              echo "::error::Le serveur indiqué dans le secret FTP_SERVER est introuvable. Mettez seulement le nom du serveur, par exemple ftp.conceptinformatique.net (sans ftp://, sans espace ni « / »), tel qu'affiché dans cPanel -> Comptes FTP -> Configurer le client FTP."
+              exit 1
+            fi
           else
             echo "ok=false" >> "$GITHUB_OUTPUT"
             echo "::warning::Secrets FTP absents : site construit mais pas mis en ligne. Voir DEPLOIEMENT.md."
@@ -70,7 +81,7 @@ jobs:
         if: steps.secrets.outputs.ok == 'true'
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
+          server: ${{ env.FTP_HOST }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftps
