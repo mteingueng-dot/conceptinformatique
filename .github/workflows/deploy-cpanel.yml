@@ -9,7 +9,7 @@
 #   FTP_SERVER      ex. ftp.conceptinformatique.net (ou le nom du serveur cPanel)
 #   FTP_USERNAME    compte FTP créé dans cPanel, ex. deploiement@conceptinformatique.net
 #   FTP_PASSWORD    mot de passe de ce compte FTP
-#   FTP_SERVER_DIR  dossier du site vu par ce compte (ex. ./ ou public_html ; le « / » final est ajouté au besoin)
+#   FTP_SERVER_DIR_CONCEPT  dossier du site vu par ce compte : ./ si le compte FTP s'ouvre sur le dossier du site
 # Sans ces secrets, la mise en ligne est ignorée (le build est quand même vérifié).
 #
 # Lancement manuel possible : onglet Actions -> « Mise en ligne cPanel » -> Run workflow.
@@ -52,7 +52,7 @@ jobs:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR_CONCEPT }}
         run: |
           if [ -n "$FTP_SERVER" ] && [ -n "$FTP_USERNAME" ] && [ -n "$FTP_PASSWORD" ]; then
             echo "ok=true" >> "$GITHUB_OUTPUT"

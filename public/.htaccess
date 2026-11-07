@@ -6,6 +6,9 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
+# Fichiers techniques jamais servis (suivi de la mise en ligne automatique, réglages PHP)
+RewriteRule (^|/)\.(ftp-deploy-sync-state\.json|user\.ini)$ - [F,L]
+
 # Une seule version du site : https + www (http:// et sans www -> redirection permanente)
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
