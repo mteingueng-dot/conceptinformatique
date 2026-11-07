@@ -9,7 +9,7 @@
 #   FTP_SERVER      ex. ftp.conceptinformatique.net (ou le nom du serveur cPanel)
 #   FTP_USERNAME    compte FTP créé dans cPanel, ex. deploiement@conceptinformatique.net
 #   FTP_PASSWORD    mot de passe de ce compte FTP
-#   FTP_SERVER_DIR  dossier du site vu par ce compte, terminé par « / » (ex. ./ ou public_html/)
+#   FTP_SERVER_DIR  dossier du site vu par ce compte (ex. ./ ou public_html ; le « / » final est ajouté au besoin)
 # Sans ces secrets, la mise en ligne est ignorée (le build est quand même vérifié).
 #
 # Lancement manuel possible : onglet Actions -> « Mise en ligne cPanel » -> Run workflow.
@@ -52,9 +52,15 @@ jobs:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+          FTP_SERVER_DIR: ${{ secrets.FTP_SERVER_DIR }}
         run: |
           if [ -n "$FTP_SERVER" ] && [ -n "$FTP_USERNAME" ] && [ -n "$FTP_PASSWORD" ]; then
             echo "ok=true" >> "$GITHUB_OUTPUT"
+            # Dossier du site : « ./ » par défaut, et toujours terminé par « / »
+            dir="${FTP_SERVER_DIR:-./}"
+            dir="$(printf '%s' "$dir" | tr -d '[:space:]')"
+            case "$dir" in */) ;; *) dir="$dir/" ;; esac
+            echo "SERVER_DIR=$dir" >> "$GITHUB_ENV"
           else
             echo "ok=false" >> "$GITHUB_OUTPUT"
             echo "::warning::Secrets FTP absents : site construit mais pas mis en ligne. Voir DEPLOIEMENT.md."
@@ -70,7 +76,7 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_SERVER_DIR || './' }}
+          server-dir: ${{ env.SERVER_DIR }}
           # Ne jamais toucher aux fichiers du serveur qui ne viennent pas du site
           exclude: |
             **/.git*
