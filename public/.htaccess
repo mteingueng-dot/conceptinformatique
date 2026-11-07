@@ -21,7 +21,14 @@ RewriteRule ^values/([^/]+)/?$ /about/values/$1/ [L,R=301]
 RewriteRule ^professional-profiles?/?$ /about/profil-professionnel/ [L,R=301]
 RewriteRule ^professional-profiles/([^/]+)/?$ /about/profils/$1/ [L,R=301]
 RewriteRule ^expertises/?$ /services/ [L,R=301]
-RewriteRule ^expertises/([^/]+)/?$ /about/expertises/$1/ [L,R=301]
+# Anciennes pages « expertises » fusionnées avec les pages de services
+RewriteRule ^(about/)?expertises/business-intelligence/?$ /services/business-intelligence/ [L,R=301]
+RewriteRule ^(about/)?expertises/ingenierie-de-donnees/?$ /services/data-engineering/ [L,R=301]
+RewriteRule ^(about/)?expertises/developpement-logiciel/?$ /services/developpement-logiciel/ [L,R=301]
+RewriteRule ^(about/)?expertises/support-ti/?$ /services/support-ti-securite/ [L,R=301]
+RewriteRule ^(about/)?expertises/automatisation-ia/?$ /services/automatisation-ia/ [L,R=301]
+RewriteRule ^(about/)?expertises/transformation-numerique/?$ /services/transformation-numerique/ [L,R=301]
+RewriteRule ^(about/)?expertises/ /services/ [L,R=301]
 
 # Page pré-rendue demandée sans « / » final -> avec « / »
 RewriteCond %{REQUEST_FILENAME} -d

@@ -99,7 +99,7 @@ const values: Array<InfoItem & { slug: string }> = [
       fr: 'La précision et la qualité guident chacun de nos déploiements.',
       en: 'Precision and quality guide each of our deployments.',
     },
-    slug: 'rigor',
+    slug: 'rigueur',
   },
   {
     icon: Cpu,
@@ -227,16 +227,10 @@ const copy = {
   ctaButton: { fr: 'Parler à un expert', en: 'Talk to an expert' },
 };
 
-const expertiseSlugs: Record<string, string> = {
-  'Business Intelligence': 'business-intelligence',
-  'Ingénierie de données': 'ingenierie-de-donnees',
-  'Développement logiciel': 'developpement-logiciel',
-  'Support TI': 'it-support',
-  'Automatisation IA': 'ai-automation',
-  'Transformation numérique': 'digital-transformation',
-};
-
 const servicePaths: Record<string, string> = {
+  'Business Intelligence': '/services/business-intelligence/',
+  'Ingénierie de données': '/services/data-engineering/',
+  'Développement logiciel': '/services/developpement-logiciel/',
   'Support TI': '/services/support-ti-securite/',
   'Automatisation IA': '/services/automatisation-ia/',
   'Transformation numérique': '/services/transformation-numerique/',
@@ -364,11 +358,10 @@ export default function AboutPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {expertises.map((item, i) => {
-              const slug = expertiseSlugs[item.title.fr] || expertiseSlugs[item.title.en] || '';
               return (
                 <Link
                   key={item.title.en}
-                  to={servicePaths[item.title.fr] ?? `/about/expertises/${slug}/`}
+                  to={servicePaths[item.title.fr] ?? '/services/'}
                   className="group no-underline"
                 >
                   <motion.div

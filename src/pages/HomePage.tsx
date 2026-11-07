@@ -128,7 +128,7 @@ function DataSphere({ label }: { label: string }) {
     if (!ctx) return;
 
     // Points répartis uniformément (spirale de Fibonacci)
-    const N = 1100;
+    const N = 650; // assez de points pour l'effet, sans surcharger les téléphones
     const pts: [number, number, number][] = [];
     const golden = Math.PI * (3 - Math.sqrt(5));
     for (let i = 0; i < N; i++) {
@@ -142,7 +142,7 @@ function DataSphere({ label }: { label: string }) {
     const lon = (-71.9 * Math.PI) / 180;
     const home: [number, number, number] = [Math.cos(lat) * Math.cos(lon), Math.sin(lat), Math.cos(lat) * Math.sin(lon)];
     // Quelques nœuds abstraits reliés par des arcs
-    const targets = [37, 151, 288, 402, 517, 640, 733, 866, 951].map((i) => pts[i]);
+    const targets = [0.03, 0.14, 0.26, 0.37, 0.47, 0.58, 0.67, 0.79, 0.86].map((f) => pts[Math.floor(f * N)]);
 
     let w = 0, h = 0, dpr = 1;
     const resize = () => {
@@ -183,7 +183,19 @@ function DataSphere({ label }: { label: string }) {
     let t0 = 0;
     const reduce = prefersReducedMotion();
 
+    // Libellé « Sherbrooke » : largeur mesurée une fois (lire offsetWidth à chaque image force un recalcul de mise en page)
+    let labelWidth = labelRef.current?.offsetWidth ?? 90;
+    const BUCKETS = 8;
+    const buckets: number[][] = Array.from({ length: BUCKETS }, () => []);
+    let lastFrame = 0;
+
     const draw = (now: number) => {
+      // 30 images/seconde suffisent pour une rotation lente et divisent le travail par deux
+      if (now - lastFrame < 32) {
+        if (running && !reduce) raf = requestAnimationFrame(draw);
+        return;
+      }
+      lastFrame = now;
       const dt = Math.min(64, now - last);
       last = now;
       if (!reduce) {
@@ -199,14 +211,19 @@ function DataSphere({ label }: { label: string }) {
       ctx.fillStyle = g;
       ctx.fillRect(0, 0, w, h);
 
-      // Points
+      // Points, regroupés par niveau de transparence (une seule couleur à définir par groupe)
+      for (const b of buckets) b.length = 0;
       for (const p of pts) {
         const q = project(p, rot);
         const front = (q.z + 1) / 2;
-        ctx.fillStyle = `rgba(21,89,209,${0.06 + front * 0.55})`;
         const size = (0.6 + front * 1.1) * q.s;
-        ctx.fillRect(q.x - size / 2, q.y - size / 2, size, size);
+        buckets[Math.min(BUCKETS - 1, Math.floor(front * BUCKETS))].push(q.x - size / 2, q.y - size / 2, size);
       }
+      buckets.forEach((b, i) => {
+        if (!b.length) return;
+        ctx.fillStyle = `rgba(21,89,209,${(0.06 + ((i + 0.5) / BUCKETS) * 0.55).toFixed(3)})`;
+        for (let j = 0; j < b.length; j += 3) ctx.fillRect(b[j], b[j + 1], b[j + 2], b[j + 2]);
+      });
 
       // Arcs depuis Sherbrooke
       targets.forEach((tp, k) => {
@@ -225,12 +242,13 @@ function DataSphere({ label }: { label: string }) {
         const q = project(slerp(home, tp, tt), rot);
         if (q.z > -0.15) {
           ctx.beginPath();
+          ctx.arc(q.x, q.y, 5 * q.s, 0, Math.PI * 2);
+          ctx.fillStyle = 'rgba(52,209,127,0.25)';
+          ctx.fill();
+          ctx.beginPath();
           ctx.arc(q.x, q.y, 2.4 * q.s, 0, Math.PI * 2);
           ctx.fillStyle = '#16b364';
-          ctx.shadowColor = '#34d17f';
-          ctx.shadowBlur = 12;
           ctx.fill();
-          ctx.shadowBlur = 0;
         }
       });
 
@@ -252,7 +270,8 @@ function DataSphere({ label }: { label: string }) {
       // Étiquette déplacée directement dans le DOM (pas de rendu React à chaque image)
       const el = labelRef.current;
       if (el) {
-        const lx = hq.x + 14 + el.offsetWidth > w ? hq.x - 14 - el.offsetWidth : hq.x + 14; // bascule à gauche près du bord
+        if (!labelWidth) labelWidth = el.offsetWidth;
+        const lx = hq.x + 14 + labelWidth > w ? hq.x - 14 - labelWidth : hq.x + 14; // bascule à gauche près du bord
         el.style.transform = `translate(${lx}px, ${hq.y - 14}px)`;
         el.style.opacity = visible ? '1' : '0';
       }
@@ -268,11 +287,28 @@ function DataSphere({ label }: { label: string }) {
         raf = requestAnimationFrame(draw);
       }
     });
-    io.observe(canvas);
-    raf = requestAnimationFrame(draw);
+    // Démarrage différé : la page s'affiche et devient utilisable d'abord, l'animation ensuite
+    let started = false;
+    let idleId = 0;
+    const start = () => {
+      if (started) return;
+      started = true;
+      labelWidth = labelRef.current?.offsetWidth ?? labelWidth;
+      io.observe(canvas);
+      raf = requestAnimationFrame(draw);
+    };
+    const schedule = () => {
+      if ('requestIdleCallback' in window) idleId = window.requestIdleCallback(start, { timeout: 2500 });
+      else idleId = globalThis.setTimeout(start, 1200) as unknown as number;
+    };
+    if (document.readyState === 'complete') schedule();
+    else window.addEventListener('load', schedule, { once: true });
 
     return () => {
       running = false;
+      window.removeEventListener('load', schedule);
+      if ('cancelIdleCallback' in window) window.cancelIdleCallback(idleId);
+      window.clearTimeout(idleId);
       cancelAnimationFrame(raf);
       io.disconnect();
       window.removeEventListener('resize', resize);
@@ -333,7 +369,7 @@ export default function HomePage() {
         {/* Grille en perspective qui défile */}
         <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-[55%] overflow-hidden [perspective:600px] [mask-image:linear-gradient(to_top,black_10%,transparent_95%)]">
           <div
-            className="absolute -inset-x-1/2 -top-full bottom-0 origin-bottom motion-safe:animate-[ci-grid_3s_linear_infinite]"
+            className="absolute -inset-x-1/2 -top-full bottom-0 origin-bottom"
             style={{
               transform: 'rotateX(68deg)',
               backgroundImage:
@@ -343,51 +379,40 @@ export default function HomePage() {
           />
         </div>
         {/* Aurore animée aux couleurs du logo */}
-        <motion.div
+        <div
           aria-hidden="true"
           className="absolute -top-40 left-[10%] w-[44rem] h-[30rem] rounded-full bg-ci-blue-200/70 blur-[130px]"
-          animate={{ x: [0, 80, 0], y: [0, 30, 0] }}
-          transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
+          />
+        <div
           aria-hidden="true"
           className="absolute top-10 right-[5%] w-[34rem] h-[26rem] rounded-full bg-[#a5f3fc]/50 blur-[130px]"
-          animate={{ x: [0, -60, 0], y: [0, 50, 0] }}
-          transition={{ duration: 22, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div
+          />
+        <div
           aria-hidden="true"
           className="absolute bottom-0 left-1/3 w-[40rem] h-[20rem] rounded-full bg-ci-green-100 blur-[130px]"
-          animate={{ x: [0, 60, 0] }}
-          transition={{ duration: 20, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <style>{'@keyframes ci-grid { from { background-position: 0 0; } to { background-position: 0 64px; } }'}</style>
+          />
 
         <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
           <div className="relative z-10">
             {/* Titre principal (H1) : services + ville, pour le référencement ; le slogan reste le grand texte */}
-            <motion.h1
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
+            <h1
               className="inline-flex items-center gap-2 rounded-2xl sm:rounded-full border border-ci-blue-100 bg-white px-4 py-1.5 font-sans text-sm font-semibold tracking-normal text-ci-blue-700 shadow-sm"
             >
               <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-ci-green-500 shadow-[0_0_10px_#34d17f]" /> {t.h1}
-            </motion.h1>
-            <motion.p
-              initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
-              animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-              transition={{ duration: 0.9 }}
+            </h1>
+            {/* Haut de page affiché immédiatement (sans animation d'entrée) : meilleur temps d'affichage pour Google */}
+            <p
               className="mt-8 font-display font-bold text-ci-navy text-[2.9rem] leading-[1] sm:text-7xl lg:text-[5.2rem] tracking-[-0.045em]"
             >
               {t.titleA}{' '}
               <span className="text-gradient-ci">
                 {t.titleB}
               </span>
-            </motion.p>
-            <motion.p initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.25 }} className="mt-7 max-w-xl text-lg leading-relaxed text-slate-600">
+            </p>
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-slate-600">
               {t.intro}
-            </motion.p>
-            <motion.div initial={{ opacity: 0, y: 14 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.4 }} className="mt-10 flex flex-col sm:flex-row gap-3">
+            </p>
+            <div className="mt-10 flex flex-col sm:flex-row gap-3">
               <Link
                 to="/contact/"
                 className="group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-ci-blue-600 to-ci-green-500 px-7 py-4 font-semibold text-white shadow-[0_12px_40px_-10px_rgba(31,111,235,0.6)]"
@@ -399,7 +424,7 @@ export default function HomePage() {
               <Link to="/services/" className="inline-flex items-center justify-center rounded-xl border border-slate-200 bg-white px-7 py-4 font-semibold text-ci-navy hover:border-ci-blue-200 hover:bg-ci-blue-50 transition-colors">
                 {t.ctaSecondary}
               </Link>
-            </motion.div>
+            </div>
           </div>
           <motion.div initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.1 }} className="relative mx-auto w-full max-w-[560px]">
             <DataSphere label={t.sphereLabel} />

@@ -6,10 +6,12 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 const content = {
   fr: {
-    headerTitleBefore: 'Expertise ',
-    headerTitleAccent: 'technologique',
+    headerTitleBefore: 'Services informatiques ',
+    headerTitleAccent: 'à Sherbrooke',
     headerSubtitle:
       "Des solutions transversales pour répondre à chaque aspect de votre transformation numérique, avec une précision d'ingénieur et une vision d'affaires.",
+    intro:
+      "Concept Informatique inc. accompagne les PME et les organisations de Sherbrooke, de l'Estrie et de partout au Québec dans sept domaines complémentaires : développement logiciel sur mesure, intelligence d'affaires avec Power BI, ingénierie de données, soutien TI et cybersécurité, automatisation et intelligence artificielle, transformation numérique et architecture infonuagique sur Azure et AWS. Une seule équipe s'occupe de votre projet, de l'analyse des besoins jusqu'au soutien après la mise en production.",
     learnMore: 'En savoir plus',
     processTitleBefore: 'Notre approche ',
     processTitleAccent: 'méthodique',
@@ -23,10 +25,12 @@ const content = {
     ],
   },
   en: {
-    headerTitleBefore: 'Technology ',
-    headerTitleAccent: 'Expertise',
+    headerTitleBefore: 'IT services ',
+    headerTitleAccent: 'in Sherbrooke',
     headerSubtitle:
       'Cross-functional solutions to address every aspect of your digital transformation, with engineering precision and business vision.',
+    intro:
+      'Concept Informatique inc. supports SMEs and organizations in Sherbrooke, the Eastern Townships and across Québec in seven complementary areas: custom software development, Power BI business intelligence, data engineering, IT support and cybersecurity, automation and artificial intelligence, digital transformation and cloud architecture on Azure and AWS. A single team handles your project, from needs analysis to support after go-live.',
     learnMore: 'Learn more',
     processTitleBefore: 'Our ',
     processTitleAccent: 'methodical',
@@ -56,6 +60,9 @@ export default function ServicesPage() {
           </h1>
           <p className="text-slate-600 text-base md:text-lg font-light max-w-3xl leading-relaxed">
             {t.headerSubtitle}
+          </p>
+          <p className="mt-4 text-slate-600 text-base max-w-4xl leading-relaxed">
+            {t.intro}
           </p>
         </div>
       </section>

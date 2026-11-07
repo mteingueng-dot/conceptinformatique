@@ -96,7 +96,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="mb-5 font-sans text-sm font-bold uppercase tracking-wider text-ci-navy">{t.servicesTitle}</h4>
+            <h2 className="mb-5 font-sans text-sm font-bold uppercase tracking-wider text-ci-navy">{t.servicesTitle}</h2>
             <ul className="space-y-3">
               {services.map((s) => (
                 <li key={s.slug}>
@@ -107,7 +107,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-2">
-            <h4 className="mb-5 font-sans text-sm font-bold uppercase tracking-wider text-ci-navy">{t.companyTitle}</h4>
+            <h2 className="mb-5 font-sans text-sm font-bold uppercase tracking-wider text-ci-navy">{t.companyTitle}</h2>
             <ul className="space-y-3">
               {[
                 { name: t.navHome, path: '/' },
@@ -123,7 +123,7 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h4 className="mb-5 font-sans text-sm font-bold uppercase tracking-wider text-ci-navy">{t.contactTitle}</h4>
+            <h2 className="mb-5 font-sans text-sm font-bold uppercase tracking-wider text-ci-navy">{t.contactTitle}</h2>
             <ul className="space-y-4">
               <li className="flex items-start gap-3 text-sm text-slate-600">
                 <MapPin className="mt-0.5 w-4 h-4 shrink-0 text-ci-green-600" />

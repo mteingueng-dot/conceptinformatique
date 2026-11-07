@@ -24,7 +24,7 @@ module.exports = {
             100: '#d1fadf',
             400: '#34d17f',
             500: '#16b364',
-            600: '#0e9150',
+            600: '#0a7a43', // assombri pour un contraste suffisant sur fond blanc (≥ 4,5:1)
           },
         },
         ink: {

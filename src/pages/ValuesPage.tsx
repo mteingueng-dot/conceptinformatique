@@ -255,7 +255,7 @@ const itemVariants = {
 
 const valueSlugMap: { [key: string]: string } = {
   Innovation: 'innovation',
-  Rigor: 'rigor',
+  Rigor: 'rigueur',
   Expertise: 'expertise',
 };
 

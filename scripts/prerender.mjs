@@ -37,7 +37,8 @@ function pageHtml(route) {
   html = setTag(html, /<meta property="og:title" content="[^"]*"\s*\/?>/, `<meta property="og:title" content="${t}" />`, 'og:title');
   html = setTag(html, /<meta property="og:description" content="[^"]*"\s*\/?>/, `<meta property="og:description" content="${d}" />`, 'og:description');
   html = setTag(html, /<meta property="og:url" content="[^"]*"\s*\/?>/, `<meta property="og:url" content="${url}" />`, 'og:url');
-  html = setTag(html, '<div id="root"></div>', `<div id="root">${render(route)}</div>`, 'root');
+  // data-prerendered : adresse de la page contenue, pour que le navigateur sache s'il peut reprendre ce HTML tel quel
+  html = setTag(html, '<div id="root"></div>', `<div id="root" data-prerendered="${meta.notFound ? '404' : meta.path}">${render(route)}</div>`, 'root');
 
   if (meta.notFound) {
     // Page « introuvable » : pas de canonique, non indexée

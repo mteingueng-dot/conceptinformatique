@@ -6,7 +6,6 @@
 import { services, getServiceBySlug } from '../data/services';
 import { values } from '../data/values';
 import { professionalProfiles } from '../data/professionalProfiles';
-import { expertises } from '../data/expertise';
 import { jobsContent } from '../data/jobs';
 
 export type SeoLang = 'fr' | 'en';
@@ -195,6 +194,9 @@ function withBrand(name: string): string {
   return name.length + suffix.length <= 60 ? name + suffix : clip(name, 60);
 }
 
+/** Ancienne page « expertise » -> page de service correspondante. */
+export const EXPERTISE_TO_SERVICE: Record<string, string> = {"business-intelligence": "business-intelligence", "ingenierie-de-donnees": "data-engineering", "developpement-logiciel": "developpement-logiciel", "support-ti": "support-ti-securite", "automatisation-ia": "automatisation-ia", "transformation-numerique": "transformation-numerique"};
+
 /** Adresses en double -> adresse officielle (sans « / » final dans les motifs). */
 const ALIASES: [RegExp, (m: RegExpMatchArray) => string][] = [
   [/^\/home$/, () => '/'],
@@ -203,7 +205,8 @@ const ALIASES: [RegExp, (m: RegExpMatchArray) => string][] = [
   [/^\/professional-profiles?$/, () => '/about/profil-professionnel/'],
   [/^\/professional-profiles\/([^/]+)$/, (m) => `/about/profils/${m[1]}/`],
   [/^\/expertises$/, () => '/services/'],
-  [/^\/expertises\/([^/]+)$/, (m) => `/about/expertises/${m[1]}/`],
+  // Anciennes pages « expertises » : fusionnées avec les pages de services (même sujet)
+  [/^\/(?:about\/)?expertises\/([^/]+)$/, (m) => `/services/${EXPERTISE_TO_SERVICE[m[1]] ?? ''}${EXPERTISE_TO_SERVICE[m[1]] ? '/' : ''}`],
 ];
 
 /** Adresse officielle d'un chemin (gère les doublons et le « / » final). */
@@ -241,16 +244,10 @@ export function getPageMeta(pathname: string, lang: SeoLang): PageMeta {
     return { path, title: withBrand(profile.title[lang]), description: clip(`${profile.tagline[lang]}. ${profile.description[lang]}`, 158) };
   }
 
-  m = path.match(/^\/about\/expertises\/([^/]+)\/$/);
-  const expertise = m && expertises.find((e) => e.slug === m![1]);
-  if (expertise) {
-    return { path, title: withBrand(expertise.title[lang]), description: clip(`${expertise.tagline[lang]}. ${expertise.description[lang]}`, 158) };
-  }
-
   m = path.match(/^\/careers\/([^/]+)\/$/);
   const job = m && jobsContent[lang].find((j) => j.id === m![1]);
   if (job) {
-    return { path, title: withBrand(job.title), description: clip(job.summary, 158) };
+    return { path, title: withBrand(job.title), description: clip(`${job.title} : ${job.summary}`, 158) };
   }
 
   // Page inconnue
@@ -264,7 +261,6 @@ export function listRoutes(): string[] {
     ...services.map((s) => `/services/${s.slug}/`),
     ...values.map((v) => `/about/values/${v.slug}/`),
     ...professionalProfiles.map((p) => `/about/profils/${p.slug}/`),
-    ...expertises.map((e) => `/about/expertises/${e.slug}/`),
     ...jobsContent.fr.map((j) => `/careers/${j.id}/`),
   ];
 }
@@ -288,7 +284,6 @@ function detailName(path: string, lang: SeoLang): string | undefined {
   if (path.startsWith('/services/')) return getServiceBySlug(slug, lang)?.title;
   if (path.startsWith('/about/values/')) return values.find((v) => v.slug === slug)?.title[lang];
   if (path.startsWith('/about/profils/')) return professionalProfiles.find((p) => p.slug === slug)?.title[lang];
-  if (path.startsWith('/about/expertises/')) return expertises.find((e) => e.slug === slug)?.title[lang];
   if (path.startsWith('/careers/')) return jobsContent[lang].find((j) => j.id === slug)?.title;
   return undefined;
 }
@@ -300,7 +295,6 @@ function breadcrumb(path: string, lang: SeoLang): { name: string; path: string }
   const parents: Record<string, string[]> = {
     '/about/profils/': ['/about/', '/about/profil-professionnel/'],
     '/about/values/': ['/about/', '/about/values/'],
-    '/about/expertises/': ['/about/'],
     '/about/profil-professionnel/': ['/about/'],
     '/services/': ['/services/'],
     '/careers/': ['/careers/'],
