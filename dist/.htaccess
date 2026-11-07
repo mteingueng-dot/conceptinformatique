@@ -6,12 +6,10 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
-# Une seule version du site : https + www.
-# À activer une fois vérifié que https://www.conceptinformatique.net/ fonctionne
-# (certificat SSL couvrant www) : retirer le « # » des 3 lignes suivantes.
-# RewriteCond %{HTTPS} off [OR]
-# RewriteCond %{HTTP_HOST} !^www\. [NC]
-# RewriteRule ^ https://www.conceptinformatique.net%{REQUEST_URI} [L,R=301]
+# Une seule version du site : https + www (http:// et sans www -> redirection permanente)
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^ https://www.conceptinformatique.net%{REQUEST_URI} [L,R=301]
 
 # Adresses en double -> adresse officielle (redirection permanente)
 RewriteRule ^home/?$ / [L,R=301]
@@ -32,9 +30,10 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Sinon : application (elle redirige les adresses inconnues vers l'accueil)
-RewriteRule ^ /index.html [L]
 </IfModule>
+
+# Adresse inexistante : vraie page « introuvable » (code 404, non indexée)
+ErrorDocument 404 /404.html
 
 # Cache : les .js et .css (dans assets/) changent de nom à chaque build
 <IfModule mod_headers.c>
