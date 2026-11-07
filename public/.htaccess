@@ -32,6 +32,11 @@ RewriteRule ^ - [L]
 
 </IfModule>
 
+# Fichiers techniques jamais servis (suivi de la mise en ligne automatique, réglages PHP)
+<FilesMatch "^(\.ftp-deploy-sync-state\.json|\.user\.ini)$">
+  Require all denied
+</FilesMatch>
+
 # Adresse inexistante : vraie page « introuvable » (code 404, non indexée)
 ErrorDocument 404 /404.html
 
