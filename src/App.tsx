@@ -15,7 +15,6 @@ import ValueDetailPage from './pages/ValueDetailPage';
 import ProfileDetailPage from './pages/ProfileDetailPage';
 import LegalPage from './pages/LegalPage';
 import NotFoundPage from './pages/NotFoundPage';
-import EstriePage from './pages/EstriePage';
 import SeoManager from './seo/SeoManager';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { Navigate } from './i18n/router';
@@ -45,7 +44,6 @@ const pageRoutes = (
     <Route path="services" element={<ServicesPage />} />
     <Route path="services/:slug" element={<ServiceDetailPage />} />
     <Route path="contact" element={<ContactPage />} />
-    <Route path="services-informatiques-estrie" element={<EstriePage />} />
     <Route path="careers" element={<CareersPage />} />
     <Route path="careers/:jobId" element={<JobDetailPage />} />
     <Route path="privacy" element={<LegalPage type="privacy" />} />

@@ -13,7 +13,6 @@ const content = {
     intro:
       "Concept Informatique inc. accompagne les PME et les organisations de Sherbrooke, de l'Estrie et de partout au Québec dans sept domaines complémentaires : développement logiciel sur mesure, intelligence d'affaires avec Power BI, ingénierie de données, soutien TI et cybersécurité, automatisation et intelligence artificielle, transformation numérique et architecture infonuagique sur Azure et AWS. Une seule équipe s'occupe de votre projet, de l'analyse des besoins jusqu'au soutien après la mise en production.",
     learnMore: 'En savoir plus',
-    estrieLink: 'Services informatiques en Estrie : zone desservie et questions fréquentes',
     processTitleBefore: 'Notre approche ',
     processTitleAccent: 'méthodique',
     processTitleAfter: '',
@@ -33,7 +32,6 @@ const content = {
     intro:
       'Concept Informatique inc. supports SMEs and organizations in Sherbrooke, the Eastern Townships and across Québec in seven complementary areas: custom software development, Power BI business intelligence, data engineering, IT support and cybersecurity, automation and artificial intelligence, digital transformation and cloud architecture on Azure and AWS. A single team handles your project, from needs analysis to support after go-live.',
     learnMore: 'Learn more',
-    estrieLink: 'IT services in the Eastern Townships: service area and FAQ',
     processTitleBefore: 'Our ',
     processTitleAccent: 'methodical',
     processTitleAfter: ' approach',
@@ -66,9 +64,6 @@ export default function ServicesPage() {
           <p className="mt-4 text-slate-600 text-base max-w-4xl leading-relaxed">
             {t.intro}
           </p>
-          <Link to="/services-informatiques-estrie/" className="mt-3 inline-flex items-center gap-1.5 text-sm font-semibold text-ci-blue-600 hover:text-ci-blue-700">
-            {t.estrieLink} <ArrowRight className="w-4 h-4" />
-          </Link>
         </div>
       </section>
 

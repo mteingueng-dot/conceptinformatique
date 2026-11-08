@@ -21,7 +21,6 @@ const copy: Record<Lang, {
   navAbout: string;
   navCareers: string;
   navContact: string;
-  navEstrie: string;
   contactTitle: string;
   rights: string;
   privacy: string;
@@ -39,7 +38,6 @@ const copy: Record<Lang, {
     navAbout: 'À propos',
     navCareers: 'Carrières',
     navContact: 'Contact',
-    navEstrie: 'Services en Estrie',
     contactTitle: 'Coordonnées',
     rights: 'Tous droits réservés.',
     privacy: 'Confidentialité',
@@ -57,7 +55,6 @@ const copy: Record<Lang, {
     navAbout: 'About',
     navCareers: 'Careers',
     navContact: 'Contact',
-    navEstrie: 'Eastern Townships',
     contactTitle: 'Contact details',
     rights: 'All rights reserved.',
     privacy: 'Privacy',
@@ -116,7 +113,6 @@ export default function Footer() {
                 { name: t.navHome, path: '/' },
                 { name: t.navAbout, path: '/about/' },
                 { name: t.navCareers, path: '/careers/' },
-                { name: t.navEstrie, path: '/services-informatiques-estrie/' },
                 { name: t.navContact, path: '/contact/' },
               ].map((item) => (
                 <li key={item.path}>
