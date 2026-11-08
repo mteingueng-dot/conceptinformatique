@@ -30,7 +30,7 @@ const organicArchitectureMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
     ],
     requirements: [
       'By October 7, 2026, submit a mandate-tailored, signed CV.',
-      'Submit both completed grids supplied with the mandate.',
+      'Submit both completed mandate grids (available on request at finances@conceptinformatique.net).',
       'Submit copies of diplomas or, where applicable, the MIFI comparative evaluation of studies completed outside Quebec.',
     ],
     assets: [],
@@ -63,7 +63,7 @@ const organicArchitectureMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
     ],
     requirements: [
       'Transmettre au plus tard le 7 octobre 2026 un CV adapté au mandat et signé.',
-      'Transmettre les deux grilles ci-jointes dûment remplies.',
+      'Transmettre les deux grilles du mandat dûment remplies (transmises sur demande à finances@conceptinformatique.net).',
       'Fournir une copie des diplômes ou, le cas échéant, l’évaluation comparative des études effectuées hors du Québec délivrée par le MIFI.',
     ],
     assets: [],
@@ -365,7 +365,7 @@ const informationSecurityMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
       'Very good knowledge of risk-assessment methods such as MEHARI and MITRE.',
       'Knowledge of cloud security environments and IaaS, PaaS and SaaS concepts.',
       'One or more recognized information-security certifications, such as CISSP, CISM, CISA, CRISC or ISO 27001.',
-      'A duly completed Public Curator compliance grid.',
+      'A duly completed Public Curator compliance grid (available on request at finances@conceptinformatique.net).',
       'A signed and dated CV.',
       'Professional references.',
     ],
@@ -397,7 +397,7 @@ const informationSecurityMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
       'Très bonnes connaissances des méthodologies d’évaluation des risques, notamment MEHARI et MITRE.',
       'Bonne connaissance de la sécurité des environnements infonuagiques et des concepts IaaS, PaaS et SaaS.',
       'Détenir une ou plusieurs certifications reconnues en sécurité de l’information, telles que CISSP, CISM, CISA, CRISC ou ISO 27001.',
-      'Grille de conformité du Curateur public dûment remplie.',
+      'Grille de conformité du Curateur public dûment remplie (transmise sur demande à finances@conceptinformatique.net).',
       'Curriculum vitæ signé et daté.',
       'Références professionnelles.',
     ],
@@ -460,7 +460,7 @@ const emergingTechAnalystMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
       'Desired start date: November 30, 2026.',
       'Duration: 36 months, full-time.',
       'On site once a week at the Montreal or Quebec City office.',
-      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.',
+      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the mandate’s evaluation grid, completed (available on request at finances@conceptinformatique.net); (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.',
     ],
   },
   fr: {
@@ -516,7 +516,7 @@ const emergingTechAnalystMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
       'Date de début souhaitée : 30 novembre 2026.',
       'Durée : 36 mois, à temps plein.',
       'Présentiel une fois par semaine, au bureau de Montréal ou de Québec.',
-      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.',
+      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille d’évaluation du mandat, complétée (transmise sur demande à finances@conceptinformatique.net) ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.',
     ],
   },
 };
@@ -573,7 +573,7 @@ const governanceAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'titl
       'Desired start date: November 30, 2026.',
       'Duration: 36 months, full-time.',
       'On site once a week at the Montreal or Quebec City office.',
-      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.',
+      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the mandate’s evaluation grid, completed (available on request at finances@conceptinformatique.net); (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.',
     ],
   },
   fr: {
@@ -627,7 +627,7 @@ const governanceAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'titl
       'Date de début souhaitée : 30 novembre 2026.',
       'Durée : 36 mois, à temps plein.',
       'Présentiel une fois par semaine, au bureau de Montréal ou de Québec.',
-      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.',
+      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille d’évaluation du mandat, complétée (transmise sur demande à finances@conceptinformatique.net) ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.',
     ],
   },
 };
@@ -671,7 +671,7 @@ const businessAnalystFrameworksMandate: Record<'fr' | 'en', Omit<JobDetail, 'id'
       "Desired start date: November 30, 2026.",
       "Duration: 36 months, full-time.",
       "On site once a week at the Montreal or Quebec City office.",
-      "To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
+      "To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the mandate’s evaluation grid, completed (available on request at finances@conceptinformatique.net); (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
     ],
   },
   fr: {
@@ -712,7 +712,7 @@ const businessAnalystFrameworksMandate: Record<'fr' | 'en', Omit<JobDetail, 'id'
       "Date de début souhaitée : 30 novembre 2026.",
       "Durée : 36 mois, à temps plein.",
       "Présentiel une fois par semaine, au bureau de Montréal ou de Québec.",
-      "Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
+      "Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille d’évaluation du mandat, complétée (transmise sur demande à finances@conceptinformatique.net) ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
     ],
   },
 };
@@ -747,7 +747,7 @@ const itSolutionsIamMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>
       "Desired start date: November 30, 2026.",
       "Duration: 12 months, full-time.",
       "100% remote; travel to Montreal or Quebec City only at the start and end of the mandate to pick up and return equipment.",
-      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
+      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the mandate’s evaluation grid, completed (available on request at finances@conceptinformatique.net); (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
     ],
   },
   fr: {
@@ -779,7 +779,7 @@ const itSolutionsIamMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>
       "Date de début souhaitée : 30 novembre 2026.",
       "Durée : 12 mois, à temps plein.",
       "Télétravail à 100 % ; déplacement au début et à la fin du mandat seulement, pour récupérer et rendre l’équipement, à Montréal ou à Québec.",
-      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
+      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille d’évaluation du mandat, complétée (transmise sur demande à finances@conceptinformatique.net) ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
     ],
   },
 };
@@ -816,7 +816,7 @@ const itSolutionsIamOnlyMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'tit
       "Desired start date: November 30, 2026.",
       "Duration: 12 months, full-time.",
       "100% remote; travel to Montreal or Quebec City only at the start and end of the mandate to pick up and return equipment.",
-      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
+      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the mandate’s evaluation grid, completed (available on request at finances@conceptinformatique.net); (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
     ],
   },
   fr: {
@@ -850,7 +850,7 @@ const itSolutionsIamOnlyMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'tit
       "Date de début souhaitée : 30 novembre 2026.",
       "Durée : 12 mois, à temps plein.",
       "Télétravail à 100 % ; déplacement au début et à la fin du mandat seulement, pour récupérer et rendre l’équipement, à Montréal ou à Québec.",
-      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
+      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille d’évaluation du mandat, complétée (transmise sur demande à finances@conceptinformatique.net) ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
     ],
   },
 };
@@ -884,7 +884,7 @@ const seniorItProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 
       "Start: December 7, 2026.",
       "Duration: 12 months, full-time (35 h/week, 8:30 a.m. to 4:30 p.m.).",
       "100% remote; travel to Montreal or Quebec City only at the start and end of the mandate to pick up and return equipment.",
-      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your up-to-date CV in Word format, clearly stating for each mandate the client, dates, your role, the scope (person-days or budget) and, where applicable, the link with the healthcare network; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) a copy of your PMP or PMI-ACP certification, if applicable; (5) your city of residence and confirmation that you are available full-time from December 7, 2026.",
+      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your up-to-date CV in Word format, clearly stating for each mandate the client, dates, your role, the scope (person-days or budget) and, where applicable, the link with the healthcare network; (2) the mandate’s evaluation grid, completed (available on request at finances@conceptinformatique.net); (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) a copy of your PMP or PMI-ACP certification, if applicable; (5) your city of residence and confirmation that you are available full-time from December 7, 2026.",
     ],
   },
   fr: {
@@ -915,7 +915,7 @@ const seniorItProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 
       "Début : 7 décembre 2026.",
       "Durée : 12 mois, à temps plein (35 h/semaine, de 8 h 30 à 16 h 30).",
       "Télétravail à 100 % ; déplacement au début et à la fin du mandat seulement, pour récupérer et rendre l’équipement, à Montréal ou à Québec.",
-      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV à jour en format Word, en indiquant clairement pour chaque mandat le client, les dates, votre rôle, l’envergure (jours-personnes ou budget) et, s’il y a lieu, le lien avec le réseau de la santé ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) une copie de votre certification PMP ou PMI-ACP, s’il y a lieu ; 5) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 7 décembre 2026.",
+      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV à jour en format Word, en indiquant clairement pour chaque mandat le client, les dates, votre rôle, l’envergure (jours-personnes ou budget) et, s’il y a lieu, le lien avec le réseau de la santé ; 2) la grille d’évaluation du mandat, complétée (transmise sur demande à finances@conceptinformatique.net) ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) une copie de votre certification PMP ou PMI-ACP, s’il y a lieu ; 5) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 7 décembre 2026.",
     ],
   },
 };
