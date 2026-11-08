@@ -3,26 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Google Tag Manager (GTM-N29MXHX8), chargé SEULEMENT après le consentement du visiteur (Loi 25).
-         Le choix est gardé dans le navigateur (clé « ci-consent ») ; le bandeau est dans src/components/CookieConsent.tsx. -->
+    <!-- Google Tag Manager (GTM-N29MXHX8) -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      // Mode consentement de Google : tout est refusé par défaut
-      gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
-      window.ciLoadGtm = function () {
-        if (window.ciGtmLoaded) return;
-        window.ciGtmLoaded = true;
-        gtag('consent', 'update', { analytics_storage: 'granted' });
-        dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-        var s = document.createElement('script');
-        s.async = true;
-        s.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-N29MXHX8';
-        document.head.appendChild(s);
-      };
-      try { if (localStorage.getItem('ci-consent') === 'granted') window.ciLoadGtm(); } catch (e) {}
+      dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
     </script>
+    <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-N29MXHX8"></script>
     <!-- Fin Google Tag Manager -->
     <meta name="theme-color" content="#ffffff" />
     <title>Concept Informatique | Données et logiciels à Sherbrooke</title>
@@ -92,6 +80,9 @@
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400&display=swap" /></noscript>
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N29MXHX8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- Fin Google Tag Manager (noscript) -->
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

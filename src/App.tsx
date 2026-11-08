@@ -16,7 +16,6 @@ import ProfileDetailPage from './pages/ProfileDetailPage';
 import LegalPage from './pages/LegalPage';
 import NotFoundPage from './pages/NotFoundPage';
 import SeoManager from './seo/SeoManager';
-import CookieConsent from './components/CookieConsent';
 import { LanguageProvider } from './i18n/LanguageContext';
 import { Navigate } from './i18n/router';
 import { EXPERTISE_TO_SERVICE } from './seo/meta';
@@ -83,7 +82,6 @@ export function AppShell() {
           </Routes>
         </main>
         <Footer />
-        <CookieConsent />
       </div>
     </LanguageProvider>
   );
