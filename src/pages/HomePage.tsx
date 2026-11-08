@@ -12,12 +12,12 @@ import { useLanguage } from '../i18n/LanguageContext';
  */
 
 const fr = {
-  h1: 'Logiciels, données et soutien TI à Sherbrooke',
-  aboutTag: 'Firme informatique à Sherbrooke',
+  h1: 'Services informatiques à Sherbrooke et en Estrie',
+  aboutTag: 'Services informatiques en Estrie',
   aboutTitle: 'Vos données et vos technologies, enfin au service de vos affaires',
   aboutText: [
-    "Concept Informatique inc. est une firme informatique de Sherbrooke qui aide les PME et les organisations de l’Estrie à tirer le meilleur de leurs données et de leurs technologies. Depuis plus de 17 ans, notre équipe conçoit des logiciels sur mesure, bâtit des tableaux de bord Power BI en intelligence d’affaires, centralise l’information dans des entrepôts de données modernes (Microsoft Fabric, Azure, Databricks) et assure le soutien informatique et la cybersécurité de votre parc.",
-    "Vos rapports prennent des heures à produire? Vos systèmes ne se parlent pas? Un processus repose encore sur des fichiers Excel? Nous partons de vos besoins d’affaires, livrons par étapes courtes et restons à vos côtés après la mise en production, en personne à Sherbrooke ou à distance, partout au Québec.",
+    "Concept Informatique inc. est une firme de services informatiques établie à Sherbrooke qui aide les PME et les organisations de toute l’Estrie (Sherbrooke, Magog, Coaticook, Windsor, East Angus, Lac-Mégantic…) à tirer le meilleur de leurs données et de leurs technologies. Depuis plus de 17 ans, notre équipe conçoit des logiciels sur mesure, bâtit des tableaux de bord Power BI en intelligence d’affaires, centralise l’information dans des entrepôts de données modernes (Microsoft Fabric, Azure, Databricks) et assure le soutien informatique et la cybersécurité de votre parc.",
+    "Vos rapports prennent des heures à produire? Vos systèmes ne se parlent pas? Un processus repose encore sur des fichiers Excel? Nous partons de vos besoins d’affaires, livrons par étapes courtes et restons à vos côtés après la mise en production, en personne à Sherbrooke et en Estrie, ou à distance, partout au Québec.",
   ],
   aboutCta: 'Parlons de votre projet',
   titleA: 'Le futur de vos données',
@@ -56,12 +56,12 @@ const fr = {
 };
 
 const en: typeof fr = {
-  h1: 'Software, data and IT support in Sherbrooke',
-  aboutTag: 'IT firm in Sherbrooke',
+  h1: 'IT services in Sherbrooke and the Eastern Townships',
+  aboutTag: 'IT services in the Eastern Townships',
   aboutTitle: 'Your data and technology, finally working for your business',
   aboutText: [
-    'Concept Informatique inc. is an IT firm in Sherbrooke that helps SMEs and organizations across the Eastern Townships get the most out of their data and technology. For more than 17 years, our team has been building custom software, Power BI business intelligence dashboards, modern data warehouses (Microsoft Fabric, Azure, Databricks), and providing IT support and cybersecurity for your systems.',
-    'Do your reports take hours to produce? Do your systems not talk to each other? Does a process still rely on Excel files? We start from your business needs, deliver in short stages and stay by your side after go-live, in person in Sherbrooke or remotely, anywhere in Québec.',
+    'Concept Informatique inc. is an IT services firm based in Sherbrooke that helps SMEs and organizations across the Eastern Townships (Sherbrooke, Magog, Coaticook, Windsor, East Angus, Lac-Mégantic…) get the most out of their data and technology. For more than 17 years, our team has been building custom software, Power BI business intelligence dashboards, modern data warehouses (Microsoft Fabric, Azure, Databricks), and providing IT support and cybersecurity for your systems.',
+    'Do your reports take hours to produce? Do your systems not talk to each other? Does a process still rely on Excel files? We start from your business needs, deliver in short stages and stay by your side after go-live, in person in Sherbrooke and the Eastern Townships, or remotely, anywhere in Québec.',
   ],
   aboutCta: "Let's talk about your project",
   titleA: 'The future of your data',

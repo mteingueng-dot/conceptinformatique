@@ -7,7 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 const content = {
   fr: {
     headerTitleBefore: 'Services informatiques ',
-    headerTitleAccent: 'à Sherbrooke',
+    headerTitleAccent: 'à Sherbrooke et en Estrie',
     headerSubtitle:
       "Des solutions transversales pour répondre à chaque aspect de votre transformation numérique, avec une précision d'ingénieur et une vision d'affaires.",
     intro:
@@ -26,7 +26,7 @@ const content = {
   },
   en: {
     headerTitleBefore: 'IT services ',
-    headerTitleAccent: 'in Sherbrooke',
+    headerTitleAccent: 'in Sherbrooke and the Eastern Townships',
     headerSubtitle:
       'Cross-functional solutions to address every aspect of your digital transformation, with engineering precision and business vision.',
     intro:

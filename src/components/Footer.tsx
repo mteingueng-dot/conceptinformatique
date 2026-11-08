@@ -29,7 +29,7 @@ const copy: Record<Lang, {
   fr: {
     homeAria: 'Concept Informatique – Accueil',
     logoAlt: 'Logo Concept Informatique',
-    description: "Partenaire stratégique en transformation numérique, spécialisé dans l'exploitation des données et le développement logiciel sur mesure à Sherbrooke.",
+    description: "Partenaire stratégique en transformation numérique, spécialisé dans l'exploitation des données et le développement logiciel sur mesure. Services informatiques à Sherbrooke et partout en Estrie.",
     linkedinAria: 'LinkedIn – Concept Informatique',
     mailAria: 'Courriel – Concept Informatique',
     servicesTitle: 'Services',
@@ -46,7 +46,7 @@ const copy: Record<Lang, {
   en: {
     homeAria: 'Concept Informatique – Home',
     logoAlt: 'Concept Informatique logo',
-    description: 'Strategic digital transformation partner, specialized in data leverage and custom software development in Sherbrooke.',
+    description: 'Strategic digital transformation partner, specialized in data leverage and custom software development. IT services in Sherbrooke and across the Eastern Townships.',
     linkedinAria: 'LinkedIn – Concept Informatique',
     mailAria: 'Email – Concept Informatique',
     servicesTitle: 'Services',

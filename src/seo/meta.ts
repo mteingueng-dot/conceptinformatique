@@ -40,22 +40,22 @@ type StaticMeta = { title: Bi; description: Bi };
 const STATIC: Record<string, StaticMeta> = {
   '/': {
     title: {
-      fr: 'Concept Informatique | Données et logiciels à Sherbrooke',
-      en: 'Concept Informatique | Software & Data in Sherbrooke',
+      fr: 'Services informatiques en Estrie | Concept Informatique',
+      en: 'Eastern Townships IT Services | Concept Informatique',
     },
     description: {
-      fr: "Firme TI de Sherbrooke : développement logiciel sur mesure, intelligence d'affaires Power BI, ingénierie de données et soutien TI pour les PME de l'Estrie.",
-      en: 'Sherbrooke IT firm: custom software development, Power BI business intelligence, data engineering and IT support for businesses in the Eastern Townships.',
+      fr: "Services informatiques à Sherbrooke et en Estrie : logiciels sur mesure, Power BI, données, soutien TI et cybersécurité pour les PME, de Magog à Coaticook.",
+      en: 'IT services in Sherbrooke and the Eastern Townships: custom software, Power BI, data, IT support and cybersecurity for businesses, from Magog to Coaticook.',
     },
   },
   '/services/': {
     title: {
-      fr: 'Services TI et données à Sherbrooke | Concept Informatique',
-      en: 'IT and Data Services in Sherbrooke | Concept Informatique',
+      fr: 'Services informatiques à Sherbrooke | Concept Informatique',
+      en: 'IT Services in Sherbrooke | Concept Informatique',
     },
     description: {
-      fr: 'Logiciels sur mesure, Power BI, entrepôts de données, soutien TI et automatisation IA : découvrez les services de Concept Informatique, à Sherbrooke.',
-      en: 'Custom software, Power BI, data warehouses, IT support and AI automation: discover the services of Concept Informatique, in Sherbrooke.',
+      fr: 'Logiciels sur mesure, Power BI, entrepôts de données, soutien TI et IA : les services informatiques de Concept Informatique, à Sherbrooke et en Estrie.',
+      en: 'Custom software, Power BI, data warehouses, IT support and AI: IT services by Concept Informatique, in Sherbrooke and the Eastern Townships.',
     },
   },
   '/about/': {
@@ -104,8 +104,8 @@ const STATIC: Record<string, StaticMeta> = {
       en: 'Contact Us | Concept Informatique, Sherbrooke',
     },
     description: {
-      fr: 'Un projet logiciel, de données ou de soutien TI? Joignez Concept Informatique à Sherbrooke au 514 712-0371 ou par notre formulaire. Réponse rapide.',
-      en: 'A software, data or IT support project? Reach Concept Informatique in Sherbrooke at 514-712-0371 or through our form. Quick response.',
+      fr: 'Un projet informatique en Estrie? Joignez Concept Informatique à Sherbrooke au 514 712-0371 ou par notre formulaire. Réponse rapide.',
+      en: 'An IT project in the Eastern Townships? Reach Concept Informatique in Sherbrooke at 514-712-0371 or through our form. Quick response.',
     },
   },
   '/privacy/': {
