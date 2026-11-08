@@ -460,8 +460,7 @@ const emergingTechAnalystMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
       'Desired start date: November 30, 2026.',
       'Duration: 36 months, full-time.',
       'On site once a week at the Montreal or Quebec City office.',
-      'Rate: $65/hour.',
-      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026; (5) your agreement to the $65/hour rate and your consent to be presented by Consultation ISGA for this mandate.',
+      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.',
     ],
   },
   fr: {
@@ -517,8 +516,7 @@ const emergingTechAnalystMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'ti
       'Date de début souhaitée : 30 novembre 2026.',
       'Durée : 36 mois, à temps plein.',
       'Présentiel une fois par semaine, au bureau de Montréal ou de Québec.',
-      'Taux : 65 $/heure.',
-      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026 ; 5) votre accord pour le taux de 65 $/heure et votre consentement à être présenté(e) par Consultation ISGA pour ce mandat.',
+      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.',
     ],
   },
 };
@@ -575,8 +573,7 @@ const governanceAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'titl
       'Desired start date: November 30, 2026.',
       'Duration: 36 months, full-time.',
       'On site once a week at the Montreal or Quebec City office.',
-      'Rate: $60/hour.',
-      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026; (5) your agreement to the $60/hour rate and your consent to be presented by Consultation ISGA for this mandate.',
+      'To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.',
     ],
   },
   fr: {
@@ -630,8 +627,7 @@ const governanceAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'titl
       'Date de début souhaitée : 30 novembre 2026.',
       'Durée : 36 mois, à temps plein.',
       'Présentiel une fois par semaine, au bureau de Montréal ou de Québec.',
-      'Taux : 60 $/heure.',
-      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026 ; 5) votre accord pour le taux de 60 $/heure et votre consentement à être présenté(e) par Consultation ISGA pour ce mandat.',
+      'Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.',
     ],
   },
 };
@@ -675,8 +671,7 @@ const businessAnalystFrameworksMandate: Record<'fr' | 'en', Omit<JobDetail, 'id'
       "Desired start date: November 30, 2026.",
       "Duration: 36 months, full-time.",
       "On site once a week at the Montreal or Quebec City office.",
-      "Rate: $60/hour.",
-      "To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026; (5) your agreement to the $60/hour rate and your consent to be presented by Consultation ISGA for this mandate.",
+      "To apply, send no later than November 11, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
     ],
   },
   fr: {
@@ -717,8 +712,7 @@ const businessAnalystFrameworksMandate: Record<'fr' | 'en', Omit<JobDetail, 'id'
       "Date de début souhaitée : 30 novembre 2026.",
       "Durée : 36 mois, à temps plein.",
       "Présentiel une fois par semaine, au bureau de Montréal ou de Québec.",
-      "Taux : 60 $/heure.",
-      "Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026 ; 5) votre accord pour le taux de 60 $/heure et votre consentement à être présenté(e) par Consultation ISGA pour ce mandat.",
+      "Pour postuler, faites-nous parvenir au plus tard le 11 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
     ],
   },
 };
@@ -753,8 +747,7 @@ const itSolutionsIamMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>
       "Desired start date: November 30, 2026.",
       "Duration: 12 months, full-time.",
       "100% remote; travel to Montreal or Quebec City only at the start and end of the mandate to pick up and return equipment.",
-      "Rate: $60/hour.",
-      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026; (5) your agreement to the $60/hour rate and your consent to be presented by Consultation ISGA for this mandate.",
+      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
     ],
   },
   fr: {
@@ -786,8 +779,7 @@ const itSolutionsIamMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>
       "Date de début souhaitée : 30 novembre 2026.",
       "Durée : 12 mois, à temps plein.",
       "Télétravail à 100 % ; déplacement au début et à la fin du mandat seulement, pour récupérer et rendre l’équipement, à Montréal ou à Québec.",
-      "Taux : 60 $/heure.",
-      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026 ; 5) votre accord pour le taux de 60 $/heure et votre consentement à être présenté(e) par Consultation ISGA pour ce mandat.",
+      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
     ],
   },
 };
@@ -824,8 +816,7 @@ const itSolutionsIamOnlyMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'tit
       "Desired start date: November 30, 2026.",
       "Duration: 12 months, full-time.",
       "100% remote; travel to Montreal or Quebec City only at the start and end of the mandate to pick up and return equipment.",
-      "Rate: $60/hour.",
-      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026; (5) your agreement to the $60/hour rate and your consent to be presented by Consultation ISGA for this mandate.",
+      "To apply, send no later than November 10, 2026, at 12 p.m.: (1) your tailored CV; (2) the grid supplied with the mandate, completed; (3) a copy of your diploma (and of its equivalency if obtained outside Québec); (4) your city of residence and confirmation that you are available full-time from November 30, 2026.",
     ],
   },
   fr: {
@@ -859,8 +850,7 @@ const itSolutionsIamOnlyMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'tit
       "Date de début souhaitée : 30 novembre 2026.",
       "Durée : 12 mois, à temps plein.",
       "Télétravail à 100 % ; déplacement au début et à la fin du mandat seulement, pour récupérer et rendre l’équipement, à Montréal ou à Québec.",
-      "Taux : 60 $/heure.",
-      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026 ; 5) votre accord pour le taux de 60 $/heure et votre consentement à être présenté(e) par Consultation ISGA pour ce mandat.",
+      "Pour postuler, faites-nous parvenir au plus tard le 10 novembre 2026 à 12 h : 1) votre CV adapté ; 2) la grille fournie avec le mandat, complétée ; 3) une copie de votre diplôme (et de l’équivalence, s’il a été obtenu hors Québec) ; 4) votre ville de résidence et la confirmation de votre disponibilité à temps plein dès le 30 novembre 2026.",
     ],
   },
 };
