@@ -91,6 +91,54 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     openTitleAccent: 'positions',
     jobs: [
       {
+        id: 'emerging-tech-solutions-analyst',
+        title: 'Emerging Technology Solutions Analyst',
+        description:
+          'Translate clinical, organizational and IT needs into requirements, assess AI solutions and design business-oriented semantic models and indicators in healthcare.',
+        location: 'Montreal or Quebec City / Hybrid',
+        type: '36 months · Full-time',
+      },
+      {
+        id: 'governance-advisor',
+        title: 'Governance Advisor',
+        description:
+          'Build and lead the AI governance framework, structures and processes in healthcare, and steer the portfolio, partnerships and performance indicators.',
+        location: 'Montreal or Quebec City / Hybrid',
+        type: '36 months · Full-time',
+      },
+      {
+        id: 'business-analyst-management-frameworks',
+        title: "Business Analyst – Management Frameworks",
+        description:
+          "Develop, revise and drive adoption of management frameworks (policies, frameworks, directives, guides, procedures) with stakeholders in healthcare.",
+        location: "Montreal or Quebec City / Hybrid",
+        type: "36 months · Full-time",
+      },
+      {
+        id: 'it-solutions-analyst-iam-m365',
+        title: "IT Solutions Administrative Analyst – IAM / M365",
+        description:
+          "Support identity and access management (IAM) operations and Santé Québec’s Microsoft 365 environment: tickets, configurations, Entra ID and new processes.",
+        location: "Remote (Québec)",
+        type: "12 months · Full-time",
+      },
+      {
+        id: 'iam-solutions-analyst',
+        title: "IT Solutions Administrative Analyst – IAM",
+        description:
+          "Support and evolve Santé Québec’s identity and access management (IAM) solutions: tickets, configurations and identity lifecycle automation (SQL, Python).",
+        location: "Remote (Québec)",
+        type: "12 months · Full-time",
+      },
+      {
+        id: 'senior-it-project-manager-health',
+        title: "Senior IT Project Manager",
+        description:
+          "Manage several Santé Québec digital projects end to end, including DAAMM and IEVD: planning, stakeholders, risks, budget, testing and go-live.",
+        location: "Remote (Québec)",
+        type: "12 months · 35 h/week",
+      },
+      {
         id: 'organic-architecture-one',
         title: 'Organic Architecture Advisor (1 resource)',
         description:
@@ -207,6 +255,54 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     openTitleLead: 'Postes ',
     openTitleAccent: 'ouverts',
     jobs: [
+      {
+        id: 'emerging-tech-solutions-analyst',
+        title: 'Analyste en solutions technologiques émergentes',
+        description:
+          'Traduire les besoins cliniques, organisationnels et TI en exigences, évaluer les solutions d’IA et concevoir des modèles sémantiques et des indicateurs orientés métier en santé.',
+        location: 'Montréal ou Québec / Hybride',
+        type: '36 mois · Temps plein',
+      },
+      {
+        id: 'governance-advisor',
+        title: 'Conseiller/ère en gouvernance',
+        description:
+          'Élaborer et piloter le cadre, les structures et les processus de gouvernance de l’IA en santé, ainsi que le portefeuille, les partenariats et les indicateurs de performance.',
+        location: 'Montréal ou Québec / Hybride',
+        type: '36 mois · Temps plein',
+      },
+      {
+        id: 'business-analyst-management-frameworks',
+        title: "Analyste d’affaires – assises de gestion",
+        description:
+          "Élaborer, réviser et faire adopter les assises de gestion (politiques, cadres, directives, guides, procédures) avec les parties prenantes, en santé.",
+        location: "Montréal ou Québec / Hybride",
+        type: "36 mois · Temps plein",
+      },
+      {
+        id: 'it-solutions-analyst-iam-m365',
+        title: "Analyste en gestion administrative des solutions TI – GIA / M365",
+        description:
+          "Soutenir les opérations de gestion des identités et des accès (GIA) et l’environnement Microsoft 365 de Santé Québec : requêtes, configurations, Entra ID et nouveaux processus.",
+        location: "Télétravail (Québec)",
+        type: "12 mois · Temps plein",
+      },
+      {
+        id: 'iam-solutions-analyst',
+        title: "Analyste en gestion administrative des solutions TI – GIA",
+        description:
+          "Soutenir et faire évoluer les solutions de gestion des identités et des accès (GIA) de Santé Québec : requêtes, configurations, automatisations du cycle de vie des identités (SQL, Python).",
+        location: "Télétravail (Québec)",
+        type: "12 mois · Temps plein",
+      },
+      {
+        id: 'senior-it-project-manager-health',
+        title: "Chargé(e) de projet TI senior",
+        description:
+          "Gérer de bout en bout plusieurs projets numériques de Santé Québec, dont DAAMM et IEVD : planification, parties prenantes, risques, budget, essais et mise en production.",
+        location: "Télétravail (Québec)",
+        type: "12 mois · 35 h/semaine",
+      },
       {
         id: 'organic-architecture-one',
         title: 'Conseiller en architecture organique – 1 ressource',
