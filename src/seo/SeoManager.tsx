@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { getAlternates, getPageMeta, getStructuredData, SITE_URL } from './meta';
@@ -31,6 +31,7 @@ const altLink = (hreflang: string) => () =>
 export default function SeoManager() {
   const { pathname } = useLocation();
   const { lang } = useLanguage();
+  const firstView = useRef(true);
 
   useEffect(() => {
     const meta = getPageMeta(pathname);
@@ -63,6 +64,16 @@ export default function SeoManager() {
       data.length > 0,
     );
     if (ld) ld.textContent = JSON.stringify(data.length === 1 ? data[0] : data);
+
+    // Google Tag Manager : le site change de page sans recharger ; on signale chaque nouvelle page
+    // (la première est déjà comptée au chargement par GTM). Déclencheur GTM : événement « virtual_page_view ».
+    if (firstView.current) {
+      firstView.current = false;
+    } else {
+      const w = window as unknown as { dataLayer?: unknown[] };
+      w.dataLayer = w.dataLayer || [];
+      w.dataLayer.push({ event: 'virtual_page_view', page_path: meta.path, page_location: url, page_title: meta.title, page_language: lang });
+    }
   }, [pathname, lang]);
 
   return null;
