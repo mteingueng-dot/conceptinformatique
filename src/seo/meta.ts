@@ -7,6 +7,7 @@ import { services, getServiceBySlug } from '../data/services';
 import { values } from '../data/values';
 import { professionalProfiles } from '../data/professionalProfiles';
 import { jobsContent } from '../data/jobs';
+import { ESTRIE_FAQ } from '../data/estrie';
 import { langFromPath, localizePath, stripLang } from '../i18n/paths';
 
 export type SeoLang = 'fr' | 'en';
@@ -96,6 +97,16 @@ const STATIC: Record<string, StaticMeta> = {
     description: {
       fr: "Développeur, analyste BI ou ingénieur de données? Consultez les postes ouverts chez Concept Informatique à Sherbrooke et postulez en ligne dès aujourd'hui.",
       en: 'Developer, BI analyst or data engineer? Browse the open positions at Concept Informatique in Sherbrooke and apply online today.',
+    },
+  },
+  '/services-informatiques-estrie/': {
+    title: {
+      fr: 'Services informatiques en Estrie | Concept Informatique',
+      en: 'Eastern Townships IT Services | Concept Informatique',
+    },
+    description: {
+      fr: 'Firme informatique de Sherbrooke au service de toute l’Estrie : logiciels sur mesure, Power BI, données, soutien TI et cybersécurité, IA. Magog, Coaticook, Windsor…',
+      en: 'Sherbrooke IT firm serving the whole Eastern Townships: custom software, Power BI, data, IT support and cybersecurity, AI. Magog, Coaticook, Windsor and more.',
     },
   },
   '/contact/': {
@@ -291,6 +302,7 @@ const CRUMB_LABELS: Record<string, Bi> = {
   '/about/profil-professionnel/': { fr: 'Profil professionnel', en: 'Professional profile' },
   '/careers/': { fr: 'Carrières', en: 'Careers' },
   '/contact/': { fr: 'Contact', en: 'Contact' },
+  '/services-informatiques-estrie/': { fr: 'Services en Estrie', en: 'Eastern Townships' },
   '/privacy/': { fr: 'Confidentialité', en: 'Privacy' },
   '/terms/': { fr: 'Conditions', en: 'Terms' },
 };
@@ -342,6 +354,18 @@ export function getStructuredData(pathname: string, langHint?: SeoLang): object[
       })),
     },
   ];
+  if (base === '/services-informatiques-estrie/') {
+    data.push({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      inLanguage: lang === 'fr' ? 'fr-CA' : 'en-CA',
+      mainEntity: ESTRIE_FAQ[lang].map((f) => ({
+        '@type': 'Question',
+        name: f.q,
+        acceptedAnswer: { '@type': 'Answer', text: f.a },
+      })),
+    });
+  }
   const m = base.match(/^\/services\/([^/]+)\/$/);
   const service = m && getServiceBySlug(m[1], lang);
   if (service) {

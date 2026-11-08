@@ -20,6 +20,7 @@ const fr = {
     "Vos rapports prennent des heures à produire? Vos systèmes ne se parlent pas? Un processus repose encore sur des fichiers Excel? Nous partons de vos besoins d’affaires, livrons par étapes courtes et restons à vos côtés après la mise en production, en personne à Sherbrooke ou à distance, partout au Québec.",
   ],
   aboutCta: 'Parlons de votre projet',
+  aboutEstrie: 'Nos services en Estrie',
   titleA: 'Le futur de vos données',
   titleB: 'commence ici.',
   intro:
@@ -64,6 +65,7 @@ const en: typeof fr = {
     'Do your reports take hours to produce? Do your systems not talk to each other? Does a process still rely on Excel files? We start from your business needs, deliver in short stages and stay by your side after go-live, in person in Sherbrooke or remotely, anywhere in Québec.',
   ],
   aboutCta: "Let's talk about your project",
+  aboutEstrie: 'Our services in the Eastern Townships',
   titleA: 'The future of your data',
   titleB: 'starts here.',
   intro:
@@ -457,6 +459,9 @@ export default function HomePage() {
             ))}
             <Link to="/contact/" className="group inline-flex items-center gap-2 pt-2 font-semibold text-ci-blue-600 hover:text-ci-blue-700">
               {t.aboutCta} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+            <Link to="/services-informatiques-estrie/" className="group ml-6 inline-flex items-center gap-2 pt-2 font-semibold text-ci-green-600 hover:text-ci-navy">
+              {t.aboutEstrie} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </motion.div>
         </div>
