@@ -4,6 +4,7 @@ import { Link2, Mail, Phone, MapPin } from 'lucide-react';
 
 import { useLanguage } from '../i18n/LanguageContext';
 import { getServices } from '../data/services';
+import { OPEN_CONSENT_EVENT } from './CookieConsent';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/concept-informatique-inc';
 
@@ -25,6 +26,7 @@ const copy: Record<Lang, {
   rights: string;
   privacy: string;
   terms: string;
+  cookies: string;
 }> = {
   fr: {
     homeAria: 'Concept Informatique – Accueil',
@@ -42,6 +44,7 @@ const copy: Record<Lang, {
     rights: 'Tous droits réservés.',
     privacy: 'Confidentialité',
     terms: 'Conditions',
+    cookies: 'Gestion des témoins',
   },
   en: {
     homeAria: 'Concept Informatique – Home',
@@ -59,6 +62,7 @@ const copy: Record<Lang, {
     rights: 'All rights reserved.',
     privacy: 'Privacy',
     terms: 'Terms',
+    cookies: 'Cookie settings',
   },
 };
 
@@ -146,6 +150,7 @@ export default function Footer() {
           <div className="flex items-center gap-6">
             <Link to="/privacy/" className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.privacy}</Link>
             <Link to="/terms/" className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.terms}</Link>
+            <button type="button" onClick={() => window.dispatchEvent(new Event(OPEN_CONSENT_EVENT))} className="text-xs text-slate-500 transition-colors hover:text-ci-blue-600">{t.cookies}</button>
           </div>
         </div>
       </div>

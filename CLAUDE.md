@@ -22,6 +22,7 @@ Toujours lancer `npm run build` après une modification pour vérifier qu'elle c
 - `src/i18n/` : la langue vient de l'adresse (`paths.ts` : `/en/...` = anglais) ; `useLanguage()` la donne et `setLang` va à la même page dans l'autre langue. Utiliser `Link`, `Navigate` et `useNavigate` de `src/i18n/router.tsx` (et non de `react-router-dom`) : ils ajoutent `/en` automatiquement.
 - `src/seo/meta.ts` : titre, description, canonique, versions fr/en (hreflang) et données structurées de chaque page ; liste des adresses à pré-rendre. `SeoManager.tsx` les applique pendant la navigation.
 - `src/entry-server.tsx` + `scripts/prerender.mjs` : pré-rendu au build (le code doit fonctionner sans `window` en dehors des `useEffect`).
+- `src/components/CookieConsent.tsx` + `index.html` : bandeau de consentement (Loi 25). Google Tag Manager (GTM-N29MXHX8, qui charge Google Analytics G-85RG4Z4J0N) n'est chargé qu'après « Accepter » ; lien « Gestion des témoins » dans le pied de page. Ne jamais charger de service de suivi avant le consentement.
 - `public/api/send-contact.php`, `public/api/send-application.php` : envoi des formulaires côté serveur (PHP sur cPanel).
 
 ## Traductions

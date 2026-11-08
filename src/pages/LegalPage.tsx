@@ -14,7 +14,7 @@ const content: Record<LegalType, Record<Lang, LegalContent>> = {
   privacy: {
     fr: {
       title: 'Politique de confidentialité',
-      updated: 'Dernière mise à jour : 2025',
+      updated: 'Dernière mise à jour : novembre 2026',
       intro:
         'Concept Informatique inc s’engage à protéger les renseignements personnels de ses clients et visiteurs. La présente politique explique comment nous recueillons, utilisons et protégeons vos renseignements.',
       sections: [
@@ -51,9 +51,12 @@ const content: Record<LegalType, Record<Lang, LegalContent>> = {
           ],
         },
         {
-          heading: 'Témoins (cookies)',
+          heading: 'Témoins (cookies) et mesure d’audience',
           body: [
-            'Notre site utilise des témoins de façon limitée, à des fins de fonctionnement et de statistiques.',
+            'Le site enregistre dans votre navigateur votre choix concernant les témoins. Ce renseignement technique ne permet pas de vous identifier.',
+            'Avec votre consentement seulement, nous utilisons Google Analytics, un service de mesure d’audience de Google LLC, chargé au moyen de Google Tag Manager. Il dépose des témoins (par exemple « _ga ») et recueille des renseignements sur votre navigation : pages consultées, durée de la visite, provenance, type d’appareil et de navigateur, emplacement approximatif. Ces renseignements servent uniquement à produire des statistiques pour comprendre l’utilisation du site et l’améliorer ; ils ne sont pas utilisés à des fins publicitaires. La collecte des données saisies dans les formulaires (courriel, téléphone, nom) par Google est désactivée.',
+            'Ces renseignements sont traités par Google sur des serveurs pouvant être situés à l’extérieur du Québec et du Canada, notamment aux États-Unis.',
+            'Si vous refusez, aucun service de Google n’est chargé à cette fin. Vous pouvez retirer ou modifier votre consentement à tout moment avec le lien « Gestion des témoins » en bas de chaque page ; les témoins de Google Analytics sont alors effacés.',
           ],
         },
         {
@@ -66,7 +69,7 @@ const content: Record<LegalType, Record<Lang, LegalContent>> = {
     },
     en: {
       title: 'Privacy Policy',
-      updated: 'Last updated: 2025',
+      updated: 'Last updated: November 2026',
       intro:
         'Concept Informatique inc is committed to protecting the personal information of its clients and visitors. This policy explains how we collect, use and protect your information.',
       sections: [
@@ -103,9 +106,12 @@ const content: Record<LegalType, Record<Lang, LegalContent>> = {
           ],
         },
         {
-          heading: 'Cookies',
+          heading: 'Cookies and audience measurement',
           body: [
-            'Our website uses cookies in a limited way, for operational and statistical purposes.',
+            'The site stores your cookie choice in your browser. This technical information does not identify you.',
+            'Only with your consent, we use Google Analytics, an audience measurement service of Google LLC, loaded through Google Tag Manager. It sets cookies (for example “_ga”) and collects information about your browsing: pages viewed, visit duration, referral source, device and browser type, approximate location. This information is used solely to produce statistics to understand how the site is used and improve it; it is not used for advertising. Google’s collection of data entered in forms (email, phone, name) is disabled.',
+            'This information is processed by Google on servers that may be located outside Québec and Canada, including in the United States.',
+            'If you decline, no Google service is loaded for this purpose. You can withdraw or change your consent at any time with the “Cookie settings” link at the bottom of every page; Google Analytics cookies are then deleted.',
           ],
         },
         {
