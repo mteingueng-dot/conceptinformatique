@@ -6,19 +6,31 @@ DirectoryIndex index.html
 RewriteEngine On
 RewriteBase /
 
+# Fichiers techniques jamais servis (suivi de la mise en ligne automatique, réglages PHP)
+RewriteRule (^|/)\.(ftp-deploy-sync-state\.json|user\.ini)$ - [F,L]
+
 # Une seule version du site : https + www (http:// et sans www -> redirection permanente)
 RewriteCond %{HTTPS} off [OR]
 RewriteCond %{HTTP_HOST} !^www\. [NC]
 RewriteRule ^ https://www.conceptinformatique.net%{REQUEST_URI} [L,R=301]
 
-# Adresses en double -> adresse officielle (redirection permanente)
-RewriteRule ^home/?$ / [L,R=301]
-RewriteRule ^values/?$ /about/values/ [L,R=301]
-RewriteRule ^values/([^/]+)/?$ /about/values/$1/ [L,R=301]
-RewriteRule ^professional-profiles?/?$ /about/profil-professionnel/ [L,R=301]
-RewriteRule ^professional-profiles/([^/]+)/?$ /about/profils/$1/ [L,R=301]
-RewriteRule ^expertises/?$ /services/ [L,R=301]
-RewriteRule ^expertises/([^/]+)/?$ /about/expertises/$1/ [L,R=301]
+# Adresses en double -> adresse officielle (redirection permanente), en français et sous /en/
+RewriteRule ^(en/)?home/?$ /$1 [L,R=301]
+RewriteRule ^(en/)?values/?$ /$1about/values/ [L,R=301]
+RewriteRule ^(en/)?values/([^/]+)/?$ /$1about/values/$2/ [L,R=301]
+RewriteRule ^(en/)?professional-profiles?/?$ /$1about/profil-professionnel/ [L,R=301]
+RewriteRule ^(en/)?professional-profiles/([^/]+)/?$ /$1about/profils/$2/ [L,R=301]
+RewriteRule ^(en/)?expertises/?$ /$1services/ [L,R=301]
+# Page retirée : « Services informatiques en Estrie »
+RewriteRule ^(en/)?services-informatiques-estrie/?$ /$1 [L,R=301]
+# Anciennes pages « expertises » fusionnées avec les pages de services
+RewriteRule ^(en/)?(about/)?expertises/business-intelligence/?$ /$1services/business-intelligence/ [L,R=301]
+RewriteRule ^(en/)?(about/)?expertises/ingenierie-de-donnees/?$ /$1services/data-engineering/ [L,R=301]
+RewriteRule ^(en/)?(about/)?expertises/developpement-logiciel/?$ /$1services/developpement-logiciel/ [L,R=301]
+RewriteRule ^(en/)?(about/)?expertises/support-ti/?$ /$1services/support-ti-securite/ [L,R=301]
+RewriteRule ^(en/)?(about/)?expertises/automatisation-ia/?$ /$1services/automatisation-ia/ [L,R=301]
+RewriteRule ^(en/)?(about/)?expertises/transformation-numerique/?$ /$1services/transformation-numerique/ [L,R=301]
+RewriteRule ^(en/)?(about/)?expertises/ /$1services/ [L,R=301]
 
 # Page pré-rendue demandée sans « / » final -> avec « / »
 RewriteCond %{REQUEST_FILENAME} -d
@@ -31,6 +43,11 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
 </IfModule>
+
+# Fichiers techniques jamais servis (suivi de la mise en ligne automatique, réglages PHP)
+<FilesMatch "^(\.ftp-deploy-sync-state\.json|\.user\.ini)$">
+  Require all denied
+</FilesMatch>
 
 # Adresse inexistante : vraie page « introuvable » (code 404, non indexée)
 ErrorDocument 404 /404.html

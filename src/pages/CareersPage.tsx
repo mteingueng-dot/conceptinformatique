@@ -139,6 +139,14 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         type: "12 months · 35 h/week",
       },
       {
+        id: 'oracle-dba-24-7',
+        title: "Oracle Database Administrator (DBA)",
+        description:
+          "Join a 24/7 support team for a Québec public organization: Oracle 19 administration on Red Hat Enterprise Linux 8, monitoring, updates, failover testing and incidents.",
+        location: "Remote (Canada)",
+        type: "3 years (+ two 1-year options) · 24/7 on-call",
+      },
+      {
         id: 'organic-architecture-one',
         title: 'Organic Architecture Advisor (1 resource)',
         description:
@@ -302,6 +310,14 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
           "Gérer de bout en bout plusieurs projets numériques de Santé Québec, dont DAAMM et IEVD : planification, parties prenantes, risques, budget, essais et mise en production.",
         location: "Télétravail (Québec)",
         type: "12 mois · 35 h/semaine",
+      },
+      {
+        id: 'oracle-dba-24-7',
+        title: "Administrateur(trice) de bases de données Oracle (DBA)",
+        description:
+          "Rejoindre une équipe de soutien 24/7 d’un organisme public québécois : administration d’Oracle 19 sous Red Hat Enterprise Linux 8, surveillance, mises à jour, relève et incidents.",
+        location: "Télétravail (Canada)",
+        type: "3 ans (+ 2 options d’un an) · Garde 24/7",
       },
       {
         id: 'organic-architecture-one',

@@ -920,6 +920,77 @@ const seniorItProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 
   },
 };
 
+const oracleDbaMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
+  en: {
+    summary: "Join a 24/7 support team for a Québec public organization: Oracle 19 administration on Red Hat Enterprise Linux 8, monitoring, updates, failover testing and incidents.",
+    location: "Remote (Canada)",
+    type: "3 years (+ two 1-year options) · 24/7 on-call",
+    intro: "We are looking for Oracle database administrators (DBAs), including at least one senior, to form a 24/7 support team for a Québec public organization. The environment includes five Oracle 19.31 servers on Red Hat Enterprise Linux 8, one of which is a production server running 24 hours a day, 7 days a week, 365 days a year. The team handles monitoring, updates, failover testing, incident management and on-demand technical support.",
+    responsibilities: [
+      "Monitor the Oracle databases and servers in the environment (5 servers, including 1 in 24/7/365 production).",
+      "Plan and apply Oracle 19.31 updates on Red Hat Enterprise Linux 8.",
+      "Run failover tests and ensure database availability.",
+      "Handle and resolve incidents, including outside regular hours.",
+      "Provide on-demand technical support to the organization’s teams.",
+      "Take part in the on-call rotation (evenings, nights and weekends).",
+    ],
+    requirements: [
+      "Excellent command of French, spoken and written.",
+      "Experience as an Oracle database administrator (the team must show at least 5 years of Oracle DBA experience).",
+      "Experience in a critical 24/7 environment.",
+      "Experience with Oracle 19.31 or a later version.",
+      "Availability for an evening, night and weekend on-call rotation.",
+      "Residence in Canada (remote work from Canada only).",
+    ],
+    assets: [
+      "Senior-level Oracle DBA experience (at least one team member must be senior).",
+      "Administration experience on Red Hat Enterprise Linux 8.",
+      "Experience with Québec public organizations.",
+    ],
+    benefits: [],
+    terms: [
+      "Duration: 3 years, with two 1-year extension options.",
+      "100% remote, from Canada only.",
+      "Evening, night and weekend on-call rotation required.",
+      "To apply, send no later than November 16, 2026, at 12 p.m.: (1) your CV in Word format; (2) the requirement sheet’s forms, completed (sheet available on request at finances@conceptinformatique.net); (3) your status (employee, self-employed or incorporated); (4) your desired hourly rate and on-call rate.",
+    ],
+  },
+  fr: {
+    summary: "Rejoindre une équipe de soutien 24/7 d’un organisme public québécois : administration d’Oracle 19 sous Red Hat Enterprise Linux 8, surveillance, mises à jour, relève et incidents.",
+    location: "Télétravail (Canada)",
+    type: "3 ans (+ 2 options d’un an) · Garde 24/7",
+    intro: "Nous recherchons des administrateurs et administratrices de bases de données (DBA) Oracle, dont au moins une personne de niveau sénior, pour former une équipe de soutien 24/7 auprès d’un organisme public québécois. L’environnement compte cinq serveurs Oracle 19.31 sous Red Hat Enterprise Linux 8, dont un serveur de production en service 24 heures sur 24, 7 jours sur 7, 365 jours par année. L’équipe assure la surveillance, les mises à jour, les tests de relève, la gestion des incidents et le soutien technique sur demande.",
+    responsibilities: [
+      "Surveiller les bases de données Oracle et les serveurs de l’environnement (5 serveurs, dont 1 en production 24/7/365).",
+      "Planifier et appliquer les mises à jour d’Oracle 19.31 sous Red Hat Enterprise Linux 8.",
+      "Réaliser les tests de relève et veiller à la disponibilité des bases de données.",
+      "Prendre en charge et résoudre les incidents, y compris en dehors des heures normales.",
+      "Offrir un soutien technique sur demande aux équipes de l’organisme.",
+      "Participer à la rotation de garde (soir, nuit et fin de semaine).",
+    ],
+    requirements: [
+      "Excellente maîtrise du français, à l’oral et à l’écrit.",
+      "Expérience comme administrateur ou administratrice de bases de données Oracle (l’équipe doit cumuler au moins 5 ans d’expérience comme DBA Oracle).",
+      "Expérience en environnement critique 24/7.",
+      "Expérience sur Oracle 19.31 ou une version supérieure.",
+      "Disponibilité pour une rotation de garde soir, nuit et fin de semaine.",
+      "Résidence au Canada (travail à distance depuis le Canada uniquement).",
+    ],
+    assets: [
+      "Expérience de niveau sénior comme DBA Oracle (au moins un membre de l’équipe doit être sénior).",
+      "Expérience d’administration sous Red Hat Enterprise Linux 8.",
+      "Expérience auprès d’organismes publics québécois.",
+    ],
+    benefits: [],
+    terms: [
+      "Durée : 3 ans, avec 2 options de prolongation d’un an chacune.",
+      "Télétravail à 100 %, depuis le Canada uniquement.",
+      "Rotation de garde soir, nuit et fin de semaine requise.",
+      "Pour postuler, faites-nous parvenir au plus tard le 16 novembre 2026 à 12 h : 1) votre CV en format Word ; 2) les formulaires de la fiche de besoin, remplis (fiche transmise sur demande à finances@conceptinformatique.net) ; 3) votre statut (salarié, travailleur autonome ou société incorporée) ; 4) votre taux horaire et votre tarif de garde souhaités.",
+    ],
+  },
+};
+
 export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
   en: [
     {
@@ -951,6 +1022,11 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'senior-it-project-manager-health',
       title: "Senior IT Project Manager",
       ...seniorItProjectManagerMandate.en,
+    },
+    {
+      id: 'oracle-dba-24-7',
+      title: "Oracle Database Administrator (DBA)",
+      ...oracleDbaMandate.en,
     },
     {
       id: 'organic-architecture-one',
@@ -1083,6 +1159,11 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'senior-it-project-manager-health',
       title: "Chargé(e) de projet TI senior",
       ...seniorItProjectManagerMandate.fr,
+    },
+    {
+      id: 'oracle-dba-24-7',
+      title: "Administrateur(trice) de bases de données Oracle (DBA)",
+      ...oracleDbaMandate.fr,
     },
     {
       id: 'organic-architecture-one',
