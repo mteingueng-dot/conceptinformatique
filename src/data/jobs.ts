@@ -13,75 +13,6 @@ export interface JobDetail {
   deliverables?: string[];
 }
 
-const organicArchitectureMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
-  en: {
-    summary:
-      'Support product teams with software architecture, shared infrastructure and services, continuous delivery, and complex organic issues.',
-    location: 'Quebec City / Hybrid',
-    type: '713 person-days · 35 h/week',
-    intro:
-      'This is a contract, not a call for tenders. Support product teams at the organic architecture level in developing and operating shared infrastructure and services. If this mandate is not a fit, you are welcome to share it with qualified professional contacts.',
-    responsibilities: [
-      'Support the full development lifecycle in a continuous-delivery context.',
-      'Advise on data management, performance, security, services, and on-premises or cloud infrastructure supporting product teams.',
-      'Ensure system software architecture meets established standards for development, performance, evolution, security, quality, and compliance.',
-      'Occasionally analyze and program complex, organic-level features to better support product teams.',
-      'Resolve complex organic issues and coordinate the evolution of the overall organic model.',
-    ],
-    requirements: [
-      'By October 7, 2026, submit a mandate-tailored, signed CV.',
-      'Submit both completed mandate grids (available on request at finances@conceptinformatique.net).',
-      'Submit copies of diplomas or, where applicable, the MIFI comparative evaluation of studies completed outside Quebec.',
-    ],
-    assets: [],
-    benefits: [],
-    terms: [
-      'Start date: November 18, 2026.',
-      'Schedule: November 18, 2026 to October 4, 2029.',
-      'Duration: 713 person-days, at 35 hours per week.',
-      'On-site at the client’s Quebec City office three days per week.',
-    ],
-    deliverables: [
-      'Organic architecture documents, impact analyses, and other documents related to the work.',
-      'Communicate, explain, and follow up on organic best practices and standards with development teams.',
-      'Document relevant information about MAMH systems and development frameworks in the documentation tools available to teams.',
-    ],
-  },
-  fr: {
-    summary:
-      'Soutenir les équipes produit en architecture logicielle, infrastructures et services communs, déploiement continu et résolution de problèmes organiques complexes.',
-    location: 'Québec / Hybride',
-    type: '713 j-p · 35 h/semaine',
-    intro:
-      'Il s’agit d’un contrat et non d’un appel d’offres. Le mandat consiste à soutenir les équipes produit au niveau organique pour le développement et l’exploitation des infrastructures et services communs. Si ce mandat ne correspond pas à votre profil, vous pouvez le partager avec vos contacts professionnels susceptibles d’être intéressés.',
-    responsibilities: [
-      'Soutenir le cycle de vie complet de développement dans un contexte de déploiement continu.',
-      'Conseiller les équipes produit sur la gestion des données, la performance, la sécurité, les services et les infrastructures sur site ou infonuagiques.',
-      'Veiller à ce que l’architecture logicielle respecte les normes établies en développement, performance, évolution, sécurité, qualité et conformité.',
-      'Analyser et programmer occasionnellement des fonctionnalités complexes à caractère organique pour mieux soutenir les équipes produit.',
-      'Résoudre les problématiques organiques complexes et coordonner l’évolution du modèle organique général.',
-    ],
-    requirements: [
-      'Transmettre au plus tard le 7 octobre 2026 un CV adapté au mandat et signé.',
-      'Transmettre les deux grilles du mandat dûment remplies (transmises sur demande à finances@conceptinformatique.net).',
-      'Fournir une copie des diplômes ou, le cas échéant, l’évaluation comparative des études effectuées hors du Québec délivrée par le MIFI.',
-    ],
-    assets: [],
-    benefits: [],
-    terms: [
-      'Entrée en fonction : 18 novembre 2026.',
-      'Échéancier : du 18 novembre 2026 au 4 octobre 2029.',
-      'Durée : 713 jours-personnes, à raison de 35 heures par semaine.',
-      'Présence au bureau du client à Québec trois jours par semaine.',
-    ],
-    deliverables: [
-      'Produire des documents d’architecture organique, d’analyse d’impact ou tout autre document lié aux tâches.',
-      'Diffuser, expliquer et assurer le suivi des meilleures pratiques et règles organiques auprès des équipes de développement.',
-      'Documenter les informations pertinentes sur les systèmes et le cadre de développement du MAMH dans les outils mis à la disposition des équipes.',
-    ],
-  },
-};
-
 const agileProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
   en: {
     summary:
@@ -1127,16 +1058,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       ...seniorItProjectManagerMandate.en,
     },
     {
-      id: 'organic-architecture-one',
-      title: 'Organic Architecture Advisor (1 resource)',
-      ...organicArchitectureMandate.en,
-    },
-    {
-      id: 'organic-architecture-three',
-      title: 'Organic Architecture Advisors (3 resources)',
-      ...organicArchitectureMandate.en,
-    },
-    {
       id: 'senior-agile-project-manager',
       title: 'Senior Project Manager – Agile Profile',
       ...agileProjectManagerMandate.en,
@@ -1267,16 +1188,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'senior-it-project-manager-health',
       title: "Chargé(e) de projet TI senior",
       ...seniorItProjectManagerMandate.fr,
-    },
-    {
-      id: 'organic-architecture-one',
-      title: 'Conseiller en architecture organique – 1 ressource',
-      ...organicArchitectureMandate.fr,
-    },
-    {
-      id: 'organic-architecture-three',
-      title: 'Conseillers en architecture organique – 3 ressources',
-      ...organicArchitectureMandate.fr,
     },
     {
       id: 'senior-agile-project-manager',

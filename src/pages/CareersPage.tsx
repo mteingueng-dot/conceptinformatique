@@ -155,22 +155,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         type: "12 months · 35 h/week",
       },
       {
-        id: 'organic-architecture-one',
-        title: 'Organic Architecture Advisor (1 resource)',
-        description:
-          'Support product teams with software architecture, shared infrastructure and services, continuous delivery, and complex organic issues.',
-        location: 'Quebec City / Hybrid',
-        type: '713 person-days · 35 h/week',
-      },
-      {
-        id: 'organic-architecture-three',
-        title: 'Organic Architecture Advisors (3 resources)',
-        description:
-          'Support product teams with software architecture, shared infrastructure and services, continuous delivery, and complex organic issues.',
-        location: 'Quebec City / Hybrid',
-        type: '713 person-days · 35 h/week',
-      },
-      {
         id: 'senior-agile-project-manager',
         title: 'Senior Project Manager – Agile Profile',
         description:
@@ -334,22 +318,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
           "Gérer de bout en bout plusieurs projets numériques de Santé Québec, dont DAAMM et IEVD : planification, parties prenantes, risques, budget, essais et mise en production.",
         location: "Télétravail (Québec)",
         type: "12 mois · 35 h/semaine",
-      },
-      {
-        id: 'organic-architecture-one',
-        title: 'Conseiller en architecture organique – 1 ressource',
-        description:
-          'Soutenir les équipes produit en architecture logicielle, infrastructures et services communs, déploiement continu et résolution de problèmes organiques complexes.',
-        location: 'Québec / Hybride',
-        type: '713 j-p · 35 h/semaine',
-      },
-      {
-        id: 'organic-architecture-three',
-        title: 'Conseillers en architecture organique – 3 ressources',
-        description:
-          'Soutenir les équipes produit en architecture logicielle, infrastructures et services communs, déploiement continu et résolution de problèmes organiques complexes.',
-        location: 'Québec / Hybride',
-        type: '713 j-p · 35 h/semaine',
       },
       {
         id: 'senior-agile-project-manager',
