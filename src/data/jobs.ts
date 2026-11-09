@@ -1078,41 +1078,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       ...informationSecurityMandate.en,
     },
     {
-      id: 'fullstack',
-      title: 'Full-Stack Software Developer',
-      summary:
-        'Design and deliver custom web applications, from the interface to the API, in collaboration with our data teams and our clients.',
-      location: 'Sherbrooke / Hybrid / telework',
-      type: 'Full-time',
-      intro:
-        'As a Full-Stack Software Developer, you will build custom web applications that help our clients simplify their operations and make better use of their data. You will work alongside our BI and data engineering teams, from the first workshop to production. This is a hands-on role where your technical judgment and your sense of quality really matter.',
-      responsibilities: [
-        'Design and develop responsive user interfaces with React and TypeScript.',
-        'Build and maintain secure, well-documented REST APIs.',
-        'Model, query and optimize SQL databases to support application needs.',
-        'Take part in code reviews, testing and continuous improvement of our practices using Git.',
-        'Meet with clients to understand their needs and turn them into clear technical solutions.',
-      ],
-      requirements: [
-        'Degree in software engineering, computer science or equivalent experience.',
-        'Solid experience with React and TypeScript.',
-        'Good knowledge of API design and integration (REST, authentication, error handling).',
-        'Proficiency in SQL and relational database concepts.',
-        'Comfortable with Git workflows and collaborative development.',
-      ],
-      assets: [
-        'Experience with cloud platforms and deployment pipelines.',
-        'Interest in data visualization, BI or AI-driven automation.',
-        'Ability to communicate in both French and English.',
-      ],
-      benefits: [
-        'Training budget and mentorship to support your growth.',
-        'Flexible hours and hybrid remote work.',
-        'Stimulating projects with modern technologies.',
-        'A collaborative, human-sized team in the heart of Sherbrooke.',
-      ],
-    },
-    {
       id: 'bi',
       title: 'Business Intelligence Analyst',
       summary:
@@ -1208,41 +1173,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'information-security-governance',
       title: "Conseiller en sécurité de l'information – spécialiste gouvernance et gestion du risque",
       ...informationSecurityMandate.fr,
-    },
-    {
-      id: 'fullstack',
-      title: 'Développeur logiciel full-stack',
-      summary:
-        'Concevez et livrez des applications web sur mesure, de l’interface à l’API, en collaboration avec nos équipes de données et nos clients.',
-      location: 'Sherbrooke / Hybride / télétravail',
-      type: 'Temps plein',
-      intro:
-        'À titre de développeur logiciel full-stack, vous concevrez des applications web sur mesure qui aident nos clients à simplifier leurs opérations et à mieux exploiter leurs données. Vous travaillerez avec nos équipes de BI et d’ingénierie de données, du premier atelier jusqu’à la mise en production. Un rôle concret où votre jugement technique et votre souci de la qualité font la différence.',
-      responsibilities: [
-        'Concevoir et développer des interfaces web adaptatives avec React et TypeScript.',
-        'Bâtir et maintenir des API REST sécurisées et bien documentées.',
-        'Modéliser, interroger et optimiser des bases de données SQL pour répondre aux besoins applicatifs.',
-        'Participer aux revues de code, aux tests et à l’amélioration continue de nos pratiques avec Git.',
-        'Rencontrer les clients pour comprendre leurs besoins et les traduire en solutions techniques claires.',
-      ],
-      requirements: [
-        'Diplôme en génie logiciel, en informatique ou expérience équivalente.',
-        'Solide expérience avec React et TypeScript.',
-        'Bonne connaissance de la conception et de l’intégration d’API (REST, authentification, gestion des erreurs).',
-        'Maîtrise du SQL et des concepts de bases de données relationnelles.',
-        'À l’aise avec les flux de travail Git et le développement collaboratif.',
-      ],
-      assets: [
-        'Expérience avec les plateformes infonuagiques et les pipelines de déploiement.',
-        'Intérêt pour la visualisation de données, la BI ou l’automatisation par IA.',
-        'Capacité à communiquer en français et en anglais.',
-      ],
-      benefits: [
-        'Budget de formation et mentorat pour soutenir votre croissance.',
-        'Horaires flexibles et télétravail hybride.',
-        'Projets stimulants avec des technologies modernes.',
-        'Une équipe collaborative à échelle humaine au cœur de Sherbrooke.',
-      ],
     },
     {
       id: 'bi',

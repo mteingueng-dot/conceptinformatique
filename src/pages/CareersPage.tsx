@@ -187,14 +187,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         type: 'Governance and risk management',
       },
       {
-        id: 'fullstack',
-        title: 'Full-Stack Software Developer',
-        description:
-          'Design and deliver custom web applications, from the interface to the API, in collaboration with our data teams and our clients.',
-        location: 'Sherbrooke / Hybrid',
-        type: 'Full-time',
-      },
-      {
         id: 'bi',
         title: 'Business Intelligence Analyst',
         description:
@@ -350,14 +342,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
           'Soutenir la gouvernance de la sécurité de l’information, la gestion des risques et le programme de transformation numérique du Curateur public.',
         location: 'Lieu à confirmer',
         type: 'Gouvernance et gestion du risque',
-      },
-      {
-        id: 'fullstack',
-        title: 'Développeur logiciel full-stack',
-        description:
-          'Concevez et livrez des applications web sur mesure, de l’interface à l’API, en collaboration avec nos équipes de données et nos clients.',
-        location: 'Sherbrooke / Hybride',
-        type: 'Temps plein',
       },
       {
         id: 'bi',
