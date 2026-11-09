@@ -952,7 +952,7 @@ const oracleDbaMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
       "Duration: 3 years, with two 1-year extension options.",
       "100% remote, from Canada only.",
       "Evening, night and weekend on-call rotation required.",
-      "To apply, send no later than November 16, 2026, at 12 p.m.: (1) your CV in Word format; (2) the requirement sheet’s forms, completed (sheet available on request at finances@conceptinformatique.net); (3) your status (employee, self-employed or incorporated); (4) your desired hourly rate and on-call rate.",
+      "To apply, send no later than November 16, 2026, at 12 p.m.: (1) your CV in Word format; (2) the requirement sheet’s forms, completed (sheet available on request at finances@conceptinformatique.net); (3) your status (employee, self-employed or incorporated).",
     ],
   },
   fr: {
@@ -986,7 +986,7 @@ const oracleDbaMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
       "Durée : 3 ans, avec 2 options de prolongation d’un an chacune.",
       "Télétravail à 100 %, depuis le Canada uniquement.",
       "Rotation de garde soir, nuit et fin de semaine requise.",
-      "Pour postuler, faites-nous parvenir au plus tard le 16 novembre 2026 à 12 h : 1) votre CV en format Word ; 2) les formulaires de la fiche de besoin, remplis (fiche transmise sur demande à finances@conceptinformatique.net) ; 3) votre statut (salarié, travailleur autonome ou société incorporée) ; 4) votre taux horaire et votre tarif de garde souhaités.",
+      "Pour postuler, faites-nous parvenir au plus tard le 16 novembre 2026 à 12 h : 1) votre CV en format Word ; 2) les formulaires de la fiche de besoin, remplis (fiche transmise sur demande à finances@conceptinformatique.net) ; 3) votre statut (salarié, travailleur autonome ou société incorporée).",
     ],
   },
 };
