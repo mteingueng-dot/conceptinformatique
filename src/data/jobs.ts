@@ -1087,6 +1087,16 @@ const seniorItGovernanceAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 'id'
 export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
   en: [
     {
+      id: 'oracle-dba-24-7',
+      title: "Oracle Database Administrator (DBA)",
+      ...oracleDbaMandate.en,
+    },
+    {
+      id: 'senior-it-governance-project-advisor',
+      title: "Senior IT Governance and Project Management Advisor",
+      ...seniorItGovernanceAdvisorMandate.en,
+    },
+    {
       id: 'emerging-tech-solutions-analyst',
       title: 'Emerging Technology Solutions Analyst',
       ...emergingTechAnalystMandate.en,
@@ -1115,16 +1125,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'senior-it-project-manager-health',
       title: "Senior IT Project Manager",
       ...seniorItProjectManagerMandate.en,
-    },
-    {
-      id: 'oracle-dba-24-7',
-      title: "Oracle Database Administrator (DBA)",
-      ...oracleDbaMandate.en,
-    },
-    {
-      id: 'senior-it-governance-project-advisor',
-      title: "Senior IT Governance and Project Management Advisor",
-      ...seniorItGovernanceAdvisorMandate.en,
     },
     {
       id: 'organic-architecture-one',
@@ -1229,6 +1229,16 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
   ],
   fr: [
     {
+      id: 'oracle-dba-24-7',
+      title: "Administrateur(trice) de bases de données Oracle (DBA)",
+      ...oracleDbaMandate.fr,
+    },
+    {
+      id: 'senior-it-governance-project-advisor',
+      title: "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
+      ...seniorItGovernanceAdvisorMandate.fr,
+    },
+    {
       id: 'emerging-tech-solutions-analyst',
       title: 'Analyste en solutions technologiques émergentes',
       ...emergingTechAnalystMandate.fr,
@@ -1257,16 +1267,6 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'senior-it-project-manager-health',
       title: "Chargé(e) de projet TI senior",
       ...seniorItProjectManagerMandate.fr,
-    },
-    {
-      id: 'oracle-dba-24-7',
-      title: "Administrateur(trice) de bases de données Oracle (DBA)",
-      ...oracleDbaMandate.fr,
-    },
-    {
-      id: 'senior-it-governance-project-advisor',
-      title: "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
-      ...seniorItGovernanceAdvisorMandate.fr,
     },
     {
       id: 'organic-architecture-one',

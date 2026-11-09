@@ -91,6 +91,22 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     openTitleAccent: 'positions',
     jobs: [
       {
+        id: 'oracle-dba-24-7',
+        title: "Oracle Database Administrator (DBA)",
+        description:
+          "Join a 24/7 support team for a Québec public organization: Oracle 19 administration on Red Hat Enterprise Linux 8, monitoring, updates, failover testing and incidents.",
+        location: "Remote (Canada)",
+        type: "3 years (+ two 1-year options) · 24/7 on-call",
+      },
+      {
+        id: 'senior-it-governance-project-advisor',
+        title: "Senior IT Governance and Project Management Advisor",
+        description:
+          "Support project teams in the project office of a large Québec public organization: compliance with scope, schedule, cost and the IT governance framework.",
+        location: "Quebec City / Hybrid (3 days on site)",
+        type: "3 years · 35 h/week",
+      },
+      {
         id: 'emerging-tech-solutions-analyst',
         title: 'Emerging Technology Solutions Analyst',
         description:
@@ -137,22 +153,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
           "Manage several Santé Québec digital projects end to end, including DAAMM and IEVD: planning, stakeholders, risks, budget, testing and go-live.",
         location: "Remote (Québec)",
         type: "12 months · 35 h/week",
-      },
-      {
-        id: 'oracle-dba-24-7',
-        title: "Oracle Database Administrator (DBA)",
-        description:
-          "Join a 24/7 support team for a Québec public organization: Oracle 19 administration on Red Hat Enterprise Linux 8, monitoring, updates, failover testing and incidents.",
-        location: "Remote (Canada)",
-        type: "3 years (+ two 1-year options) · 24/7 on-call",
-      },
-      {
-        id: 'senior-it-governance-project-advisor',
-        title: "Senior IT Governance and Project Management Advisor",
-        description:
-          "Support project teams in the project office of a large Québec public organization: compliance with scope, schedule, cost and the IT governance framework.",
-        location: "Quebec City / Hybrid (3 days on site)",
-        type: "3 years · 35 h/week",
       },
       {
         id: 'organic-architecture-one',
@@ -272,6 +272,22 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     openTitleAccent: 'ouverts',
     jobs: [
       {
+        id: 'oracle-dba-24-7',
+        title: "Administrateur(trice) de bases de données Oracle (DBA)",
+        description:
+          "Rejoindre une équipe de soutien 24/7 d’un organisme public québécois : administration d’Oracle 19 sous Red Hat Enterprise Linux 8, surveillance, mises à jour, relève et incidents.",
+        location: "Télétravail (Canada)",
+        type: "3 ans (+ 2 options d’un an) · Garde 24/7",
+      },
+      {
+        id: 'senior-it-governance-project-advisor',
+        title: "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
+        description:
+          "Accompagner les équipes de projet du bureau de projets d’un grand organisme public québécois : respect de la portée, de l’échéancier, des coûts et du cadre de gouvernance TI.",
+        location: "Québec / Hybride (3 jours au bureau)",
+        type: "3 ans · 35 h/semaine",
+      },
+      {
         id: 'emerging-tech-solutions-analyst',
         title: 'Analyste en solutions technologiques émergentes',
         description:
@@ -318,22 +334,6 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
           "Gérer de bout en bout plusieurs projets numériques de Santé Québec, dont DAAMM et IEVD : planification, parties prenantes, risques, budget, essais et mise en production.",
         location: "Télétravail (Québec)",
         type: "12 mois · 35 h/semaine",
-      },
-      {
-        id: 'oracle-dba-24-7',
-        title: "Administrateur(trice) de bases de données Oracle (DBA)",
-        description:
-          "Rejoindre une équipe de soutien 24/7 d’un organisme public québécois : administration d’Oracle 19 sous Red Hat Enterprise Linux 8, surveillance, mises à jour, relève et incidents.",
-        location: "Télétravail (Canada)",
-        type: "3 ans (+ 2 options d’un an) · Garde 24/7",
-      },
-      {
-        id: 'senior-it-governance-project-advisor',
-        title: "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
-        description:
-          "Accompagner les équipes de projet du bureau de projets d’un grand organisme public québécois : respect de la portée, de l’échéancier, des coûts et du cadre de gouvernance TI.",
-        location: "Québec / Hybride (3 jours au bureau)",
-        type: "3 ans · 35 h/semaine",
       },
       {
         id: 'organic-architecture-one',
