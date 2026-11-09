@@ -53,7 +53,7 @@ function LangSwitcher({ lang, setLang, label, className = '' }: LangSwitcherProp
           key={l}
           type="button"
           lang={l}
-          aria-label={l === 'fr' ? 'Français' : 'English'}
+          aria-label={l === 'fr' ? 'FR – Français' : 'EN – English'}
           onClick={() => setLang(l)}
           aria-pressed={lang === l}
           className={`rounded-md px-2.5 py-1 transition-colors ${
