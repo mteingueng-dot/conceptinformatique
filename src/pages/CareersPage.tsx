@@ -147,6 +147,14 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
         type: "3 years (+ two 1-year options) · 24/7 on-call",
       },
       {
+        id: 'senior-it-governance-project-advisor',
+        title: "Senior IT Governance and Project Management Advisor",
+        description:
+          "Support project teams in the project office of a large Québec public organization: compliance with scope, schedule, cost and the IT governance framework.",
+        location: "Quebec City / Hybrid (3 days on site)",
+        type: "3 years · 35 h/week",
+      },
+      {
         id: 'organic-architecture-one',
         title: 'Organic Architecture Advisor (1 resource)',
         description:
@@ -318,6 +326,14 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
           "Rejoindre une équipe de soutien 24/7 d’un organisme public québécois : administration d’Oracle 19 sous Red Hat Enterprise Linux 8, surveillance, mises à jour, relève et incidents.",
         location: "Télétravail (Canada)",
         type: "3 ans (+ 2 options d’un an) · Garde 24/7",
+      },
+      {
+        id: 'senior-it-governance-project-advisor',
+        title: "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
+        description:
+          "Accompagner les équipes de projet du bureau de projets d’un grand organisme public québécois : respect de la portée, de l’échéancier, des coûts et du cadre de gouvernance TI.",
+        location: "Québec / Hybride (3 jours au bureau)",
+        type: "3 ans · 35 h/semaine",
       },
       {
         id: 'organic-architecture-one',

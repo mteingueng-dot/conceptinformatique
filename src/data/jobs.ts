@@ -991,6 +991,99 @@ const oracleDbaMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
   },
 };
 
+const seniorItGovernanceAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {
+  en: {
+    summary: "Support project teams in the project office of a large Québec public organization: compliance with scope, schedule, cost and the IT governance framework.",
+    location: "Quebec City / Hybrid (3 days on site)",
+    type: "3 years · 35 h/week",
+    intro: "The project office of a large Québec public organization (multiplatform environment: mainframe, client-server and web) is looking for senior advisors in IT governance and project management. You will support project teams to ensure compliance with project authorization parameters (scope, schedule, cost) and the governance framework, within mixed teams of internal and external resources.",
+    responsibilities: [
+      "Support and advise project teams at every stage of the life cycle (pre-project, planning, execution, closing).",
+      "Support the monitoring of project performance and parameters: scope, schedule, budget, milestones, deliveries, benefits and variances.",
+      "Help teams identify, analyze and track risks, issues, mitigation measures and corrective actions.",
+      "Review the quality, completeness, consistency and compliance of documents and deliverables (accountability reporting, phase gates, change requests).",
+      "Produce the project office’s opinions for phase-gate approvals before governance committees.",
+      "Advise teams on applying and evolving the IT governance and project management framework (directives, processes, practices, templates, tools).",
+      "Contribute to accountability reporting, recommendations to governance bodies and knowledge transfer to internal resources.",
+    ],
+    deliverables: [
+      "Dashboards and progress reports.",
+      "Variance analyses and risk registers.",
+      "Phase-gate opinions (opportunity case, business case, execution authorization).",
+      "Change impact analyses and decision-support notes.",
+      "Governance assessments, guides and templates.",
+      "Training material.",
+    ],
+    requirements: [
+      "Excellent command of French, spoken and written, with the ability to write very high-quality documents.",
+      "Senior-level experience in IT governance and project management.",
+      "Proficiency with MS Project, Azure DevOps and the Microsoft 365 suite (including Power BI).",
+      "Knowledge of agile approaches.",
+      "Ability to work on site in Quebec City at least 3 days a week.",
+    ],
+    assets: [
+      "Residence in the Quebec City region (strongly preferred).",
+      "Experience in a public organization’s project office.",
+      "Experience in a multiplatform environment (mainframe, client-server and web).",
+    ],
+    benefits: [],
+    terms: [
+      "Duration: 3 years, starting early 2027 (no later than 15 business days after the contract is signed).",
+      "Volume: about 1,800 person-days in total for the team (7-hour days).",
+      "Hybrid: on site in Quebec City at least 3 days a week; remote work from Québec only.",
+      "Schedule: 7 hours a day, Monday to Friday, between 7 a.m. and 6:30 p.m.; mandatory presence from 10 to 11:30 a.m. and from 1:30 to 3 p.m.",
+      "No travel, parking or accommodation expenses are reimbursed.",
+      "Background check before starting.",
+      "To apply, send your up-to-date CV in Word format to finances@conceptinformatique.net, stating for each mandate the client, dates, your role and the project’s scope, along with your city of residence and availability.",
+    ],
+  },
+  fr: {
+    summary: "Accompagner les équipes de projet du bureau de projets d’un grand organisme public québécois : respect de la portée, de l’échéancier, des coûts et du cadre de gouvernance TI.",
+    location: "Québec / Hybride (3 jours au bureau)",
+    type: "3 ans · 35 h/semaine",
+    intro: "Le bureau de projets d’un grand organisme public québécois (environnement multiplateforme : central, client-serveur et Web) souhaite s’adjoindre des conseillers et conseillères séniors en gouvernance et en gestion de projets en technologies de l’information. Vous accompagnerez les équipes de projet afin d’assurer le respect des paramètres d’autorisation des projets (portée, échéancier, coût) et du cadre de gouvernance, au sein d’équipes mixtes composées de ressources internes et externes.",
+    responsibilities: [
+      "Accompagner et conseiller les équipes de projet à toutes les étapes du cycle de vie (avant-projet, planification, réalisation, fermeture).",
+      "Soutenir le suivi de la performance et des paramètres des projets : portée, échéancier, budget, jalons, livraisons, bénéfices et écarts.",
+      "Accompagner les équipes dans l’identification, l’analyse et le suivi des risques, des enjeux, des mesures de mitigation et des actions correctives.",
+      "Analyser la qualité, la complétude, la cohérence et la conformité des documents et livrables (reddition de comptes, passages de phase, demandes de changement).",
+      "Produire les avis du bureau de projets pour les autorisations de passage de phase auprès des comités de gouvernance.",
+      "Conseiller les équipes dans l’application et l’évolution du cadre de gouvernance et de gestion des projets TI (directives, processus, pratiques, gabarits, outils).",
+      "Contribuer à la reddition de comptes, aux recommandations destinées aux instances de gouvernance et au transfert de connaissances vers les ressources internes.",
+    ],
+    deliverables: [
+      "Tableaux de bord et rapports d’avancement.",
+      "Analyses d’écarts et registres de risques.",
+      "Avis de passage de phase (dossier d’opportunité, dossier d’affaires, autorisation d’exécution).",
+      "Analyses d’impact de changements et notes d’aide à la décision.",
+      "Diagnostics de gouvernance, guides et gabarits.",
+      "Matériel de formation.",
+    ],
+    requirements: [
+      "Excellente maîtrise du français, à l’oral et à l’écrit, avec une capacité à rédiger des documents de très bonne qualité.",
+      "Expérience de niveau sénior en gouvernance et en gestion de projets en technologies de l’information.",
+      "Maîtrise de MS Project, d’Azure DevOps et de la suite Microsoft 365 (dont Power BI).",
+      "Connaissance de l’approche agile.",
+      "Capacité à travailler au bureau à Québec au moins 3 jours par semaine.",
+    ],
+    assets: [
+      "Résidence dans la région de Québec (fortement privilégiée).",
+      "Expérience au sein d’un bureau de projets d’un organisme public.",
+      "Expérience en environnement multiplateforme (central, client-serveur et Web).",
+    ],
+    benefits: [],
+    terms: [
+      "Durée : 3 ans, démarrage au début de 2027 (au plus tard 15 jours ouvrables après la signature du contrat).",
+      "Volume : environ 1 800 jours-personnes au total pour l’équipe (journées de 7 h).",
+      "Mode hybride : présence au bureau à Québec (ville de Québec) au moins 3 jours par semaine ; télétravail au Québec seulement.",
+      "Horaire : 7 h par jour, du lundi au vendredi, entre 7 h et 18 h 30 ; présence obligatoire de 10 h à 11 h 30 et de 13 h 30 à 15 h.",
+      "Aucuns frais de déplacement, de stationnement ou d’hébergement ne sont remboursés.",
+      "Vérification des antécédents avant l’entrée en fonction.",
+      "Pour postuler, faites-nous parvenir votre CV à jour en format Word à finances@conceptinformatique.net, en indiquant pour chaque mandat le client, les dates, votre rôle et l’envergure du projet, ainsi que votre ville de résidence et votre disponibilité.",
+    ],
+  },
+};
+
 export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
   en: [
     {
@@ -1027,6 +1120,11 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'oracle-dba-24-7',
       title: "Oracle Database Administrator (DBA)",
       ...oracleDbaMandate.en,
+    },
+    {
+      id: 'senior-it-governance-project-advisor',
+      title: "Senior IT Governance and Project Management Advisor",
+      ...seniorItGovernanceAdvisorMandate.en,
     },
     {
       id: 'organic-architecture-one',
@@ -1164,6 +1262,11 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
       id: 'oracle-dba-24-7',
       title: "Administrateur(trice) de bases de données Oracle (DBA)",
       ...oracleDbaMandate.fr,
+    },
+    {
+      id: 'senior-it-governance-project-advisor',
+      title: "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
+      ...seniorItGovernanceAdvisorMandate.fr,
     },
     {
       id: 'organic-architecture-one',
