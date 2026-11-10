@@ -49,6 +49,11 @@ const fr = {
     { title: 'BI augmentée', text: 'Des tableaux de bord rapides sur des données à jour.', to: '/services/business-intelligence/' },
     { title: 'IA en production', text: 'Agents et modèles intégrés à vos processus.', to: '/services/automatisation-ia/' },
   ],
+  videoTag: 'Présentation en vidéo',
+  videoTitle: 'Concept Informatique en 30 secondes.',
+  videoText: 'Nos services, une de nos réalisations et la façon de nous joindre, en un coup d’œil.',
+  videoLabel: 'Vidéo de présentation de Concept Informatique (sans son)',
+  videoFile: 'concept-informatique-presentation-fr',
   workTag: 'Nos réalisations',
   workTitle: 'Des sites que nous avons conçus.',
   workText: 'Concept Informatique conçoit, développe et met en ligne des sites web sur mesure pour des entreprises d’ici.',
@@ -109,6 +114,11 @@ const en: typeof fr = {
     { title: 'Augmented BI', text: 'Fast dashboards on up-to-date data.', to: '/services/business-intelligence/' },
     { title: 'AI in production', text: 'Agents and models built into your processes.', to: '/services/automatisation-ia/' },
   ],
+  videoTag: 'Video overview',
+  videoTitle: 'Concept Informatique in 30 seconds.',
+  videoText: 'Our services, one of our projects and how to reach us, at a glance.',
+  videoLabel: 'Concept Informatique overview video (no sound)',
+  videoFile: 'concept-informatique-presentation-en',
   workTag: 'Our work',
   workTitle: 'Websites we have built.',
   workText: 'Concept Informatique designs, develops and launches custom websites for local businesses.',
@@ -490,6 +500,33 @@ export default function HomePage() {
             <Link to="/contact/" className="group inline-flex items-center gap-2 pt-2 font-semibold text-ci-blue-600 hover:text-ci-blue-700">
               {t.aboutCta} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Vidéo de présentation (fichiers dans public/videos/, produits par scripts/make-video.py) */}
+      <section className="relative pb-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-10 items-center">
+          <motion.div {...reveal}>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.videoTag}</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold tracking-[-0.04em] text-ci-navy">{t.videoTitle}</h2>
+            <p className="mt-4 text-lg text-slate-600">{t.videoText}</p>
+          </motion.div>
+          <motion.div {...reveal} transition={{ delay: 0.1 }} className="overflow-hidden rounded-3xl border border-white bg-white shadow-[0_30px_60px_-30px_rgba(11,31,58,0.45)]">
+            <video
+              key={t.videoFile}
+              className="block aspect-video w-full bg-ci-blue-50"
+              controls
+              muted
+              playsInline
+              preload="none"
+              width={1920}
+              height={1080}
+              poster={`/videos/${t.videoFile}.webp`}
+              aria-label={t.videoLabel}
+            >
+              <source src={`/videos/${t.videoFile}.mp4`} type="video/mp4" />
+            </video>
           </motion.div>
         </div>
       </section>
