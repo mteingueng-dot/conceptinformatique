@@ -90,9 +90,13 @@ export default function Navbar() {
   }, [location.pathname]);
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'unset';
+    // Bloque le défilement de la page derrière le menu ouvert (html et body : Chrome Android défile sur html).
+    const value = isOpen ? 'hidden' : '';
+    document.documentElement.style.overflow = value;
+    document.body.style.overflow = value;
     return () => {
-      document.body.style.overflow = 'unset';
+      document.documentElement.style.overflow = '';
+      document.body.style.overflow = '';
     };
   }, [isOpen]);
 
@@ -111,6 +115,7 @@ export default function Navbar() {
   };
 
   return (
+    <>
     <nav
       id="navbar-root-w8p1k9m3"
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -175,11 +180,14 @@ export default function Navbar() {
           </div>
         </div>
       </div>
+    </nav>
 
-      {/* Mobile Menu */}
+      {/* Menu mobile : hors du <nav>, car son flou d'arrière-plan (backdrop-filter) limiterait
+          ce panneau « fixed » à la hauteur de l'en-tête au lieu de tout l'écran. */}
       <div
         id="mobile-menu-overlay-k4m8n2p1"
-        className={`lg:hidden fixed inset-0 z-40 bg-white transition-transform duration-300 ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        aria-hidden={!isOpen}
+        className={`lg:hidden fixed inset-0 z-40 h-[100dvh] overflow-y-auto overscroll-contain bg-white transition-[transform,visibility] duration-300 ${isOpen ? 'visible translate-x-0' : 'invisible translate-x-full'}`}
       >
         <div className="flex h-full flex-col px-6 pt-28 pb-10">
           <div className="flex flex-col gap-1">
@@ -208,6 +216,6 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-    </nav>
+    </>
   );
 }
