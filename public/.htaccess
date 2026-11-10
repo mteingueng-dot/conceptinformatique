@@ -54,8 +54,6 @@ RewriteRule ^ - [L]
 # Adresse inexistante : vraie page « introuvable » (code 404, non indexée)
 ErrorDocument 404 /404.html
 
-AddType video/mp4 .mp4
-
 # Cache : les .js et .css (dans assets/) changent de nom à chaque build
 <IfModule mod_headers.c>
   <FilesMatch "\.(js|css)$">
