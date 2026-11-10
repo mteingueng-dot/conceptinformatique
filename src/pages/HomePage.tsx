@@ -49,6 +49,21 @@ const fr = {
     { title: 'BI augmentée', text: 'Des tableaux de bord rapides sur des données à jour.', to: '/services/business-intelligence/' },
     { title: 'IA en production', text: 'Agents et modèles intégrés à vos processus.', to: '/services/automatisation-ia/' },
   ],
+  workTag: 'Nos réalisations',
+  workTitle: 'Des sites que nous avons conçus.',
+  workText: 'Concept Informatique conçoit, développe et met en ligne des sites web sur mesure pour des entreprises d’ici.',
+  workKind: 'Site web',
+  projects: [
+    {
+      name: 'Marché Mvog-Mbi',
+      nameStart: 'Marché ',
+      nameAccent: 'Mvog-Mbi',
+      tagline: 'Épicerie africaine, caribéenne et latine · Sherbrooke',
+      text: 'Site de l’épicerie Marché Mvog-Mbi à Sherbrooke : catalogue de plus de 2 000 produits avec recherche, rayons, nouveautés, recettes du monde et informations de livraison. Le site est entièrement conçu et développé par Concept Informatique.',
+      url: 'https://www.marchemvogmbi.com/',
+      cta: 'Visiter marchemvogmbi.com',
+    },
+  ],
   learnMore: 'Découvrir',
   ctaTitle: 'Prêt à passer à la vitesse supérieure?',
   ctaText: 'Parlons de votre plateforme de données et de vos ambitions en IA.',
@@ -92,6 +107,21 @@ const en: typeof fr = {
     { title: 'Real time', text: 'Continuous streams to decide in seconds.', to: '/services/data-engineering/' },
     { title: 'Augmented BI', text: 'Fast dashboards on up-to-date data.', to: '/services/business-intelligence/' },
     { title: 'AI in production', text: 'Agents and models built into your processes.', to: '/services/automatisation-ia/' },
+  ],
+  workTag: 'Our work',
+  workTitle: 'Websites we have built.',
+  workText: 'Concept Informatique designs, develops and launches custom websites for local businesses.',
+  workKind: 'Website',
+  projects: [
+    {
+      name: 'Marché Mvog-Mbi',
+      nameStart: 'Marché ',
+      nameAccent: 'Mvog-Mbi',
+      tagline: 'African, Caribbean and Latin grocery · Sherbrooke',
+      text: 'Website for the Marché Mvog-Mbi grocery store in Sherbrooke: a catalogue of over 2,000 products with search, aisles, new arrivals, world recipes and delivery information. The site was fully designed and developed by Concept Informatique.',
+      url: 'https://www.marchemvogmbi.com/',
+      cta: 'Visit marchemvogmbi.com',
+    },
   ],
   learnMore: 'Discover',
   ctaTitle: 'Ready to shift into high gear?',
@@ -528,6 +558,53 @@ export default function HomePage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Réalisations : sites produits pour nos clients */}
+      <section className="relative py-24 border-t border-white/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...reveal} className="max-w-3xl">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.workTag}</p>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-[-0.04em] text-ci-navy">{t.workTitle}</h2>
+            <p className="mt-4 text-lg text-slate-600">{t.workText}</p>
+          </motion.div>
+          <div className="mt-12 space-y-8">
+            {t.projects.map((p) => (
+              <motion.article
+                key={p.url}
+                {...reveal}
+                className="grid grid-cols-1 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-[0_30px_60px_-35px_rgba(11,31,58,0.35)] md:grid-cols-2"
+              >
+                <div className="flex flex-col justify-center p-8 sm:p-12">
+                  <p className="font-mono text-xs font-semibold uppercase tracking-[0.2em] text-ci-blue-600">{t.workKind}</p>
+                  <h3 className="mt-4 font-display text-3xl font-bold text-ci-navy">{p.name}</h3>
+                  <p className="mt-4 leading-relaxed text-slate-600">{p.text}</p>
+                  <a
+                    href={p.url}
+                    target="_blank"
+                    rel="noopener"
+                    className="group mt-8 inline-flex w-fit items-center gap-2 rounded-xl bg-ci-navy px-6 py-3.5 font-semibold text-white transition-colors hover:bg-ci-blue-700"
+                  >
+                    {p.cta} <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                  </a>
+                </div>
+                <a
+                  href={p.url}
+                  target="_blank"
+                  rel="noopener"
+                  tabIndex={-1}
+                  aria-hidden="true"
+                  className="relative flex min-h-[16rem] flex-col items-center justify-center bg-gradient-to-br from-[#1f6b3a] to-[#0d3b20] px-8 py-12 text-center"
+                >
+                  <span className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+                    {p.nameStart}<span className="text-[#f5b82e]">{p.nameAccent}</span>
+                  </span>
+                  <span className="mt-4 text-sm text-white/80">{p.tagline}</span>
+                </a>
+              </motion.article>
+            ))}
           </div>
         </div>
       </section>
