@@ -61,6 +61,7 @@ const fr = {
       tagline: 'Épicerie africaine, caribéenne et latine · Sherbrooke',
       text: 'Site de l’épicerie Marché Mvog-Mbi à Sherbrooke : catalogue de plus de 2 000 produits avec recherche, rayons, nouveautés, recettes du monde et informations de livraison. Le site est entièrement conçu et développé par Concept Informatique.',
       url: 'https://www.marchemvogmbi.com/',
+      logo: '/realisations/marche-mvog-mbi-logo.webp',
       cta: 'Visiter marchemvogmbi.com',
     },
   ],
@@ -120,6 +121,7 @@ const en: typeof fr = {
       tagline: 'African, Caribbean and Latin grocery · Sherbrooke',
       text: 'Website for the Marché Mvog-Mbi grocery store in Sherbrooke: a catalogue of over 2,000 products with search, aisles, new arrivals, world recipes and delivery information. The site was fully designed and developed by Concept Informatique.',
       url: 'https://www.marchemvogmbi.com/',
+      logo: '/realisations/marche-mvog-mbi-logo.webp',
       cta: 'Visit marchemvogmbi.com',
     },
   ],
@@ -598,7 +600,10 @@ export default function HomePage() {
                   aria-hidden="true"
                   className="relative flex min-h-[16rem] flex-col items-center justify-center bg-gradient-to-br from-[#1f6b3a] to-[#0d3b20] px-8 py-12 text-center"
                 >
-                  <span className="font-display text-4xl sm:text-5xl font-extrabold tracking-tight text-white">
+                  <span className="flex rounded-3xl bg-white p-4 shadow-[0_20px_40px_-20px_rgba(0,0,0,0.6)]">
+                    <img src={p.logo} alt="" width="240" height="308" loading="lazy" className="h-40 w-auto sm:h-48" />
+                  </span>
+                  <span className="mt-6 font-display text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
                     {p.nameStart}<span className="text-[#f5b82e]">{p.nameAccent}</span>
                   </span>
                   <span className="mt-4 text-sm text-white/80">{p.tagline}</span>
