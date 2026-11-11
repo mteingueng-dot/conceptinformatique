@@ -38,7 +38,7 @@ if (strlen($name) > 200 || strlen($phone) > 60 || strlen($position) > 200 || str
     sendJsonResponse(422, ['message' => 'Certaines informations dépassent la longueur autorisée.']);
 }
 
-$recipient = 'finances@conceptinformatique.net';
+$recipient = 'recrutement@conceptinformatique.net';
 $subject = $position === 'Candidature spontanée'
     ? 'Candidature spontanée'
     : 'Candidature - ' . $position;
