@@ -17,6 +17,7 @@ const t = {
     tagline: 'Solutions TI · Sherbrooke',
     toggleMenu: 'Ouvrir ou fermer le menu',
     langLabel: 'Choisir la langue',
+    logoAlt: 'Logo Concept Informatique',
   },
   en: {
     home: 'Home',
@@ -29,6 +30,7 @@ const t = {
     tagline: 'IT solutions · Sherbrooke',
     toggleMenu: 'Toggle menu',
     langLabel: 'Choose language',
+    logoAlt: 'Concept Informatique logo',
   },
 };
 
@@ -128,7 +130,7 @@ export default function Navbar() {
         <div className="relative z-50 flex justify-between h-20 items-center">
           <div id="nav-logo-container-k4m2p8n1" data-role="logo" className="flex items-center">
             <Link to="/" className="flex items-center gap-3">
-              <img src="/logo-concept-informatique-mark.webp" width="204" height="132" alt="Logo Concept Informatique" className="h-10 w-auto object-contain" />
+              <img src="/logo-concept-informatique-mark.webp" width="204" height="132" alt={tr.logoAlt} className="h-10 w-auto object-contain" />
               <span className="hidden min-[420px]:flex flex-col leading-tight whitespace-nowrap">
                 <span className="text-lg font-extrabold tracking-tight text-ci-navy">
                   Concept <span className="text-ci-green-600">Informatique</span>
