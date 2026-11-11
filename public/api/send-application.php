@@ -149,4 +149,53 @@ if (!$sent) {
     sendJsonResponse(500, ['message' => 'Le serveur de messagerie n’a pas accepté la candidature. Veuillez réessayer.']);
 }
 
+// Accusé de réception automatique au candidat, dans la langue du site (fr par défaut).
+// Un échec ici n'annule pas la candidature, déjà transmise : il est seulement consigné.
+$lang = (($_POST['lang'] ?? '') === 'en') ? 'en' : 'fr';
+$candidateName = preg_replace('/[\x00-\x1F\x7F]+/', ' ', $name) ?? '';
+$isSpontaneous = in_array($position, ['Candidature spontanée', 'Spontaneous application'], true);
+if ($lang === 'en') {
+    $ackSubject = 'We have received your application – Concept Informatique';
+    $ackBody = "Hello {$candidateName},\n\n"
+        . 'Thank you for your interest in Concept Informatique. We confirm that we have received your '
+        . ($isSpontaneous ? 'spontaneous application' : "application for the position “{$position}”") . ".\n\n"
+        . "Your application will be reviewed with the greatest attention, and a member of our recruitment team will contact you shortly.\n\n"
+        . "Best regards,\n\n"
+        . "The recruitment team\n"
+        . "Concept Informatique inc.\n"
+        . "Sherbrooke, Québec · 514 712-0371\n"
+        . "https://www.conceptinformatique.net/en/\n\n"
+        . "This message was sent automatically following your application on our website.\n";
+} else {
+    $ackSubject = 'Nous avons bien reçu votre candidature – Concept Informatique';
+    $ackBody = "Bonjour {$candidateName},\n\n"
+        . 'Nous vous remercions de l’intérêt que vous portez à Concept Informatique. Nous confirmons avoir bien reçu votre '
+        . ($isSpontaneous ? 'candidature spontanée' : "candidature pour le poste « {$position} »") . ".\n\n"
+        . "Votre candidature sera examinée avec la plus grande attention, et un membre de notre équipe de recrutement entrera en contact avec vous sous peu.\n\n"
+        . "Cordialement,\n\n"
+        . "L’équipe de recrutement\n"
+        . "Concept Informatique inc.\n"
+        . "Sherbrooke (Québec) · 514 712-0371\n"
+        . "https://www.conceptinformatique.net/\n\n"
+        . "Ce message a été envoyé automatiquement à la suite de votre candidature sur notre site.\n";
+}
+$ackHeaders = [
+    'From: =?UTF-8?B?' . base64_encode('Concept Informatique – Recrutement') . "?= <{$recipient}>",
+    'Reply-To: ' . $recipient,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: quoted-printable',
+    'Auto-Submitted: auto-replied',
+];
+$ackSent = mail(
+    $email,
+    '=?UTF-8?B?' . base64_encode($ackSubject) . '?=',
+    quoted_printable_encode(str_replace("\n", "\r\n", $ackBody)),
+    implode("\r\n", $ackHeaders),
+    '-f' . $recipient
+);
+if (!$ackSent) {
+    error_log('Career application acknowledgement could not be sent to the candidate.');
+}
+
 sendJsonResponse(200, ['message' => 'Candidature envoyée.']);

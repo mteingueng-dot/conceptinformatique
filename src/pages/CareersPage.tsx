@@ -199,7 +199,7 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     viewDetails: 'View details',
     applyTitleLead: 'Submit your ',
     applyTitleAccent: 'application',
-    successMessage: 'Your application was submitted successfully.',
+    successMessage: 'Thank you! Your application has been received and will be reviewed with the greatest attention. A member of our recruitment team will contact you shortly. A confirmation email has been sent to you.',
     successReturnToJobs: 'Back to available positions',
     nameLabel: 'First & Last Name',
     namePlaceholder: 'e.g. John Smith',
@@ -356,7 +356,7 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     viewDetails: 'Voir les détails',
     applyTitleLead: 'Soumettez votre ',
     applyTitleAccent: 'candidature',
-    successMessage: 'Votre candidature a bien été soumise.',
+    successMessage: 'Merci! Votre candidature a bien été reçue et sera examinée avec la plus grande attention. Un membre de notre équipe de recrutement entrera en contact avec vous sous peu. Un courriel de confirmation vous a été envoyé.',
     successReturnToJobs: 'Retour aux postes disponibles',
     nameLabel: 'Prénom et nom',
     namePlaceholder: 'ex. Jean Tremblay',
@@ -684,6 +684,7 @@ export default function CareersPage() {
                 aria-hidden="true"
                 className="hidden"
               />
+              <input type="hidden" name="lang" value={lang} />
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label htmlFor="careers-name" className="text-sm font-medium text-ci-navy">{t.nameLabel}</label>
