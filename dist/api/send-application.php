@@ -153,6 +153,15 @@ if (!$sent) {
 // Un échec ici n'annule pas la candidature, déjà transmise : il est seulement consigné.
 $lang = (($_POST['lang'] ?? '') === 'en') ? 'en' : 'fr';
 $candidateName = preg_replace('/[\x00-\x1F\x7F]+/', ' ', $name) ?? '';
+// Majuscule au début de chaque mot (y compris après un trait d'union ou une apostrophe), le reste est conservé :
+// « jean-luc o'neil » -> « Jean-Luc O'Neil », « McDonald » reste « McDonald ».
+if (function_exists('mb_strtoupper')) {
+    $candidateName = preg_replace_callback(
+        "/(^|[\\s\\-'’])(\\p{Ll})/u",
+        static fn (array $m): string => $m[1] . mb_strtoupper($m[2], 'UTF-8'),
+        $candidateName
+    ) ?? $candidateName;
+}
 $isSpontaneous = in_array($position, ['Candidature spontanée', 'Spontaneous application'], true);
 if ($lang === 'en') {
     $ackSubject = 'We have received your application – Concept Informatique';
