@@ -25,6 +25,7 @@ RewriteRule ^(en/)?expertises/?$ /$1services/ [L,R=301]
 RewriteRule ^(en/)?services-informatiques-estrie/?$ /$1 [L,R=301]
 # Offres d'emploi échues -> page Carrières
 RewriteRule ^(en/)?careers/(organic-architecture-(one|three)|fullstack)/?$ /$1careers/ [L,R=301]
+RewriteRule ^(en/)?careers/(it-solutions-analyst-iam-m365|iam-solutions-analyst|senior-it-project-manager-health|emerging-tech-solutions-analyst|governance-advisor|business-analyst-management-frameworks)/?$ /$1careers/ [L,R=301]
 # Anciennes pages « expertises » fusionnées avec les pages de services
 RewriteRule ^(en/)?(about/)?expertises/business-intelligence/?$ /$1services/business-intelligence/ [L,R=301]
 RewriteRule ^(en/)?(about/)?expertises/ingenierie-de-donnees/?$ /$1services/data-engineering/ [L,R=301]
