@@ -3,6 +3,31 @@ import { Mail, Phone, MapPin, Link2 } from 'lucide-react';
 import SiteJourneyForm from '../components/SiteJourneyForm';
 import { motion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
+
+// Contenu ajouté : ce qui se passe après l'envoi du message
+const nextSteps = {
+  fr: {
+    titleBefore: 'Et ensuite, ',
+    titleHighlight: 'que se passe-t-il ?',
+    intro: 'Pas de longue procédure : voici comment se déroulent les premiers échanges avec notre équipe.',
+    steps: [
+      { title: 'Nous lisons votre message', text: 'Un membre de l’équipe prend connaissance de votre demande et vous répond rapidement.' },
+      { title: 'Un premier échange', text: 'Par téléphone, en visioconférence ou à nos bureaux, pour bien comprendre vos besoins et vos contraintes.' },
+      { title: 'Une proposition claire', text: 'Une solution, des étapes et un budget présentés simplement, pour décider en toute confiance.' },
+    ],
+  },
+  en: {
+    titleBefore: 'What happens ',
+    titleHighlight: 'next?',
+    intro: 'No lengthy procedure: here is how the first conversations with our team unfold.',
+    steps: [
+      { title: 'We read your message', text: 'A team member reviews your request and gets back to you quickly.' },
+      { title: 'A first conversation', text: 'By phone, video call or at our offices, to fully understand your needs and constraints.' },
+      { title: 'A clear proposal', text: 'A solution, steps and budget presented simply, so you can decide with confidence.' },
+    ],
+  },
+};
 
 const LINKEDIN_URL = 'https://www.linkedin.com/company/concept-informatique-inc';
 
@@ -74,6 +99,7 @@ const content = {
 export default function ContactPage() {
   const { lang } = useLanguage();
   const c = lang === 'fr' ? content.fr : content.en;
+  const n = lang === 'fr' ? nextSteps.fr : nextSteps.en;
   const [attachment, setAttachment] = useState<File | null>(null);
 
   return (
@@ -240,6 +266,41 @@ export default function ContactPage() {
             </motion.div>
           </div>
         </div>
+      </section>
+
+      {/* Après l'envoi du message */}
+      <section className="bg-white/50 border-t border-slate-200 py-24 text-ci-navy">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Photo name="planification-projet" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[3/2] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <h2 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-5xl mb-4">
+              {n.titleBefore}<span className="text-gradient-ci">{n.titleHighlight}</span>
+            </h2>
+            <p className="text-slate-600 text-lg font-light mb-10">{n.intro}</p>
+            <ol className="space-y-6">
+              {n.steps.map((step, i) => (
+                <li key={step.title} className="flex gap-5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-ci-blue-600 to-ci-green-500 font-mono text-sm font-bold text-white">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-lg text-ci-navy">{step.title}</h3>
+                    <p className="mt-1 text-slate-600 font-light">{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Bandeau photo de l'Estrie */}
+      <section className="relative h-64 md:h-80 w-full overflow-hidden">
+        <Photo name="sherbrooke-estrie" sizes="100vw" className="absolute inset-0 h-full w-full" />
+        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b1f3a]/70 to-transparent" />
+        <p className="absolute bottom-6 left-0 right-0 mx-auto max-w-7xl px-4 sm:px-8 font-display text-2xl md:text-3xl font-bold text-white">{c.officeArea}</p>
       </section>
 
       <section className="relative h-[460px] w-full bg-slate-100">

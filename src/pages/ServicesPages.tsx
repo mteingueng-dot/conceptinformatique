@@ -1,8 +1,10 @@
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from '../i18n/router';
 import { getServices } from '../data/services';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
+import { servicePhoto } from '../data/photos';
 
 const content = {
   fr: {
@@ -23,6 +25,16 @@ const content = {
       { step: '03', title: 'Déploiement', desc: 'Mise en œuvre agile et intégration aux systèmes existants.' },
       { step: '04', title: 'Optimisation', desc: 'Maintenance proactive et amélioration continue des performances.' },
     ],
+    whyTitleBefore: 'Une seule équipe, ',
+    whyTitleAccent: 'de l’idée au soutien',
+    whyText:
+      'Vos projets ne passent pas d’un fournisseur à l’autre : la même équipe analyse vos besoins, conçoit la solution, la met en production et en assure le suivi. Vous gardez un interlocuteur qui connaît votre contexte.',
+    whyPoints: [
+      'Des livraisons courtes et régulières, pour voir les résultats rapidement.',
+      'Des technologies reconnues : Microsoft 365, Power BI, Azure, AWS, Fabric, Databricks.',
+      'Une documentation et une formation remises à vos équipes à chaque étape.',
+      'Une présence locale à Sherbrooke et en Estrie, et des services à distance partout au Québec.',
+    ],
   },
   en: {
     headerTitleBefore: 'IT services ',
@@ -41,6 +53,16 @@ const content = {
       { step: '02', title: 'Design', desc: 'Architecture design and solution modelling.' },
       { step: '03', title: 'Deployment', desc: 'Agile implementation and integration with existing systems.' },
       { step: '04', title: 'Optimization', desc: 'Proactive maintenance and continuous performance improvement.' },
+    ],
+    whyTitleBefore: 'One team, ',
+    whyTitleAccent: 'from idea to support',
+    whyText:
+      'Your projects are not handed from one supplier to the next: the same team analyzes your needs, designs the solution, puts it into production and follows up. You keep a contact who knows your context.',
+    whyPoints: [
+      'Short, regular deliveries so you see results quickly.',
+      'Proven technologies: Microsoft 365, Power BI, Azure, AWS, Fabric, Databricks.',
+      'Documentation and training handed over to your teams at every stage.',
+      'A local presence in Sherbrooke and the Eastern Townships, and remote services across Québec.',
     ],
   },
 };
@@ -82,8 +104,20 @@ export default function ServicesPage() {
               >
                 <Link
                   to={`/services/${service.slug}/`}
-                  className="group flex flex-col h-full min-h-[208px] bg-white border border-slate-200 p-5 rounded-xl shadow-sm hover:shadow-xl hover:shadow-ci-blue-600/10 hover:border-ci-green-400/40 transition-all duration-300 hover:-translate-y-1"
+                  className="group flex flex-col h-full overflow-hidden bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-xl hover:shadow-ci-blue-600/10 hover:border-ci-green-400/40 transition-all duration-300 hover:-translate-y-1"
                 >
+                  {servicePhoto[service.slug] && (
+                    <div className="overflow-hidden">
+                      <Photo
+                        name={servicePhoto[service.slug]}
+                        decorative
+                        priority={idx < 4}
+                        sizes="(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw"
+                        className="aspect-[16/10] w-full transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="flex flex-1 flex-col p-5">
                   <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-3">
                     <service.icon className="w-5 h-5" />
                   </div>
@@ -92,6 +126,7 @@ export default function ServicesPage() {
                   <div className="mt-auto flex items-center gap-2 text-sm font-medium text-ci-green-600">
                     {t.learnMore}
                     <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" />
+                  </div>
                   </div>
                 </Link>
               </motion.div>
@@ -121,6 +156,29 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Une seule équipe */}
+      <section className="py-24 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
+            <Photo name="equipe-collaboration" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[3/2] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }}>
+            <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-6 text-ci-navy">
+              {t.whyTitleBefore}<span className="text-gradient-ci">{t.whyTitleAccent}</span>
+            </h2>
+            <p className="text-slate-600 text-lg font-light leading-relaxed mb-8">{t.whyText}</p>
+            <ul className="space-y-4">
+              {t.whyPoints.map((point) => (
+                <li key={point} className="flex items-start gap-3 text-slate-600">
+                  <CheckCircle2 className="w-5 h-5 text-ci-green-600 mt-0.5 shrink-0" />
+                  {point}
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </section>
     </div>

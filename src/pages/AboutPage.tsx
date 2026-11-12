@@ -19,6 +19,8 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
+import { valuePhoto, profilePhoto, type PhotoKey } from '../data/photos';
 
 interface Bi {
   fr: string;
@@ -227,6 +229,32 @@ const copy = {
   ctaButton: { fr: 'Parler à un expert', en: 'Talk to an expert' },
 };
 
+// Photo de chaque carte d'expertise (clé = titre français)
+const expertisePhotoByTitle: Record<string, PhotoKey> = {
+  'Business Intelligence': 'expertise-business-intelligence',
+  'Ingénierie de données': 'expertise-ingenierie-de-donnees',
+  'Développement logiciel': 'expertise-developpement-logiciel',
+  'Support TI': 'expertise-support-ti',
+  'Automatisation IA': 'expertise-automatisation-ia',
+  'Transformation numérique': 'expertise-transformation-numerique',
+};
+
+// Section « Ce qui nous distingue »
+const distinct = {
+  prefix: { fr: 'Ce qui nous', en: 'What sets us' } as Bi,
+  accent: { fr: 'distingue', en: 'apart' } as Bi,
+  intro: {
+    fr: 'Choisir un partenaire technologique, c’est choisir une équipe avec qui l’on travaillera pendant des années. Voici ce que nos clients apprécient le plus.',
+    en: 'Choosing a technology partner means choosing a team you will work with for years. Here is what our clients value most.',
+  } as Bi,
+  points: [
+    { title: { fr: 'Plus de 17 ans d’expérience', en: 'Over 17 years of experience' }, text: { fr: 'Des projets menés pour des PME et des organisations de différents secteurs d’activité.', en: 'Projects delivered for SMEs and organizations in a range of industries.' } },
+    { title: { fr: 'Une présence locale', en: 'A local presence' }, text: { fr: 'Une équipe établie à Sherbrooke, qui se déplace en Estrie et travaille à distance partout au Québec.', en: 'A team based in Sherbrooke that travels across the Eastern Townships and works remotely throughout Québec.' } },
+    { title: { fr: 'Un service bilingue', en: 'Bilingual service' }, text: { fr: 'Des échanges, de la documentation et de la formation en français comme en anglais.', en: 'Communication, documentation and training in French as well as English.' } },
+    { title: { fr: 'Un partenariat à long terme', en: 'A long-term partnership' }, text: { fr: 'Nous restons à vos côtés après la mise en production pour faire évoluer vos solutions avec votre entreprise.', en: 'We stay with you after go-live to evolve your solutions as your business grows.' } },
+  ] as { title: Bi; text: Bi }[],
+};
+
 const servicePaths: Record<string, string> = {
   'Business Intelligence': '/services/business-intelligence/',
   'Ingénierie de données': '/services/data-engineering/',
@@ -278,6 +306,13 @@ export default function AboutPage() {
             </p>
             <p className="font-mono text-ci-blue-600 text-sm md:text-base">{t(copy.slogan)}</p>
           </motion.div>
+        </div>
+        <div className="relative z-10 max-w-7xl mx-auto mt-16 px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-4">
+          <Photo name="bureau-lumineux" priority sizes="(min-width: 768px) 50vw, 100vw" className="col-span-2 row-span-2 aspect-[3/2] md:aspect-auto h-full w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+          <Photo name="equipe-collaboration" priority sizes="(min-width: 768px) 25vw, 50vw" className="aspect-[3/2] w-full rounded-2xl shadow-lg" />
+          <Photo name="reseau-mondial" priority sizes="(min-width: 768px) 25vw, 50vw" className="aspect-[3/2] w-full rounded-2xl shadow-lg" />
+          <Photo name="expertise-developpement-logiciel" sizes="(min-width: 768px) 25vw, 50vw" className="aspect-[3/2] w-full rounded-2xl shadow-lg" />
+          <Photo name="expertise-business-intelligence" sizes="(min-width: 768px) 25vw, 50vw" className="aspect-[3/2] w-full rounded-2xl shadow-lg" />
         </div>
       </section>
 
@@ -369,8 +404,14 @@ export default function AboutPage() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
-                    className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8 h-full"
+                    className="overflow-hidden bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] h-full"
                   >
+                    {expertisePhotoByTitle[item.title.fr] && (
+                      <div className="overflow-hidden">
+                        <Photo name={expertisePhotoByTitle[item.title.fr]} decorative sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="aspect-[16/9] w-full transition-transform duration-500 group-hover:scale-105" />
+                      </div>
+                    )}
+                    <div className="p-8">
                     <div className="flex items-start justify-between mb-6">
                       <div className="w-12 h-12 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center">
                         <item.icon className="w-6 h-6" />
@@ -379,6 +420,7 @@ export default function AboutPage() {
                     </div>
                     <h3 className="font-display text-ci-navy text-xl font-medium mb-3">{t(item.title)}</h3>
                     <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
+                    </div>
                   </motion.div>
                 </Link>
               );
@@ -409,13 +451,20 @@ export default function AboutPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
-                  className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8 text-center h-full"
+                  className="overflow-hidden bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] text-center h-full"
                 >
-                  <div className="w-14 h-14 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center mx-auto mb-6">
+                  {valuePhoto[item.slug] && (
+                    <div className="overflow-hidden">
+                      <Photo name={valuePhoto[item.slug]} decorative sizes="(min-width: 768px) 33vw, 100vw" className="aspect-[16/9] w-full transition-transform duration-500 group-hover:scale-105" />
+                    </div>
+                  )}
+                  <div className="p-8">
+                  <div className="-mt-14 relative w-14 h-14 rounded-xl bg-white text-ci-blue-600 shadow-lg flex items-center justify-center mx-auto mb-6">
                     <item.icon className="w-7 h-7" />
                   </div>
                   <h3 className="font-display text-ci-navy text-xl font-medium mb-3">{t(item.title)}</h3>
                   <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
+                  </div>
                 </motion.div>
               </Link>
             ))}
@@ -447,6 +496,7 @@ export default function AboutPage() {
                   <p key={p.en}>{t(p)}</p>
                 ))}
               </div>
+              <Photo name="bureau-aire-ouverte" sizes="(min-width: 1024px) 45vw, 100vw" className="mt-10 aspect-[3/2] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
             </motion.div>
             <div className="space-y-6">
               {profileHighlights.map((item, i) => (
@@ -462,9 +512,13 @@ export default function AboutPage() {
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     className="flex items-start gap-5 bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-6"
                   >
-                    <div className="w-12 h-12 shrink-0 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center">
-                      <item.icon className="w-6 h-6" />
-                    </div>
+                    {profilePhoto[item.slug] ? (
+                      <Photo name={profilePhoto[item.slug]} decorative sizes="128px" className="w-24 h-20 sm:w-32 sm:h-24 shrink-0 rounded-lg" />
+                    ) : (
+                      <div className="w-12 h-12 shrink-0 rounded-xl bg-ci-blue-500/10 text-ci-blue-600 flex items-center justify-center">
+                        <item.icon className="w-6 h-6" />
+                      </div>
+                    )}
                     <div>
                       <h3 className="font-display text-ci-navy text-xl font-medium mb-2">{t(item.title)}</h3>
                       <p className="text-slate-600 font-light leading-relaxed">{t(item.desc)}</p>
@@ -505,6 +559,41 @@ export default function AboutPage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Ce qui nous distingue */}
+      <section className="relative bg-transparent py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <h2 className="font-display text-ci-navy text-3xl md:text-5xl font-bold tracking-[-0.03em] mb-6">
+              {t(distinct.prefix)} <span className="bg-gradient-to-r from-ci-blue-600 to-ci-green-500 bg-clip-text text-transparent">{t(distinct.accent)}</span>
+            </h2>
+            <p className="text-slate-600 text-lg font-light leading-relaxed mb-10">{t(distinct.intro)}</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {distinct.points.map((pt, i) => (
+                <div key={pt.title.en} className="bg-white/90 border border-slate-200 rounded-xl p-6">
+                  <span className="font-mono text-sm text-ci-green-600">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="mt-2 font-display text-ci-navy text-lg font-medium">{t(pt.title)}</h3>
+                  <p className="mt-2 text-slate-600 font-light text-sm leading-relaxed">{t(pt.text)}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="relative"
+          >
+            <Photo name="espace-de-travail" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[4/5] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+          </motion.div>
         </div>
       </section>
 

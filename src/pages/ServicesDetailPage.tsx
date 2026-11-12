@@ -1,7 +1,11 @@
 import { useParams } from 'react-router-dom';
 import { Link } from '../i18n/router';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ChevronDown, Lightbulb } from 'lucide-react';
+import Photo from '../components/Photo';
+import BenefitsShowcase from '../components/BenefitsShowcase';
+import { benefitPhoto, servicePhoto } from '../data/photos';
+import { getServiceExtra } from '../data/serviceExtras';
 import { getServiceBySlug, getServices } from '../data/services';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -18,6 +22,7 @@ const copy = {
     keyPoints: 'Points clés',
     benefitsPrefix: 'Les ',
     benefitsHighlight: 'avantages',
+    benefitsSubtitle: 'Ce que ce service change concrètement pour votre organisation.',
     deliverPrefix: 'Ce que nous ',
     deliverHighlight: 'livrons',
     techPrefix: 'Technologies et ',
@@ -27,6 +32,11 @@ const copy = {
     otherPrefix: 'Autres ',
     otherHighlight: 'services',
     learnMore: 'En savoir plus',
+    useCasesPrefix: 'Cas d’usage ',
+    useCasesHighlight: 'typiques',
+    useCasesText: 'Quelques exemples de projets que nous réalisons pour les PME et les organisations.',
+    faqPrefix: 'Questions ',
+    faqHighlight: 'fréquentes',
     ctaTitle: 'Prêt à démarrer votre projet ?',
     ctaText: 'Parlons de vos besoins et trouvons ensemble la meilleure solution.',
     ctaButton: 'Contacter Concept Informatique',
@@ -43,6 +53,7 @@ const copy = {
     keyPoints: 'Key points',
     benefitsPrefix: 'The ',
     benefitsHighlight: 'benefits',
+    benefitsSubtitle: 'What this service concretely changes for your organization.',
     deliverPrefix: 'What we ',
     deliverHighlight: 'deliver',
     techPrefix: 'Technologies and ',
@@ -52,6 +63,11 @@ const copy = {
     otherPrefix: 'Other ',
     otherHighlight: 'services',
     learnMore: 'Learn more',
+    useCasesPrefix: 'Typical ',
+    useCasesHighlight: 'use cases',
+    useCasesText: 'A few examples of projects we deliver for SMEs and organizations.',
+    faqPrefix: 'Frequently asked ',
+    faqHighlight: 'questions',
     ctaTitle: 'Ready to start your project?',
     ctaText: "Let's talk about your needs and find the best solution together.",
     ctaButton: 'Contact Concept Informatique',
@@ -90,12 +106,14 @@ export default function ServiceDetailPage() {
   const firstWords = words.length > 1 ? words.slice(0, -1).join(' ') : service.title;
   const Icon = service.icon;
   const otherServices = getServices(lang).filter((s) => s.slug !== service.slug);
+  const extra = getServiceExtra(service.slug, lang);
+  const photo = servicePhoto[service.slug];
 
   return (
     <div id="service-detail-root-z6c3b8n1" className="pt-20 bg-transparent text-ci-navy min-h-screen">
       {/* Header */}
       <section className="bg-white/50 border-b border-slate-200 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -110,7 +128,7 @@ export default function ServiceDetailPage() {
             <div className="w-14 h-14 bg-ci-green-500/10 text-ci-green-600 rounded-xl flex items-center justify-center mb-6">
               <Icon className="w-7 h-7" />
             </div>
-            <h1 className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-7xl mb-6">
+            <h1 className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-6xl mb-6">
               {firstWords}{' '}
               {lastWord && <span className="text-gradient-ci">{lastWord}</span>}
             </h1>
@@ -123,6 +141,12 @@ export default function ServiceDetailPage() {
               {t.requestConsultation} <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
+          {photo && (
+            <div className="relative">
+              <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-ci-blue-200/60 to-ci-green-100/60 blur-2xl" />
+              <Photo name={photo} priority sizes="(min-width: 1024px) 45vw, 100vw" className="relative aspect-[3/2] w-full rounded-3xl border border-white shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+            </div>
+          )}
         </div>
       </section>
 
@@ -161,31 +185,13 @@ export default function ServiceDetailPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 bg-white/50 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-12 text-ci-navy">
-            {t.benefitsPrefix}<span className="text-gradient-ci">{t.benefitsHighlight}</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {service.benefits.map((benefit, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white border border-slate-200 p-8 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-5 font-sans font-medium">
-                  {i + 1}
-                </div>
-                <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">{benefit.title}</h3>
-                <p className="text-slate-600 font-light leading-relaxed">{benefit.text}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsShowcase
+        prefix={t.benefitsPrefix}
+        highlight={t.benefitsHighlight}
+        subtitle={t.benefitsSubtitle}
+        photo={benefitPhoto.service[service.slug]}
+        items={service.benefits}
+      />
 
       {/* Deliverables + Technologies */}
       <section className="py-24 bg-transparent">
@@ -259,6 +265,58 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
+      {/* Cas d'usage */}
+      {extra && (
+        <section className="py-24 bg-transparent border-t border-slate-200">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-4 text-ci-navy">
+              {t.useCasesPrefix}<span className="text-gradient-ci">{t.useCasesHighlight}</span>
+            </h2>
+            <p className="text-slate-600 text-lg font-light mb-12 max-w-2xl">{t.useCasesText}</p>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {extra.useCases.map((uc, i) => (
+                <motion.div
+                  key={uc.title}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.1 }}
+                  className="bg-white border border-slate-200 p-8 rounded-2xl"
+                >
+                  <div className="w-10 h-10 bg-ci-blue-600/10 text-ci-blue-600 rounded-lg flex items-center justify-center mb-5">
+                    <Lightbulb className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">{uc.title}</h3>
+                  <p className="text-slate-600 font-light leading-relaxed">{uc.text}</p>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Questions fréquentes */}
+      {extra && (
+        <section className="py-24 bg-white/50 border-t border-slate-200">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-10 text-ci-navy">
+              {t.faqPrefix}<span className="text-gradient-ci">{t.faqHighlight}</span>
+            </h2>
+            <div className="space-y-4">
+              {extra.faq.map((item) => (
+                <details key={item.q} className="group bg-white border border-slate-200 rounded-2xl p-6 open:shadow-lg open:shadow-ci-blue-600/5">
+                  <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-lg font-medium text-ci-navy [&::-webkit-details-marker]:hidden">
+                    {item.q}
+                    <ChevronDown className="w-5 h-5 shrink-0 text-ci-green-600 transition-transform group-open:rotate-180" />
+                  </summary>
+                  <p className="mt-4 text-slate-600 font-light leading-relaxed">{item.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Other services */}
       <section className="py-24 bg-transparent border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -278,8 +336,12 @@ export default function ServiceDetailPage() {
                 >
                   <Link
                     to={`/services/${other.slug}/`}
-                    className="block h-full bg-white border border-slate-200 p-6 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
+                    className="block h-full overflow-hidden bg-white border border-slate-200 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
                   >
+                    {servicePhoto[other.slug] && (
+                      <Photo name={servicePhoto[other.slug]} decorative sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw" className="aspect-[16/9] w-full" />
+                    )}
+                    <div className="p-6">
                     <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-4">
                       <OtherIcon className="w-5 h-5" />
                     </div>
@@ -288,6 +350,7 @@ export default function ServiceDetailPage() {
                     <span className="inline-flex items-center gap-1 text-sm text-ci-green-600">
                       {t.learnMore} <ArrowRight className="w-4 h-4" />
                     </span>
+                    </div>
                   </Link>
                 </motion.div>
               );

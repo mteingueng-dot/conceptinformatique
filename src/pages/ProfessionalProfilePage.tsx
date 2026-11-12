@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
 
 interface Bi {
   fr: string;
@@ -236,11 +237,14 @@ export default function ProfessionalProfilePage() {
             <p className="font-mono text-ci-blue-600 text-sm md:text-base">{t(copy.slogan)}</p>
           </motion.div>
         </div>
+        <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4 sm:px-6 lg:px-8">
+          <Photo name="profil-experience-concrete" priority sizes="(min-width: 1152px) 1100px, 100vw" className="aspect-[21/9] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.6)]" />
+        </div>
       </section>
 
       {/* Company Introduction */}
       <section className="bg-white/50 py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -250,6 +254,14 @@ export default function ProfessionalProfilePage() {
           >
             <p>{t(copy.companyIntro1)}</p>
             <p>{t(copy.companyIntro2)}</p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+          >
+            <Photo name="profil-approche-axee-donnees" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[3/2] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
           </motion.div>
         </div>
       </section>

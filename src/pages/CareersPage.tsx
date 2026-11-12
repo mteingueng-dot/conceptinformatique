@@ -6,6 +6,48 @@ import { motion } from 'framer-motion';
 import { Briefcase, MapPin, Clock, Rocket, GraduationCap, HeartHandshake, Paperclip, CheckCircle2 } from 'lucide-react';
 import SocialShareButtons from '../components/SocialShareButtons';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
+import type { PhotoKey } from '../data/photos';
+
+// Contenu ajouté : vie d'équipe en images et étapes du recrutement
+const careersExtra = {
+  fr: {
+    lifeTitleLead: 'La vie chez ',
+    lifeTitleAccent: 'Concept Informatique',
+    lifeText: 'Des projets variés, des technologies récentes et une équipe qui partage ses connaissances.',
+    life: [
+      { photo: 'equipe-collaboration', title: 'Travail d’équipe', text: 'Des équipes mixtes où chacun apporte son expertise.' },
+      { photo: 'expertise-support-ti', title: 'Apprentissage continu', text: 'Des mandats qui font grandir vos compétences.' },
+      { photo: 'bureau-lumineux', title: 'Mode hybride', text: 'Selon le mandat : au bureau, chez le client ou à distance.' },
+    ] as { photo: PhotoKey; title: string; text: string }[],
+    stepsTitleLead: 'Notre processus de ',
+    stepsTitleAccent: 'recrutement',
+    steps: [
+      { title: 'Candidature', text: 'Vous postulez en ligne et recevez aussitôt un courriel de confirmation.' },
+      { title: 'Analyse du profil', text: 'Notre équipe de recrutement examine votre candidature avec attention.' },
+      { title: 'Entrevue', text: 'Un échange pour parler de votre parcours, de vos objectifs et du mandat.' },
+      { title: 'Proposition', text: 'Si votre profil correspond, nous vous présentons une offre et préparons votre arrivée.' },
+    ],
+  },
+  en: {
+    lifeTitleLead: 'Life at ',
+    lifeTitleAccent: 'Concept Informatique',
+    lifeText: 'Varied projects, recent technologies and a team that shares its knowledge.',
+    life: [
+      { photo: 'equipe-collaboration', title: 'Teamwork', text: 'Mixed teams where everyone brings their expertise.' },
+      { photo: 'expertise-support-ti', title: 'Continuous learning', text: 'Engagements that grow your skills.' },
+      { photo: 'bureau-lumineux', title: 'Hybrid work', text: 'Depending on the engagement: at the office, on the client’s site or remotely.' },
+    ] as { photo: PhotoKey; title: string; text: string }[],
+    stepsTitleLead: 'Our recruitment ',
+    stepsTitleAccent: 'process',
+    steps: [
+      { title: 'Application', text: 'You apply online and immediately receive a confirmation email.' },
+      { title: 'Profile review', text: 'Our recruitment team carefully reviews your application.' },
+      { title: 'Interview', text: 'A conversation about your background, your goals and the engagement.' },
+      { title: 'Offer', text: 'If your profile is a match, we present an offer and prepare your arrival.' },
+    ],
+  },
+};
 
 const SPONTANEOUS_ID = 'spontaneous';
 
@@ -294,6 +336,7 @@ export default function CareersPage() {
   const { lang: currentLang } = useLanguage();
   const lang: 'fr' | 'en' = currentLang === 'fr' ? 'fr' : 'en';
   const t = translations[lang];
+  const x = careersExtra[lang];
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -404,12 +447,13 @@ export default function CareersPage() {
             backgroundSize: '48px 48px',
           }}
         />
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
+          <div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-7xl mb-8"
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-6xl mb-8"
           >
             {t.heroTitleLead}<span className="text-gradient-ci">{t.heroTitleAccent}</span>
           </motion.h1>
@@ -446,6 +490,11 @@ export default function CareersPage() {
               {t.spontaneousLabel}
             </button>
           </motion.div>
+          </div>
+          <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7 }} className="relative">
+            <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-ci-blue-200/60 to-ci-green-100/60 blur-2xl" />
+            <Photo name="espace-de-travail" priority sizes="(min-width: 1024px) 45vw, 100vw" className="relative aspect-[3/2] w-full rounded-3xl border border-white shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+          </motion.div>
         </div>
       </section>
 
@@ -480,6 +529,74 @@ export default function CareersPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* Vie d'équipe en images */}
+      <section className="bg-white/50 py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-4xl md:text-5xl mb-4"
+          >
+            {x.lifeTitleLead}<span className="text-gradient-ci">{x.lifeTitleAccent}</span>
+          </motion.h2>
+          <p className="text-slate-600 text-lg font-light mb-12 max-w-2xl">{x.lifeText}</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {x.life.map((item, i) => (
+              <motion.figure
+                key={item.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="group relative overflow-hidden rounded-3xl bg-ci-navy shadow-[0_25px_50px_-30px_rgba(11,31,58,0.6)]"
+              >
+                <Photo name={item.photo} sizes="(min-width: 768px) 33vw, 100vw" className="aspect-[4/5] w-full transition-transform duration-700 group-hover:scale-105" />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b1f3a]/90 via-[#0b1f3a]/20 to-transparent" />
+                <figcaption className="absolute inset-x-0 bottom-0 p-6">
+                  <p className="font-display text-xl font-bold text-white">{item.title}</p>
+                  <p className="mt-1 text-sm text-white/80">{item.text}</p>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Processus de recrutement */}
+      <section className="bg-transparent py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="font-display font-bold tracking-[-0.03em] text-ci-navy text-4xl md:text-5xl mb-16"
+          >
+            {x.stepsTitleLead}<span className="text-gradient-ci">{x.stepsTitleAccent}</span>
+          </motion.h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {x.steps.map((step, i) => (
+              <motion.div
+                key={step.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="relative group"
+              >
+                <div className="text-6xl font-sans font-bold text-slate-200 absolute -top-10 -left-4 z-0 group-hover:text-ci-green-600 transition-colors">
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <div className="relative z-10 pt-4">
+                  <h3 className="text-xl font-sans font-medium mb-3 text-ci-green-600">{step.title}</h3>
+                  <p className="text-slate-600 font-light text-sm leading-relaxed">{step.text}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>

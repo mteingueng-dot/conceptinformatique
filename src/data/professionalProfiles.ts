@@ -144,13 +144,13 @@ export const professionalProfiles: ProfessionalProfile[] = [
     },
     icon: Shield,
     benefits: [
-      "Disponibilité 99.9%+ garantie",
+      "Haute disponibilité des systèmes",
       "Support réactif et proactif",
       "Mises à jour et maintenance planifiées",
       "Sécurité et conformité intégrées",
     ],
     benefitsEn: [
-      "Guaranteed 99.9%+ availability",
+      "High system availability",
       "Responsive, proactive support",
       "Planned updates and maintenance",
       "Built-in security and compliance",

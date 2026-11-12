@@ -1,4 +1,8 @@
 import { useParams } from 'react-router-dom';
+import Photo from '../components/Photo';
+import BenefitsShowcase from '../components/BenefitsShowcase';
+import { benefitPhoto, valuePhoto } from '../data/photos';
+import { getBenefitDetails } from '../data/benefitDetails';
 import { Link } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -17,6 +21,7 @@ const copy = {
     keyPoints: 'Points clés',
     benefitsPrefix: 'Les ',
     benefitsHighlight: 'avantages',
+    benefitsSubtitle: 'Ce que cette valeur vous apporte, concrètement, dans chaque projet.',
     examplesPrefix: 'Comment nous ',
     examplesHighlight: 'l\'appliquons',
     featuresPrefix: 'Ce que nous ',
@@ -41,6 +46,7 @@ const copy = {
     keyPoints: 'Key points',
     benefitsPrefix: 'The ',
     benefitsHighlight: 'benefits',
+    benefitsSubtitle: 'What this value concretely brings you in every project.',
     examplesPrefix: 'How we ',
     examplesHighlight: 'apply it',
     featuresPrefix: 'What we ',
@@ -96,7 +102,7 @@ export default function ValueDetailPage() {
     <div id="value-detail-root-z6c3b8n1" className="pt-20 bg-transparent text-ci-navy min-h-screen">
       {/* Header */}
       <section className="bg-white/50 border-b border-slate-200 py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-[1.1fr_1fr] gap-12 items-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -111,7 +117,7 @@ export default function ValueDetailPage() {
             <div className="w-14 h-14 bg-ci-green-500/10 text-ci-green-600 rounded-xl flex items-center justify-center mb-6">
               <Icon className="w-7 h-7" />
             </div>
-            <h1 className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-7xl mb-6">
+            <h1 className="font-display font-bold tracking-[-0.03em] text-ci-navy text-5xl md:text-6xl mb-6">
               {firstWords}{' '}
               {lastWord && <span className="text-gradient-ci">{lastWord}</span>}
             </h1>
@@ -124,6 +130,12 @@ export default function ValueDetailPage() {
               {t.requestConsultation} <ArrowRight className="w-5 h-5" />
             </Link>
           </motion.div>
+          {valuePhoto[value.slug] && (
+            <div className="relative">
+              <div aria-hidden="true" className="absolute -inset-3 rounded-[2rem] bg-gradient-to-br from-ci-blue-200/60 to-ci-green-100/60 blur-2xl" />
+              <Photo name={valuePhoto[value.slug]} priority sizes="(min-width: 1024px) 45vw, 100vw" className="relative aspect-[3/2] w-full rounded-3xl border border-white shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+            </div>
+          )}
         </div>
       </section>
 
@@ -162,33 +174,13 @@ export default function ValueDetailPage() {
       </section>
 
       {/* Benefits */}
-      <section className="py-24 bg-white/50 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="font-display font-bold tracking-[-0.03em] text-4xl mb-12 text-ci-navy">
-            {t.benefitsPrefix}<span className="text-gradient-ci">{t.benefitsHighlight}</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {(lang === 'en' ? value.benefitsEn : value.benefits).map((benefit, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="bg-white border border-slate-200 p-8 rounded-2xl hover:border-ci-green-400/40 hover:shadow-xl hover:shadow-ci-blue-600/10 transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-10 h-10 bg-ci-green-500/10 text-ci-green-600 rounded-lg flex items-center justify-center mb-5 font-sans font-medium">
-                  {i + 1}
-                </div>
-                <h3 className="text-xl font-sans font-medium text-ci-navy mb-3">{benefit}</h3>
-                <p className="text-slate-600 font-light leading-relaxed text-sm">
-                  Un bénéfice fondamental de notre engagement.
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <BenefitsShowcase
+        prefix={t.benefitsPrefix}
+        highlight={t.benefitsHighlight}
+        subtitle={t.benefitsSubtitle}
+        photo={benefitPhoto.value[value.slug]}
+        items={(lang === 'en' ? value.benefitsEn : value.benefits).map((title, i) => ({ title, text: getBenefitDetails(value.slug, lang)[i] }))}
+      />
 
       {/* Examples + Features */}
       <section className="py-24 bg-transparent">

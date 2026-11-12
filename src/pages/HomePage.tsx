@@ -3,6 +3,9 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ArrowUpRight, BrainCircuit, Database, GitBranch, LineChart, Radio, Sparkles } from 'lucide-react';
 import { Link } from '../i18n/router';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
+import { servicePhoto } from '../data/photos';
+import { getServices } from '../data/services';
 
 /*
  * Page d'accueil — style « 3D futuriste » sur fond bleu clair (version F retenue).
@@ -44,10 +47,10 @@ const fr = {
   ],
   capTag: 'Ce que nous bâtissons',
   caps: [
-    { title: 'Lakehouse moderne', text: 'Une source de vérité unique, gouvernée et performante.', to: '/services/data-engineering/' },
-    { title: 'Temps réel', text: 'Des flux continus pour décider à la seconde près.', to: '/services/data-engineering/' },
-    { title: 'BI augmentée', text: 'Des tableaux de bord rapides sur des données à jour.', to: '/services/business-intelligence/' },
-    { title: 'IA en production', text: 'Agents et modèles intégrés à vos processus.', to: '/services/automatisation-ia/' },
+    { title: 'Lakehouse moderne', text: 'Une source de vérité unique, gouvernée et performante.', to: '/services/data-engineering/', badge: 'Données centralisées', tech: ['Fabric', 'Databricks', 'Snowflake'] },
+    { title: 'Temps réel', text: 'Des flux continus pour décider à la seconde près.', to: '/services/data-engineering/', badge: 'En direct', tech: ['Kafka', 'Event Hubs', 'Spark'] },
+    { title: 'BI augmentée', text: 'Des tableaux de bord rapides sur des données à jour.', to: '/services/business-intelligence/', badge: 'Mis à jour automatiquement', tech: ['Power BI', 'Direct Lake', 'DAX'] },
+    { title: 'IA en production', text: 'Agents et modèles intégrés à vos processus.', to: '/services/automatisation-ia/', badge: 'Agent IA actif', tech: ['Azure OpenAI', 'MLflow', 'Agents IA'] },
   ],
   workTag: 'Nos réalisations',
   workTitle: 'Des sites que nous avons conçus.',
@@ -66,6 +69,22 @@ const fr = {
     },
   ],
   learnMore: 'Découvrir',
+  servicesTag: 'Nos services',
+  servicesTitle: 'Sept expertises, une seule équipe.',
+  servicesText: 'Du logiciel sur mesure à l’intelligence artificielle, nous couvrons l’ensemble de vos besoins technologiques.',
+  servicesAll: 'Voir tous les services',
+  processTag: 'Notre démarche',
+  processTitle: 'Un projet clair, du premier appel au soutien.',
+  processText: 'Chaque mandat suit les mêmes étapes simples. Vous savez toujours où en est votre projet et ce qui vient ensuite.',
+  processSteps: [
+    { title: 'Écoute', text: 'Une rencontre pour comprendre vos objectifs, vos irritants et vos systèmes actuels.' },
+    { title: 'Proposition', text: 'Une solution, un échéancier et un budget clairs, présentés en langage d’affaires.' },
+    { title: 'Livraisons par étapes', text: 'Des versions fonctionnelles livrées régulièrement, que vous validez au fur et à mesure.' },
+    { title: 'Soutien continu', text: 'Formation, documentation et accompagnement après la mise en production.' },
+  ],
+  localTag: 'Ancrés en Estrie',
+  localTitle: 'Une équipe d’ici, des solutions de calibre international.',
+  localText: 'Établie à Sherbrooke, Concept Informatique inc. se déplace chez ses clients de l’Estrie et accompagne à distance des organisations partout au Québec. Nous utilisons les mêmes technologies que les grandes entreprises, adaptées à la taille et au budget des PME.',
   ctaTitle: 'Prêt à passer à la vitesse supérieure?',
   ctaText: 'Parlons de votre plateforme de données et de vos ambitions en IA.',
   ctaButton: 'Contacter Concept Informatique',
@@ -104,10 +123,10 @@ const en: typeof fr = {
   ],
   capTag: 'What we build',
   caps: [
-    { title: 'Modern lakehouse', text: 'A single, governed, high-performance source of truth.', to: '/services/data-engineering/' },
-    { title: 'Real time', text: 'Continuous streams to decide in seconds.', to: '/services/data-engineering/' },
-    { title: 'Augmented BI', text: 'Fast dashboards on up-to-date data.', to: '/services/business-intelligence/' },
-    { title: 'AI in production', text: 'Agents and models built into your processes.', to: '/services/automatisation-ia/' },
+    { title: 'Modern lakehouse', text: 'A single, governed, high-performance source of truth.', to: '/services/data-engineering/', badge: 'Centralized data', tech: ['Fabric', 'Databricks', 'Snowflake'] },
+    { title: 'Real time', text: 'Continuous streams to decide in seconds.', to: '/services/data-engineering/', badge: 'Live', tech: ['Kafka', 'Event Hubs', 'Spark'] },
+    { title: 'Augmented BI', text: 'Fast dashboards on up-to-date data.', to: '/services/business-intelligence/', badge: 'Refreshed automatically', tech: ['Power BI', 'Direct Lake', 'DAX'] },
+    { title: 'AI in production', text: 'Agents and models built into your processes.', to: '/services/automatisation-ia/', badge: 'AI agent running', tech: ['Azure OpenAI', 'MLflow', 'AI agents'] },
   ],
   workTag: 'Our work',
   workTitle: 'Websites we have built.',
@@ -126,6 +145,22 @@ const en: typeof fr = {
     },
   ],
   learnMore: 'Discover',
+  servicesTag: 'Our services',
+  servicesTitle: 'Seven areas of expertise, one team.',
+  servicesText: 'From custom software to artificial intelligence, we cover all your technology needs.',
+  servicesAll: 'See all services',
+  processTag: 'How we work',
+  processTitle: 'A clear project, from the first call to ongoing support.',
+  processText: 'Every engagement follows the same simple steps. You always know where your project stands and what comes next.',
+  processSteps: [
+    { title: 'Listening', text: 'A meeting to understand your goals, pain points and current systems.' },
+    { title: 'Proposal', text: 'A clear solution, timeline and budget, presented in business terms.' },
+    { title: 'Delivery in stages', text: 'Working versions delivered regularly, which you validate as we go.' },
+    { title: 'Ongoing support', text: 'Training, documentation and support after go-live.' },
+  ],
+  localTag: 'Rooted in the Eastern Townships',
+  localTitle: 'A local team, world-class solutions.',
+  localText: 'Based in Sherbrooke, Concept Informatique inc. visits clients across the Eastern Townships and supports organizations remotely throughout Québec. We use the same technologies as large enterprises, adapted to the size and budget of SMEs.',
   ctaTitle: 'Ready to shift into high gear?',
   ctaText: "Let's talk about your data platform and your AI ambitions.",
   ctaButton: 'Contact Concept Informatique',
@@ -142,6 +177,32 @@ const layerLinks = [
   '/services/automatisation-ia/',
 ];
 const capIcons = [Database, Radio, LineChart, Sparkles];
+const capPhotos = ['expertise-ingenierie-de-donnees', 'reseau-mondial', 'profil-approche-axee-donnees', 'expertise-automatisation-ia'] as const;
+
+/* Petit indicateur posé sur la photo de chaque carte (purement décoratif) */
+function CapIndicator({ index, label }: { index: number; label: string }) {
+  return (
+    <span className="absolute left-4 top-4 inline-flex items-center gap-2 rounded-full border border-white/20 bg-[#0b1f3a]/75 px-3 py-1.5 font-mono text-[11px] font-semibold text-white backdrop-blur">
+      {index === 1 ? (
+        <span className="relative flex h-2 w-2">
+          <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#34d17f] opacity-75 motion-reduce:animate-none" />
+          <span className="relative inline-flex h-2 w-2 rounded-full bg-[#34d17f]" />
+        </span>
+      ) : index === 2 ? (
+        <span aria-hidden="true" className="flex h-3 items-end gap-[2px]">
+          {[40, 70, 55, 90, 75].map((h, i) => (
+            <span key={i} className="w-[3px] rounded-sm bg-[#6ee7a8]" style={{ height: `${h}%` }} />
+          ))}
+        </span>
+      ) : index === 3 ? (
+        <Sparkles className="h-3 w-3 text-[#6ee7a8]" />
+      ) : (
+        <Database className="h-3 w-3 text-[#6ee7a8]" />
+      )}
+      {label}
+    </span>
+  );
+}
 const reveal = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: '-60px' } };
 
 function prefersReducedMotion() {
@@ -389,6 +450,7 @@ export default function HomePage() {
   const { lang: ctxLang } = useLanguage();
   const lang: 'fr' | 'en' = ctxLang === 'en' ? 'en' : 'fr';
   const t = dict[lang];
+  const services = getServices(lang);
 
   return (
     <div className="relative overflow-hidden bg-[#dfeafb] text-slate-600">
@@ -482,6 +544,7 @@ export default function HomePage() {
           <motion.div {...reveal}>
             <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.aboutTag}</p>
             <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold tracking-[-0.04em] text-ci-navy">{t.aboutTitle}</h2>
+            <Photo name="equipe-atelier" sizes="(min-width: 1024px) 45vw, 100vw" className="mt-10 aspect-[3/2] w-full rounded-3xl border border-white shadow-[0_30px_60px_-30px_rgba(11,31,58,0.45)]" />
           </motion.div>
           <motion.div {...reveal} transition={{ delay: 0.1 }} className="space-y-5 text-lg leading-relaxed text-slate-600">
             {t.aboutText.map((para) => (
@@ -548,19 +611,108 @@ export default function HomePage() {
               return (
                 <motion.div key={c.title} {...reveal} transition={{ delay: i * 0.08 }}>
                   <TiltCard className="h-full rounded-3xl">
-                    <Link to={c.to} className="relative flex h-full flex-col rounded-3xl border border-slate-200 bg-white p-7 transition-all hover:border-ci-blue-200 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)]">
-                      <Icon className="w-8 h-8 text-ci-blue-600 [transform:translateZ(30px)]" />
-                      <h3 className="mt-8 font-display text-2xl font-bold text-ci-navy">{c.title}</h3>
-                      <p className="mt-2 text-slate-600">{c.text}</p>
-                      <span className="mt-auto pt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-ci-green-600">
-                        {t.learnMore} <ArrowUpRight className="w-4 h-4" />
-                      </span>
+                    <Link to={c.to} className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white transition-all hover:border-ci-blue-200 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)]">
+                      <div className="relative overflow-hidden">
+                        <Photo name={capPhotos[i]} decorative sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" className="aspect-[16/10] w-full transition-transform duration-700 group-hover:scale-105" />
+                        <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b1f3a]/40 to-transparent" />
+                        <CapIndicator index={i} label={c.badge} />
+                      </div>
+                      <div className="flex flex-1 flex-col p-7">
+                        <div className="flex items-center gap-3">
+                          <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-ci-blue-600/10 text-ci-blue-600 [transform:translateZ(30px)]">
+                            <Icon className="w-5 h-5" />
+                          </span>
+                          <h3 className="font-display text-xl font-bold text-ci-navy">{c.title}</h3>
+                        </div>
+                        <p className="mt-4 text-slate-600">{c.text}</p>
+                        <ul className="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+                          {c.tech.map((tech) => (
+                            <li key={tech} className="rounded-full border border-ci-green-100 bg-ci-green-50 px-2.5 py-1 font-mono text-[11px] font-semibold text-ci-green-600">{tech}</li>
+                          ))}
+                        </ul>
+                        <span className="mt-auto pt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-ci-green-600">
+                          {t.learnMore} <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                        </span>
+                      </div>
                     </Link>
                   </TiltCard>
                 </motion.div>
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* Services en images */}
+      <section className="relative py-24 border-t border-white/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div {...reveal} className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+            <div className="max-w-2xl">
+              <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.servicesTag}</p>
+              <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-[-0.04em] text-ci-navy">{t.servicesTitle}</h2>
+              <p className="mt-4 text-lg text-slate-600">{t.servicesText}</p>
+            </div>
+            <Link to="/services/" className="group inline-flex shrink-0 items-center gap-2 font-semibold text-ci-blue-600 hover:text-ci-blue-700">
+              {t.servicesAll} <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </motion.div>
+          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {services.map((svc, i) => (
+              <motion.div key={svc.slug} {...reveal} transition={{ delay: (i % 4) * 0.06 }} className={i === 0 ? 'sm:col-span-2 lg:row-span-2' : ''}>
+                <Link
+                  to={`/services/${svc.slug}/`}
+                  className="group relative flex h-full min-h-[15rem] flex-col justify-end overflow-hidden rounded-3xl border border-white bg-ci-navy shadow-[0_25px_50px_-30px_rgba(11,31,58,0.6)]"
+                >
+                  {servicePhoto[svc.slug] && (
+                    <Photo
+                      name={servicePhoto[svc.slug]}
+                      decorative
+                      sizes={i === 0 ? '(min-width: 1024px) 50vw, 100vw' : '(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw'}
+                      className="absolute inset-0 h-full w-full transition-transform duration-700 group-hover:scale-105"
+                    />
+                  )}
+                  <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0b1f3a]/95 via-[#0b1f3a]/45 to-transparent" />
+                  <div className="relative p-6">
+                    <h3 className={`font-display font-bold text-white ${i === 0 ? 'text-3xl' : 'text-xl'}`}>{svc.title}</h3>
+                    <p className={`mt-2 text-sm text-white/80 ${i === 0 ? 'max-w-md' : 'line-clamp-2'}`}>{svc.tagline}</p>
+                    <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#6ee7a8]">
+                      {t.learnMore} <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </span>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Démarche */}
+      <section className="relative py-24 border-t border-white/70">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+          <motion.div {...reveal} className="relative order-last lg:order-first">
+            <Photo name="planification-projet" sizes="(min-width: 1024px) 50vw, 100vw" className="aspect-[3/2] w-full rounded-3xl border border-white shadow-[0_30px_60px_-30px_rgba(11,31,58,0.45)]" />
+            <div className="absolute -bottom-6 right-6 hidden w-1/2 sm:block">
+              <Photo name="bureau-moderne" sizes="25vw" className="aspect-[3/2] w-full rounded-2xl border-4 border-white shadow-xl" />
+            </div>
+          </motion.div>
+          <motion.div {...reveal} transition={{ delay: 0.1 }}>
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-ci-green-600">{t.processTag}</p>
+            <h2 className="mt-3 font-display text-4xl md:text-5xl font-bold tracking-[-0.04em] text-ci-navy">{t.processTitle}</h2>
+            <p className="mt-4 text-lg text-slate-600">{t.processText}</p>
+            <ol className="mt-10 space-y-6">
+              {t.processSteps.map((step, i) => (
+                <li key={step.title} className="flex gap-5">
+                  <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-ci-blue-600 to-ci-green-500 font-mono text-sm font-bold text-white shadow-[0_10px_25px_-8px_rgba(31,111,235,0.6)]">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div>
+                    <h3 className="font-bold text-ci-navy text-lg">{step.title}</h3>
+                    <p className="mt-1 text-slate-600">{step.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </motion.div>
         </div>
       </section>
 
@@ -612,6 +764,19 @@ export default function HomePage() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* Ancrage local */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16">
+        <motion.div {...reveal} className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] shadow-[0_30px_80px_-40px_rgba(11,31,58,0.6)]">
+          <Photo name="sherbrooke-estrie" decorative sizes="100vw" className="absolute inset-0 h-full w-full" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-r from-[#0b1f3a]/90 via-[#0b1f3a]/65 to-[#0b1f3a]/20" />
+          <div className="relative max-w-2xl px-8 py-20 sm:px-14">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-[#6ee7a8]">{t.localTag}</p>
+            <h2 className="mt-3 font-display text-3xl md:text-5xl font-bold tracking-[-0.04em] text-white">{t.localTitle}</h2>
+            <p className="mt-5 text-lg leading-relaxed text-white/85">{t.localText}</p>
+          </div>
+        </motion.div>
       </section>
 
       {/* CTA */}

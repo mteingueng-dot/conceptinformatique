@@ -18,6 +18,8 @@ import {
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
+import Photo from '../components/Photo';
+import { valuePhoto } from '../data/photos';
 
 interface Bi {
   fr: string;
@@ -291,6 +293,9 @@ export default function ValuesPage() {
             <p className="font-mono text-ci-blue-600 text-sm md:text-base">{t(copy.heroSubtitle)}</p>
           </motion.div>
         </div>
+        <div className="relative z-10 max-w-6xl mx-auto mt-16 px-4 sm:px-6 lg:px-8">
+          <Photo name="reseau-mondial" priority sizes="(min-width: 1152px) 1100px, 100vw" className="aspect-[21/9] w-full rounded-3xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.6)]" />
+        </div>
       </section>
 
       {/* Value Sections */}
@@ -354,7 +359,13 @@ export default function ValuesPage() {
                   </div>
                 </motion.div>
 
-                {/* Right: Examples */}
+                {/* Right: photo + Examples */}
+                <div className="space-y-6">
+                {valuePhoto[valueSlugMap[value.title.en]] && (
+                  <motion.div variants={itemVariants}>
+                    <Photo name={valuePhoto[valueSlugMap[value.title.en]]} sizes="(min-width: 1024px) 45vw, 100vw" className="aspect-[3/2] w-full rounded-2xl shadow-[0_30px_60px_-30px_rgba(11,31,58,0.5)]" />
+                  </motion.div>
+                )}
                 <motion.div
                   variants={itemVariants}
                   className="bg-white/90 border border-slate-200 rounded-xl backdrop-blur transition-all duration-300 hover:border-ci-blue-500 hover:shadow-[0_25px_50px_-25px_rgba(21,89,209,0.45)] p-8"
@@ -377,6 +388,7 @@ export default function ValuesPage() {
                     ))}
                   </div>
                 </motion.div>
+                </div>
               </div>
             </div>
           </section>
@@ -400,7 +412,7 @@ export default function ValuesPage() {
             </h2>
             <p className="text-slate-600 font-light leading-relaxed text-lg">
               {lang === 'fr'
-                ? 'Ces trois valeurs fondamentales — innovation, rigueur et expertise — sont interconnectées et se renforcent mutuellement. Elles forment la base de chaque projet que nous entreprendre et chaque relation que nous établissons avec nos clients. Ensemble, elles nous permettent de créer de la valeur durable et d\'accompagner votre organisation vers le succès.'
+                ? 'Ces trois valeurs fondamentales — innovation, rigueur et expertise — sont interconnectées et se renforcent mutuellement. Elles forment la base de chaque projet que nous entreprenons et chaque relation que nous établissons avec nos clients. Ensemble, elles nous permettent de créer de la valeur durable et d\'accompagner votre organisation vers le succès.'
                 : 'These three core values — innovation, rigor and expertise — are interconnected and reinforce each other. They form the foundation of every project we undertake and every relationship we establish with our clients. Together, they enable us to create lasting value and support your organization toward success.'}
             </p>
           </motion.div>
