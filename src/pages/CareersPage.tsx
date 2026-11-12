@@ -133,6 +133,46 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     openTitleAccent: 'positions',
     jobs: [
       {
+        id: 'it-project-manager-dotnet-systems',
+        title: "Project Manager – .NET Information Systems",
+        description:
+          "Lead a 3-year engagement to maintain, evolve and develop .NET systems for a large public organization: planning, resources, deliveries and accountability reporting.",
+        location: "Quebec City or Montreal / Hybrid (3 days on site)",
+        type: "3-year engagement",
+      },
+      {
+        id: 'functional-analyst-dotnet',
+        title: "Functional Analyst – .NET Ecosystem (2 positions)",
+        description:
+          "Analyze, test and evolve a large public organization’s .NET systems for 3 years. Two positions: one on the strategic team, one on the back-up team.",
+        location: "Quebec City or Montreal / Hybrid (3 days on site)",
+        type: "3-year engagement",
+      },
+      {
+        id: 'dotnet-programmer',
+        title: ".NET Programmer",
+        description:
+          "Program, test and fix a large public organization’s .NET systems for 3 years, as part of a back-up team mobilized as projects require.",
+        location: "Quebec City or Montreal / Hybrid (3 days on site)",
+        type: "3-year engagement",
+      },
+      {
+        id: 'functional-architecture-advisor',
+        title: "Functional Architecture Advisor",
+        description:
+          "Provide functional architecture advice (data and processing) to a large public organization’s .NET projects for 3 years.",
+        location: "Quebec City or Montreal / Hybrid (3 days on site)",
+        type: "3-year engagement",
+      },
+      {
+        id: 'dotnet-technical-architecture-advisor',
+        title: ".NET Technical (Organic) Architecture Advisor",
+        description:
+          "Guide a large public organization’s .NET programmers for 3 years: technical architecture, code quality, performance and reusable components.",
+        location: "Quebec City or Montreal / Hybrid (3 days on site)",
+        type: "3-year engagement",
+      },
+      {
         id: 'oracle-dba-24-7',
         title: "Oracle Database Administrator (DBA)",
         description:
@@ -241,6 +281,46 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     openTitleLead: 'Postes ',
     openTitleAccent: 'ouverts',
     jobs: [
+      {
+        id: 'it-project-manager-dotnet-systems',
+        title: "Chargé(e) de projet – systèmes d’information .NET",
+        description:
+          "Diriger un mandat de 3 ans d’entretien, d’évolution et de développement de systèmes .NET pour un grand organisme public : planification, ressources, livraisons et reddition de comptes.",
+        location: "Québec ou Montréal / Hybride (3 jours au bureau)",
+        type: "Mandat de 3 ans",
+      },
+      {
+        id: 'functional-analyst-dotnet',
+        title: "Analyste fonctionnel(le) – écosystème .NET (2 postes)",
+        description:
+          "Analyser, tester et faire évoluer les systèmes .NET d’un grand organisme public pendant 3 ans. Deux postes : un dans l’équipe stratégique, un dans l’équipe d’appoint.",
+        location: "Québec ou Montréal / Hybride (3 jours au bureau)",
+        type: "Mandat de 3 ans",
+      },
+      {
+        id: 'dotnet-programmer',
+        title: "Programmeur(euse) .NET",
+        description:
+          "Programmer, tester et corriger les systèmes .NET d’un grand organisme public pendant 3 ans, au sein d’une équipe d’appoint mobilisée selon les projets.",
+        location: "Québec ou Montréal / Hybride (3 jours au bureau)",
+        type: "Mandat de 3 ans",
+      },
+      {
+        id: 'functional-architecture-advisor',
+        title: "Conseiller(ère) en architecture fonctionnelle",
+        description:
+          "Apporter l’expertise-conseil en architecture fonctionnelle (données et traitements) aux projets .NET d’un grand organisme public pendant 3 ans.",
+        location: "Québec ou Montréal / Hybride (3 jours au bureau)",
+        type: "Mandat de 3 ans",
+      },
+      {
+        id: 'dotnet-technical-architecture-advisor',
+        title: "Conseiller(ère) en architecture organique .NET",
+        description:
+          "Guider les programmeurs .NET d’un grand organisme public pendant 3 ans : architecture organique, qualité du code, performance et composants réutilisables.",
+        location: "Québec ou Montréal / Hybride (3 jours au bureau)",
+        type: "Mandat de 3 ans",
+      },
       {
         id: 'oracle-dba-24-7',
         title: "Administrateur(trice) de bases de données Oracle (DBA)",
