@@ -543,7 +543,7 @@ const dotnetProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 't
       "You may apply to only one of the positions in this engagement.",
       "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
       "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
-      "To apply, send to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
+      "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
     ],
   },
   fr: {
@@ -587,7 +587,7 @@ const dotnetProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 't
       "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
       "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
       "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
-      "Pour postuler, faites-nous parvenir à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
+      "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
     ],
   },
 };
@@ -628,7 +628,7 @@ const dotnetFunctionalAnalystMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' |
       "You may apply to only one of the positions in this engagement.",
       "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
       "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
-      "To apply, send to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
+      "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
     ],
   },
   fr: {
@@ -666,7 +666,7 @@ const dotnetFunctionalAnalystMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' |
       "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
       "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
       "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
-      "Pour postuler, faites-nous parvenir à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
+      "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
     ],
   },
 };
@@ -707,7 +707,7 @@ const dotnetProgrammerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title
       "You may apply to only one of the positions in this engagement.",
       "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
       "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
-      "To apply, send to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
+      "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
     ],
   },
   fr: {
@@ -745,7 +745,7 @@ const dotnetProgrammerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title
       "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
       "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
       "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
-      "Pour postuler, faites-nous parvenir à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
+      "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
     ],
   },
 };
@@ -789,7 +789,7 @@ const functionalArchitectureAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 
       "You may apply to only one of the positions in this engagement.",
       "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
       "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
-      "To apply, send to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
+      "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
     ],
   },
   fr: {
@@ -830,7 +830,7 @@ const functionalArchitectureAdvisorMandate: Record<'fr' | 'en', Omit<JobDetail, 
       "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
       "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
       "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
-      "Pour postuler, faites-nous parvenir à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
+      "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
     ],
   },
 };
@@ -873,7 +873,7 @@ const dotnetTechnicalArchitectureAdvisorMandate: Record<'fr' | 'en', Omit<JobDet
       "You may apply to only one of the positions in this engagement.",
       "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
       "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
-      "To apply, send to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
+      "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability.",
     ],
   },
   fr: {
@@ -913,7 +913,7 @@ const dotnetTechnicalArchitectureAdvisorMandate: Record<'fr' | 'en', Omit<JobDet
       "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
       "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
       "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
-      "Pour postuler, faites-nous parvenir à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
+      "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité.",
     ],
   },
 };
