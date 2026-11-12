@@ -11,6 +11,12 @@ export interface JobDetail {
   benefits: string[];
   terms?: string[];
   deliverables?: string[];
+  /** Date limite pour postuler (AAAA-MM-JJ) */
+  deadline?: string;
+  /** Date de publication (AAAA-MM-JJ), donnée par l'application RH */
+  publishedAt?: string;
+  /** Client, seulement s'il n'est pas confidentiel */
+  client?: string;
 }
 
 const agileProjectManagerMandate: Record<'fr' | 'en', Omit<JobDetail, 'id' | 'title'>> = {

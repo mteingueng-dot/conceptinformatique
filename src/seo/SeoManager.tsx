@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { getAlternates, getPageMeta, getStructuredData, SITE_URL } from './meta';
+import { getAlternates, getPageMeta, getStructuredData, setLiveJobs, SITE_URL } from './meta';
+import { useRemoteJobs } from '../data/remoteJobs';
 
 function setMeta(selector: string, attr: 'content' | 'href', value: string) {
   document.querySelector(selector)?.setAttribute(attr, value);
@@ -31,9 +32,12 @@ const altLink = (hreflang: string) => () =>
 export default function SeoManager() {
   const { pathname } = useLocation();
   const { lang } = useLanguage();
-  const firstView = useRef(true);
+  const lastView = useRef<string | null>(null);
+  // Offres de l'application RH : titre et description des offres qui ne sont pas dans jobs.ts
+  const remote = useRemoteJobs();
 
   useEffect(() => {
+    if (remote.status === 'ready') setLiveJobs(remote.jobs);
     const meta = getPageMeta(pathname);
     const url = SITE_URL + meta.path;
     const alt = getAlternates(pathname);
@@ -67,14 +71,19 @@ export default function SeoManager() {
 
     // Google Tag Manager : le site change de page sans recharger ; on signale chaque nouvelle page
     // (la première est déjà comptée au chargement par GTM). Déclencheur GTM : événement « virtual_page_view ».
-    if (firstView.current) {
-      firstView.current = false;
+    // (seulement quand la page change, pas quand les offres de l'application RH arrivent)
+    const view = `${lang}:${pathname}`;
+    if (lastView.current === view) {
+      // même page
+    } else if (lastView.current === null) {
+      lastView.current = view;
     } else {
+      lastView.current = view;
       const w = window as unknown as { dataLayer?: unknown[] };
       w.dataLayer = w.dataLayer || [];
       w.dataLayer.push({ event: 'virtual_page_view', page_path: meta.path, page_location: url, page_title: meta.title, page_language: lang });
     }
-  }, [pathname, lang]);
+  }, [pathname, lang, remote]);
 
   return null;
 }

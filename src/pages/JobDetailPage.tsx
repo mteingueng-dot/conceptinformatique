@@ -1,9 +1,10 @@
 import { useParams } from 'react-router-dom';
 import { useNavigate, Link } from '../i18n/router';
 import { motion } from 'framer-motion';
-import { ArrowLeft, MapPin, Clock, CheckCircle2 } from 'lucide-react';
+import { ArrowLeft, MapPin, Clock, CheckCircle2, CalendarClock, Building2 } from 'lucide-react';
 import SocialShareButtons from '../components/SocialShareButtons';
 import { getJob } from '../data/jobs';
+import { useRemoteJobs, formatDeadline } from '../data/remoteJobs';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const copy = {
@@ -11,6 +12,10 @@ const copy = {
     back: 'Back to open positions',
     apply: 'Apply',
     notFound: 'Position not found',
+    notFoundText: 'This position is no longer posted or has been filled.',
+    loading: 'Loading position…',
+    deadline: 'Apply by',
+    client: 'Client:',
     responsibilities: 'Responsibilities',
     deliverables: 'Deliverables',
     requirements: 'Requirements',
@@ -26,6 +31,10 @@ const copy = {
     back: 'Retour aux postes ouverts',
     apply: 'Postuler',
     notFound: 'Poste introuvable',
+    notFoundText: 'Cette offre n’est plus affichée ou a été pourvue.',
+    loading: 'Chargement de l’offre…',
+    deadline: 'Date limite :',
+    client: 'Client :',
     responsibilities: 'Responsabilités',
     deliverables: 'Livrables',
     requirements: 'Exigences',
@@ -51,13 +60,28 @@ export default function JobDetailPage() {
   const lang: 'fr' | 'en' = currentLang === 'fr' ? 'fr' : 'en';
   const t = copy[lang];
   const navigate = useNavigate();
-  const job = getJob(lang, jobId);
+  const remote = useRemoteJobs();
+  // L'application RH fait foi dès qu'elle a répondu ; avant (et pendant le pré-rendu) ou en cas d'échec : jobs.ts
+  const job = remote.status === 'ready' ? remote.jobs[lang].find((j) => j.id === jobId) : getJob(lang, jobId);
+
+  if (!job && remote.status === 'loading') {
+    // Offre publiée par l'application RH mais pas pré-rendue : on attend la réponse de l'API
+    return (
+      <div id="job-loading-j0b10ad1" className="pt-20 bg-transparent text-slate-700 min-h-screen">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center" role="status" aria-live="polite">
+          <span aria-hidden="true" className="mx-auto mb-6 block h-10 w-10 animate-spin rounded-full border-4 border-ci-blue-200 border-t-ci-blue-600" />
+          <p className="text-lg text-ci-navy font-light">{t.loading}</p>
+        </div>
+      </div>
+    );
+  }
 
   if (!job) {
     return (
       <div id="job-not-found-j0b4n0t1" className="pt-20 bg-transparent text-slate-700 min-h-screen">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
-          <h1 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-6xl text-ci-navy mb-10">{t.notFound}</h1>
+          <h1 className="font-display font-bold tracking-[-0.03em] text-4xl md:text-6xl text-ci-navy mb-6">{t.notFound}</h1>
+          <p className="text-lg text-slate-600 font-light mb-10">{t.notFoundText}</p>
           <Link
             to="/careers/"
             className="inline-flex items-center gap-2 text-ci-blue-600 hover:text-ci-blue-600 transition-colors"
@@ -118,6 +142,18 @@ export default function JobDetailPage() {
                 <Clock className="w-4 h-4 text-ci-blue-600" />
                 {job.type}
               </span>
+              {job.deadline && (
+                <span className={pillClass}>
+                  <CalendarClock className="w-4 h-4 text-ci-blue-600" />
+                  {t.deadline} {formatDeadline(job.deadline, lang)}
+                </span>
+              )}
+              {job.client && (
+                <span className={pillClass}>
+                  <Building2 className="w-4 h-4 text-ci-blue-600" />
+                  {t.client} {job.client}
+                </span>
+              )}
             </div>
             <p className="text-ci-navy text-lg font-light leading-relaxed mb-10">{job.intro}</p>
             <div className="flex flex-wrap items-center gap-3">

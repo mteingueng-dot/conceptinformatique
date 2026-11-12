@@ -3,11 +3,12 @@ import { createPortal } from 'react-dom';
 import { useLocation } from 'react-router-dom';
 import { Link, useNavigate } from '../i18n/router';
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, Clock, Rocket, GraduationCap, HeartHandshake, Paperclip, CheckCircle2 } from 'lucide-react';
+import { Briefcase, MapPin, Clock, CalendarClock, Rocket, GraduationCap, HeartHandshake, Paperclip, CheckCircle2 } from 'lucide-react';
 import SocialShareButtons from '../components/SocialShareButtons';
 import { useLanguage } from '../i18n/LanguageContext';
 import Photo from '../components/Photo';
 import type { PhotoKey } from '../data/photos';
+import { useRemoteJobs, formatDeadline } from '../data/remoteJobs';
 
 // Contenu ajouté : vie d'équipe en images et étapes du recrutement
 const careersExtra = {
@@ -59,6 +60,8 @@ interface JobText {
   description: string;
   location: string;
   type: string;
+  /** Date limite (AAAA-MM-JJ), donnée par l'application RH */
+  deadline?: string;
 }
 
 interface PerkText {
@@ -80,6 +83,7 @@ interface CareersTranslations {
   jobs: JobText[];
   apply: string;
   viewDetails: string;
+  deadline: string;
   applyTitleLead: string;
   applyTitleAccent: string;
   successMessage: string;
@@ -231,6 +235,7 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     ],
     apply: 'Apply',
     viewDetails: 'View details',
+    deadline: 'Apply by',
     applyTitleLead: 'Submit your ',
     applyTitleAccent: 'application',
     successMessage: 'Thank you! Your application has been received and will be reviewed with the greatest attention. A member of our recruitment team will contact you shortly. A confirmation email has been sent to you.',
@@ -380,6 +385,7 @@ const translations: Record<'fr' | 'en', CareersTranslations> = {
     ],
     apply: 'Postuler',
     viewDetails: 'Voir les détails',
+    deadline: 'Date limite :',
     applyTitleLead: 'Soumettez votre ',
     applyTitleAccent: 'candidature',
     successMessage: 'Merci! Votre candidature a bien été reçue et sera examinée avec la plus grande attention. Un membre de notre équipe de recrutement entrera en contact avec vous sous peu. Un courriel de confirmation vous a été envoyé.',
@@ -427,12 +433,15 @@ export default function CareersPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState('');
 
-
-
-
+  // Offres publiées par l'application RH ; tant qu'elle n'a pas répondu (ou si elle échoue) : celles de cette page
+  const remote = useRemoteJobs();
+  const jobs: JobText[] =
+    remote.status === 'ready'
+      ? remote.jobs[lang].map((j) => ({ id: j.id, title: j.title, description: j.summary, location: j.location, type: j.type, deadline: j.deadline }))
+      : t.jobs;
 
   const labelFor = (id: string) =>
-    id === SPONTANEOUS_ID ? t.spontaneousLabel : t.jobs.find((j) => j.id === id)?.title ?? t.spontaneousLabel;
+    id === SPONTANEOUS_ID ? t.spontaneousLabel : jobs.find((j) => j.id === id)?.title ?? t.spontaneousLabel;
 
   const selectedLabel = labelFor(selectedJob);
 
@@ -447,13 +456,14 @@ export default function CareersPage() {
 
   useEffect(() => {
     const applyTo = (location.state as { applyTo?: string } | null)?.applyTo;
-    if (applyTo && t.jobs.some((j) => j.id === applyTo)) {
+    if (remote.status === 'loading') return; // on attend la liste à jour avant de choisir le poste
+    if (applyTo && jobs.some((j) => j.id === applyTo)) {
       setSelectedJob(applyTo);
       setTimeout(() => scrollTo('candidature'), 100);
       navigate(location.pathname, { replace: true, state: null });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [location.state]);
+  }, [location.state, remote.status]);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -693,7 +703,7 @@ export default function CareersPage() {
             {t.openTitleLead}<span className="text-gradient-ci">{t.openTitleAccent}</span>
           </motion.h2>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {t.jobs.map((job, i) => (
+            {jobs.map((job, i) => (
               <motion.div
                 key={job.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -722,6 +732,12 @@ export default function CareersPage() {
                     <Clock className="w-4 h-4 text-ci-blue-600" />
                     {job.type}
                   </span>
+                  {job.deadline && (
+                    <span className="inline-flex items-center gap-2 text-sm text-ci-navy bg-white border border-slate-200 rounded-full px-3 py-1">
+                      <CalendarClock className="w-4 h-4 text-ci-blue-600" />
+                      {t.deadline} {formatDeadline(job.deadline, lang)}
+                    </span>
+                  )}
                 </div>
                 <div className="flex flex-wrap gap-3">
                   <Link

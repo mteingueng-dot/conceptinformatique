@@ -6,12 +6,22 @@
 import { services, getServiceBySlug } from '../data/services';
 import { values } from '../data/values';
 import { professionalProfiles } from '../data/professionalProfiles';
-import { jobsContent } from '../data/jobs';
+import { jobsContent, type JobDetail } from '../data/jobs';
 import { langFromPath, localizePath, stripLang } from '../i18n/paths';
 
 export type SeoLang = 'fr' | 'en';
 
 export const SITE_URL = 'https://www.conceptinformatique.net';
+
+/*
+ * Offres affichées : celles de jobs.ts (pré-rendu), remplacées dans le navigateur par celles de
+ * l'application RH dès qu'elle a répondu (voir src/data/remoteJobs.ts et SeoManager).
+ */
+let liveJobs: Record<SeoLang, JobDetail[]> | null = null;
+export function setLiveJobs(jobs: Record<SeoLang, JobDetail[]> | null): void {
+  liveJobs = jobs;
+}
+const currentJobs = (lang: SeoLang): JobDetail[] => (liveJobs ?? jobsContent)[lang];
 const BRAND = 'Concept Informatique';
 
 export interface PageMeta {
@@ -261,7 +271,7 @@ export function getPageMeta(pathname: string, langHint?: SeoLang): PageMeta {
   }
 
   m = base.match(/^\/careers\/([^/]+)\/$/);
-  const job = m && jobsContent[lang].find((j) => j.id === m![1]);
+  const job = m && currentJobs(lang).find((j) => j.id === m![1]);
   if (job) {
     return { path, title: withBrand(job.title), description: clip(`${job.title}${lang === 'fr' ? ' :' : ':'} ${job.summary}`, 158) };
   }
@@ -301,7 +311,7 @@ function detailName(path: string, lang: SeoLang): string | undefined {
   if (path.startsWith('/services/')) return getServiceBySlug(slug, lang)?.title;
   if (path.startsWith('/about/values/')) return values.find((v) => v.slug === slug)?.title[lang];
   if (path.startsWith('/about/profils/')) return professionalProfiles.find((p) => p.slug === slug)?.title[lang];
-  if (path.startsWith('/careers/')) return jobsContent[lang].find((j) => j.id === slug)?.title;
+  if (path.startsWith('/careers/')) return currentJobs(lang).find((j) => j.id === slug)?.title;
   return undefined;
 }
 

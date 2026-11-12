@@ -45,6 +45,11 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
+# Offre publiée par l'application RH mais pas encore pré-rendue : on sert la page Carrières,
+# et le navigateur affiche l'offre lue dans l'application RH (ou « Poste introuvable »)
+RewriteRule ^(en/)?careers/([^/.]+)$ /$1careers/$2/ [L,R=301]
+RewriteRule ^(en/)?careers/[^/.]+/$ /$1careers/index.html [L]
+
 </IfModule>
 
 # Fichiers techniques jamais servis (suivi de la mise en ligne automatique, réglages PHP)
