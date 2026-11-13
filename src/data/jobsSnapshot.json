@@ -1,0 +1,1087 @@
+{
+  "generatedAt": "2026-11-12 19:25:54",
+  "fr": [
+    {
+      "id": "it-solutions-administrative-analyst-iam",
+      "title": "Analyste en gestion administrative des solutions TI – GIA",
+      "summary": "Assurer le soutien opérationnel des solutions de gestion des identités et des accès (GIA) d’un organisme du réseau de la santé du Québec : mandat de 12 mois, en télétravail à 100 %.",
+      "location": "Télétravail à 100 % (Québec)",
+      "type": "Contrat de 12 mois, temps plein",
+      "intro": "Un organisme du réseau de la santé du Québec cherche un(e) analyste pour soutenir ses solutions de gestion des identités et des accès (GIA). Sous l’autorité du chef de secteur aux opérations GIA, vous traitez les requêtes reçues dans le système de billetterie, administrez les outils GIA et veillez à leur bon fonctionnement. Vous accompagnez les équipes dans l’intégration des solutions d’authentification et la mise en place des profils, des rôles et des matrices d’accès, et vous faites évoluer les automatisations du cycle de vie des identités (approvisionnement et retrait des accès, intégrations API, flux d’orchestration).",
+      "responsibilities": [
+        "Prendre en charge et traiter les requêtes des clients reçues par billets dans le système de billetterie.",
+        "Accompagner les clients dans les processus de gestion des identités et des accès.",
+        "Administrer les outils GIA, maintenir leurs configurations et veiller à leur bon fonctionnement.",
+        "Soutenir les équipes dans l’intégration des solutions d’authentification et la mise en place des profils, des rôles et des matrices d’accès.",
+        "Développer et maintenir les automatisations du cycle de vie des identités : approvisionnement et retrait des accès, intégrations API et flux d’orchestration.",
+        "Participer à la mise en place de correctifs et d’améliorations sur les solutions GIA (SQL, Python).",
+        "Produire la documentation technique et les procédures nécessaires aux interventions opérationnelles.",
+        "Contribuer aux travaux d’architecture et de sécurité, et encadrer la livraison des changements selon les standards de développement et les bonnes pratiques."
+      ],
+      "requirements": [
+        "Bonne expérience en SQL."
+      ],
+      "assets": [
+        "Expérience avec Python.",
+        "Expérience en gestion des identités et des accès (GIA).",
+        "Expérience en sécurité de l’information.",
+        "Expérience avec Active Directory et Microsoft Entra ID.",
+        "Expérience avec les pratiques et outils DevOps."
+      ],
+      "benefits": [
+        "Télétravail à 100 % pendant toute la durée du mandat.",
+        "Mandat stimulant au cœur de la sécurité des accès du réseau de la santé.",
+        "Accompagnement de Concept Informatique tout au long du mandat."
+      ],
+      "terms": [
+        "Début du mandat : 30 novembre 2026, pour une durée de 12 mois à temps plein.",
+        "Télétravail à 100 % ; un déplacement à Montréal ou à Québec est requis seulement au début et à la fin du mandat, pour récupérer puis rendre l’équipement.",
+        "Pour postuler, faites-nous parvenir au plus tard le 27 novembre 2026 votre CV à jour à recrutement@conceptinformatique.net, en précisant le titre du poste et votre disponibilité."
+      ],
+      "deadline": "2026-11-27",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "it-project-manager-dotnet-systems",
+      "title": "Chargé(e) de projet – systèmes d’information .NET",
+      "summary": "Diriger un mandat de 3 ans d’entretien, d’évolution et de développement de systèmes .NET pour un grand organisme public : planification, ressources, livraisons et reddition de comptes.",
+      "location": "Québec ou Montréal / Hybride (3 jours au bureau)",
+      "type": "Mandat de 3 ans",
+      "intro": "Un grand organisme public québécois confie l’entretien, l’évolution et le développement de ses systèmes d’information à une équipe stratégique, appuyée par une équipe d’appoint mobilisée selon les projets. Au sein de l’équipe stratégique, vous assurez la gestion de l’ensemble du mandat, pour les deux équipes. Environnement : Microsoft .NET, Visual Studio, Azure DevOps (exigences, code source, pipelines CI/CD), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server et IIS, Microsoft 365, Visio et SharePoint ; applications Web, client-serveur et infonuagiques, systèmes patrimoniaux et nouveaux développements ; méthode Macroscope (ou similaire) et approche Agile/Scrum.",
+      "responsibilities": [
+        "Assurer la gestion du mandat (coordination, planification, organisation, suivi et communication) pour l’équipe stratégique et l’équipe d’appoint.",
+        "Analyser et évaluer les travaux confiés ; gérer les demandes d’intervention (planification, évaluation, suivi et contrôle).",
+        "Assigner, diriger et gérer les ressources ; produire le plan d’assignation et gérer la capacité globale de l’équipe.",
+        "Effectuer les planifications détaillées et les faire approuver par le client.",
+        "Prendre en charge l’entretien, l’évolution et le développement des systèmes visés ; planifier, organiser et superviser les livraisons.",
+        "Faire les demandes de mise en production avec les équipes internes.",
+        "Coordonner les travaux dans le respect du cadre normatif ; tenir à jour la documentation et les registres des demandes de maintenance.",
+        "Produire la reddition de comptes et le rapport d’avancement mensuels, ainsi que les rapports, tableaux de bord et présentations requis.",
+        "Assurer la qualité des livrables et signaler toute situation ayant un impact sur les coûts, les échéances ou les objectifs.",
+        "Collaborer à certaines tâches de ScrumMaster en contexte agile et assurer le transfert de connaissances."
+      ],
+      "requirements": [
+        "Baccalauréat en informatique, en administration ou en gestion de projet. Domaines connexes acceptés : mathématiques, sciences de l’ingénierie, administration, ou tout domaine comprenant au moins 30 crédits universitaires en TI. Un diplôme supérieur est accepté. À défaut de baccalauréat : certificat en informatique + 4 ans, DEC en informatique + 6 ans, DEC autre + 8 ans ou AEC en informatique + 10 ans d’expérience (ces années sont retirées de l’expérience évaluée).",
+        "Au moins 8 ans d’expérience au cours des 10 dernières années comme chargé(e) de projet dans des mandats de conception, de développement, de modernisation, d’évolution ou de transformation de systèmes d’information.",
+        "Au moins 1 projet d’envergure d’au moins 2 000 jours-personnes par année (projet TI, modernisation ou transformation numérique) réalisé au cours des 5 dernières années comme chargé(e) de projet : décrire le contexte, les objectifs, l’envergure, la complexité, vos responsabilités, les activités, les livrables, les enjeux, les mesures prises et les résultats.",
+        "Au moins 4 ans d’utilisation d’une méthode et d’outils de gestion de projet similaires à Macroscope : préciser les méthodes, les outils, les projets et leur utilisation pour la planification, le suivi et le contrôle.",
+        "Expérience acquise dans un contexte comparable : ministère, organisme public ou parapublic, ou entreprise privée d’au moins 750 employés, 20 unités administratives, 4 niveaux décisionnels et un portefeuille d’au moins 10 projets TI (à décrire explicitement).",
+        "Résider au Québec et pouvoir se rendre au bureau à Québec ou à Montréal 3 jours par semaine."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans. Nous recherchons des personnes réellement disponibles et engagées pour toute la durée du mandat : la ressource retenue ne peut pas être remplacée en cours de contrat.",
+        "Mode hybride : 3 jours par semaine au bureau à Québec ou à Montréal ; résidence au Québec obligatoire.",
+        "Vérification de sécurité et engagement de confidentialité exigés avant l’entrée en fonction.",
+        "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
+        "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
+        "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
+        "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité."
+      ],
+      "deliverables": [
+        "Plan d’assignation des ressources et planifications détaillées.",
+        "Demandes d’intervention documentées (besoin, objectifs, échéancier, ressources, microlivraisons, efforts réels).",
+        "Rapports d’avancement mensuels, reddition de comptes et tableaux de bord.",
+        "Livrables de gestion de projet et bilan selon la méthode du client.",
+        "Analyses d’impact et documentation de transfert de connaissances."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "functional-analyst-dotnet",
+      "title": "Analyste fonctionnel(le) – écosystème .NET (2 postes)",
+      "summary": "Analyser, tester et faire évoluer les systèmes .NET d’un grand organisme public pendant 3 ans. Deux postes : un dans l’équipe stratégique, un dans l’équipe d’appoint.",
+      "location": "Québec ou Montréal / Hybride (3 jours au bureau)",
+      "type": "Mandat de 3 ans",
+      "intro": "Un grand organisme public québécois confie l’entretien, l’évolution et le développement de ses systèmes d’information à une équipe stratégique, appuyée par une équipe d’appoint mobilisée selon les projets. Deux analystes fonctionnels sont recherchés : un(e) au sein de l’équipe stratégique, qui travaille de près avec le chargé de projet, et un(e) au sein de l’équipe d’appoint, mobilisé(e) selon les besoins des projets. Environnement : Microsoft .NET, Visual Studio, Azure DevOps (exigences, code source, pipelines CI/CD), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server et IIS, Microsoft 365, Visio et SharePoint ; applications Web, client-serveur et infonuagiques, systèmes patrimoniaux et nouveaux développements ; méthode Macroscope (ou similaire) et approche Agile/Scrum.",
+      "responsibilities": [
+        "Réaliser l’analyse fonctionnelle des demandes d’entretien, d’évolution et de développement.",
+        "Réaliser les essais fonctionnels et intégrés des demandes analysées.",
+        "Soutenir les utilisateurs pendant les essais d’acceptation et effectuer les correctifs d’anomalies.",
+        "Réaliser ou ajuster les livrables d’analyse fonctionnelle selon les règles du client.",
+        "Participer aux mises à niveau et aux migrations des composantes logicielles.",
+        "Équipe stratégique : contribuer, avec le chargé de projet, à la planification et à la coordination de la mise en œuvre des projets, et le remplacer ponctuellement sur une intervention si le client l’autorise."
+      ],
+      "requirements": [
+        "Baccalauréat en informatique ou dans un domaine connexe. Domaines connexes acceptés : mathématiques, sciences de l’ingénierie, administration, ou tout domaine comprenant au moins 30 crédits universitaires en TI. Un diplôme supérieur est accepté. À défaut de baccalauréat : certificat en informatique + 4 ans, DEC en informatique + 6 ans, DEC autre + 8 ans ou AEC en informatique + 10 ans d’expérience (ces années sont retirées de l’expérience évaluée).",
+        "Au moins 6 ans d’expérience au cours des 8 dernières années en analyse, évolution, modernisation ou développement de systèmes d’information, dont au moins 2 ans comme analyste fonctionnel(le).",
+        "Au moins 2 mandats distincts d’au moins 110 jours-personnes chacun, au cours des 3 dernières années, dans l’écosystème Microsoft .NET : préciser le contexte, vos responsabilités, les documents d’analyse produits et les résultats.",
+        "Au moins 2 ans d’utilisation d’une méthode de développement similaire à Macroscope : préciser les méthodes et les mandats.",
+        "Expérience acquise dans un contexte comparable : ministère, organisme public ou parapublic, ou entreprise privée d’au moins 750 employés, 20 unités administratives, 4 niveaux décisionnels et un portefeuille d’au moins 10 projets TI (à décrire explicitement).",
+        "Résider au Québec et pouvoir se rendre au bureau à Québec ou à Montréal 3 jours par semaine."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans. Nous recherchons des personnes réellement disponibles et engagées pour toute la durée du mandat : la ressource retenue ne peut pas être remplacée en cours de contrat.",
+        "Mode hybride : 3 jours par semaine au bureau à Québec ou à Montréal ; résidence au Québec obligatoire.",
+        "Vérification de sécurité et engagement de confidentialité exigés avant l’entrée en fonction.",
+        "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
+        "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
+        "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
+        "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité."
+      ],
+      "deliverables": [
+        "Documents et dossiers d’analyse fonctionnelle.",
+        "Plans, jeux et résultats d’essais fonctionnels et intégrés.",
+        "Correctifs d’anomalies et documentation des systèmes."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "dotnet-programmer",
+      "title": "Programmeur(euse) .NET",
+      "summary": "Programmer, tester et corriger les systèmes .NET d’un grand organisme public pendant 3 ans, au sein d’une équipe d’appoint mobilisée selon les projets.",
+      "location": "Québec ou Montréal / Hybride (3 jours au bureau)",
+      "type": "Mandat de 3 ans",
+      "intro": "Un grand organisme public québécois confie l’entretien, l’évolution et le développement de ses systèmes d’information à une équipe stratégique, appuyée par une équipe d’appoint mobilisée selon les projets. Au sein de l’équipe d’appoint, vous réalisez la programmation des demandes d’entretien, d’évolution et de développement. Environnement : Microsoft .NET, Visual Studio, Azure DevOps (exigences, code source, pipelines CI/CD), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server et IIS, Microsoft 365, Visio et SharePoint ; applications Web, client-serveur et infonuagiques, systèmes patrimoniaux et nouveaux développements ; méthode Macroscope (ou similaire) et approche Agile/Scrum.",
+      "responsibilities": [
+        "Réaliser la programmation des unités de tâches liées aux demandes d’entretien, d’évolution et de développement.",
+        "Réaliser les essais unitaires.",
+        "Effectuer les correctifs d’anomalies relevées lors des essais d’acceptation.",
+        "Participer aux mises à niveau et aux migrations des composantes logicielles.",
+        "Soutenir les utilisateurs pendant les essais d’acceptation et pour les demandes techniques.",
+        "Respecter les règles du client pour le développement et sa documentation."
+      ],
+      "requirements": [
+        "DEC en informatique. Un DEC dans un autre domaine avec 2 ans d’expérience supplémentaires, ou une AEC en informatique avec 4 ans d’expérience supplémentaires, est accepté. Diplôme reconnu au Québec (évaluation comparative du MIFI obligatoire pour un diplôme obtenu hors Canada) ; un diplôme supérieur est accepté.",
+        "Au moins 5 ans d’expérience au cours des 6 dernières années en développement, évolution, modernisation ou entretien de systèmes dans l’écosystème Microsoft .NET.",
+        "Au moins 2 mandats distincts d’au moins 110 jours-personnes chacun, au cours des 3 dernières années, en .NET : préciser le contexte, vos responsabilités, les technologies, les livrables et les résultats.",
+        "Au moins 2 ans de développement de solutions intégrées à un environnement comparable (voir l’environnement décrit plus haut) : préciser les outils, les cadres de développement et les technologies.",
+        "Expérience acquise dans un contexte comparable : ministère, organisme public ou parapublic, ou entreprise privée d’au moins 750 employés, 20 unités administratives, 4 niveaux décisionnels et un portefeuille d’au moins 10 projets TI (à décrire explicitement).",
+        "Résider au Québec et pouvoir se rendre au bureau à Québec ou à Montréal 3 jours par semaine."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans. Nous recherchons des personnes réellement disponibles et engagées pour toute la durée du mandat : la ressource retenue ne peut pas être remplacée en cours de contrat.",
+        "Mode hybride : 3 jours par semaine au bureau à Québec ou à Montréal ; résidence au Québec obligatoire.",
+        "Vérification de sécurité et engagement de confidentialité exigés avant l’entrée en fonction.",
+        "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
+        "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
+        "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
+        "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité."
+      ],
+      "deliverables": [
+        "Code programmé et documenté.",
+        "Résultats des essais unitaires.",
+        "Correctifs d’anomalies et description des interventions dans l’outil de suivi."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "functional-architecture-advisor",
+      "title": "Conseiller(ère) en architecture fonctionnelle",
+      "summary": "Apporter l’expertise-conseil en architecture fonctionnelle (données et traitements) aux projets .NET d’un grand organisme public pendant 3 ans.",
+      "location": "Québec ou Montréal / Hybride (3 jours au bureau)",
+      "type": "Mandat de 3 ans",
+      "intro": "Un grand organisme public québécois confie l’entretien, l’évolution et le développement de ses systèmes d’information à une équipe stratégique, appuyée par une équipe d’appoint mobilisée selon les projets. Au sein de l’équipe d’appoint, vous veillez à la cohérence fonctionnelle des systèmes et guidez les analystes. Environnement : Microsoft .NET, Visual Studio, Azure DevOps (exigences, code source, pipelines CI/CD), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server et IIS, Microsoft 365, Visio et SharePoint ; applications Web, client-serveur et infonuagiques, systèmes patrimoniaux et nouveaux développements ; méthode Macroscope (ou similaire) et approche Agile/Scrum.",
+      "responsibilities": [
+        "Fournir l’expertise-conseil en données et en traitements ; participer à l’évaluation des demandes.",
+        "Proposer des solutions arrimées à la vision d’ensemble des systèmes.",
+        "Réaliser ou ajuster les documents d’architecture fonctionnelle et les dossiers fonctionnels.",
+        "Assurer la qualité des livrables des analystes fonctionnels ; définir et réaliser les essais fonctionnels intégrés.",
+        "Soutenir les analystes et les utilisateurs pendant les essais et le développement.",
+        "Conseiller sur la cohérence et l’intégration des modifications ; réaliser des études et des analyses d’impact.",
+        "Élaborer les stratégies de développement et d’évolution, les plans maîtres et le découpage des phases de transition.",
+        "Participer à l’élaboration et à la diffusion des orientations de développement et d’intégration des systèmes."
+      ],
+      "requirements": [
+        "Baccalauréat en informatique ou dans un domaine connexe. Domaines connexes acceptés : mathématiques, sciences de l’ingénierie, administration, ou tout domaine comprenant au moins 30 crédits universitaires en TI. Un diplôme supérieur est accepté. À défaut de baccalauréat : certificat en informatique + 4 ans, DEC en informatique + 6 ans, DEC autre + 8 ans ou AEC en informatique + 10 ans d’expérience (ces années sont retirées de l’expérience évaluée).",
+        "Au moins 8 ans d’expérience au cours des 10 dernières années en évolution ou en développement de systèmes d’information, dont au moins 5 ans comme conseiller(ère) en architecture fonctionnelle.",
+        "Au moins 3 projets distincts d’au moins 1 000 jours-personnes chacun (évolution, développement ou modernisation) avec un rôle de conseiller(ère) en architecture fonctionnelle : décrire le contexte, les objectifs, l’envergure, la complexité, vos responsabilités, les livrables et les résultats.",
+        "Au moins 5 ans en architecture fonctionnelle (définition des besoins d’affaires, modélisation fonctionnelle, dossiers d’architecture) dans les projets présentés.",
+        "Expérience acquise dans un contexte comparable : ministère, organisme public ou parapublic, ou entreprise privée d’au moins 750 employés, 20 unités administratives, 4 niveaux décisionnels et un portefeuille d’au moins 10 projets TI (à décrire explicitement).",
+        "Résider au Québec et pouvoir se rendre au bureau à Québec ou à Montréal 3 jours par semaine."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans. Nous recherchons des personnes réellement disponibles et engagées pour toute la durée du mandat : la ressource retenue ne peut pas être remplacée en cours de contrat.",
+        "Mode hybride : 3 jours par semaine au bureau à Québec ou à Montréal ; résidence au Québec obligatoire.",
+        "Vérification de sécurité et engagement de confidentialité exigés avant l’entrée en fonction.",
+        "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
+        "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
+        "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
+        "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité."
+      ],
+      "deliverables": [
+        "Documents d’architecture fonctionnelle et dossiers fonctionnels.",
+        "Études et analyses d’impact.",
+        "Stratégies d’évolution, plans maîtres et découpage des phases de transition.",
+        "Plans et résultats d’essais fonctionnels intégrés."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "dotnet-technical-architecture-advisor",
+      "title": "Conseiller(ère) en architecture organique .NET",
+      "summary": "Guider les programmeurs .NET d’un grand organisme public pendant 3 ans : architecture organique, qualité du code, performance et composants réutilisables.",
+      "location": "Québec ou Montréal / Hybride (3 jours au bureau)",
+      "type": "Mandat de 3 ans",
+      "intro": "Un grand organisme public québécois confie l’entretien, l’évolution et le développement de ses systèmes d’information à une équipe stratégique, appuyée par une équipe d’appoint mobilisée selon les projets. Au sein de l’équipe d’appoint, vous êtes la référence technique de l’environnement Microsoft pour les programmeurs. Environnement : Microsoft .NET, Visual Studio, Azure DevOps (exigences, code source, pipelines CI/CD), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server et IIS, Microsoft 365, Visio et SharePoint ; applications Web, client-serveur et infonuagiques, systèmes patrimoniaux et nouveaux développements ; méthode Macroscope (ou similaire) et approche Agile/Scrum.",
+      "responsibilities": [
+        "Agir comme expert(e)-conseil auprès des programmeurs dans l’environnement Microsoft (Visual Studio .NET, ASP.NET, etc.).",
+        "Proposer des solutions organiques fondées sur les meilleures pratiques Microsoft.",
+        "Réaliser ou ajuster les documents d’architecture organique.",
+        "Assurer la bonne utilisation du cadre de développement applicatif du client.",
+        "Assurer la qualité du code des programmeurs (efficience, règles de programmation).",
+        "Analyser la performance des traitements et recommander des modifications.",
+        "Mettre en place et gérer une librairie de composants communs et en assurer la réutilisation.",
+        "Participer aux mises à niveau et aux migrations de l’environnement Microsoft."
+      ],
+      "requirements": [
+        "Baccalauréat en informatique ou dans un domaine connexe. Domaines connexes acceptés : mathématiques, sciences de l’ingénierie, administration, ou tout domaine comprenant au moins 30 crédits universitaires en TI. Un diplôme supérieur est accepté. À défaut de baccalauréat : certificat en informatique + 4 ans, DEC en informatique + 6 ans, DEC autre + 8 ans ou AEC en informatique + 10 ans d’expérience (ces années sont retirées de l’expérience évaluée).",
+        "Au moins 8 ans d’expérience en évolution ou en développement de systèmes d’information, dont au moins 5 ans en architecture organique d’applications Microsoft .NET.",
+        "Au moins 3 projets distincts d’au moins 1 000 jours-personnes chacun avec un rôle de conseiller(ère) en architecture organique : décrire le contexte, les objectifs, l’envergure, la complexité, vos responsabilités, les livrables et les résultats.",
+        "Au moins 5 ans en architecture organique (conception de solutions, composantes applicatives, interfaces et intégrations) dans les projets présentés.",
+        "Expérience acquise dans un contexte comparable : ministère, organisme public ou parapublic, ou entreprise privée d’au moins 750 employés, 20 unités administratives, 4 niveaux décisionnels et un portefeuille d’au moins 10 projets TI (à décrire explicitement).",
+        "Résider au Québec et pouvoir se rendre au bureau à Québec ou à Montréal 3 jours par semaine."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans. Nous recherchons des personnes réellement disponibles et engagées pour toute la durée du mandat : la ressource retenue ne peut pas être remplacée en cours de contrat.",
+        "Mode hybride : 3 jours par semaine au bureau à Québec ou à Montréal ; résidence au Québec obligatoire.",
+        "Vérification de sécurité et engagement de confidentialité exigés avant l’entrée en fonction.",
+        "Vous ne pouvez postuler qu’à un seul des postes de ce mandat.",
+        "Certaines personnes ayant travaillé pour le client au cours des 2 dernières années sont exclues : indiquez tout emploi dans un ministère ou un organisme public québécois durant cette période.",
+        "Seule l’expérience réelle et vérifiable est prise en compte : les dossiers sont présentés tels quels, sans ajout de mandats ni de dates.",
+        "Pour postuler, faites-nous parvenir au plus tard le 20 novembre 2026, à recrutement@conceptinformatique.net : 1) votre CV à jour en format Word, en indiquant pour chaque mandat le nom du client, les dates de début et de fin (mois/année), votre rôle, l’envergure (en jours-personnes), la nature des travaux et les principaux livrables ; 2) une copie de votre diplôme (et de l’évaluation comparative du MIFI s’il a été obtenu hors Canada) ; 3) votre ville de résidence et votre disponibilité."
+      ],
+      "deliverables": [
+        "Documents d’architecture organique.",
+        "Librairie de composants communs.",
+        "Recommandations de performance et revues de code."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "oracle-dba-24-7",
+      "title": "Administrateur(trice) de bases de données Oracle (DBA)",
+      "summary": "Rejoindre une équipe de soutien 24/7 d’un organisme public québécois : administration d’Oracle 19 sous Red Hat Enterprise Linux 8, surveillance, mises à jour, relève et incidents.",
+      "location": "Télétravail (Canada)",
+      "type": "3 ans (+ 2 options d’un an) · Garde 24/7",
+      "intro": "Nous recherchons des administrateurs et administratrices de bases de données (DBA) Oracle, dont au moins une personne de niveau sénior, pour former une équipe de soutien 24/7 auprès d’un organisme public québécois. L’environnement compte cinq serveurs Oracle 19.31 sous Red Hat Enterprise Linux 8, dont un serveur de production en service 24 heures sur 24, 7 jours sur 7, 365 jours par année. L’équipe assure la surveillance, les mises à jour, les tests de relève, la gestion des incidents et le soutien technique sur demande.",
+      "responsibilities": [
+        "Surveiller les bases de données Oracle et les serveurs de l’environnement (5 serveurs, dont 1 en production 24/7/365).",
+        "Planifier et appliquer les mises à jour d’Oracle 19.31 sous Red Hat Enterprise Linux 8.",
+        "Réaliser les tests de relève et veiller à la disponibilité des bases de données.",
+        "Prendre en charge et résoudre les incidents, y compris en dehors des heures normales.",
+        "Offrir un soutien technique sur demande aux équipes de l’organisme.",
+        "Participer à la rotation de garde (soir, nuit et fin de semaine)."
+      ],
+      "requirements": [
+        "Excellente maîtrise du français, à l’oral et à l’écrit.",
+        "Expérience comme administrateur ou administratrice de bases de données Oracle (l’équipe doit cumuler au moins 5 ans d’expérience comme DBA Oracle).",
+        "Expérience en environnement critique 24/7.",
+        "Expérience sur Oracle 19.31 ou une version supérieure.",
+        "Disponibilité pour une rotation de garde soir, nuit et fin de semaine.",
+        "Résidence au Canada (travail à distance depuis le Canada uniquement)."
+      ],
+      "assets": [
+        "Expérience de niveau sénior comme DBA Oracle (au moins un membre de l’équipe doit être sénior).",
+        "Expérience d’administration sous Red Hat Enterprise Linux 8.",
+        "Expérience auprès d’organismes publics québécois."
+      ],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans, avec 2 options de prolongation d’un an chacune.",
+        "Télétravail à 100 %, depuis le Canada uniquement.",
+        "Rotation de garde soir, nuit et fin de semaine requise.",
+        "Pour postuler, faites-nous parvenir au plus tard le 16 novembre 2026 à 12 h : 1) votre CV en format Word ; 2) les formulaires de la fiche de besoin, remplis (fiche transmise sur demande à recrutement@conceptinformatique.net) ; 3) votre statut (salarié, travailleur autonome ou société incorporée)."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "senior-it-governance-project-advisor",
+      "title": "Conseiller(ère) sénior en gouvernance et gestion de projets TI",
+      "summary": "Accompagner les équipes de projet du bureau de projets d’un grand organisme public québécois : respect de la portée, de l’échéancier, des coûts et du cadre de gouvernance TI.",
+      "location": "Québec / Hybride (3 jours au bureau)",
+      "type": "3 ans · 35 h/semaine",
+      "intro": "Le bureau de projets d’un grand organisme public québécois (environnement multiplateforme : central, client-serveur et Web) souhaite s’adjoindre des conseillers et conseillères séniors en gouvernance et en gestion de projets en technologies de l’information. Vous accompagnerez les équipes de projet afin d’assurer le respect des paramètres d’autorisation des projets (portée, échéancier, coût) et du cadre de gouvernance, au sein d’équipes mixtes composées de ressources internes et externes.",
+      "responsibilities": [
+        "Accompagner et conseiller les équipes de projet à toutes les étapes du cycle de vie (avant-projet, planification, réalisation, fermeture).",
+        "Soutenir le suivi de la performance et des paramètres des projets : portée, échéancier, budget, jalons, livraisons, bénéfices et écarts.",
+        "Accompagner les équipes dans l’identification, l’analyse et le suivi des risques, des enjeux, des mesures de mitigation et des actions correctives.",
+        "Analyser la qualité, la complétude, la cohérence et la conformité des documents et livrables (reddition de comptes, passages de phase, demandes de changement).",
+        "Produire les avis du bureau de projets pour les autorisations de passage de phase auprès des comités de gouvernance.",
+        "Conseiller les équipes dans l’application et l’évolution du cadre de gouvernance et de gestion des projets TI (directives, processus, pratiques, gabarits, outils).",
+        "Contribuer à la reddition de comptes, aux recommandations destinées aux instances de gouvernance et au transfert de connaissances vers les ressources internes."
+      ],
+      "requirements": [
+        "Excellente maîtrise du français, à l’oral et à l’écrit, avec une capacité à rédiger des documents de très bonne qualité.",
+        "Expérience de niveau sénior en gouvernance et en gestion de projets en technologies de l’information.",
+        "Maîtrise de MS Project, d’Azure DevOps et de la suite Microsoft 365 (dont Power BI).",
+        "Connaissance de l’approche agile.",
+        "Capacité à travailler au bureau à Québec au moins 3 jours par semaine."
+      ],
+      "assets": [
+        "Résidence dans la région de Québec (fortement privilégiée).",
+        "Expérience au sein d’un bureau de projets d’un organisme public.",
+        "Expérience en environnement multiplateforme (central, client-serveur et Web)."
+      ],
+      "benefits": [],
+      "terms": [
+        "Durée : 3 ans, démarrage au début de 2027 (au plus tard 15 jours ouvrables après la signature du contrat).",
+        "Volume : environ 1 800 jours-personnes au total pour l’équipe (journées de 7 h).",
+        "Mode hybride : présence au bureau à Québec (ville de Québec) au moins 3 jours par semaine ; télétravail au Québec seulement.",
+        "Horaire : 7 h par jour, du lundi au vendredi, entre 7 h et 18 h 30 ; présence obligatoire de 10 h à 11 h 30 et de 13 h 30 à 15 h.",
+        "Aucuns frais de déplacement, de stationnement ou d’hébergement ne sont remboursés.",
+        "Vérification des antécédents avant l’entrée en fonction.",
+        "Pour postuler, faites-nous parvenir votre CV à jour en format Word à recrutement@conceptinformatique.net, en indiquant pour chaque mandat le client, les dates, votre rôle et l’envergure du projet, ainsi que votre ville de résidence et votre disponibilité."
+      ],
+      "deliverables": [
+        "Tableaux de bord et rapports d’avancement.",
+        "Analyses d’écarts et registres de risques.",
+        "Avis de passage de phase (dossier d’opportunité, dossier d’affaires, autorisation d’exécution).",
+        "Analyses d’impact de changements et notes d’aide à la décision.",
+        "Diagnostics de gouvernance, guides et gabarits.",
+        "Matériel de formation."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "senior-agile-project-manager",
+      "title": "Chargé de projet senior – Profil Agile",
+      "summary": "Accompagner une équipe en stratégie des données en mode agile, coordonner les parties prenantes et suivre la portée, les échéanciers, les coûts et la qualité.",
+      "location": "Montréal ou Québec / Hybride",
+      "type": "24 mois · 35 h/semaine",
+      "intro": "À titre de chargé de projet senior – profil Agile, vous accompagnerez une équipe en stratégie des données dans la livraison continue de valeur selon le mode ALEC basé sur SAFe. Vous animerez les pratiques agiles, coordonnerez la livraison et la qualité et maintiendrez l’engagement des parties prenantes.",
+      "responsibilities": [
+        "Mettre en place et animer les événements agiles, instaurer une culture agile durable, accompagner l’équipe en mode ALEC basé sur SAFe, lever les obstacles et former l’équipe aux outils agiles de l’organisation.",
+        "Synthétiser les besoins des projets pour définir la portée globale des travaux TI; définir, planifier et suivre les échéanciers des livrables; estimer et suivre les efforts et les coûts de chaque bloc de travail.",
+        "Planifier et coordonner l’assurance qualité et les tests; mobiliser, coordonner et suivre les équipes de développement.",
+        "Assurer une communication transparente avec les parties prenantes; anticiper les risques TI et opérationnels et leurs mesures d’atténuation; gérer les ententes contractuelles et fournisseurs requis; maintenir l’engagement des responsables."
+      ],
+      "requirements": [
+        "Excellente maîtrise du français parlé et écrit.",
+        "Baccalauréat en technologies de l’information, administration des affaires, gestion ou domaine connexe, et certification Scrum Master.",
+        "Au moins 15 ans d’expérience concrète en gestion ou coordination de projets affaires et TI, dont 5 ans comme Scrum Master en environnement complexe.",
+        "Participation à au moins trois projets d’envergure d’environ 5 000 jours-personnes chacun.",
+        "Expérience démontrée avec des cadres reconnus : PMBOK/PMI, Agile et méthodes hybrides.",
+        "Maîtrise avérée des méthodes agiles et/ou hybrides; certification PMP, PSM, SAFe ou équivalente.",
+        "Orientation résultats, performance d’équipe et cohérence stratégique.",
+        "Excellente planification, organisation et gestion des priorités; capacité à gérer plusieurs dossiers en environnement complexe.",
+        "Excellentes habiletés de communication et d’animation; capacité à mobiliser des équipes multidisciplinaires et coordonner plusieurs intervenants.",
+        "Rigueur dans le suivi des échéanciers, des budgets et des livrables.",
+        "Capacité d’analyse et de synthèse pour soutenir la décision, et bonne compréhension des environnements technologiques.",
+        "Leadership, autonomie et sens des responsabilités."
+      ],
+      "assets": [
+        "Certification SAFe pertinente.",
+        "Certification PROSCI en gestion du changement.",
+        "Expérience dans le secteur de la santé publique."
+      ],
+      "benefits": [],
+      "terms": [
+        "Durée : 24 mois.",
+        "Horaire : 35 heures par semaine.",
+        "Présence au bureau du client une journée par semaine, à Montréal ou à Québec."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "senior-data-engineer",
+      "title": "Ingénieur de données senior",
+      "summary": "Concevoir des solutions analytiques modernes avec Microsoft Fabric, des pipelines de données et l’intégration de systèmes cliniques du réseau de la santé du Québec.",
+      "location": "Montréal ou Québec / Hybride",
+      "type": "24 mois · 35 h/semaine",
+      "intro": "À titre d’ingénieur de données senior, vous concevrez des pipelines et des accélérateurs d’intégration, assurerez la qualité et la confidentialité des données et contribuerez à des architectures analytiques modernes soutenant la BI et l’IA dans le réseau de la santé du Québec.",
+      "responsibilities": [
+        "Concevoir et développer des pipelines de données et créer des accélérateurs pour l’intégration de données.",
+        "Assurer la qualité et la conformité des données, ainsi que leur sécurité et leur confidentialité.",
+        "Participer à la conception d’architectures analytiques modernes, développer des outils pour la BI et l’IA, et optimiser les requêtes et la modélisation.",
+        "Participer au choix et à l’implantation des outils, soutenir les utilisateurs et l’amélioration continue, et contribuer à la gouvernance des données."
+      ],
+      "requirements": [
+        "Maîtrise avancée du français parlé et écrit.",
+        "Baccalauréat en technologies de l’information, administration des affaires, gestion ou domaine connexe, et réussite d’au moins 3 évaluations Microsoft Applied Skills directement liées à Fabric ou certification Microsoft Fabric Data Engineer Associate (DP-700).",
+        "Huit années d’expérience en ingénierie de données.",
+        "Plus de 5 années d’expérience en intelligence d’affaires, dont 3 ans en ingénierie de données dans le réseau de la santé du Québec.",
+        "Participation active à au moins 3 mandats de développement de solutions analytiques intégrant des systèmes cliniques provinciaux et d’établissements, par exemple Clinibase, SIURGE, Med-urge, BDCU, MED-ECHO, Opera, SIMASS ou SILP.",
+        "Connaissance avancée de Microsoft Office 365 et de Fabric : Lakehouse, Data Warehouse, Direct Lake, pipelines et notebooks; expérience pratique en gestion des espaces de travail Fabric et des environnements Spark; utilisation avancée des notebooks pour l’ingestion, la transformation, l’analyse exploratoire et le prototypage analytique.",
+        "Connaissance approfondie de Power BI et Power Platform (Power Automate, Power Apps, Copilot Studio); maîtrise de T-SQL, M, R, JSON, Python et DAX; expérience pratique de gestion de conteneurs avec Docker et Kubernetes.",
+        "Maîtrise de la modélisation et de l’optimisation des données : schémas en étoile et en flocon, entrepôts, modèles d’apprentissage automatique, agrégations, partitions et stratégies de rafraîchissement dans Fabric.",
+        "Connaissances avancées des systèmes cliniques et administratifs du réseau de la santé du Québec (essentiel).",
+        "Bonne connaissance de YAML et des fichiers de configuration CI/CD; des bases MS SQL Server, Oracle, DB2, Sybase, Dataverse, NoSQL et Spark; et des flux ELT, ETL, API et JSON.",
+        "Expérience avec les architectures orientées événements et le traitement en temps réel; connaissance pratique de Microsoft Purview pour la gestion des métadonnées.",
+        "Connaissance des services Microsoft Azure, Azure Data Lake Storage Gen2, Data Factory et Azure Machine Learning; solide expérience de SSIS, SSAS et SSRS.",
+        "Expérience en intégration de données HL7/PHIRE.",
+        "Connaissance des normes ISO 27001, GDPR et SOC 2, ainsi que des principes de cryptographie et de gestion des accès.",
+        "Rigueur et souci du détail pour garantir la qualité, la performance et la sécurité; capacité à travailler en équipe, coordonner plusieurs projets et conseiller sur les meilleures pratiques techniques."
+      ],
+      "assets": [
+        "Certification Microsoft Certified Azure Developer Associate ou équivalent.",
+        "Expérience de niveau senior dans la réalisation de mandats stratégiques."
+      ],
+      "benefits": [],
+      "terms": [
+        "Durée : 24 mois.",
+        "Horaire : 35 heures par semaine.",
+        "Présence au bureau du client une journée par semaine, à Montréal ou à Québec."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "intermediate-business-analyst-ai",
+      "title": "Analyste d'affaires intermédiaire – IA",
+      "summary": "Faire le lien entre les équipes d’affaires, cliniques et techniques pour évaluer et réaliser des possibilités d’IA responsables en santé.",
+      "location": "Montréal ou Québec / Hybride",
+      "type": "24 mois · 35 h/semaine",
+      "intro": "À titre d’analyste d’affaires intermédiaire spécialisé en IA, vous documenterez les besoins et processus d’affaires, évaluerez la faisabilité et la valeur des solutions d’IA et accompagnerez leur conception fonctionnelle et leur acceptation avec les parties prenantes d’affaires, cliniques et techniques.",
+      "responsibilities": [
+        "Analyser les besoins d’affaires et préparer des dossiers d’opportunités et d’affaires pour les initiatives en IA.",
+        "Documenter les processus métier actuels et repérer les possibilités d’amélioration par l’IA.",
+        "Analyser la faisabilité et la valeur ajoutée des solutions d’intelligence artificielle proposées.",
+        "Évaluer les impacts organisationnels et les changements requis.",
+        "Traduire les besoins métier en exigences fonctionnelles et non fonctionnelles.",
+        "Participer à la conception des modèles d’IA et valider leur alignement avec les besoins.",
+        "Définir les critères de succès et les indicateurs de performance (KPI).",
+        "Assurer la liaison entre les équipes techniques, cliniques et opérationnelles.",
+        "Participer aux planifications de sprint, revues et rétrospectives; gérer les attentes et communiquer l’avancement aux parties prenantes.",
+        "Soutenir les tests d’acceptation utilisateur (UAT) des solutions d’IA.",
+        "Assurer la conformité aux normes de Santé Québec et aux réglementations en santé; évaluer les risques liés à l’IA (biais, éthique, protection des données) avec les équipes de sécurité et conformité."
+      ],
+      "requirements": [
+        "Excellente maîtrise du français parlé et écrit.",
+        "Baccalauréat en administration, en analyse d’affaires ou dans une discipline connexe pertinente aux responsabilités du poste.",
+        "Au moins 7 ans d’expérience en analyse d’affaires.",
+        "Au moins 3 ans d’expérience en gestion de projets Agile/Scrum.",
+        "Contribution, à titre d’analyste d’affaires, à au moins 2 projets technologiques complexes au cours des 5 dernières années.",
+        "Expérience en analyse d’impact organisationnel sur les processus d’affaires, les rôles et les modes de fonctionnement dans une organisation d’envergure comparable à Santé Québec.",
+        "Analyser et documenter les besoins; modéliser les processus d’affaires; rédiger des cas d’utilisation et des user stories; assurer la gestion et la traçabilité des exigences.",
+        "Connaissance des méthodes Agile (Scrum, Kanban), de la modélisation UML et BPMN, de la gestion du changement organisationnel et de l’analyse et l’atténuation des risques.",
+        "Connaissance avancée de Microsoft Office 365 et des outils de collaboration comme Teams et Slack.",
+        "Compréhension des concepts de base de l’IA et du ML, et des enjeux éthiques (biais, équité, explicabilité).",
+        "Connaissance de la réglementation en matière de protection des données."
+      ],
+      "assets": [
+        "Maîtrise en analyse d’affaires ou en gestion de projet, ou certification Agile (PMI, Scrum Product Owner); atout majeur.",
+        "Expérience dans le secteur de la santé."
+      ],
+      "benefits": [],
+      "terms": [
+        "Durée : 24 mois.",
+        "Horaire : 35 heures par semaine.",
+        "Présence au bureau du client une journée par semaine, à Montréal ou à Québec."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "information-security-governance",
+      "title": "Conseiller en sécurité de l'information – spécialiste gouvernance et gestion du risque",
+      "summary": "Soutenir la gouvernance de la sécurité de l’information, la gestion des risques et le programme de transformation numérique du Curateur public.",
+      "location": "Lieu à confirmer",
+      "type": "Gouvernance et gestion du risque",
+      "intro": "Le conseiller en gouvernance de la sécurité de l’information et gestion du risque soutient l’encadrement de la sécurité de l’information, coordonne les activités d’analyse des risques et participe à la mise en œuvre et à l’évolution des principes de gouvernance dans le programme de transformation numérique du Curateur public.",
+      "responsibilities": [
+        "Participer à l’élaboration des orientations, directives, processus et documents d’encadrement en sécurité de l’information.",
+        "Contribuer à l’amélioration du niveau de maturité de la sécurité de l’information de l’organisation.",
+        "Collaborer à la mise à jour du cadre normatif en sécurité.",
+        "Participer à la planification, à l’organisation, au contrôle et à la reddition de comptes en sécurité de l’information.",
+        "Participer à l’implantation et à l’opérationnalisation du processus de gestion des risques de sécurité de l’information.",
+        "Identifier, analyser et évaluer les risques, les menaces et leurs conséquences, notamment par la cartographie des risques.",
+        "Participer à la définition et au déploiement des plans de traitement des risques en sécurité de l’information.",
+        "Contribuer à la création et à la mise en place d’un cadre de gestion des risques."
+      ],
+      "requirements": [
+        "Minimum de 10 années d’expérience dans le domaine des technologies de l’information.",
+        "Minimum de 6 années à titre de conseiller en gouvernance de la sécurité.",
+        "Minimum de 4 années d’expérience en gestion du risque de sécurité.",
+        "Connaissance approfondie des cadres de sécurité TI et des normes connexes, par exemple NIST 800-xx, ISO 2700x et COBIT.",
+        "Très bonnes connaissances des méthodologies d’évaluation des risques, notamment MEHARI et MITRE.",
+        "Bonne connaissance de la sécurité des environnements infonuagiques et des concepts IaaS, PaaS et SaaS.",
+        "Détenir une ou plusieurs certifications reconnues en sécurité de l’information, telles que CISSP, CISM, CISA, CRISC ou ISO 27001.",
+        "Grille de conformité du Curateur public dûment remplie (transmise sur demande à recrutement@conceptinformatique.net).",
+        "Curriculum vitæ signé et daté.",
+        "Références professionnelles."
+      ],
+      "assets": [],
+      "benefits": [],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "bi",
+      "title": "Analyste en intelligence d’affaires",
+      "summary": "Transformez les données de nos clients en tableaux de bord clairs et en indicateurs utiles qui guident leurs décisions stratégiques.",
+      "location": "Sherbrooke / Hybride",
+      "type": "Temps plein",
+      "intro": "À titre d’analyste en intelligence d’affaires, vous aiderez les organisations à comprendre leur performance en transformant des données dispersées en informations fiables et exploitables. Vous concevrez des tableaux de bord, modéliserez les données et bâtirez les pipelines qui les alimentent. Votre travail soutiendra directement les décisions stratégiques de nos clients.",
+      "responsibilities": [
+        "Concevoir et publier des tableaux de bord et rapports interactifs avec Power BI.",
+        "Écrire et optimiser des requêtes SQL pour extraire et préparer les données.",
+        "Bâtir des modèles de données (schémas en étoile, mesures, relations) fiables et faciles à maintenir.",
+        "Développer et surveiller des processus ETL pour intégrer des données provenant de sources multiples.",
+        "Collaborer avec les clients pour définir les indicateurs clés et présenter les résultats clairement."
+      ],
+      "requirements": [
+        "Diplôme en systèmes d’information, en statistiques, en informatique ou dans un domaine connexe.",
+        "Expérience pratique de Power BI, incluant DAX et Power Query.",
+        "Excellente maîtrise du SQL.",
+        "Bonne compréhension de la modélisation de données et des principes d’entrepôt de données.",
+        "Esprit analytique et capacité à expliquer simplement des résultats complexes."
+      ],
+      "assets": [
+        "Expérience avec des outils ETL ou d’orchestration (p. ex. Azure Data Factory, SSIS).",
+        "Connaissance de Python pour la préparation des données.",
+        "Expérience antérieure en contexte de services-conseils."
+      ],
+      "benefits": [
+        "Budget de formation et soutien à la certification.",
+        "Horaires flexibles et télétravail hybride.",
+        "Projets variés dans plusieurs secteurs d’activité.",
+        "Mentorat par des professionnels de la donnée expérimentés."
+      ],
+      "publishedAt": "2026-11-12"
+    }
+  ],
+  "en": [
+    {
+      "id": "it-solutions-administrative-analyst-iam",
+      "title": "IT Solutions Administrative Analyst – Identity and Access Management (IAM)",
+      "summary": "Provide operational support for the identity and access management (IAM) solutions of a Québec health-network organization: 12-month engagement, 100% remote.",
+      "location": "100% remote (Québec)",
+      "type": "12-month contract, full-time",
+      "intro": "A Québec health-network organization is looking for an analyst to support its identity and access management (IAM) solutions. Reporting to the IAM operations section head, you handle requests received in the ticketing system, administer the IAM tools and keep them running smoothly. You help teams integrate authentication solutions and set up profiles, roles and access matrices, and you evolve the identity-lifecycle automations (access provisioning and deprovisioning, API integrations, orchestration flows).",
+      "responsibilities": [
+        "Take charge of and resolve client requests received as tickets in the ticketing system.",
+        "Guide clients through identity and access management processes.",
+        "Administer the IAM tools, maintain their configurations and keep them running smoothly.",
+        "Support teams in integrating authentication solutions and setting up profiles, roles and access matrices.",
+        "Develop and maintain identity-lifecycle automations: access provisioning and deprovisioning, API integrations and orchestration flows.",
+        "Help implement fixes and improvements to the IAM solutions (SQL, Python).",
+        "Produce the technical documentation and procedures needed for operational work.",
+        "Contribute to architecture and security work, and oversee the delivery of changes according to development standards and best practices."
+      ],
+      "requirements": [
+        "Solid experience with SQL."
+      ],
+      "assets": [
+        "Experience with Python.",
+        "Experience in identity and access management (IAM).",
+        "Experience in information security.",
+        "Experience with Active Directory and Microsoft Entra ID.",
+        "Experience with DevOps practices and tools."
+      ],
+      "benefits": [
+        "100% remote work for the entire engagement.",
+        "A challenging engagement at the heart of access security in the health network.",
+        "Support from Concept Informatique throughout the engagement."
+      ],
+      "terms": [
+        "Start date: November 30, 2026, for a 12-month full-time engagement.",
+        "100% remote; travel to Montréal or Québec City is required only at the start and end of the engagement, to pick up and return equipment.",
+        "To apply, send no later than November 27, 2026, your up-to-date CV to recrutement@conceptinformatique.net, stating the position title and your availability."
+      ],
+      "deadline": "2026-11-27",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "it-project-manager-dotnet-systems",
+      "title": "Project Manager – .NET Information Systems",
+      "summary": "Lead a 3-year engagement to maintain, evolve and develop .NET systems for a large public organization: planning, resources, deliveries and accountability reporting.",
+      "location": "Quebec City or Montreal / Hybrid (3 days on site)",
+      "type": "3-year engagement",
+      "intro": "A large Québec public organization is entrusting the maintenance, evolution and development of its information systems to a strategic team, supported by a back-up team mobilized as projects require. As part of the strategic team, you manage the entire engagement for both teams. Environment: Microsoft .NET, Visual Studio, Azure DevOps (requirements, source code, CI/CD pipelines), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server and IIS, Microsoft 365, Visio and SharePoint; web, client-server and cloud applications, legacy systems and new development; Macroscope (or similar) method and Agile/Scrum approach.",
+      "responsibilities": [
+        "Manage the engagement (coordination, planning, organization, follow-up and communication) for the strategic and back-up teams.",
+        "Analyze and assess assigned work; manage work requests (planning, estimation, follow-up and control).",
+        "Assign, direct and manage resources; produce the assignment plan and manage the team’s overall capacity.",
+        "Prepare detailed plans and have them approved by the client.",
+        "Take charge of maintaining, evolving and developing the systems concerned; plan, organize and oversee deliveries.",
+        "Submit production deployment requests with internal teams.",
+        "Coordinate work in line with the standards framework; keep documentation and maintenance request registers up to date.",
+        "Produce monthly accountability and progress reports, as well as the required reports, dashboards and presentations.",
+        "Ensure deliverable quality and report any situation affecting costs, deadlines or objectives.",
+        "Take on some ScrumMaster tasks in an agile context and ensure knowledge transfer."
+      ],
+      "requirements": [
+        "Bachelor’s degree in computer science, administration or project management. Related fields accepted: mathematics, engineering sciences, administration, or any field including at least 30 university credits in IT. A higher degree is accepted. Without a bachelor’s degree: certificate in computer science + 4 years, DEC in computer science + 6 years, other DEC + 8 years, or AEC in computer science + 10 years of experience (these years are deducted from the experience assessed).",
+        "At least 8 years of experience in the last 10 years as a project manager on engagements to design, develop, modernize, evolve or transform information systems.",
+        "At least 1 large-scale project of at least 2,000 person-days per year (IT project, modernization or digital transformation) completed in the last 5 years as project manager: describe the context, objectives, scope, complexity, your responsibilities, activities, deliverables, issues, measures taken and results.",
+        "At least 4 years using a project management method and tools similar to Macroscope: specify the methods, tools, projects and how they were used for planning, monitoring and control.",
+        "Experience gained in a comparable context: government department, public or para-public body, or private company with at least 750 employees, 20 administrative units, 4 decision-making levels and a portfolio of at least 10 IT projects (to be described explicitly).",
+        "Reside in Québec and be able to work on site in Quebec City or Montreal 3 days a week."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years. We are looking for people who are truly available and committed for the full engagement: the selected resource cannot be replaced during the contract.",
+        "Hybrid: 3 days a week on site in Quebec City or Montreal; residence in Québec required.",
+        "Security check and confidentiality agreement required before starting.",
+        "You may apply to only one of the positions in this engagement.",
+        "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
+        "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
+        "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability."
+      ],
+      "deliverables": [
+        "Resource assignment plan and detailed plans.",
+        "Documented work requests (need, objectives, schedule, resources, micro-deliveries, actual effort).",
+        "Monthly progress reports, accountability reporting and dashboards.",
+        "Project management deliverables and close-out report according to the client’s method.",
+        "Impact analyses and knowledge transfer documentation."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "functional-analyst-dotnet",
+      "title": "Functional Analyst – .NET Ecosystem (2 positions)",
+      "summary": "Analyze, test and evolve a large public organization’s .NET systems for 3 years. Two positions: one on the strategic team, one on the back-up team.",
+      "location": "Quebec City or Montreal / Hybrid (3 days on site)",
+      "type": "3-year engagement",
+      "intro": "A large Québec public organization is entrusting the maintenance, evolution and development of its information systems to a strategic team, supported by a back-up team mobilized as projects require. Two functional analysts are needed: one on the strategic team, working closely with the project manager, and one on the back-up team, mobilized as projects require. Environment: Microsoft .NET, Visual Studio, Azure DevOps (requirements, source code, CI/CD pipelines), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server and IIS, Microsoft 365, Visio and SharePoint; web, client-server and cloud applications, legacy systems and new development; Macroscope (or similar) method and Agile/Scrum approach.",
+      "responsibilities": [
+        "Perform functional analysis of maintenance, evolution and development requests.",
+        "Carry out functional and integrated testing of the analyzed requests.",
+        "Support users during acceptance testing and fix defects.",
+        "Produce or adjust functional analysis deliverables according to the client’s rules.",
+        "Take part in upgrades and migrations of software components.",
+        "Strategic team: help the project manager plan and coordinate project implementation, and occasionally replace them on a work request if the client approves."
+      ],
+      "requirements": [
+        "Bachelor’s degree in computer science or a related field. Related fields accepted: mathematics, engineering sciences, administration, or any field including at least 30 university credits in IT. A higher degree is accepted. Without a bachelor’s degree: certificate in computer science + 4 years, DEC in computer science + 6 years, other DEC + 8 years, or AEC in computer science + 10 years of experience (these years are deducted from the experience assessed).",
+        "At least 6 years of experience in the last 8 years in analysis, evolution, modernization or development of information systems, including at least 2 years as a functional analyst.",
+        "At least 2 separate engagements of at least 110 person-days each, in the last 3 years, in the Microsoft .NET ecosystem: specify the context, your responsibilities, the analysis documents produced and the results.",
+        "At least 2 years using a development method similar to Macroscope: specify the methods and engagements.",
+        "Experience gained in a comparable context: government department, public or para-public body, or private company with at least 750 employees, 20 administrative units, 4 decision-making levels and a portfolio of at least 10 IT projects (to be described explicitly).",
+        "Reside in Québec and be able to work on site in Quebec City or Montreal 3 days a week."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years. We are looking for people who are truly available and committed for the full engagement: the selected resource cannot be replaced during the contract.",
+        "Hybrid: 3 days a week on site in Quebec City or Montreal; residence in Québec required.",
+        "Security check and confidentiality agreement required before starting.",
+        "You may apply to only one of the positions in this engagement.",
+        "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
+        "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
+        "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability."
+      ],
+      "deliverables": [
+        "Functional analysis documents and files.",
+        "Functional and integrated test plans, test sets and results.",
+        "Defect fixes and system documentation."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "dotnet-programmer",
+      "title": ".NET Programmer",
+      "summary": "Program, test and fix a large public organization’s .NET systems for 3 years, as part of a back-up team mobilized as projects require.",
+      "location": "Quebec City or Montreal / Hybrid (3 days on site)",
+      "type": "3-year engagement",
+      "intro": "A large Québec public organization is entrusting the maintenance, evolution and development of its information systems to a strategic team, supported by a back-up team mobilized as projects require. As part of the back-up team, you program the maintenance, evolution and development requests. Environment: Microsoft .NET, Visual Studio, Azure DevOps (requirements, source code, CI/CD pipelines), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server and IIS, Microsoft 365, Visio and SharePoint; web, client-server and cloud applications, legacy systems and new development; Macroscope (or similar) method and Agile/Scrum approach.",
+      "responsibilities": [
+        "Program the task units related to maintenance, evolution and development requests.",
+        "Perform unit testing.",
+        "Fix defects found during acceptance testing.",
+        "Take part in upgrades and migrations of software components.",
+        "Support users during acceptance testing and with technical requests.",
+        "Follow the client’s rules for development and its documentation."
+      ],
+      "requirements": [
+        "DEC in computer science. A DEC in another field with 2 additional years of experience, or an AEC in computer science with 4 additional years of experience, is accepted. Diploma recognized in Québec (a MIFI comparative evaluation is required for a diploma obtained outside Canada); a higher degree is accepted.",
+        "At least 5 years of experience in the last 6 years in development, evolution, modernization or maintenance of systems in the Microsoft .NET ecosystem.",
+        "At least 2 separate engagements of at least 110 person-days each, in the last 3 years, in .NET: specify the context, your responsibilities, technologies, deliverables and results.",
+        "At least 2 years developing solutions integrated into a comparable environment (see the environment described above): specify the tools, development frameworks and technologies.",
+        "Experience gained in a comparable context: government department, public or para-public body, or private company with at least 750 employees, 20 administrative units, 4 decision-making levels and a portfolio of at least 10 IT projects (to be described explicitly).",
+        "Reside in Québec and be able to work on site in Quebec City or Montreal 3 days a week."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years. We are looking for people who are truly available and committed for the full engagement: the selected resource cannot be replaced during the contract.",
+        "Hybrid: 3 days a week on site in Quebec City or Montreal; residence in Québec required.",
+        "Security check and confidentiality agreement required before starting.",
+        "You may apply to only one of the positions in this engagement.",
+        "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
+        "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
+        "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability."
+      ],
+      "deliverables": [
+        "Programmed and documented code.",
+        "Unit test results.",
+        "Defect fixes and descriptions of the work in the tracking tool."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "functional-architecture-advisor",
+      "title": "Functional Architecture Advisor",
+      "summary": "Provide functional architecture advice (data and processing) to a large public organization’s .NET projects for 3 years.",
+      "location": "Quebec City or Montreal / Hybrid (3 days on site)",
+      "type": "3-year engagement",
+      "intro": "A large Québec public organization is entrusting the maintenance, evolution and development of its information systems to a strategic team, supported by a back-up team mobilized as projects require. As part of the back-up team, you ensure the functional consistency of the systems and guide the analysts. Environment: Microsoft .NET, Visual Studio, Azure DevOps (requirements, source code, CI/CD pipelines), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server and IIS, Microsoft 365, Visio and SharePoint; web, client-server and cloud applications, legacy systems and new development; Macroscope (or similar) method and Agile/Scrum approach.",
+      "responsibilities": [
+        "Provide expert advice on data and processing; take part in assessing requests.",
+        "Propose solutions aligned with the overall vision of the systems.",
+        "Produce or adjust functional architecture documents and functional files.",
+        "Ensure the quality of functional analysts’ deliverables; define and perform integrated functional testing.",
+        "Support analysts and users during testing and development.",
+        "Advise on the consistency and integration of changes; carry out studies and impact analyses.",
+        "Develop development and evolution strategies, master plans and the breakdown of transition phases.",
+        "Take part in defining and communicating system development and integration directions."
+      ],
+      "requirements": [
+        "Bachelor’s degree in computer science or a related field. Related fields accepted: mathematics, engineering sciences, administration, or any field including at least 30 university credits in IT. A higher degree is accepted. Without a bachelor’s degree: certificate in computer science + 4 years, DEC in computer science + 6 years, other DEC + 8 years, or AEC in computer science + 10 years of experience (these years are deducted from the experience assessed).",
+        "At least 8 years of experience in the last 10 years in evolution or development of information systems, including at least 5 years as a functional architecture advisor.",
+        "At least 3 separate projects of at least 1,000 person-days each (evolution, development or modernization) in a functional architecture advisor role: describe the context, objectives, scope, complexity, your responsibilities, deliverables and results.",
+        "At least 5 years in functional architecture (business requirements definition, functional modelling, architecture files) within the projects presented.",
+        "Experience gained in a comparable context: government department, public or para-public body, or private company with at least 750 employees, 20 administrative units, 4 decision-making levels and a portfolio of at least 10 IT projects (to be described explicitly).",
+        "Reside in Québec and be able to work on site in Quebec City or Montreal 3 days a week."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years. We are looking for people who are truly available and committed for the full engagement: the selected resource cannot be replaced during the contract.",
+        "Hybrid: 3 days a week on site in Quebec City or Montreal; residence in Québec required.",
+        "Security check and confidentiality agreement required before starting.",
+        "You may apply to only one of the positions in this engagement.",
+        "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
+        "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
+        "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability."
+      ],
+      "deliverables": [
+        "Functional architecture documents and functional files.",
+        "Studies and impact analyses.",
+        "Evolution strategies, master plans and transition phase breakdown.",
+        "Integrated functional test plans and results."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "dotnet-technical-architecture-advisor",
+      "title": ".NET Technical (Organic) Architecture Advisor",
+      "summary": "Guide a large public organization’s .NET programmers for 3 years: technical architecture, code quality, performance and reusable components.",
+      "location": "Quebec City or Montreal / Hybrid (3 days on site)",
+      "type": "3-year engagement",
+      "intro": "A large Québec public organization is entrusting the maintenance, evolution and development of its information systems to a strategic team, supported by a back-up team mobilized as projects require. As part of the back-up team, you are the technical reference for the Microsoft environment for programmers. Environment: Microsoft .NET, Visual Studio, Azure DevOps (requirements, source code, CI/CD pipelines), SQL Server 2019, Azure SQL Managed Instance, SSRS 2019, Windows Server and IIS, Microsoft 365, Visio and SharePoint; web, client-server and cloud applications, legacy systems and new development; Macroscope (or similar) method and Agile/Scrum approach.",
+      "responsibilities": [
+        "Act as an expert advisor to programmers in the Microsoft environment (Visual Studio .NET, ASP.NET, etc.).",
+        "Propose technical solutions based on Microsoft best practices.",
+        "Produce or adjust technical (organic) architecture documents.",
+        "Ensure proper use of the client’s application development framework.",
+        "Ensure the quality of programmers’ code (efficiency, programming rules).",
+        "Analyze processing performance and recommend changes.",
+        "Set up and manage a library of common components and ensure their reuse.",
+        "Take part in upgrades and migrations of the Microsoft environment."
+      ],
+      "requirements": [
+        "Bachelor’s degree in computer science or a related field. Related fields accepted: mathematics, engineering sciences, administration, or any field including at least 30 university credits in IT. A higher degree is accepted. Without a bachelor’s degree: certificate in computer science + 4 years, DEC in computer science + 6 years, other DEC + 8 years, or AEC in computer science + 10 years of experience (these years are deducted from the experience assessed).",
+        "At least 8 years of experience in evolution or development of information systems, including at least 5 years in technical (organic) architecture of Microsoft .NET applications.",
+        "At least 3 separate projects of at least 1,000 person-days each in a technical (organic) architecture advisor role: describe the context, objectives, scope, complexity, your responsibilities, deliverables and results.",
+        "At least 5 years in technical (organic) architecture (solution design, application components, interfaces and integrations) within the projects presented.",
+        "Experience gained in a comparable context: government department, public or para-public body, or private company with at least 750 employees, 20 administrative units, 4 decision-making levels and a portfolio of at least 10 IT projects (to be described explicitly).",
+        "Reside in Québec and be able to work on site in Quebec City or Montreal 3 days a week."
+      ],
+      "assets": [],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years. We are looking for people who are truly available and committed for the full engagement: the selected resource cannot be replaced during the contract.",
+        "Hybrid: 3 days a week on site in Quebec City or Montreal; residence in Québec required.",
+        "Security check and confidentiality agreement required before starting.",
+        "You may apply to only one of the positions in this engagement.",
+        "Some people who worked for the client in the last 2 years are excluded: please state any employment with a Québec government department or public body during that period.",
+        "Only real, verifiable experience is considered: applications are presented as is, with no added engagements or dates.",
+        "To apply, send no later than November 20, 2026, to recrutement@conceptinformatique.net: (1) your up-to-date CV in Word format, stating for each engagement the client’s name, start and end dates (month/year), your role, the scope (in person-days), the nature of the work and the main deliverables; (2) a copy of your diploma (and the MIFI comparative evaluation if obtained outside Canada); (3) your city of residence and availability."
+      ],
+      "deliverables": [
+        "Technical (organic) architecture documents.",
+        "Library of common components.",
+        "Performance recommendations and code reviews."
+      ],
+      "deadline": "2026-11-20",
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "oracle-dba-24-7",
+      "title": "Oracle Database Administrator (DBA)",
+      "summary": "Join a 24/7 support team for a Québec public organization: Oracle 19 administration on Red Hat Enterprise Linux 8, monitoring, updates, failover testing and incidents.",
+      "location": "Remote (Canada)",
+      "type": "3 years (+ two 1-year options) · 24/7 on-call",
+      "intro": "We are looking for Oracle database administrators (DBAs), including at least one senior, to form a 24/7 support team for a Québec public organization. The environment includes five Oracle 19.31 servers on Red Hat Enterprise Linux 8, one of which is a production server running 24 hours a day, 7 days a week, 365 days a year. The team handles monitoring, updates, failover testing, incident management and on-demand technical support.",
+      "responsibilities": [
+        "Monitor the Oracle databases and servers in the environment (5 servers, including 1 in 24/7/365 production).",
+        "Plan and apply Oracle 19.31 updates on Red Hat Enterprise Linux 8.",
+        "Run failover tests and ensure database availability.",
+        "Handle and resolve incidents, including outside regular hours.",
+        "Provide on-demand technical support to the organization’s teams.",
+        "Take part in the on-call rotation (evenings, nights and weekends)."
+      ],
+      "requirements": [
+        "Excellent command of French, spoken and written.",
+        "Experience as an Oracle database administrator (the team must show at least 5 years of Oracle DBA experience).",
+        "Experience in a critical 24/7 environment.",
+        "Experience with Oracle 19.31 or a later version.",
+        "Availability for an evening, night and weekend on-call rotation.",
+        "Residence in Canada (remote work from Canada only)."
+      ],
+      "assets": [
+        "Senior-level Oracle DBA experience (at least one team member must be senior).",
+        "Administration experience on Red Hat Enterprise Linux 8.",
+        "Experience with Québec public organizations."
+      ],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years, with two 1-year extension options.",
+        "100% remote, from Canada only.",
+        "Evening, night and weekend on-call rotation required.",
+        "To apply, send no later than November 16, 2026, at 12 p.m.: (1) your CV in Word format; (2) the requirement sheet’s forms, completed (sheet available on request at recrutement@conceptinformatique.net); (3) your status (employee, self-employed or incorporated)."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "senior-it-governance-project-advisor",
+      "title": "Senior IT Governance and Project Management Advisor",
+      "summary": "Support project teams in the project office of a large Québec public organization: compliance with scope, schedule, cost and the IT governance framework.",
+      "location": "Quebec City / Hybrid (3 days on site)",
+      "type": "3 years · 35 h/week",
+      "intro": "The project office of a large Québec public organization (multiplatform environment: mainframe, client-server and web) is looking for senior advisors in IT governance and project management. You will support project teams to ensure compliance with project authorization parameters (scope, schedule, cost) and the governance framework, within mixed teams of internal and external resources.",
+      "responsibilities": [
+        "Support and advise project teams at every stage of the life cycle (pre-project, planning, execution, closing).",
+        "Support the monitoring of project performance and parameters: scope, schedule, budget, milestones, deliveries, benefits and variances.",
+        "Help teams identify, analyze and track risks, issues, mitigation measures and corrective actions.",
+        "Review the quality, completeness, consistency and compliance of documents and deliverables (accountability reporting, phase gates, change requests).",
+        "Produce the project office’s opinions for phase-gate approvals before governance committees.",
+        "Advise teams on applying and evolving the IT governance and project management framework (directives, processes, practices, templates, tools).",
+        "Contribute to accountability reporting, recommendations to governance bodies and knowledge transfer to internal resources."
+      ],
+      "requirements": [
+        "Excellent command of French, spoken and written, with the ability to write very high-quality documents.",
+        "Senior-level experience in IT governance and project management.",
+        "Proficiency with MS Project, Azure DevOps and the Microsoft 365 suite (including Power BI).",
+        "Knowledge of agile approaches.",
+        "Ability to work on site in Quebec City at least 3 days a week."
+      ],
+      "assets": [
+        "Residence in the Quebec City region (strongly preferred).",
+        "Experience in a public organization’s project office.",
+        "Experience in a multiplatform environment (mainframe, client-server and web)."
+      ],
+      "benefits": [],
+      "terms": [
+        "Duration: 3 years, starting early 2027 (no later than 15 business days after the contract is signed).",
+        "Volume: about 1,800 person-days in total for the team (7-hour days).",
+        "Hybrid: on site in Quebec City at least 3 days a week; remote work from Québec only.",
+        "Schedule: 7 hours a day, Monday to Friday, between 7 a.m. and 6:30 p.m.; mandatory presence from 10 to 11:30 a.m. and from 1:30 to 3 p.m.",
+        "No travel, parking or accommodation expenses are reimbursed.",
+        "Background check before starting.",
+        "To apply, send your up-to-date CV in Word format to recrutement@conceptinformatique.net, stating for each mandate the client, dates, your role and the project’s scope, along with your city of residence and availability."
+      ],
+      "deliverables": [
+        "Dashboards and progress reports.",
+        "Variance analyses and risk registers.",
+        "Phase-gate opinions (opportunity case, business case, execution authorization).",
+        "Change impact analyses and decision-support notes.",
+        "Governance assessments, guides and templates.",
+        "Training material."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "senior-agile-project-manager",
+      "title": "Senior Project Manager – Agile Profile",
+      "summary": "Lead agile delivery for a data strategy team, coordinate multidisciplinary stakeholders, and manage scope, schedule, effort, costs, and quality.",
+      "location": "Montreal or Quebec City / Hybrid",
+      "type": "24 months · 35 h/week",
+      "intro": "As a Senior Project Manager with an Agile profile, you will help a data strategy team deliver value continuously using ALEC, based on SAFe. You will facilitate agile practices, coordinate delivery and quality, and maintain transparent engagement with stakeholders.",
+      "responsibilities": [
+        "Establish and facilitate agile events, foster a sustainable agile culture, support continuous value delivery using ALEC (SAFe-based), remove obstacles, and train the team on the organization’s agile tools.",
+        "Synthesize project needs to define the overall IT scope; define, plan, and track IT deliverables; estimate and monitor effort and costs for each work package.",
+        "Plan and coordinate quality assurance and solution testing; mobilize, coordinate, and follow up with development teams.",
+        "Maintain transparent stakeholder communications; identify IT and operational risks and mitigation plans; manage required vendor and contractual relationships; sustain owner engagement."
+      ],
+      "requirements": [
+        "Excellent spoken and written French.",
+        "Bachelor’s degree in information technology, business administration, management, or a related field, and Scrum Master certification.",
+        "At least 15 years of hands-on project management or coordination experience across business and IT, including 5 years as a Scrum Master in complex environments.",
+        "Participation in at least three large-scale projects of approximately 5,000 person-days each.",
+        "Demonstrated experience with recognized project management approaches and frameworks, including PMBOK/PMI, Agile, and hybrid methods.",
+        "Proven command of Agile and/or hybrid methods; PMP, PSM, SAFe, or equivalent certification.",
+        "Results-oriented, with a focus on team performance and strategic alignment.",
+        "Strong planning, organization, and prioritization skills; able to manage multiple files in complex environments.",
+        "Excellent communication and meeting facilitation skills; able to mobilize multidisciplinary teams and coordinate multiple contributors.",
+        "Rigorous tracking of schedules, budgets, and deliverables.",
+        "Strong analytical and synthesis skills to support decision-making, and a sound understanding of technology environments.",
+        "Leadership, autonomy, and accountability."
+      ],
+      "assets": [
+        "Relevant SAFe certification.",
+        "PROSCI change-management certification.",
+        "Experience in the public health sector."
+      ],
+      "benefits": [],
+      "terms": [
+        "Duration: 24 months.",
+        "Schedule: 35 hours per week.",
+        "On-site one day per week at the client’s office in Montreal or Quebec City."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "senior-data-engineer",
+      "title": "Senior Data Engineer",
+      "summary": "Build modern Microsoft Fabric analytics solutions, data pipelines and clinical-system integrations for Quebec’s health network.",
+      "location": "Montreal or Quebec City / Hybrid",
+      "type": "24 months · 35 h/week",
+      "intro": "As a Senior Data Engineer, you will design data pipelines and integration accelerators, protect data quality and privacy, and contribute to modern analytics architecture supporting business intelligence and AI in Quebec’s health network.",
+      "responsibilities": [
+        "Design and develop data pipelines and build accelerators for data integration.",
+        "Ensure data quality and compliance, and protect data security and confidentiality.",
+        "Contribute to modern analytics architectures; build BI and AI tools; optimize queries and data models.",
+        "Contribute to tool selection and implementation, user support, continuous improvement and data governance."
+      ],
+      "requirements": [
+        "Advanced spoken and written French.",
+        "Bachelor’s degree in information technology, business administration, management or a related field, plus at least three Microsoft Applied Skills assessments directly related to Fabric or the Microsoft Fabric Data Engineer Associate certification (DP-700).",
+        "At least 8 years of data-engineering experience.",
+        "More than 5 years of business-intelligence experience, including 3 years in data engineering within Quebec’s health network.",
+        "Active participation in at least 3 analytics-solution mandates integrating provincial and healthcare-institution clinical information systems, such as Clinibase, SIURGE, Med-urge, BDCU, MED-ECHO, Opera, SIMASS or SILP.",
+        "Advanced Microsoft 365 and Microsoft Fabric knowledge: Lakehouse, Data Warehouse, Direct Lake, pipelines and notebooks; hands-on administration of Fabric workspaces and Spark environments; advanced notebook use for ingestion, transformation, exploratory analysis and analytics prototyping.",
+        "In-depth Power BI and Power Platform knowledge, including Power Automate, Power Apps and Copilot Studio; advanced T-SQL, M, R, JSON, Python and DAX; practical Docker and Kubernetes container management.",
+        "Strong data-modeling and optimization skills for star and snowflake schemas, warehouses and machine-learning models, including Fabric aggregations, partitions and refresh strategies.",
+        "Advanced knowledge of clinical and administrative systems in Quebec’s health network is essential.",
+        "YAML and configuration files for automated CI/CD deployments; SQL Server, Oracle, DB2, Sybase, Dataverse, NoSQL and Spark; ELT, ETL, APIs and JSON data sources.",
+        "Experience with event-driven architectures and real-time data processing; practical knowledge of Microsoft Purview for metadata management.",
+        "Knowledge of Microsoft Azure services, Azure Data Lake Storage Gen2, Data Factory and Azure Machine Learning; strong hands-on experience with SSIS, SSAS and SSRS.",
+        "Experience integrating HL7/PHIRE data.",
+        "Knowledge of ISO 27001, GDPR and SOC 2, as well as cryptography and access-management principles.",
+        "Rigour and attention to detail in data quality, performance and security; ability to work collaboratively, coordinate several projects and advise on technical best practices."
+      ],
+      "assets": [
+        "Microsoft Certified Azure Developer Associate certification or equivalent.",
+        "Senior-level experience delivering strategic mandates."
+      ],
+      "benefits": [],
+      "terms": [
+        "Duration: 24 months.",
+        "Schedule: 35 hours per week.",
+        "On-site one day per week at the client’s office in Montreal or Quebec City."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "intermediate-business-analyst-ai",
+      "title": "Intermediate Business Analyst – AI",
+      "summary": "Bridge business, clinical and technical teams to identify, assess and deliver responsible AI opportunities in healthcare.",
+      "location": "Montreal or Quebec City / Hybrid",
+      "type": "24 months · 35 h/week",
+      "intro": "As an Intermediate Business Analyst focused on AI, you will document business needs and processes, assess the feasibility and value of AI solutions, and guide their functional design and acceptance with business, clinical and technical stakeholders.",
+      "responsibilities": [
+        "Analyze business needs and prepare opportunity and business cases for AI initiatives.",
+        "Document current business processes and identify opportunities for improvement through AI.",
+        "Assess the feasibility and added value of proposed AI solutions.",
+        "Assess organizational impacts and required changes.",
+        "Translate business needs into functional and non-functional requirements.",
+        "Contribute to AI-model design and validate alignment with business needs.",
+        "Define success criteria and key performance indicators (KPIs).",
+        "Liaise between technical, clinical and operational teams.",
+        "Participate in sprint planning, reviews and retrospectives; manage expectations and communicate progress to stakeholders.",
+        "Support user acceptance testing (UAT) for AI solutions.",
+        "Ensure alignment with Santé Québec standards and healthcare regulations; assess AI risks such as bias, ethics and data protection with security and compliance teams."
+      ],
+      "requirements": [
+        "Advanced spoken and written French.",
+        "Bachelor’s degree in business administration, business analysis or a related discipline relevant to the role.",
+        "At least 7 years of business-analysis experience.",
+        "At least 3 years of experience managing Agile/Scrum projects.",
+        "Contributed as a business analyst to at least 2 complex technology projects within the past 5 years.",
+        "Experience analyzing organizational impacts on business processes, roles and ways of working in an organization comparable in scale to Santé Québec.",
+        "Analyze and document needs; model business processes; write use cases and user stories; manage requirements and traceability.",
+        "Knowledge of Agile methods (Scrum, Kanban), UML and BPMN process modeling, organizational change management, risk analysis and mitigation.",
+        "Advanced knowledge of Microsoft Office 365 and collaboration tools such as Teams and Slack.",
+        "Understanding of AI and machine-learning fundamentals and ethical issues including bias, fairness and explainability.",
+        "Knowledge of data-protection regulations."
+      ],
+      "assets": [
+        "Master’s degree in business analysis or project management, or an Agile certification such as PMI or Scrum Product Owner; considered a major asset.",
+        "Experience in the healthcare sector."
+      ],
+      "benefits": [],
+      "terms": [
+        "Duration: 24 months.",
+        "Schedule: 35 hours per week.",
+        "On-site one day per week at the client’s office in Montreal or Quebec City."
+      ],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "information-security-governance",
+      "title": "Information Security Governance and Risk Advisor",
+      "summary": "Support the Public Curator’s information-security governance, security-risk management and digital transformation program.",
+      "location": "To be confirmed",
+      "type": "Governance and risk management",
+      "intro": "The Information Security Governance and Security Risk Management Advisor supports the information-security framework, coordinates security-risk analysis activities, and implements and evolves information-security governance principles for the Public Curator’s digital transformation program.",
+      "responsibilities": [
+        "Help develop information-security directions, directives, processes and framework documents.",
+        "Contribute to improving the organization’s information-security maturity.",
+        "Help update the information-security standards framework.",
+        "Take part in planning, organizing, controlling and reporting on information-security activities.",
+        "Help implement and operationalize the organization’s information-security risk-management process.",
+        "Identify, analyze and assess risks, threats and their consequences, including risk mapping.",
+        "Help define and deploy information-security risk-treatment plans.",
+        "Contribute to creating and implementing a risk-management framework."
+      ],
+      "requirements": [
+        "At least 10 years of experience in information technology.",
+        "At least 6 years as an information-security governance advisor.",
+        "At least 4 years of experience in security-risk management.",
+        "In-depth knowledge of IT security frameworks and related standards, such as NIST 800-series, ISO 2700x and COBIT.",
+        "Very good knowledge of risk-assessment methods such as MEHARI and MITRE.",
+        "Knowledge of cloud security environments and IaaS, PaaS and SaaS concepts.",
+        "One or more recognized information-security certifications, such as CISSP, CISM, CISA, CRISC or ISO 27001.",
+        "A duly completed Public Curator compliance grid (available on request at recrutement@conceptinformatique.net).",
+        "A signed and dated CV.",
+        "Professional references."
+      ],
+      "assets": [],
+      "benefits": [],
+      "publishedAt": "2026-11-12"
+    },
+    {
+      "id": "bi",
+      "title": "Business Intelligence Analyst",
+      "summary": "Turn our clients’ data into clear dashboards and useful indicators that guide their strategic decisions.",
+      "location": "Sherbrooke / Hybrid",
+      "type": "Full-time",
+      "intro": "As a Business Intelligence Analyst, you will help organizations understand their performance by turning scattered data into reliable, actionable insights. You will design dashboards, model data and build the pipelines that feed them. Your work will directly support our clients’ strategic decisions.",
+      "responsibilities": [
+        "Design and publish interactive dashboards and reports with Power BI.",
+        "Write and optimize SQL queries to extract and prepare data.",
+        "Build data models (star schemas, measures, relationships) that are reliable and easy to maintain.",
+        "Develop and monitor ETL processes to integrate data from multiple sources.",
+        "Work with clients to define key indicators and present findings clearly."
+      ],
+      "requirements": [
+        "Degree in information systems, statistics, computer science or a related field.",
+        "Practical experience with Power BI, including DAX and Power Query.",
+        "Strong command of SQL.",
+        "Good understanding of data modeling and data warehousing principles.",
+        "Analytical mindset and ability to explain complex results simply."
+      ],
+      "assets": [
+        "Experience with ETL tools or orchestration (e.g. Azure Data Factory, SSIS).",
+        "Knowledge of Python for data preparation.",
+        "Previous experience in a consulting environment."
+      ],
+      "benefits": [
+        "Training budget and certification support.",
+        "Flexible hours and hybrid remote work.",
+        "Varied projects across several industries.",
+        "Mentorship from experienced data professionals."
+      ],
+      "publishedAt": "2026-11-12"
+    }
+  ]
+}

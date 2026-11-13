@@ -1,3 +1,6 @@
+import snapshot from './jobsSnapshot.json';
+import { cleanJobList } from './jobsClean';
+
 export interface JobDetail {
   id: string;
   title: string;
@@ -1111,7 +1114,20 @@ export const jobsContent: Record<'fr' | 'en', JobDetail[]> = {
   ],
 };
 
+/*
+ * Offres du site : celles de l'application ConceptSolution RH capturées au build
+ * (scripts/fetch-jobs.mjs -> jobsSnapshot.json) ; si la capture est vide, la liste ci-dessus.
+ * Elles servent au pré-rendu, au sitemap et de repli quand l'API ne répond pas.
+ */
+const fromApp: Record<'fr' | 'en', JobDetail[]> = {
+  fr: cleanJobList(snapshot.fr, false),
+  en: cleanJobList(snapshot.en, false),
+};
+/** Vrai si les offres du site viennent de la capture de l'application RH. */
+export const siteJobsFromApp = fromApp.fr.length > 0 && fromApp.en.length > 0;
+export const siteJobs: Record<'fr' | 'en', JobDetail[]> = siteJobsFromApp ? fromApp : jobsContent;
+
 export function getJob(lang: 'fr' | 'en', id: string | undefined): JobDetail | undefined {
   if (!id) return undefined;
-  return jobsContent[lang].find((job) => job.id === id);
+  return siteJobs[lang].find((job) => job.id === id);
 }

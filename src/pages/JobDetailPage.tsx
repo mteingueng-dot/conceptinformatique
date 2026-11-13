@@ -3,8 +3,7 @@ import { useNavigate, Link } from '../i18n/router';
 import { motion } from 'framer-motion';
 import { ArrowLeft, MapPin, Clock, CheckCircle2, CalendarClock, Building2 } from 'lucide-react';
 import SocialShareButtons from '../components/SocialShareButtons';
-import { getJob } from '../data/jobs';
-import { useRemoteJobs, formatDeadline } from '../data/remoteJobs';
+import { useRemoteJobs, formatDeadline, jobsFor } from '../data/remoteJobs';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const copy = {
@@ -62,7 +61,7 @@ export default function JobDetailPage() {
   const navigate = useNavigate();
   const remote = useRemoteJobs();
   // L'application RH fait foi dès qu'elle a répondu ; avant (et pendant le pré-rendu) ou en cas d'échec : jobs.ts
-  const job = remote.status === 'ready' ? remote.jobs[lang].find((j) => j.id === jobId) : getJob(lang, jobId);
+  const job = jobsFor(remote, lang).find((j) => j.id === jobId);
 
   if (!job && remote.status === 'loading') {
     // Offre publiée par l'application RH mais pas pré-rendue : on attend la réponse de l'API

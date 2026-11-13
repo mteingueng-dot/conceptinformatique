@@ -6,7 +6,7 @@
 import { services, getServiceBySlug } from '../data/services';
 import { values } from '../data/values';
 import { professionalProfiles } from '../data/professionalProfiles';
-import { jobsContent, type JobDetail } from '../data/jobs';
+import { siteJobs, type JobDetail } from '../data/jobs';
 import { langFromPath, localizePath, stripLang } from '../i18n/paths';
 
 export type SeoLang = 'fr' | 'en';
@@ -21,7 +21,7 @@ let liveJobs: Record<SeoLang, JobDetail[]> | null = null;
 export function setLiveJobs(jobs: Record<SeoLang, JobDetail[]> | null): void {
   liveJobs = jobs;
 }
-const currentJobs = (lang: SeoLang): JobDetail[] => (liveJobs ?? jobsContent)[lang];
+const currentJobs = (lang: SeoLang): JobDetail[] => (liveJobs ?? siteJobs)[lang];
 const BRAND = 'Concept Informatique';
 
 export interface PageMeta {
@@ -287,7 +287,7 @@ export function listRoutes(): string[] {
     ...services.map((s) => `/services/${s.slug}/`),
     ...values.map((v) => `/about/values/${v.slug}/`),
     ...professionalProfiles.map((p) => `/about/profils/${p.slug}/`),
-    ...jobsContent.fr.map((j) => `/careers/${j.id}/`),
+    ...siteJobs.fr.map((j) => `/careers/${j.id}/`),
   ];
   return [...fr, ...fr.map((r) => localizePath(r, 'en'))];
 }

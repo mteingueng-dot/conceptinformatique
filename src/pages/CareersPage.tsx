@@ -8,7 +8,8 @@ import SocialShareButtons from '../components/SocialShareButtons';
 import { useLanguage } from '../i18n/LanguageContext';
 import Photo from '../components/Photo';
 import type { PhotoKey } from '../data/photos';
-import { useRemoteJobs, formatDeadline } from '../data/remoteJobs';
+import { useRemoteJobs, formatDeadline, jobsFor } from '../data/remoteJobs';
+import { siteJobsFromApp } from '../data/jobs';
 
 // Contenu ajouté : vie d'équipe en images et étapes du recrutement
 const careersExtra = {
@@ -435,9 +436,10 @@ export default function CareersPage() {
 
   // Offres publiées par l'application RH ; tant qu'elle n'a pas répondu (ou si elle échoue) : celles de cette page
   const remote = useRemoteJobs();
+  // (les cartes écrites ci-dessus ne servent que si le build n'a capturé aucune offre de l'application RH)
   const jobs: JobText[] =
-    remote.status === 'ready'
-      ? remote.jobs[lang].map((j) => ({ id: j.id, title: j.title, description: j.summary, location: j.location, type: j.type, deadline: j.deadline }))
+    remote.status === 'ready' || siteJobsFromApp
+      ? jobsFor(remote, lang).map((j) => ({ id: j.id, title: j.title, description: j.summary, location: j.location, type: j.type, deadline: j.deadline }))
       : t.jobs;
 
   const labelFor = (id: string) =>

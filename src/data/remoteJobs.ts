@@ -4,7 +4,8 @@
  * arrivée, ou si l'API échoue ou ne rend aucune offre, le site affiche les offres de jobs.ts.
  */
 import { useEffect, useState } from 'react';
-import { jobsContent, type JobDetail } from './jobs';
+import { siteJobs, type JobDetail } from './jobs';
+import { cleanJobList, isExpired } from './jobsClean';
 
 export const JOBS_API_URL = 'https://rh.conceptinformatique.net/api/offres.json';
 
@@ -19,51 +20,6 @@ export type RemoteJobsState =
   /** Échec ou listes vides : repli sur jobs.ts */
   | { status: 'fallback' };
 
-const isText = (v: unknown): v is string => typeof v === 'string' && v.trim() !== '';
-const textList = (v: unknown): string[] => (Array.isArray(v) ? v.filter(isText) : []);
-const isoDate = (v: unknown): string | undefined =>
-  typeof v === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(v) ? v : undefined;
-
-/** Date du jour au Québec (AAAA-MM-JJ), pour masquer une offre échue même si l'API est en cache. */
-function todayInQuebec(): string {
-  return new Intl.DateTimeFormat('en-CA', { timeZone: 'America/Toronto' }).format(new Date());
-}
-
-/** Garde seulement les offres complètes ; l'identifiant sert dans l'adresse, il doit rester simple. */
-function cleanList(raw: unknown): JobDetail[] {
-  if (!Array.isArray(raw)) return [];
-  const today = todayInQuebec();
-  const seen = new Set<string>();
-  const out: JobDetail[] = [];
-  for (const item of raw) {
-    if (!item || typeof item !== 'object') continue;
-    const j = item as Record<string, unknown>;
-    if (!isText(j.id) || !/^[a-z0-9][a-z0-9-]{0,99}$/i.test(j.id) || seen.has(j.id)) continue;
-    if (!isText(j.title) || !isText(j.summary) || !isText(j.location) || !isText(j.type) || !isText(j.intro)) continue;
-    const deadline = isoDate(j.deadline);
-    if (deadline && deadline < today) continue;
-    seen.add(j.id);
-    out.push({
-      id: j.id,
-      title: j.title,
-      summary: j.summary,
-      location: j.location,
-      type: j.type,
-      intro: j.intro,
-      responsibilities: textList(j.responsibilities),
-      requirements: textList(j.requirements),
-      assets: textList(j.assets),
-      benefits: textList(j.benefits),
-      terms: textList(j.terms),
-      deliverables: textList(j.deliverables),
-      deadline,
-      publishedAt: isoDate(j.publishedAt),
-      client: isText(j.client) ? j.client : undefined,
-    });
-  }
-  return out;
-}
-
 let request: Promise<RemoteJobsState> | null = null;
 
 /** Une seule requête par visite, partagée par toutes les pages. */
@@ -75,7 +31,7 @@ function loadRemoteJobs(): Promise<RemoteJobsState> {
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then((data: unknown): RemoteJobsState => {
         const d = (data ?? {}) as Record<string, unknown>;
-        const jobs = { fr: cleanList(d.fr), en: cleanList(d.en) };
+        const jobs = { fr: cleanJobList(d.fr, true), en: cleanJobList(d.en, true) };
         return jobs.fr.length > 0 && jobs.en.length > 0 ? { status: 'ready', jobs } : { status: 'fallback' };
       })
       .catch((): RemoteJobsState => ({ status: 'fallback' }))
@@ -106,9 +62,14 @@ export function useRemoteJobs(): RemoteJobsState {
   return state;
 }
 
-/** Offres à afficher : celles de l'API si elle a répondu, sinon celles de jobs.ts. */
+/**
+ * Offres à afficher : celles de l'API si elle a répondu ; sinon celles du build (siteJobs),
+ * sans les offres échues une fois le rendu initial passé.
+ */
 export function jobsFor(state: RemoteJobsState, lang: Lang): JobDetail[] {
-  return state.status === 'ready' ? state.jobs[lang] : jobsContent[lang];
+  if (state.status === 'ready') return state.jobs[lang];
+  if (state.status === 'fallback') return siteJobs[lang].filter((j) => !isExpired(j));
+  return siteJobs[lang];
 }
 
 /** Date limite affichée (« 20 novembre 2026 » / « November 20, 2026 »). */

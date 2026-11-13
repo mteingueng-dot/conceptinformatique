@@ -12,7 +12,8 @@
 #   FTP_SERVER_DIR_CONCEPT  dossier du site vu par ce compte : ./ si le compte FTP s'ouvre sur le dossier du site
 # Sans ces secrets, la mise en ligne est ignorée (le build est quand même vérifié).
 #
-# Lancement manuel possible : onglet Actions -> « Mise en ligne cPanel » -> Run workflow.
+# Lancement manuel possible : onglet Actions -> « Mise en ligne cPanel » -> Run workflow (ou gh workflow run).
+# Lancement automatique chaque heure, pour reprendre les offres publiées dans l'application RH.
 
 name: Mise en ligne cPanel
 
@@ -20,6 +21,10 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # Chaque heure : nouvelle capture des offres de l'application ConceptSolution RH
+  # (pages pré-rendues des nouvelles offres, retrait des offres échues)
+  schedule:
+    - cron: '7 * * * *'
 
 # Une seule mise en ligne à la fois ; une nouvelle annule celle en attente
 concurrency:
